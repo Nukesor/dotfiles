@@ -1,0 +1,5 @@
+Cmake Kram:
+
+    Wichtiges zu merken:
+        include_directories muss immer in dem directory aufgerufen werden, in dem die Library erstellt wird!
+
