@@ -57,4 +57,5 @@ ${wireless_link_qual_perc wlan0}\
 ${endif}\
 ${color} Capacity: ${texeci 60 cat /sys/class/power_supply/BAT/capacity} %;\
 ${color} Status: ${texeci 60 cat /sys/class/power_supply/BAT/status};\
+${color} ${mpd_status}: ${mpd_artist} - ${mpd_title} / Vol: ${mpd_vol}; \
 ${color} Notes: ${texeci 60 cat ~/.local/todo} 
