@@ -1,7 +1,11 @@
 "Basics
 set nocompatible        " use Vim defaults
 set t_Co=256            " set 256 color
-colorscheme darkspectrum " define syntax color scheme
+if has("gui_running")
+    colorscheme colorful
+else
+    colorscheme darkspectrum " define syntax color scheme
+endif
 set shortmess+=I        " disable the welcome screen
 set clipboard+=unnamed  " yank and copy to X clipboard
 set backspace=2         " full backspacing capabilities

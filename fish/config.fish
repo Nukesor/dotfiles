@@ -38,4 +38,5 @@ end
 
 # SSH-Environment Variables
 setenv SSH_ENV $HOME/.ssh/environment
+eval (dircolors -c ~/.dir_colors)
 
