@@ -7,7 +7,7 @@ else
     colorscheme darkspectrum " define syntax color scheme
 endif
 set shortmess+=I        " disable the welcome screen
-set clipboard+=unnamed  " yank and copy to X clipboard
+set clipboard+=unnamedplus  " yank and copy to X clipboard
 set backspace=2         " full backspacing capabilities
 set history=100         " 100 lines of command line history
 set ww=<,>,[,]          " whichwrap -- left/right keys can traverse up/down
