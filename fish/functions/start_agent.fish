@@ -1,14 +1,17 @@
 function start_agent
-	if [ -n "$SSH_AGENT_PID" ]
-            ps -ef | grep $SSH_AGENT_PID | grep ssh-agent > /dev/null
-            if [ $status -eq 0 ]
-                test_identities
-            end
+
+    if [ -n "$SSH_AGENT_PID" ]
+        ps -ef | grep $SSH_AGENT_PID | grep ssh-agent > /dev/null
+        if [ $status -eq 0 ]
+            test_identities
+        end
     else
-            if [ -f $SSH_ENV ]
-                . $SSH_ENV > /dev/null
-            end
+        if [ -f $SSH_ENV ]
+            . $SSH_ENV > /dev/null
+        end
+
         ps -ef | grep $SSH_AGENT_PID | grep -v grep | grep ssh-agent > /dev/null
+
         if [ $status -eq 0 ]
             test_identities
         else
@@ -19,5 +22,5 @@ function start_agent
             . $SSH_ENV > /dev/null
             ssh-add
         end
-	end
+    end
 end
