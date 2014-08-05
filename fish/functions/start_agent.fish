@@ -1,5 +1,5 @@
 function start_agent
-
+	
     if [ -n "$SSH_AGENT_PID" ]
         ps -ef | grep $SSH_AGENT_PID | grep ssh-agent > /dev/null
         if [ $status -eq 0 ]
@@ -21,6 +21,7 @@ function start_agent
             chmod 600 $SSH_ENV 
             . $SSH_ENV > /dev/null
             ssh-add
+            setenv SSH_RUNNING 1
         end
     end
 end

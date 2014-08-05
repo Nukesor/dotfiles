@@ -28,8 +28,7 @@ end
 setenv SSH_ENV $HOME/.ssh/environment
 
 # Adding new Identity if Agent is running
-printenv | grep "SSH_AUTH_SOCK" > /dev/null
-if [ $status -eq 0 ] 
+if [ $SSH_RUNNING -eq 1 ] 
     start_agent
 end
 
