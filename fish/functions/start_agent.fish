@@ -21,7 +21,7 @@ function start_agent
             chmod 600 $SSH_ENV 
             . $SSH_ENV > /dev/null
             ssh-add
-            setenv SSH_RUNNING 1
+            set -U SSH_RUNNING 1
         end
     end
 end
