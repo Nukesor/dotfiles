@@ -1,3 +1,3 @@
 function pong
-	ping google.de $argv
+	ping -D google.de $argv
 end
