@@ -45,6 +45,7 @@ function backupconf
     cp ~/.config/mpd/mpd.conf ~/Dokumente/stuff/mpd/
     cp -r ~/.config/mpd/playlists ~/Dokumente/stuff/mpd/
     cp ~/.ncmpcpp/config ~/Dokumente/stuff/.ncmpcpp/
+    cp ~/.ncmpcpp/bindings ~/Dokumente/stuff/.ncmpcpp/
     ## Cataclysm
     cp ~/.cataclysm/.start.sh ~/Dokumente/stuff/.cataclysm/.start.sh
     cp ~/.cataclysm/.backup.sh ~/Dokumente/stuff/.cataclysm/.backup.sh
