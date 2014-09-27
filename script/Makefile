@@ -5,9 +5,15 @@ basic:
 	echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 	locale-gen
 	echo "KEYMAP=us-qwerty" > /etc/vconsole.conf
+
+boot-grub:
 	pacman -S grub
 	grub-install --target=i386-pc --recheck --debug /dev/sdd # Hier Device einsetzen
 	grub-mkconfig -o /boot/grub/grub.cfg
+
+boot-efi:
+	pacman -S gummiboot
+	gummiboot --path=/boot/ install
 
 advanced:
 	# Downloading fish and setting it as default shell
@@ -29,5 +35,7 @@ user:
 	useradd -d /home/nukesor -g nukesor nukesor
 	chsh -s /usr/bin/fish nukesor
 
-everything: basic advanced install-pkg user home-dir
+everything-grub: basic boot-grub advanced install-pkg user home-dir
+	
+everything-efi: basic advanced install-pkg user home-dir
 	
