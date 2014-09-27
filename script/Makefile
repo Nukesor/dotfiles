@@ -24,11 +24,10 @@ install-pkg:
 	fish install.fish
 
 user:
-	mkdir /home/nukesor
+	cp -r --preserve /mnt/home /home/nukesor
 	groupadd nukesor
 	useradd -d /home/nukesor -g nukesor nukesor
 	chsh -s /usr/bin/fish nukesor
-	cp -r --preserve /mnt/home /home/nukesor
 
 everything: basic advanced install-pkg user home-dir
 	
