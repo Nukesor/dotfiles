@@ -7,17 +7,17 @@ basic:
 	echo "KEYMAP=us-qwerty" > /etc/vconsole.conf
 
 boot-grub:
-	pacman -S grub
+	pacman -S grub --noconfirm
 	grub-install --target=i386-pc --recheck --debug /dev/sdd # Hier Device einsetzen
 	grub-mkconfig -o /boot/grub/grub.cfg
 
 boot-efi:
-	pacman -S gummiboot
+	pacman -S gummiboot --noconfirm
 	gummiboot --path=/boot/ install
 
 advanced:
 	# Downloading fish and setting it as default shell
-	pacman -S fish sudo
+	pacman -S fish sudo --noconfirm
 	chsh -s /usr/bin/fish
 	# Copying etc
 	cp -rf /mnt/etc/* /etc/
