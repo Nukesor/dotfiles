@@ -1,10 +1,15 @@
 default: basic
 
 basic:
+	# Setzen der Lokalzeit
 	ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+	# Setzen des encodings
 	echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 	locale-gen
+	# Setzen der Keymap
 	echo "KEYMAP=us-qwerty" > /etc/vconsole.conf
+	mkinitcpio -p linux
+	passwd
 
 boot-grub:
 	pacman -S grub --noconfirm
@@ -12,6 +17,7 @@ boot-grub:
 	grub-mkconfig -o /boot/grub/grub.cfg
 
 boot-efi:
+	# Not finnished yet
 	pacman -S gummiboot --noconfirm
 	gummiboot --path=/boot/ install
 
@@ -20,7 +26,7 @@ advanced:
 	pacman -S fish sudo --noconfirm
 	chsh -s /usr/bin/fish
 	# Copying etc
-	cp -rf /mnt/etc/* /etc/
+	cp -rf --preserve /mnt/etc/* /etc/
 	# Adding and signing Haskell repository for pacman
 	pacman-key -r 4209170B
 	pacman-key --lsign-key 4209170B
@@ -30,12 +36,13 @@ install-pkg:
 	fish install.fish
 
 user:
+	# Kopieren der Home Backup daten
 	cp -r --preserve /mnt/home /home/nukesor
+	# Erstellen von user Nukesor und setzen der Standartshell
 	groupadd nukesor
 	useradd -d /home/nukesor -g nukesor nukesor
 	chsh -s /usr/bin/fish nukesor
+	passwd nukesor
 
-everything-grub: basic boot-grub advanced install-pkg user home-dir
-	
-everything-efi: basic advanced install-pkg user home-dir
-	
+everything-grub: basic boot-grub advanced install-pkg user	
+
