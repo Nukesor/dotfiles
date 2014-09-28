@@ -47,7 +47,7 @@ function backupconf
     cp ~/.ncmpcpp/config ~/Dokumente/stuff/.ncmpcpp/
     cp ~/.ncmpcpp/bindings ~/Dokumente/stuff/.ncmpcpp/
     ## Cataclysm
-    cp ~/.cataclysm/.start.sh ~/Dokumente/stuff/.cataclysm/.start.sh
-    cp ~/.cataclysm/.backup.sh ~/Dokumente/stuff/.cataclysm/.backup.sh
-    cp ~/.cataclysm/.restore.sh ~/Dokumente/stuff/.cataclysm/.restore.sh
+    cp ~/.cataclysm/start.fish ~/Dokumente/stuff/.cataclysm/start.fish
+    cp ~/.cataclysm/backup.fish ~/Dokumente/stuff/.cataclysm/backup.fish
+    cp ~/.cataclysm/restore.fish ~/Dokumente/stuff/.cataclysm/restore.fish
 end
