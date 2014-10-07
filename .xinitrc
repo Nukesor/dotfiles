@@ -9,7 +9,5 @@ setxkbmap us
 
 exec i3
 
-# Disable PC beep
-xset -b
 # Setting Background
 feh --bg-scale ~/.local/lost-aurora-1080p.jpg

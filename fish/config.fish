@@ -8,8 +8,14 @@
 # Disable greetings message 
 set fish_greeting ""
 
+# Disable PC beep
+command xset -b
+
 # Set vim as default editor
 set --export EDITOR "vim -f"
+
+# Color grep output
+set --export GREP_OPTIONS --color=auto
 
 #sudo !! fix
 function sudo
