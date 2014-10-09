@@ -1,4 +1,6 @@
-default: basic
+.PHONY: basic default boot-grub boot-efi advanced install-pkg user
+
+default:
 
 basic:
 	# Setzen der Lokalzeit
@@ -31,6 +33,7 @@ advanced:
 	pacman-key -r 4209170B
 	pacman-key --lsign-key 4209170B
 	pacman -Syy
+	pacman -S base-devel yaourt --noconfirm
 
 install-pkg:
 	fish install.fish
