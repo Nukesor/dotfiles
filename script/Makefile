@@ -5,11 +5,11 @@ basic:
 	ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 	# Setzen des encodings
 	echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+	echo "LANG=en_US.UTF-8" > /etc/locale.conf
 	locale-gen
 	# Setzen der Keymap
-	echo "KEYMAP=us-qwerty" > /etc/vconsole.conf
-	mkinitcpio -p linux
-	passwd
+	echo "KEYMAP=us" > /etc/vconsole.conf
+	echo "FONT=ter-112n" >> /etc/vconsole.conf
 
 boot-grub:
 	pacman -S grub --noconfirm
@@ -42,7 +42,6 @@ user:
 	groupadd nukesor
 	useradd -d /home/nukesor -g nukesor nukesor
 	chsh -s /usr/bin/fish nukesor
-	passwd nukesor
 
 everything-grub: basic boot-grub advanced install-pkg user	
 

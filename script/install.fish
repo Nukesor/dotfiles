@@ -1,1 +1,1 @@
-pacman -Sy (cat pkglist) 
+pacman -Sy --noconfirm (cat pkglist) 
