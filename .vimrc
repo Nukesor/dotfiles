@@ -1,7 +1,8 @@
 "Basics
 set nocompatible        " use Vim defaults
-set t_Co=256            " set 256 color
 set encoding=utf-8
+set fileencoding=utf-8
+set t_Co=256            " set 256 color
 if has("gui_running")
     colorscheme colorful
 else
