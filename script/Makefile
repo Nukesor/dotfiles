@@ -14,18 +14,18 @@ basic:
 	echo "FONT=ter-112n" >> /etc/vconsole.conf
 
 boot-grub:
-	pacman -S grub --noconfirm
+	pacman -Sy grub --needed --noconfirm
 	grub-install --target=i386-pc --recheck --debug /dev/sdd # Hier Device einsetzen
 	grub-mkconfig -o /boot/grub/grub.cfg
 
 boot-efi:
 	# Not finnished yet
-	pacman -S gummiboot --noconfirm
+	pacman -S gummiboot --needed --noconfirm
 	gummiboot --path=/boot/ install
 
 advanced:
 	# Downloading fish and setting it as default shell
-	pacman -S fish sudo --noconfirm
+	pacman -Sy base-devel fish sudo --needed --noconfirm
 	chsh -s /usr/bin/fish
 	# Copying etc
 	cp -rf --preserve /mnt/etc/* /etc/
@@ -33,13 +33,13 @@ advanced:
 	pacman-key -r 4209170B
 	pacman-key --lsign-key 4209170B
 	pacman -Syy
-	pacman -S base-devel yaourt --noconfirm
+	pacman -S yaourt --noconfirm
 
 install-pkg:
 	fish install.fish
 
 user:
-	# Kopieren der Home Backup daten
+	# Kopieren der Home Backup Daten
 	cp -r --preserve /mnt/home /home/nukesor
 	# Erstellen von user Nukesor und setzen der Standartshell
 	groupadd nukesor

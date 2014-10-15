@@ -1,1 +1,1 @@
-pacman -Sy --noconfirm (cat pkglist) 
+pacman -Sy --noconfirm --needed (cat pkglist) 

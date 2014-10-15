@@ -30,7 +30,7 @@ pidgin
 pidgin-otr
 powertop
 python
-qt-qalculate
+qalculate-gtk
 sed
 sfml
 smartmontools
@@ -47,7 +47,7 @@ wpa_supplicant
 xorg-server
 xorg-server-utils
 xorg-apps
-xorg-init
+xorg-xinit
 xf86-input-mouse
 xf86-input-synaptics
 xf86-video-intel
