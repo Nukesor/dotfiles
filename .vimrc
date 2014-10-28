@@ -39,17 +39,6 @@ command -nargs=* NERD NERDTree <args>
 command V vsplit | A
 command T tabnew
 
-" Latex
-let g:tex_flavor='latex'
-
-let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
-let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
-let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
-
-let g:Tex_ViewRule_pdf = 'okular'
-
-autoc Filetype tex,latex :set textwidth=99
-autocmd Filetype tex,latex :set grepprg=grep\ -nH\ $*
 autocmd Filetype tex,latex :set dictionary=~/.vim/dict/latex.dict
 
 filetype plugin on
@@ -61,12 +50,7 @@ map ; :
 " Disable F1 help
 :nmap <F1> :echo<CR>
 :imap <F1> <C-o>:echo<CR>
-nnoremap <silent> <F2> :set list!<CR>
-inoremap <silent> <F2> <esc>:set list!<CR>a
 
-" NerdTree
-nnoremap <silent> <F6> :NERDTreeToggle<CR>
-inoremap <silent> <F6> <esc>:NERDTreeToggle<CR>a
 " Tlist
 nnoremap <silent> <F7> :TlistUpdate<CR>
 inoremap <silent> <F7> <esc>:TlistUpdate<CR>a
@@ -139,12 +123,6 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Compart_Format = 1
 let Tlist_Show_Menu = 1
 let Tlist_Exit_OnlyWindow = 1
-
-" minibufexpl
-" let g:miniBufExplMapWindowNavVim = 1
-" let g:miniBufExplMapWindowNavArrows = 1
-" let g:miniBufExplMapCTabSwitchBufs = 1
-" let g:miniBufExplModSelTarget = 1
 
 " restore position
 autocmd BufReadPost *

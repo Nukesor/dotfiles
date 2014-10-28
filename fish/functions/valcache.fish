@@ -1,3 +1,3 @@
 function valcache
-	command valgrind --tool=cachecheck $argv
+	command valgrind --tool=cachegrind $argv
 end
