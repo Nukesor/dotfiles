@@ -1,7 +1,11 @@
 #!/bin/sh
 
-SEDCOMMAND='s/'$1'/'$2'/g'
-PLACES=$(grep -rl $1)
+SEDCOMMAND='s/'
+SEDCOMMAND+=$1
+SEDCOMMAND+='/'
+SEDCOMMAND+=$2
+SEDCOMMAND+='/g'
 echo 'Replacing '$1' by '$2 'in the following Files: '
 echo $PLACES
-sed -i $SEDCOMMAND $PLACES
+echo $SEDCOMMAND
+sed -i $SEDCOMMAND $(grep --binary-files=without-match -rl $1)
