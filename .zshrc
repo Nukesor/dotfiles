@@ -44,6 +44,12 @@ alias watchgit='watch -d -n 10 -c git pull'
 
 alias km='killall skype pidgin'
 
+# Scripts
+alias backlight="source ~/.scripts/backlight.sh"
+alias replace="source ~/.scripts/replace.sh"
+alias screenshot="source ~/.scripts/screenshot.sh"
+alias webogram='source ~/.scripts/webogram.sh'
+
 eval `keychain --eval -Q -q id_rsa`
 export EDITOR=vim
 
