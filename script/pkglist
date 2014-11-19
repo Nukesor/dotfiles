@@ -1,3 +1,4 @@
+adobe-source-han-sans-tw-fonts
 aircrack-ng
 alsa-utils
 apvlv
@@ -34,6 +35,7 @@ mumble
 ncmpcpp
 ntfs-3g
 openssh
+otf-ipafont
 pidgin
 pidgin-otr
 powertop
@@ -46,6 +48,7 @@ smartmontools
 sudo
 terminus-font
 thunderbird
+ttf-dejavu
 unrar
 unzip
 valgrind
