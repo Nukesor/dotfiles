@@ -25,8 +25,8 @@ boot-efi:
 
 advanced:
 	# Downloading fish and setting it as default shell
-	pacman -Sy base-devel fish sudo --needed --noconfirm
-	chsh -s /usr/bin/fish
+	pacman -Sy base-devel fish zsh sudo --needed --noconfirm
+	chsh -s /usr/bin/zsh
 	# Copying etc
 	cp -rf --preserve /mnt/etc/* /etc/
 	# Adding and signing Haskell repository for pacman
