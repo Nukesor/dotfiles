@@ -38,6 +38,9 @@ advanced:
 install-pkg:
 	fish install.fish
 
+yaourt-pkg:
+	fish yaourt.fish
+
 user:
 	# Kopieren der Home Backup Daten
 	cp -r --preserve /mnt/home /home/nukesor

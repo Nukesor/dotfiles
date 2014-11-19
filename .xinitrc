@@ -9,5 +9,3 @@ setxkbmap us
 
 exec i3
 
-# Setting Background
-feh --bg-scale ~/.local/lost-aurora-1080p.jpg

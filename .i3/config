@@ -26,7 +26,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Control+k exec xterm
+bindsym $mod+Control+k exec termite
 # start chromium
 bindsym $mod+Control+i exec chromium
 # start Thunderbird

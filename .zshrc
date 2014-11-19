@@ -53,3 +53,5 @@ alias webogram='source ~/.scripts/webogram.sh'
 eval `keychain --eval -Q -q id_rsa`
 export EDITOR=vim
 
+xset -b
+

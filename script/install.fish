@@ -1,1 +1,1 @@
-pacman -Sy --noconfirm --needed (cat pkglist) 
+yaourt -Sy --noconfirm --needed (cat yaourt) 
