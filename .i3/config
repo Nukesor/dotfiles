@@ -25,7 +25,9 @@ floating_modifier $mod
 # mouse floating causing no longer change of window focus
 focus_follows_mouse no
 
-# start a terminal
+# start a xterm
+bindsym $mod+Control+k exec termite
+# start a termite
 bindsym $mod+Control+k exec termite
 # start chromium
 bindsym $mod+Control+i exec chromium

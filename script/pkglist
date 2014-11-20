@@ -11,6 +11,7 @@ conky
 cryptsetup
 dmenu
 dstat
+evince
 firefox
 fish
 gcc
@@ -31,6 +32,7 @@ love
 make
 mpc
 mpd
+mpv
 mumble
 ncmpcpp
 ntfs-3g
@@ -53,6 +55,7 @@ unrar
 unzip
 valgrind
 vim-plugins
+vlc
 weechat
 wget
 which
