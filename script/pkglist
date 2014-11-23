@@ -14,6 +14,7 @@ dstat
 evince
 firefox
 fish
+feh
 gcc
 gdb
 gimp
@@ -38,6 +39,8 @@ ncmpcpp
 ntfs-3g
 openssh
 otf-ipafont
+parted
+pcmanfm
 pidgin
 pidgin-otr
 powertop
@@ -49,6 +52,8 @@ skype
 smartmontools
 sudo
 terminus-font
+texlive-most
+texlive-lang
 thunderbird
 ttf-dejavu
 unrar
