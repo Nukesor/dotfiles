@@ -1,1 +1,1 @@
-yaourt -Sy --noconfirm --needed (cat yaourt) 
+yaourt -Sy --noconfirm (cat yaourt) 
