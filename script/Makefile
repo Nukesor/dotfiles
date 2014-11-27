@@ -25,7 +25,7 @@ boot-efi:
 
 advanced:
 	# Downloading fish and setting it as default shell
-	pacman -Sy base-devel fish zsh sudo --needed --noconfirm
+	pacman -Sy base-devel zsh sudo --needed --noconfirm
 	chsh -s /usr/bin/zsh
 	# Copying etc
 	cp -rf --preserve /mnt/etc/* /etc/
@@ -36,10 +36,10 @@ advanced:
 	pacman -S yaourt --noconfirm
 
 install-pkg:
-	fish install.fish
+	/usr/bin/bash install.sh
 
 yaourt-pkg:
-	fish yaourt.fish
+	/usr/bin/bash yaourt.sh
 
 user:
 	# Kopieren der Home Backup Daten

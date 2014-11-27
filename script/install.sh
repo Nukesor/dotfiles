@@ -1,1 +1,1 @@
-pacman -Sy --noconfirm --needed $(cat serverlist) 
+pacman -Sy --noconfirm --needed $(cat pkglist) 
