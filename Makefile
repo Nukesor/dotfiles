@@ -1,15 +1,15 @@
 .PHONY: ncmpcpp config
 
 config: ncmpcpp
-	stow git
-	stow mpd
-	stow i3
-	stow scripts
-	stow termite
-	stow various
-	stow vim
-	stow x
-	stow zsh
+	stow -t ~/ git
+	stow -t ~/ mpd
+	stow -t ~/ i3
+	stow -t ~/ scripts
+	stow -t ~/ termite
+	stow -t ~/ various
+	stow -t ~/ vim
+	stow -t ~/ x
+	stow -t ~/ zsh
 
 ncmpcpp:
 	mkdir -p ~/.ncmpcpp
