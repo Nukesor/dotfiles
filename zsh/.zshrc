@@ -41,6 +41,8 @@ alias dfh='df -h -x tmpfs'
 alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 10 -c git pull'
+alias rsyncs='rsync -avz --progress '
+alias rsync='rsync --recursive --perms --progress --times'
 
 alias km='killall skype pidgin'
 
@@ -50,8 +52,11 @@ alias replace="source ~/.scripts/replace.sh"
 alias screenshot="source ~/.scripts/screenshot.sh"
 alias webogram='source ~/.scripts/webogram.sh'
 
-eval `keychain --eval -Q -q id_rsa`
+alias mt="sudo mount"
+alias ut="sudo umount"
+
 export EDITOR=vim
 
+eval `keychain --eval --agents "ssh" -Q -q id_rsa`
 xset -b
 

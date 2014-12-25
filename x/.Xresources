@@ -1,7 +1,6 @@
 XTerm*faceName: Bitstream Vera Serif Mono
 xterm*faceSize: 10
 xterm*vt100*geometry: 80x60
-XTerm*locale: true
 xterm*saveLines: 16384
 xterm*loginShell: true
 xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48

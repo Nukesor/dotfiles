@@ -51,9 +51,9 @@ ${if_existing /sys/class/net/enp4s0f2/operstate up} \
 ${upspeedgraph eth0 10,100 CCCC00 FFFF00 -t -l} ↑${upspeed enp4s0f2} \
 ${downspeedgraph eth0 10,100 CCCC00 FFFF00 -t -l} ↓${downspeed enp4s0f2} \
 ${else}\
-${upspeedgraph wlan0 10,100 AA7700 FFDD00 -t -l} ↑${upspeed wlan0} \
-${downspeedgraph wlan0 10,100 AA7700 FFDD00 -t -l} ↓${downspeed wlan0} \
-${wireless_link_qual_perc wlan0}\
+${upspeedgraph wlp3s0 10,100 AA7700 FFDD00 -t -l} ↑${upspeed wlp3s0} \
+${downspeedgraph wlp3s0 10,100 AA7700 FFDD00 -t -l} ↓${downspeed wlp3s0} \
+${wireless_link_qual_perc wlp3s0}\
 ${endif}\
 ${color} Capacity: ${texeci 60 cat /sys/class/power_supply/BAT/capacity} %;\
 ${color} Status: ${texeci 60 cat /sys/class/power_supply/BAT/status};\

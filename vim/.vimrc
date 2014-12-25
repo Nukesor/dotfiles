@@ -8,6 +8,7 @@ if has("gui_running")
 else
     colorscheme darkspectrum " define syntax color scheme
 endif
+
 set shortmess+=I        " disable the welcome screen
 set clipboard=unnamedplus  " yank and copy to X clipboard
 set backspace=2         " full backspacing capabilities
@@ -38,6 +39,9 @@ command -nargs=* -complete=help Help vertical belowright help <args>
 command -nargs=* NERD NERDTree <args>
 command V vsplit | A
 command T tabnew
+command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
+command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
+
 
 autocmd Filetype tex,latex :set dictionary=~/.vim/dict/latex.dict
 
@@ -50,6 +54,10 @@ map ; :
 " Disable F1 help
 :nmap <F1> :echo<CR>
 :imap <F1> <C-o>:echo<CR>
+
+" Disable MinibufExplorer until needed
+nmap <silent> <F2> :MBEToggle<CR>
+
 
 " Tlist
 nnoremap <silent> <F7> :TlistUpdate<CR>
