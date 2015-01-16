@@ -9,6 +9,7 @@ clang
 cmake
 conky
 cryptsetup
+ctags
 dmenu
 dstat
 evince
