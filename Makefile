@@ -10,6 +10,7 @@ config: ncmpcpp
 	stow -t ~/ vim
 	stow -t ~/ x
 	stow -t ~/ zsh
+	stow -t ~/.config config
 
 ncmpcpp:
 	mkdir -p ~/.ncmpcpp
