@@ -111,6 +111,7 @@ alias km='killall skype pidgin'
 # Scripts
 alias backlight="source ~/.scripts/backlight.sh"
 alias replace="source ~/.scripts/replace.sh"
+alias wscreenshot="source ~/.scripts/wscreenshot.sh"
 alias screenshot="source ~/.scripts/screenshot.sh"
 alias webogram='source ~/.scripts/webogram.sh'
 
