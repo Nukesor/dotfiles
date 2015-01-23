@@ -6,10 +6,6 @@ while true; do
     grep -r $string
     temp=$?
     rm temp
-    echo $temp
-    echo ""
-    echo $2
-    echo ""
     if [[ temp -eq 0 ]] ; then
         scrot -q 100
     else
