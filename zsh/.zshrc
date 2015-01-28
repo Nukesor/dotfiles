@@ -84,6 +84,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lh --color=auto'
 alias lsa='ls -a'
 alias lsl='ls -al'
+alias lslr='ls -LR'
 alias grep='grep --color=auto'
 
 alias sys='sudo systemctl'
@@ -102,7 +103,7 @@ alias dfh='df -h -x tmpfs'
 # Git 
 alias glg='git lg'
 alias gls='git ls'
-alias watchgit='watch -d -n 10 -c git pull'
+alias watchgit='watch -d -n 5 -c git pull'
 alias rsyncs='rsync -avz --progress '
 alias rsync='rsync --recursive --perms --progress --times'
 
