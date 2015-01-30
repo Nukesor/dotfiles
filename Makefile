@@ -19,7 +19,7 @@ ncmpcpp:
 
 server:
 	stow -t ~/.config config
-	stow -t ~/ zsh
+	stow -t ~/ szsh
 	stow -t ~/ vim
 	stow -t ~/ git
 	stow -t ~/ varall
