@@ -144,7 +144,7 @@ LP_ENABLE_SSH_COLORS=0
 LP_DISABLED_VCS_PATH=""
 
 # Setting Colors
-LP_COLOR_SSH="WHITE"
-LP_COLOR_HOST="WHITE"
+LP_COLOR_SSH=""
+LP_COLOR_HOST=""
 
 # vim: set et sts=4 sw=4 tw=120 ft=sh:
