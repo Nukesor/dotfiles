@@ -7,6 +7,7 @@ config: ncmpcpp
 	stow -t ~/ scripts
 	stow -t ~/ termite
 	stow -t ~/ various
+	stow -t ~/ varall
 	stow -t ~/ vim
 	stow -t ~/ x
 	stow -t ~/ zsh
@@ -15,4 +16,11 @@ config: ncmpcpp
 ncmpcpp:
 	mkdir -p ~/.ncmpcpp
 	stow -t ~/.ncmpcpp ncmpcpp
+
+server:
+	stow -t ~/.config config
+	stow -t ~/ zsh
+	stow -t ~/ vim
+	stow -t ~/ git
+	stow -t ~/ varall
 

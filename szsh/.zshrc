@@ -94,13 +94,7 @@ alias grep='grep --color=auto'
 alias sys='sudo systemctl'
 alias nvim='vim -c NERD'
 alias spacman='sudo pacman'
-alias mpds='mpd ~/.config/mpd/mpd.conf'
-alias music='ncmpcpp -h localhost'
 alias pong='ping -D google.de'
-
-# Netctl
-alias co='sudo netctl start'
-alias disco='sudo netctl stop'
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
@@ -108,22 +102,11 @@ alias dfh='df -h -x tmpfs'
 alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
-alias rsyncs='rsync -avz --progress '
-alias rsync='rsync --recursive --perms --progress --times'
-
-alias km='killall skype pidgin'
 
 # Scripts
-alias backlight="source ~/.scripts/backlight.sh"
 alias replace="source ~/.scripts/replace.sh"
-alias wscreenshot="source ~/.scripts/wscreenshot.sh"
-alias screenshot="source ~/.scripts/screenshot.sh"
-alias webogram='source ~/.scripts/webogram.sh'
 
 export EDITOR=vim
-
-eval `keychain --eval --agents "ssh" -Q -q id_rsa`
-xset -b
 
 # fasd
 eval "$(fasd --init auto)"
