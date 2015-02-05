@@ -91,12 +91,21 @@ alias lsl='ls -al'
 alias lslr='ls -LR'
 alias grep='grep --color=auto'
 
-alias sys='sudo systemctl'
 alias nvim='vim -c NERD'
+alias pong='ping -D google.de'
+
+
+alias sys='sudo systemctl'
+alias susp='blur && systemctl suspend'
 alias spacman='sudo pacman'
+
+# mpd & ncmpcpp
 alias mpds='mpd ~/.config/mpd/mpd.conf'
 alias music='ncmpcpp -h localhost'
-alias pong='ping -D google.de'
+
+# Xset
+alias noblank='xset s off && xset -dpms && xset s noblank'
+xset -b
 
 # Netctl
 alias co='sudo netctl start'
@@ -104,6 +113,8 @@ alias disco='sudo netctl stop'
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
+alias duh='du -h'
+
 # Git 
 alias glg='git lg'
 alias gls='git ls'
@@ -114,16 +125,17 @@ alias rsync='rsync --recursive --perms --progress --times'
 alias km='killall skype pidgin'
 
 # Scripts
-alias backlight="source ~/.scripts/backlight.sh"
+alias vpn='source ~/.scripts/vpn.sh'
+alias blur='source ~/.scripts/i3lock-blur.sh'
 alias replace="source ~/.scripts/replace.sh"
-alias wscreenshot="source ~/.scripts/wscreenshot.sh"
-alias screenshot="source ~/.scripts/screenshot.sh"
 alias webogram='source ~/.scripts/webogram.sh'
+alias backlight="source ~/.scripts/backlight.sh"
+alias screenshot="source ~/.scripts/screenshot.sh"
+alias wscreenshot="source ~/.scripts/wscreenshot.sh"
 
 export EDITOR=vim
 
 eval `keychain --eval --agents "ssh" -Q -q id_rsa`
-xset -b
 
 # fasd
 eval "$(fasd --init auto)"
