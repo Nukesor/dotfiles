@@ -120,7 +120,7 @@ alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
 alias rsyncs='rsync -avz --progress '
-alias rsync='rsync --recursive --perms --progress --times'
+alias rsync='rsync --recursive --perms --progress --times -u'
 
 alias km='killall skype pidgin'
 
@@ -129,6 +129,7 @@ alias vpn='source ~/.scripts/vpn.sh'
 alias blur='source ~/.scripts/i3lock-blur.sh'
 alias replace="source ~/.scripts/replace.sh"
 alias webogram='source ~/.scripts/webogram.sh'
+alias ntfsComp='source ~/.scripts/ntfsComp.sh'
 alias backlight="source ~/.scripts/backlight.sh"
 alias screenshot="source ~/.scripts/screenshot.sh"
 alias wscreenshot="source ~/.scripts/wscreenshot.sh"
