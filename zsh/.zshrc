@@ -92,6 +92,8 @@ alias lslr='ls -LR'
 alias grep='grep --color=auto'
 
 alias nvim='vim -c NERD'
+alias svim='sudo vim'
+alias snvim='sudo vim -c NERD'
 alias pong='ping -D google.de'
 
 
