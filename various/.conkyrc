@@ -32,9 +32,6 @@ xftfont DejaVu Sans Mono:size=10
 # Force UTF8? note that UTF8 support required XFT
 override_utf8_locale yes
 
-#${color} Date: $time; \
-#${color} ${mpd_status}: ${mpd_artist} - ${mpd_title} / Vol: ${mpd_vol}; \
-
 #to prevent window from moving
 maximum_width 1920
 
@@ -45,8 +42,6 @@ short_units yes
 TEXT
 ${cpugraph cpu0 10,100 AA5500 AA8800 -t -l} ${color darkgray}$cpu%${goto 140}\
 ${memgraph 10,100 FF3300 FFAA00 -t -l} ${color darkgray}$memperc%${goto 280}\
-${diskiograph_read /dev/sda 10,100 663300 996633 -t -l} ↑${diskio_read /dev/sda} \
-${diskiograph_write /dev/sda 10,100 663300 996633 -t -l} ↓${diskio_write} \
 ${if_existing /sys/class/net/enp4s0f2/operstate up} \
 ${upspeedgraph eth0 10,100 CCCC00 FFFF00 -t -l} ↑${upspeed enp4s0f2} \
 ${downspeedgraph eth0 10,100 CCCC00 FFFF00 -t -l} ↓${downspeed enp4s0f2} \
@@ -55,7 +50,6 @@ ${upspeedgraph wlp3s0 10,100 AA7700 FFDD00 -t -l} ↑${upspeed wlp3s0} \
 ${downspeedgraph wlp3s0 10,100 AA7700 FFDD00 -t -l} ↓${downspeed wlp3s0} \
 ${wireless_link_qual_perc wlp3s0}\
 ${endif}\
-${color} Capacity: ${texeci 60 cat /sys/class/power_supply/BAT/capacity} %;\
-${color} Status: ${texeci 60 cat /sys/class/power_supply/BAT/status};\
 ${color} ${mpd_status}: ${mpd_artist} - ${mpd_title} / Vol: ${mpd_vol}; \
-${color} Notes: ${texeci 60 cat ~/.local/todo} 
+${color} Notes: ${texeci 60 cat ~/.local/todo}
+

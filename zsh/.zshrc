@@ -123,7 +123,6 @@ alias rsyncs='rsync -avz --progress '
 alias rsync='rsync --recursive --perms --progress --times -u'
 
 alias km='killall skype pidgin'
-alias floodTest='hping3 -c 100000 -d 120 -S -w 64 -p 21 --flood --rand-source'
 
 # Scripts
 alias vpn='source ~/.scripts/vpn.sh'
