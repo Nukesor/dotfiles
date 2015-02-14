@@ -194,6 +194,12 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
+" Disable Folding
+:let Tex_FoldedSections=""
+:let Tex_FoldedEnvironments=""
+:let Tex_FoldedMisc=""
+set nofoldenable
+
 " restore position
 autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
