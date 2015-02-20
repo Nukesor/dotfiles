@@ -32,6 +32,7 @@ NeoBundle 'mitsuhiko/vim-jinja'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'Shutnik/jshint2.vim'
 
 " Looks
 NeoBundle 'bling/vim-airline'
@@ -79,6 +80,8 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+"Setting Runtimepath for jshint
+set runtimepath+=~/.vim/bundle/jshint2.vim/
 
 " Basics settings
 set showmatch           " show matching brackets (),{},[]
