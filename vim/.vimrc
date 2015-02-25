@@ -223,3 +223,5 @@ map ; :
 :nmap <F1> :echo<CR>
 :imap <F1> <C-o>:echo<CR>
 
+    " Setting F2 to :JSHint
+nmap <silent> <F2> :JSHint <CR>
