@@ -94,6 +94,7 @@ alias grep='grep --color=auto'
 alias nvim='vim -c NERD'
 alias svim='sudo vim'
 alias snvim='sudo vim -c NERD'
+
 alias pong='ping -D google.de'
 alias clearTrash='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
 
@@ -144,4 +145,10 @@ eval `keychain --eval --agents "ssh" -Q -q id_rsa`
 # fasd
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
+
+#work
+alias stopComdirect="source ~/setup/stopComdirect"
+alias startComdirect="source ~/setup/startComdirect"
+alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
+alias correctKeyboard="echo 0 | sudo tee /sys/module/hid_apple/parameters/iso_layout"
 
