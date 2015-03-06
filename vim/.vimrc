@@ -65,8 +65,7 @@ NeoBundle 'rhysd/vim-clang-format'
 
 NeoBundle 'Valloric/YouCompleteMe', {
     \ 'build': {
-    \   'linux': './install.sh --clang-completer --system-libclang --system-boost',
-    \   'directory': 'YouCompleteMe'
+    \   'linux': './install.sh --clang-completer --system-libclang --omnisharp-completer --system-boost',
     \   },
     \ }
 

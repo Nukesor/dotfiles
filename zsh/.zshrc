@@ -95,7 +95,7 @@ alias nvim='vim -c NERD'
 alias svim='sudo vim'
 alias snvim='sudo vim -c NERD'
 alias pong='ping -D google.de'
-alias clearTrash='rm -rf ~/.local/share/Trash/*'
+alias clearTrash='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
 
 
 alias sys='sudo systemctl'
@@ -144,5 +144,4 @@ eval `keychain --eval --agents "ssh" -Q -q id_rsa`
 # fasd
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
-
 
