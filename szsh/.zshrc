@@ -96,6 +96,10 @@ alias nvim='vim -c NERD'
 alias spacman='sudo pacman'
 alias pong='ping -D google.de'
 
+# Rsync
+alias rsyncs='rsync -avz --progress '
+alias rsync='rsync --recursive --perms --progress --times -u'
+
 # df Human readable
 alias dfh='df -h -x tmpfs'
 # Git 
