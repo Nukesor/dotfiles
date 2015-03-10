@@ -55,7 +55,6 @@ bindsym $mod+Shift+w exec setxkbmap us
 
 # kill focused window
 bindsym $mod+F4 kill
-bindsym $mod+d kill
 
 # change focus
 bindsym $mod+h focus left
