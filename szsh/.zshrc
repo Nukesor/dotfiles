@@ -97,8 +97,14 @@ alias spacman='sudo pacman'
 alias pong='ping -D google.de'
 
 # Rsync
-alias rsyncs='rsync -avz --progress '
+alias rsyncs='rsync -az --progress '
 alias rsync='rsync --recursive --perms --progress --times -u'
+
+#Tmux
+alias tew='tmux new -s'
+alias tat='tmux attach -t'
+alias tet='tmux detach'
+alias tend='tmux send -t '
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
