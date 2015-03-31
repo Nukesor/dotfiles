@@ -112,7 +112,7 @@ alias noblank='xset s off && xset -dpms && xset s noblank'
 xset -b
 
 # Netctl
-alias co='sudo netctl start'
+alias co='sudo netctl stop-all && sudo netctl start'
 alias disco='sudo netctl stop'
 
 # df Human readable
@@ -124,7 +124,7 @@ alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
 alias rsyncs='rsync -avz --progress '
-alias rsync='rsync --recursive --perms --progress --times -u'
+alias rsync='rsync --recursive --perms --progress'
 
 alias km='killall skype pidgin'
 
