@@ -3,6 +3,7 @@
 config: ncmpcpp
 	stow -t ~/ git
 	stow -t ~/ mpd
+	stow -t ~/ mpv
 	stow -t ~/ i3
 	stow -t ~/ scripts
 	stow -t ~/ termite
