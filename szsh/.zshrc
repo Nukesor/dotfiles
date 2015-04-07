@@ -112,6 +112,7 @@ alias dfh='df -h -x tmpfs'
 alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
+alias upreboot='pacman -Syu --noconfirm && reboot'
 
 # Scripts
 alias replace="source ~/.scripts/replace.sh"
