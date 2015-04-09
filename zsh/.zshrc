@@ -137,6 +137,7 @@ alias ntfsComp='source ~/.scripts/ntfsComp.sh'
 alias backlight="source ~/.scripts/backlight.sh"
 alias screenshot="source ~/.scripts/screenshot.sh"
 alias wscreenshot="source ~/.scripts/wscreenshot.sh"
+alias upoff="spacman -Syu --noconfirm && poweroff"
 
 export EDITOR=vim
 
