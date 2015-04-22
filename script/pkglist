@@ -29,6 +29,7 @@ i3-wm
 i3lock
 i3status
 iftop
+imagemagick
 keychain
 love
 nodejs
@@ -51,6 +52,7 @@ powertop
 python
 qalculate-gtk
 rsync
+scrot
 sed
 sfml
 smartmontools
