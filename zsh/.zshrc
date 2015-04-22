@@ -140,6 +140,9 @@ alias wscreenshot="source ~/.scripts/wscreenshot.sh"
 alias upoff="blur && spacman -Syu --noconfirm && poweroff"
 
 export EDITOR=vim
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+export JRE_HOME=/usr/lib/jvm/java-7-openjdk/jre
+
 
 eval `keychain --eval --agents "ssh" -Q -q id_rsa`
 

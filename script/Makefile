@@ -43,11 +43,11 @@ yaourt-pkg:
 
 user:
 	# Kopieren der Home Backup Daten
-	cp -r --preserve /mnt/home /home/nukesor
-	# Erstellen von user Nukesor und setzen der Standartshell
-	groupadd nukesor
-	useradd -d /home/nukesor -g nukesor nukesor
-	chsh -s /usr/bin/fish nukesor
+	cp -r --preserve /mnt/home /home/nuke
+	# Erstellen von user nuke und setzen der Standartshell
+	groupadd nuke
+	useradd -d /home/nuke -g nuke nuke
+	chsh -s /usr/bin/zsh nuke
 
 everything-grub: basic boot-grub advanced install-pkg user	
 
