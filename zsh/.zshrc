@@ -124,7 +124,7 @@ alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
 alias rsyncs='rsync -avz --progress '
-alias rsync='rsync --recursive --perms --progress'
+alias rsync='rsync --update --recursive --perms --progress'
 
 alias km='killall skype pidgin'
 

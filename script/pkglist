@@ -38,6 +38,7 @@ mpd
 mpv
 mumble
 ncmpcpp
+nmap
 ntfs-3g
 openssh
 otf-ipafont
@@ -49,14 +50,17 @@ pidgin-otr
 powertop
 python
 qalculate-gtk
+rsync
 sed
 sfml
 smartmontools
 stow
 sudo
+the_silver_searcher
 terminus-font
 texlive-most
 thunderbird
+tree
 ttf-dejavu
 unrar
 unzip

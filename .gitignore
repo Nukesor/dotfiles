@@ -2,3 +2,4 @@
 *.save
 fish/fish_read_history
 vim/.vim/bundle
+mpd/.config/mpd/*
