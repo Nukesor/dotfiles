@@ -23,6 +23,7 @@ user:
 everything-grub: basic boot-grub advanced install-pkg user	
 
 HD-setup:
+	./scripts/grub-partition.sh
 	./scripts/hd-setup.sh
 
 basic-install:
