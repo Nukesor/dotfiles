@@ -137,6 +137,7 @@ alias ntfsComp='source ~/.scripts/ntfsComp.sh'
 alias backlight="source ~/.scripts/backlight.sh"
 alias screenshot="source ~/.scripts/screenshot.sh"
 alias wscreenshot="source ~/.scripts/wscreenshot.sh"
+alias folder-rename='source ~/.scripts/folder-Rename.sh'
 alias upoff="blur && spacman -Syu --noconfirm && poweroff"
 
 export EDITOR=vim
@@ -154,5 +155,4 @@ alias j='fasd_cd -d'
 alias stopComdirect="source ~/setup/stopComdirect"
 alias startComdirect="source ~/setup/startComdirect"
 alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
-alias correctKeyboard="echo 0 | sudo tee /sys/module/hid_apple/parameters/iso_layout"
 

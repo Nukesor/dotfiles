@@ -123,4 +123,8 @@ export EDITOR=vim
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 
+# Scripts
+alias replace="source ~/.scripts/replace.sh"
+alias ntfsComp='source ~/.scripts/ntfsComp.sh'
+alias folder-rename='source ~/.scripts/folder-Rename.sh'
 
