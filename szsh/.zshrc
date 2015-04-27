@@ -126,5 +126,5 @@ alias j='fasd_cd -d'
 # Scripts
 alias replace="source ~/.scripts/replace.sh"
 alias ntfsComp='source ~/.scripts/ntfsComp.sh'
-alias folder-rename='source ~/.scripts/folder-Rename.sh'
+alias f-rename='source ~/.scripts/folder-Rename.sh'
 
