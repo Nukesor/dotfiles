@@ -1,5 +1,7 @@
 .PHONY: ncmpcpp config
 
+default:
+
 config: ncmpcpp
 	stow -t ~/ git
 	stow -t ~/ mpd
@@ -24,4 +26,5 @@ server:
 	stow -t ~/ vim
 	stow -t ~/ git
 	stow -t ~/ varall
+	stow -t ~/ scripts
 
