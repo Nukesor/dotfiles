@@ -127,18 +127,17 @@ alias rsyncs='rsync -avz --progress '
 alias rsync='rsync --update --recursive --perms --progress'
 
 alias km='killall skype pidgin'
+alias upoff="blur && spacman -Syu --noconfirm && poweroff"
 
 # Scripts
 alias vpn='source ~/.scripts/vpn.sh'
 alias blur='source ~/.scripts/i3lock-blur.sh'
 alias replace="source ~/.scripts/replace.sh"
-alias webogram='source ~/.scripts/webogram.sh'
 alias ntfsComp='source ~/.scripts/ntfsComp.sh'
 alias backlight="source ~/.scripts/backlight.sh"
 alias screenshot="source ~/.scripts/screenshot.sh"
 alias wscreenshot="source ~/.scripts/wscreenshot.sh"
 alias f-rename='source ~/.scripts/folder-Rename.sh'
-alias upoff="blur && spacman -Syu --noconfirm && poweroff"
 
 export EDITOR=vim
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
