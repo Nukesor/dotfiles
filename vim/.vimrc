@@ -68,7 +68,7 @@ NeoBundle 'editorconfig/editorconfig-vim'
 
 NeoBundle 'Valloric/YouCompleteMe', {
     \ 'build': {
-    \   'linux': './install.sh --clang-completer --system-libclang --omnisharp-completer --system-boost',
+    \   'linux': 'git submodule update --init --recursive && ./install.sh',
     \   },
     \ }
 
