@@ -27,7 +27,24 @@ SEDCOMMAND+=$1
 SEDCOMMAND+='/'
 SEDCOMMAND+=$2
 SEDCOMMAND+='/g'
-echo 'Replacing '$1' by '$2 'in the following Files: '
-echo $(grep --binary-files=without-match -rl $1)
-echo $SEDCOMMAND
-sed -i $SEDCOMMAND $(grep --binary-files=without-match -rl $1)
+files=$(grep --binary-files=without-match -rl $1)
+
+if [ "" = "$files" ]; then
+    echo "No files for replacement found"
+else
+    echo 'Replacing '$1' by '$2 'in the following Files: '
+    echo ""
+    for file in $files
+    do
+        echo $file
+    done
+
+    echo ""
+    echo $SEDCOMMAND
+
+    if [ -n "$3" ] ; then
+        echo "Running a dry run \n"
+    else
+        sed -i $SEDCOMMAND $(grep --binary-files=without-match -rl $1)
+    fi
+fi
