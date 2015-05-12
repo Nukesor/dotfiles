@@ -14,7 +14,6 @@ dmenu
 dstat
 evince
 firefox
-fish
 feh
 gcc
 gdb
@@ -36,6 +35,7 @@ nodejs
 make
 mpc
 mpd
+mtr
 mpv
 mumble
 ncmpcpp
@@ -61,7 +61,6 @@ stow
 sudo
 the_silver_searcher
 terminus-font
-texlive-most
 thunderbird
 tree
 ttf-dejavu
