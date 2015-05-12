@@ -117,7 +117,7 @@ alias disco='sudo netctl stop'
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
-alias duh='du -h'
+alias dirsize='du -ahl -d 0'
 
 # Git 
 alias glg='git lg'
@@ -127,6 +127,7 @@ alias rsyncs='rsync -avz --progress '
 alias rsync='rsync --update --recursive --perms --progress'
 
 alias km='killall skype pidgin'
+alias hate='killall -9'
 alias upoff="blur && spacman -Syu --noconfirm && poweroff"
 
 # Scripts
@@ -154,4 +155,4 @@ alias j='fasd_cd -d'
 alias stopComdirect="source ~/setup/stopComdirect"
 alias startComdirect="source ~/setup/startComdirect"
 alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
-
+kk
