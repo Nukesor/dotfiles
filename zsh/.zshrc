@@ -155,4 +155,4 @@ alias j='fasd_cd -d'
 alias stopComdirect="source ~/setup/stopComdirect"
 alias startComdirect="source ~/setup/startComdirect"
 alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
-kk
+
