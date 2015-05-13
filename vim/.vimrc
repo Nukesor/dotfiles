@@ -65,6 +65,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'xuhdev/vim-latex-live-preview'
 NeoBundle 'rhysd/vim-clang-format'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'tomtom/tcomment_vim'
 
 NeoBundle 'Valloric/YouCompleteMe', {
     \ 'build': {
