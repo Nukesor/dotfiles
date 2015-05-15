@@ -27,7 +27,7 @@ HD-setup:
 	./scripts/hd-setup.sh
 
 basic-install:
-	./basic-install.sh
+	./scripts/basic-install.sh
 
 setup: HD-setup basic-install
 
