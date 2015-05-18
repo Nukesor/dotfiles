@@ -133,6 +133,7 @@ alias upoff="blur && spacman -Syu --noconfirm && poweroff"
 # Scripts
 alias vpn='source ~/.scripts/vpn.sh'
 alias blur='source ~/.scripts/i3lock-blur.sh'
+alias backup='source ~/.scripts/backup.sh'
 alias replace="source ~/.scripts/replace.sh"
 alias ntfsComp='source ~/.scripts/ntfsComp.sh'
 alias powersave="source ~/.scripts/powersave.sh"
