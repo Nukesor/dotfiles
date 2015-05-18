@@ -47,10 +47,6 @@ setopt auto_param_slash     # if completed parameter is a directory, add a trail
 unsetopt menu_complete      # do not autoselect the first completion entry
 unsetopt flow_control       # disable start/stop characters in shell editor
 
-#Syntax Highlighting
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=002,bold'
-ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
-
 ## Group matches and describe.
 # zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:matches' group 'yes'
@@ -82,6 +78,10 @@ zstyle ':completion:*:history-words' stop yes
 zstyle ':completion:*:history-words' remove-all-dups yes
 zstyle ':completion:*:history-words' list false
 zstyle ':completion:*:history-words' menu yes
+
+#Syntax Highlighting
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=002,bold'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
 
 # Aliases
 alias ls='ls --color=auto'
