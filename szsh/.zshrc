@@ -98,7 +98,7 @@ alias pong='ping -D google.de'
 
 # Rsync
 alias rsyncs='rsync -az --progress '
-alias rsync='rsync --recursive --perms --progress --times -u'
+alias rsync='rsync --recursive --perms --partial --progress --times -u'
 
 #Tmux
 alias tew='tmux new -s'
