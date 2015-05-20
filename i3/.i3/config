@@ -36,7 +36,7 @@ bindsym $mod+Control+t exec thunderbird
 # start nautilus
 bindsym $mod+Control+d exec pcmanfm
 # start pidgin
-bindsym $mod+Control+m exec pidgin
+bindsym $mod+Control+m "exec pidgin;exec  skype"
 # start qalculate
 bindsym $mod+Control+q exec qalculate
 # start dmenu 
