@@ -108,7 +108,7 @@ alias tend='tmux send -t'
 alias till='tmux kill-session -t'
 
 #Permissions
-alias webacc='chown root:nginx -R /srv/files'
+alias setperms='chown root:nginx -R /srv/files'
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
