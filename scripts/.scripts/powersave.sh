@@ -32,3 +32,4 @@ sudo tee /sys/bus/pci/devices/0000:03:00.0/power/control <<< 'auto'
 sudo tee /sys/bus/pci/devices/0000:04:00.0/power/control <<< 'auto'
 sudo tee /sys/bus/pci/devices/0000:04:00.2/power/control <<< 'auto'
 
+killall conky

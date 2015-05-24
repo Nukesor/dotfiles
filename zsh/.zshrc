@@ -123,7 +123,7 @@ alias dirsize='du -ahl -d 0'
 alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
-alias rsyncs='rsync -avz --progress '
+alias ursync='rsync --update'
 alias rsync='rsync --recursive --partial --perms --progress'
 
 alias km='killall skype pidgin'

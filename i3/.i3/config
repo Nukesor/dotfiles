@@ -50,8 +50,8 @@ bindsym Shift+Control+p exec mpc toggle
 bindsym Shift+Control+d exec mpc del 0
 bindsym Shift+Control+b exec mpc prev
 bindsym Shift+Control+n exec mpc next
-bindsym Shift+Control+v exec mpc seek -10%
-bindsym Shift+Control+m exec mpc seek +10%
+bindsym Shift+Control+z exec mpc seek -10%
+bindsym Shift+Control+x exec mpc seek +10%
 
 #German Layout
 bindsym $mod+Shift+q exec setxkbmap de
