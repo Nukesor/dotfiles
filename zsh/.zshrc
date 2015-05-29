@@ -104,7 +104,7 @@ alias susp='blur && systemctl suspend'
 alias spacman='sudo pacman'
 
 # mpd & ncmpcpp
-alias mpds='mpd ~/.config/mpd/mpd.conf'
+alias mpds='mpd ~/.config/mpd/mpd.conf && music'
 alias music='ncmpcpp -h localhost'
 
 # Xset
@@ -141,19 +141,17 @@ alias screenshot="source ~/.scripts/screenshot.sh"
 alias wscreenshot="source ~/.scripts/wscreenshot.sh"
 alias f-rename='source ~/.scripts/folder-Rename.sh'
 
-export EDITOR=vim
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
-export JRE_HOME=/usr/lib/jvm/java-7-openjdk/jre
-
-
-eval `keychain --eval --agents "ssh" -Q -q id_rsa`
-
-# fasd
-eval "$(fasd --init auto)"
-alias j='fasd_cd -d'
-
 #work
 alias stopComdirect="source ~/setup/stopComdirect"
 alias startComdirect="source ~/setup/startComdirect"
 alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
 
+export EDITOR=vim
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+export JRE_HOME=/usr/lib/jvm/java-7-openjdk/jre
+
+# fasd
+eval "$(fasd --init auto)"
+alias j='fasd_cd -d'
+
+eval `keychain --eval --agents "ssh" -Q -q id_rsa`
