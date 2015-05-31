@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo openvpn /etc/openvpn/client.conf
+sudo openvpn /etc/openvpn/nukesor.conf
