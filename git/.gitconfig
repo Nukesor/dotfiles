@@ -16,3 +16,9 @@
 
 [core]
 	editor = vim
+
+[branch]
+    autosetupmerge = always
+
+[push]
+	default = current
