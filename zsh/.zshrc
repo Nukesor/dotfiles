@@ -96,7 +96,7 @@ alias svim='sudo vim'
 alias snvim='sudo vim -c NERD'
 
 alias pong='ping -D google.de'
-alias clearTrash='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
+alias clt='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
 
 
 alias sys='sudo systemctl'
