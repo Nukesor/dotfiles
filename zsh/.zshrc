@@ -147,7 +147,7 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 export JRE_HOME=/usr/lib/jvm/java-7-openjdk/jre
 
 # Helper
-alias clearTrash='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
+alias clt='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
 alias susp='blur && systemctl suspend'
 
 # mpd & ncmpcpp
