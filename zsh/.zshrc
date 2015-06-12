@@ -85,10 +85,8 @@ ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
 
 # Aliases
 alias ls='ls --color=auto'
-alias ll='ls -lh --color=auto'
-alias lsa='ls -a'
-alias lsl='ls -al'
-alias lslr='ls -LR'
+alias lsa='ls -alh'
+alias lsr='ls -alhR'
 alias grep='grep --color=auto'
 
 alias nvim='vim -c NERD'
@@ -97,7 +95,6 @@ alias snvim='sudo vim -c NERD'
 
 alias pong='ping -D google.de'
 alias clearTrash='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
-
 
 alias sys='sudo systemctl'
 alias susp='blur && systemctl suspend'
@@ -123,8 +120,8 @@ alias dirsize='du -ahl -d 0'
 alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
-alias ursync='rsync --update'
 alias rsync='rsync --recursive --partial --perms --progress'
+alias ursync='rsync --update'
 
 alias km='killall skype pidgin'
 alias hate='killall -9'
