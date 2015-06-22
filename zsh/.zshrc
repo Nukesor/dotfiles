@@ -85,31 +85,18 @@ ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
 
 # Aliases
 alias ls='ls --color=auto'
-alias ll='ls -lh --color=auto'
-alias lsa='ls -a'
-alias lsl='ls -al'
-alias lslr='ls -LR'
+alias lsa='ls -alh'
+alias lsr='ls -alhR'
 alias grep='grep --color=auto'
 
-alias nvim='vim -c NERD'
-alias svim='sudo vim'
-alias snvim='sudo vim -c NERD'
-
-alias pong='ping -D google.de'
-alias clt='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
-
+# fasd
+eval "$(fasd --init auto)"
+alias j='fasd_cd -d'
 
 alias sys='sudo systemctl'
-alias susp='blur && systemctl suspend'
+alias nvim='vim -c NERD'
 alias spacman='sudo pacman'
-
-# mpd & ncmpcpp
-alias mpds='mpd ~/.config/mpd/mpd.conf && music'
-alias music='ncmpcpp -h localhost'
-
-# Xset
-alias noblank='xset s off && xset -dpms && xset s noblank'
-xset -b
+alias pong='ping -D google.de'
 
 # Netctl
 alias co='sudo netctl stop-all && sudo netctl start'
@@ -123,12 +110,19 @@ alias dirsize='du -ahl -d 0'
 alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
-alias ursync='rsync --update'
 alias rsync='rsync --recursive --partial --perms --progress'
+alias ursync='rsync --update'
 
 alias km='killall skype pidgin'
 alias hate='killall -9'
 alias upoff="blur && spacman -Syu --noconfirm && poweroff"
+
+#Tmux
+alias tew='tmux new -s'
+alias tat='tmux attach -t'
+alias tet='tmux detach'
+alias tend='tmux send -t'
+alias till='tmux kill-session -t'
 
 # Scripts
 alias vpn='source ~/.scripts/vpn.sh'
@@ -146,13 +140,23 @@ alias stopComdirect="source ~/setup/stopComdirect"
 alias startComdirect="source ~/setup/startComdirect"
 alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
 
+
+# Environment Variables
 export EDITOR=vim
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 export JRE_HOME=/usr/lib/jvm/java-7-openjdk/jre
 
-# fasd
-eval "$(fasd --init auto)"
-alias j='fasd_cd -d'
+# Helper
+alias clt='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
+alias susp='blur && systemctl suspend'
+
+# mpd & ncmpcpp
+alias mpds='mpd ~/.config/mpd/mpd.conf && music'
+alias music='ncmpcpp -h localhost'
+
+# Xset
+alias noblank='xset s off && xset -dpms && xset s noblank'
+xset -b
 
 eval `keychain --eval --agents "ssh" -Q -q id_rsa`
 

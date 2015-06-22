@@ -85,10 +85,8 @@ zstyle ':completion:*:history-words' menu yes
 
 # Aliases
 alias ls='ls --color=auto'
-alias ll='ls -lh --color=auto'
-alias lsa='ls -a'
-alias lsl='ls -al'
-alias lslr='ls -LR'
+alias lsa='ls -alh'
+alias lsr='ls -alhR'
 alias grep='grep --color=auto'
 
 alias sys='sudo systemctl'
@@ -97,8 +95,8 @@ alias spacman='sudo pacman'
 alias pong='ping -D google.de'
 
 # Rsync
-alias rsyncs='rsync -az --progress '
-alias rsync='rsync --recursive --perms --partial --progress --times -u'
+alias rsync='rsync --recursive --partial --perms --progress'
+alias ursync='rsync --update'
 
 #Tmux
 alias tew='tmux new -s'
@@ -107,11 +105,10 @@ alias tet='tmux detach'
 alias tend='tmux send -t'
 alias till='tmux kill-session -t'
 
-#Permissions
-alias setperms='chown root:nginx -R /srv/files'
-
-# df Human readable
+# Directory helper
 alias dfh='df -h -x tmpfs'
+alias dirsize='du -ahl -d 0'
+alias setperms='chown root:nginx -R /srv/files'
 
 # Git 
 alias glg='git lg'
@@ -119,9 +116,7 @@ alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
 alias upreboot='pacman -Syu --noconfirm && reboot'
 
-# Scripts
-alias replace="source ~/.scripts/replace.sh"
-
+# Environment Variables
 export EDITOR=vim
 
 # fasd
