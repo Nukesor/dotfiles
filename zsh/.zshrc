@@ -155,3 +155,6 @@ eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 
 eval `keychain --eval --agents "ssh" -Q -q id_rsa`
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
