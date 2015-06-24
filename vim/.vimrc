@@ -28,7 +28,6 @@ NeoBundle 'plasticboy/vim-markdown', {'depends': 'godlygeek/tabular'}
 NeoBundle 'vim-scripts/DoxygenToolkit.vim'
 NeoBundle 'lervag/vim-latex'
 NeoBundle 'chase/vim-ansible-yaml'
-NeoBundle 'mitsuhiko/vim-jinja'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
