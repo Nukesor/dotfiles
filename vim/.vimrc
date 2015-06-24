@@ -34,6 +34,7 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'Shutnik/jshint2.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'sudar/vim-arduino-syntax'
 
 " Looks
 NeoBundle 'bling/vim-airline'

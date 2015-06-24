@@ -114,7 +114,7 @@ alias rsync='rsync --recursive --partial --perms --progress'
 alias ursync='rsync --update'
 
 alias km='killall skype pidgin'
-alias hate='killall -9'
+alias hate='sudo killall -9'
 alias upoff="blur && spacman -Syu --noconfirm && poweroff"
 
 #Tmux
