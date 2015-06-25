@@ -95,6 +95,7 @@ alias j='fasd_cd -d'
 
 alias sys='sudo systemctl'
 alias nvim='vim -c NERD'
+alias svim='sudo vim -c NERD'
 alias spacman='sudo pacman'
 alias pong='ping -D google.de'
 
