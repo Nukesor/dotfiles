@@ -94,6 +94,7 @@ eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 
 alias sys='sudo systemctl'
+alias logs='sudo journalctl -f'
 alias nvim='vim -c NERD'
 alias svim='sudo vim -c NERD'
 alias spacman='sudo pacman'
