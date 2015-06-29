@@ -12,6 +12,7 @@ config: ncmpcpp
 	stow -t ~/ various
 	stow -t ~/ varall
 	stow -t ~/ vim
+	stow -t ~/ editorconf
 	stow -t ~/ x
 	stow -t ~/ zsh
 	stow -t ~/.config config
@@ -24,6 +25,7 @@ server:
 	stow -t ~/.config config
 	stow -t ~/ szsh
 	stow -t ~/ vim
+	stow -t ~/ editorconf
 	stow -t ~/ git
 	stow -t ~/ varall
 	stow -t ~/ scripts
