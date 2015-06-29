@@ -42,6 +42,7 @@ NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'luochen1990/rainbow'
 
 " Functionality
+NeoBundle 'rking/ag.vim'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
@@ -124,14 +125,6 @@ set showmode            " show mode at bottom of screen
 set cmdheight=1         " set the command height
 set showcmd             " show incomplete command at bottom of screen
 
-"Opens help vertically by typing :Help . 
-command -nargs=* -complete=help Help vertical belowright help <args> 
-command -nargs=* NERD NERDTree <args>
-command V vsplit | A
-command T tabnew
-command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
-command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
-
 
 autocmd Filetype tex,latex :set dictionary=~/.vim/dict/latex.dict
 
@@ -200,7 +193,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-" Disable Folding
+" Disable Tex Folding
 :let Tex_FoldedSections=""
 :let Tex_FoldedEnvironments=""
 :let Tex_FoldedMisc=""
@@ -228,3 +221,17 @@ map ; :
 
     " Setting F2 to :JSHint
 nmap <silent> <F2> :JSHint <CR>
+    " Ctrlp-funky
+nnoremap fu :CtrlPFunky<Cr>
+
+"Opens help vertically by typing :Help . 
+command -nargs=* -complete=help Help vertical belowright help <args> 
+command -nargs=* NERD NERDTree <args>
+command V vsplit | A
+command T tabnew
+command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
+command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
+
+" Setting Colors
+hi CtrlPLinePre ctermbg=red ctermfg=red
+
