@@ -1,32 +1,25 @@
 .PHONY: ncmpcpp config
 
-default:
-
-config: ncmpcpp
+basic:
+	stow -t ~/.config config
+	stow -t ~/ editorconf
 	stow -t ~/ git
+	stow -t ~/ scripts
+	stow -t ~/ various
+	stow -t ~/ vim
+	stow -t ~/ zsh
+
+client: basic
+	stow -t ~/ i3
+	stow -t ~/ termite
 	stow -t ~/ mpd
 	stow -t ~/ mpv
-	stow -t ~/ i3
-	stow -t ~/ scripts
-	stow -t ~/ termite
-	stow -t ~/ various
-	stow -t ~/ varall
-	stow -t ~/ vim
-	stow -t ~/ editorconf
 	stow -t ~/ x
-	stow -t ~/ zsh
-	stow -t ~/.config config
+	stow -t ~/ zsh-client
 
-ncmpcpp:
-	mkdir -p ~/.ncmpcpp
-	stow -t ~/.ncmpcpp ncmpcpp
+work: basic client
+	stow -t ~/ zsh-work
 
-server:
-	stow -t ~/.config config
-	stow -t ~/ szsh
-	stow -t ~/ vim
-	stow -t ~/ editorconf
-	stow -t ~/ git
-	stow -t ~/ varall
-	stow -t ~/ scripts
+server: basic
+	stow -t ~/ zsh-server
 

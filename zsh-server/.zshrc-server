@@ -1,0 +1,2 @@
+#Aliases
+alias setperms='chown root:nginx -R /srv/files'

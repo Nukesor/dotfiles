@@ -1,0 +1,23 @@
+#Aliases
+alias km='killall skype pidgin'
+alias upoff="blur && spacman -Syu --noconfirm && poweroff"
+
+# Scripts
+alias blur='source ~/.scripts/i3lock-blur.sh'
+alias backup='source ~/.scripts/backup.sh'
+alias ntfsComp='source ~/.scripts/ntfsComp.sh'
+alias screenshot="source ~/.scripts/screenshot.sh"
+alias wscreenshot="source ~/.scripts/wscreenshot.sh"
+
+# Helper
+alias clt='rm -rf ~/.local/share/Trash/* && rm -rf ~/Desktop'
+alias susp='blur && systemctl suspend'
+
+# mpd & ncmpcpp
+alias mpds='mpd ~/.config/mpd/mpd.conf && music'
+alias music='ncmpcpp -h localhost'
+
+# Xset
+alias noblank='xset s off && xset -dpms && xset s noblank'
+xset -b
+

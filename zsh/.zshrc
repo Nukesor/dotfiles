@@ -1,4 +1,9 @@
-# zgen stuff
+# Include function
+function include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
+#zgen stuff
 source "/usr/share/zsh/scripts/zgen/zgen.zsh"
 
 if ! zgen saved; then
@@ -83,6 +88,9 @@ zstyle ':completion:*:history-words' menu yes
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=002,bold'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
 
+# Environment Variables
+export EDITOR=vim
+
 # Aliases
 alias ls='ls --color=auto'
 alias lsa='ls -alh'
@@ -93,12 +101,16 @@ alias grep='grep --color=auto'
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 
+#Various
 alias sys='sudo systemctl'
+alias hate='sudo killall -9'
 alias logs='sudo journalctl -f'
-alias nvim='vim -c NERD'
-alias svim='sudo vim -c NERD'
 alias spacman='sudo pacman'
 alias pong='ping -D google.de'
+
+# Vim
+alias nvim='vim -c NERD'
+alias svim='sudo vim -c NERD'
 
 # Netctl
 alias co='sudo netctl stop-all && sudo netctl start'
@@ -108,16 +120,13 @@ alias disco='sudo netctl stop'
 alias dfh='df -h -x tmpfs'
 alias dirsize='du -ahl -d 0'
 
-# Git 
+# Git
 alias glg='git lg'
 alias gls='git ls'
 alias watchgit='watch -d -n 5 -c git pull'
 alias rsync='rsync --recursive --partial --perms --progress'
 alias ursync='rsync --update'
 
-alias km='killall skype pidgin'
-alias hate='sudo killall -9'
-alias upoff="blur && spacman -Syu --noconfirm && poweroff"
 
 #Tmux
 alias tew='tmux new -s'
@@ -128,39 +137,13 @@ alias till='tmux kill-session -t'
 
 # Scripts
 alias vpn='source ~/.scripts/vpn.sh'
-alias blur='source ~/.scripts/i3lock-blur.sh'
-alias backup='source ~/.scripts/backup.sh'
-alias replace="source ~/.scripts/replace.sh"
-alias ntfsComp='source ~/.scripts/ntfsComp.sh'
-alias powersave="source ~/.scripts/powersave.sh"
-alias screenshot="source ~/.scripts/screenshot.sh"
-alias wscreenshot="source ~/.scripts/wscreenshot.sh"
+alias replace='source ~/.scripts/replace.sh'
 alias f-rename='source ~/.scripts/folder-Rename.sh'
+alias powersave='source ~/.scripts/powersave.sh'
 
-#work
-alias stopComdirect="source ~/setup/stopComdirect"
-alias startComdirect="source ~/setup/startComdirect"
-alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
+eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
 
-
-# Environment Variables
-export EDITOR=vim
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
-export JRE_HOME=/usr/lib/jvm/java-7-openjdk/jre
-
-# Helper
-alias clt='rm -rf ~/.local/share/Trash/* && rm -r ~/Desktop'
-alias susp='blur && systemctl suspend'
-
-# mpd & ncmpcpp
-alias mpds='mpd ~/.config/mpd/mpd.conf && music'
-alias music='ncmpcpp -h localhost'
-
-# Xset
-alias noblank='xset s off && xset -dpms && xset s noblank'
-xset -b
-
-eval `keychain --eval --agents "ssh" -Q -q id_rsa`
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
+[[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work
+[[ -r $HOME/.zshrc-server ]] && source $HOME/.zshrc-server
 

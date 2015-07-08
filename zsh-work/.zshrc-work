@@ -1,0 +1,15 @@
+# Comdirect Aliases
+alias stopComdirect="source ~/setup/stopComdirect"
+alias startComdirect="source ~/setup/startComdirect"
+alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
+
+#Rvm 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+#Direnv
+eval "$(direnv hook zsh)"
+
+#Environment Variables
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+export JRE_HOME=/usr/lib/jvm/java-7-openjdk/jre
+
