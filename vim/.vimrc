@@ -174,6 +174,10 @@ set completeopt=menuone,menu,longest,preview
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
+" CtrlP Config
+let g:ctrlp_max_depth=40
+let g:ctrlp_max_files=20000
+
 " Airline config
 set laststatus=2
 let g:airline_powerline_fonts = 1
