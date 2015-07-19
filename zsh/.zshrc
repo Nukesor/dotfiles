@@ -94,6 +94,7 @@ export EDITOR=vim
 # Aliases
 alias ls='ls --color=auto'
 alias lsa='ls -alh'
+alias lsl='ls -lh'
 alias lsr='ls -alhR'
 alias grep='grep --color=auto'
 
