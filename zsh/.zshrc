@@ -119,6 +119,7 @@ alias disco='sudo netctl stop'
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
+alias dud='du -ah -d 1'
 alias dirsize='du -ahl -d 0'
 
 # Git
