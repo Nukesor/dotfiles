@@ -118,7 +118,7 @@ set mat=0              " show matching brackets for 0.5 seconds
 set cursorline          " highlight cursor line
 set cursorcolumn        " highlight cursor column (breaks completion preview)
 
-"Sugar 
+"Sugar
 set ruler               " ruler display in status line
 set number              " show line numbers
 set showmode            " show mode at bottom of screen
@@ -130,7 +130,7 @@ autocmd Filetype tex,latex :set dictionary=~/.vim/dict/latex.dict
 
 filetype plugin on
 
- 
+
 " wrap like other editors
 set wrap                " word wrap
 set lbr                 " line break
@@ -151,7 +151,7 @@ set autoindent          " auto indents next new line
 set listchars=tab:→,trail:¸ " show trail spaces and tabstchars
 
 "command mode
-set wildmenu 
+set wildmenu
 set wildmode=list:longest,full
 
 " searching
@@ -177,6 +177,7 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 " CtrlP Config
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=20000
+let g:ctrlp_dotfiles = 1
 
 " Airline config
 set laststatus=2
@@ -223,8 +224,8 @@ nmap <silent> <F2> :JSHint <CR>
     " Ctrlp-funky
 nnoremap fu :CtrlPFunky<Cr>
 
-"Opens help vertically by typing :Help . 
-command -nargs=* -complete=help Help vertical belowright help <args> 
+"Opens help vertically by typing :Help .
+command -nargs=* -complete=help Help vertical belowright help <args>
 command -nargs=* NERD NERDTree <args>
 command V vsplit | A
 command T tabnew
