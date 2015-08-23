@@ -41,7 +41,7 @@ bindsym $mod+Control+s exec scrot -u ~/screenshot.png
 bindsym $mod+Control+m "exec pidgin;exec  skype"
 # start qalculate
 bindsym $mod+Control+q exec qalculate
-# start dmenu 
+# start dmenu
 bindsym $mod+F2 exec dmenu_run
 #Mpd volume
 bindsym Shift+Control+Right exec mpc volume +1
@@ -136,7 +136,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # lock screen
-bindsym $mod+Control+p exec /home/nuke/.scripts/i3lock-blur.sh
+bindsym $mod+Control+p exec /home/nuke/.scripts/i3lock-blur
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
