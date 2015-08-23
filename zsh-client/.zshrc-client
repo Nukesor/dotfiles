@@ -1,6 +1,6 @@
 #Aliases
 alias km='killall skype pidgin'
-alias upoff="blur && spacman -Syu --noconfirm && poweroff"
+alias upoff="blur && spacman -Syyu --noconfirm ; poweroff"
 
 # Scripts
 alias blur='source ~/.scripts/i3lock-blur.sh'

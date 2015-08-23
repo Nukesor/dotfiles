@@ -142,6 +142,9 @@ alias replace='source ~/.scripts/replace.sh'
 alias f-rename='source ~/.scripts/folder-Rename.sh'
 alias powersave='source ~/.scripts/powersave.sh'
 
+PATH=$PATH:/home/$USER/.scripts/
+PATH=$PATH:/home/$USER/.execs/
+
 eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
