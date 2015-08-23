@@ -177,6 +177,7 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 " CtrlP Config
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=20000
+let g:ctrlp_dotfiles = 1
 
 " Airline config
 set laststatus=2
