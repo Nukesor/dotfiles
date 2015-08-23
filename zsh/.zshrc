@@ -136,12 +136,6 @@ alias tet='tmux detach'
 alias tend='tmux send -t'
 alias till='tmux kill-session -t'
 
-# Scripts
-alias vpn='source ~/.scripts/vpn.sh'
-alias replace='source ~/.scripts/replace.sh'
-alias f-rename='source ~/.scripts/folder-Rename.sh'
-alias powersave='source ~/.scripts/powersave.sh'
-
 PATH=$PATH:/home/$USER/.scripts/
 PATH=$PATH:/home/$USER/.execs/
 
