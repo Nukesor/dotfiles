@@ -104,6 +104,7 @@ alias j='fasd_cd -d'
 
 #Various
 alias sys='sudo systemctl'
+alias systatus='systemctl --type=service'
 alias hate='sudo killall -9'
 alias logs='sudo journalctl -f'
 alias spacman='sudo pacman'
