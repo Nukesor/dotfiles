@@ -35,6 +35,7 @@ NeoBundle 'Shutnik/jshint2.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'sudar/vim-arduino-syntax'
+NeoBundle 'mustache/vim-mustache-handlebars'
 
 " Looks
 NeoBundle 'bling/vim-airline'
