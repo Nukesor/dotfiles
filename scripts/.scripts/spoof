@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Generating new random mac
+firstMac=$(cat /home/$USER/.config/macaddress | head -c 8 )
+lastMac=$(dd bs=1 count=3 if=/dev/random 2>/dev/null |hexdump -v -e '/1 ":%02X"')
+mac=$firstMac$lastMac
+mac=${mac,,}
+
+# Stopping all networking and setting down interfaces
+sudo netctl stop-all
+sudo ip link set wlp3s0 down
+sudo ip link set dev wlp3s0 down
+
+# Changing mac address
+sudo ip link set dev wlp3s0 address $mac
