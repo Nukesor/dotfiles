@@ -22,6 +22,7 @@
 #SOFTWARE.
 
 
+# Interface that should be spoofed
 interface=wlp3s0
 
 # Get the current Mac address
@@ -37,7 +38,8 @@ for element in "${ipLinkString[@]}"; do
     ((++count))
 done
 
-# Generating new random mac
+# Generating new random mac, first 3 bytes stay the
+#same to ensure a correct vendor id
 firstMac=$(echo $currentMac | head -c 8 )
 lastMac=$(dd bs=1 count=3 if=/dev/random 2>/dev/null |hexdump -v -e '/1 ":%02X"')
 mac=$firstMac$lastMac
@@ -45,8 +47,8 @@ mac=${mac,,}
 
 # Stopping all networking and setting down interfaces
 sudo netctl stop-all
-sudo ip link set wlp3s0 down
-sudo ip link set dev wlp3s0 down
+sudo ip link set $interface down
+sudo ip link set dev $interface down
 
 # Changing mac address
-sudo ip link set dev wlp3s0 address $mac
+sudo ip link set dev $interface address $mac
