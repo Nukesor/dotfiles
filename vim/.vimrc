@@ -198,6 +198,11 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
+" syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_python_checkers = ['flake8', 'python']
+let g:syntastic_python_flake8_args='--max-line-length=160'
+
 " Disable Tex Folding
 set nofoldenable    " disable folding
 
