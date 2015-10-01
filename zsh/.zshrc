@@ -13,7 +13,7 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load nojhan/liquidprompt
     zgen load chrissicool/zsh-256color
-    zgen completions zsh-users/zsh-completions src
+    zgen load zsh-users/zsh-completions src
 
     zgen save
 fi
@@ -142,9 +142,8 @@ alias till='tmux kill-session -t'
 PATH=$PATH:/home/$USER/.scripts/
 PATH=$PATH:/home/$USER/.execs/
 
-eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
-
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
 [[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work
 [[ -r $HOME/.zshrc-server ]] && source $HOME/.zshrc-server
 
+eval `keychain --eval --agents 'ssh' -Q -q id_rsa`

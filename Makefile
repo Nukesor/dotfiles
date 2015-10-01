@@ -1,25 +1,25 @@
 .PHONY: ncmpcpp config
 
 basic:
-	stow -t ~/.config config
-	stow -t ~/ editorconf
-	stow -t ~/ git
-	stow -t ~/ scripts
-	stow -t ~/ various
-	stow -t ~/ vim
-	stow -t ~/ zsh
+	stow -t ~/.config -R config
+	stow -t ~/ -R editorconf
+	stow -t ~/ -R git
+	stow -t ~/ -R scripts
+	stow -t ~/ -R various
+	stow -t ~/ -R vim
+	stow -t ~/ -R zsh
 
 client: basic
-	stow -t ~/ i3
-	stow -t ~/ termite
-	stow -t ~/ mpd
-	stow -t ~/ mpv
-	stow -t ~/ x
-	stow -t ~/ zsh-client
+	stow -t ~/ -R i3
+	stow -t ~/ -R termite
+	stow -t ~/ -R mpd
+	stow -t ~/ -R mpv
+	stow -t ~/ -R x
+	stow -t ~/ -R zsh-client
 
 work: basic client
-	stow -t ~/ zsh-work
+	stow -t ~/ -R zsh-work
 
 server: basic
-	stow -t ~/ zsh-server
+	stow -t ~/ -R zsh-server
 
