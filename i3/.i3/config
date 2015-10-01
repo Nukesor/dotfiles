@@ -55,9 +55,9 @@ bindsym Shift+Control+x exec mpc seek +10%
 bindsym Shift+Control+r exec mpc single
 
 #German Layout
-bindsym $mod+Shift+q exec setxkbmap de
+bindsym $mod+Shift+q exec ~/.scripts/changeLanguage deutsch
 #US Layout
-bindsym $mod+Shift+w exec setxkbmap us
+bindsym $mod+Shift+w exec ~/.scripts/changeLanguage english
 
 # kill focused window
 bindsym $mod+F4 kill
