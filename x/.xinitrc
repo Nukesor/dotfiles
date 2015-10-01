@@ -4,7 +4,7 @@
 #
 # Executed by startx (run your window manager from here)
 
-setxkbmap us
+~/.scripts/changeLanguage english
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 exec i3
