@@ -5,16 +5,18 @@ basic:
 	stow -t ~/ -R editorconf
 	stow -t ~/ -R git
 	stow -t ~/ -R mpd
-	stow -t ~/ -R ncmpcpp
+	stow -t ~/ -R playlists
 	stow -t ~/ -R scripts
 	stow -t ~/ -R various
 	stow -t ~/ -R vim
 	stow -t ~/ -R zsh
+	stow -t ~/ -R playlists
 
 client: basic
 	stow -t ~/ -R i3
 	stow -t ~/ -R termite
 	stow -t ~/ -R mpv
+	stow -t ~/ -R ncmpcpp
 	stow -t ~/ -R x
 	stow -t ~/ -R zsh-client
 
