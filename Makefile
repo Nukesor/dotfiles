@@ -5,6 +5,7 @@ basic:
 	stow -t ~/ -R editorconf
 	stow -t ~/ -R git
 	stow -t ~/ -R mpd
+	stow -t ~/ -R ncmpcpp
 	stow -t ~/ -R scripts
 	stow -t ~/ -R various
 	stow -t ~/ -R vim

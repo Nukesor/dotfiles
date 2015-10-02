@@ -9,6 +9,7 @@ alias susp='i3lock-blur && systemctl suspend'
 # mpd & ncmpcpp
 alias mpds='mpd ~/.config/mpd/mpd.conf && music'
 alias music='ncmpcpp -h localhost'
+alias jarvis='ncmpcpp -h arne.beer'
 
 # Xset
 alias noblank='xset s off && xset -dpms && xset s noblank'
