@@ -1,10 +1,5 @@
-# Include function
-function include () {
-    [[ -f "$1" ]] && source "$1"
-}
-
 #zgen stuff
-source "/usr/share/zsh/scripts/zgen/zgen.zsh"
+source "$HOME/.zsh/zgen.zsh"
 
 if ! zgen saved; then
     echo "Creating a zgen save"

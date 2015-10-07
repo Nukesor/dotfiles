@@ -8,9 +8,8 @@ basic:
 	stow -t ~/ -R playlists
 	stow -t ~/ -R scripts
 	stow -t ~/ -R various
-	stow -t ~/ -R vim
+	stow -t ~/ -R nvim
 	stow -t ~/ -R zsh
-	stow -t ~/ -R playlists
 
 client: basic
 	stow -t ~/ -R i3

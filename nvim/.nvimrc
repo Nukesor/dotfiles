@@ -1,89 +1,61 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-let g:neobundle#types#git#enable_submodule = 1
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'Shougo/vimproc.vim', {
-    \ 'build' : {
-    \     'linux' : 'make',
-    \   },
-    \ }
+call plug#begin(expand('~/.nvimr/plug/'))
 
 " Language support
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'dart-lang/dart-vim-plugin'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'plasticboy/vim-markdown', {'depends': 'godlygeek/tabular'}
-NeoBundle 'vim-scripts/DoxygenToolkit.vim'
-NeoBundle 'lervag/vim-latex'
-NeoBundle 'chase/vim-ansible-yaml'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'Shutnik/jshint2.vim'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'sudar/vim-arduino-syntax'
-NeoBundle 'mustache/vim-mustache-handlebars'
+Plug 'kchmck/vim-coffee-script'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'groenewege/vim-less'
+Plug 'plasticboy/vim-markdown', {'depends': 'godlygeek/tabular'}
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'lervag/vim-latex'
+Plug 'chase/vim-ansible-yaml'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'Shutnik/jshint2.vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'mxw/vim-jsx'
+Plug 'sudar/vim-arduino-syntax'
+Plug 'mustache/vim-mustache-handlebars'
 
 " Looks
-NeoBundle 'bling/vim-airline'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'luochen1990/rainbow'
+Plug 'bling/vim-airline'
+Plug 'flazz/vim-colorschemes'
+Plug 'luochen1990/rainbow'
 
 " Functionality
-NeoBundle 'rking/ag.vim'
-NeoBundle 'vim-scripts/a.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'michaeljsmith/vim-indent-object'
-NeoBundle 'Valloric/MatchTagAlways'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'tacahiroy/ctrlp-funky'
-NeoBundle 'dyng/ctrlsf.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'xuhdev/vim-latex-live-preview'
-NeoBundle 'rhysd/vim-clang-format'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'tomtom/tcomment_vim'
+Plug 'rking/ag.vim'
+Plug 'vim-scripts/a.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+Plug 'airblade/vim-gitgutter'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'Valloric/MatchTagAlways'
+Plug 'tomtom/tcomment_vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/taglist.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'dyng/ctrlsf.vim'
+Plug 'thinca/vim-quickrun'
+Plug 'sjl/gundo.vim'
+Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
+Plug 'xuhdev/vim-latex-live-preview'
+Plug 'rhysd/vim-clang-format'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tomtom/tcomment_vim'
 
-NeoBundle 'Valloric/YouCompleteMe', {
-    \ 'build': {
-    \   'linux': 'git submodule update --init --recursive && ./install.sh',
-    \   },
-    \ }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --system-libclang --system-boost' }
 
-call neobundle#end()
+call plug#end()
 
 " Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 "Setting Runtimepath for jshint
 set runtimepath+=~/.vim/bundle/jshint2.vim/
