@@ -142,3 +142,4 @@ PATH=$PATH:/home/$USER/.execs/
 [[ -r $HOME/.zshrc-server ]] && source $HOME/.zshrc-server
 
 eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
+eval "$(dircolors -b ~/.dircolors)"

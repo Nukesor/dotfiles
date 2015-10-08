@@ -1,8 +1,6 @@
 call plug#begin(expand('~/.nvimr/plug/'))
 
 " Language support
-Plug 'kchmck/vim-coffee-script'
-Plug 'dart-lang/dart-vim-plugin'
 Plug 'groenewege/vim-less'
 Plug 'plasticboy/vim-markdown', {'depends': 'godlygeek/tabular'}
 Plug 'vim-scripts/DoxygenToolkit.vim'
