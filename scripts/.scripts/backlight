@@ -1,0 +1,19 @@
+#!/bin/bash
+
+path=/sys/class/backlight/intel_backlight/brightness
+current=$(cat $path)
+
+if [ "$1" == "up" ]; then
+    new=$(($current+20))
+    sudo tee $path <<< $new
+elif [ "$1" == "down" ]; then
+    new=$(($current-20))
+    sudo tee $path <<< $new
+else
+    re='^[0-9]'
+    if ! [[ $1 =~ $re ]] ; then
+       echo "error: Not a number" >&2; exit 1
+       exit 1
+    fi
+    sudo tee $path <<< $1
+fi

@@ -108,7 +108,7 @@ alias pong='ping -D google.de'
 
 # Vim
 alias nvim='vim -c NERD'
-alias svim='sudo vim -c NERD'
+alias svim='sudo nvim'
 
 # Netctl
 alias co='sudo netctl stop-all && sudo netctl start'
@@ -133,6 +133,9 @@ alias tat='tmux attach -t'
 alias tet='tmux detach'
 alias tend='tmux send -t'
 alias till='tmux kill-session -t'
+
+#Pueue
+alias pad='pueue add'
 
 PATH=$PATH:/home/$USER/.scripts/
 PATH=$PATH:/home/$USER/.execs/

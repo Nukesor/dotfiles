@@ -89,6 +89,10 @@ set mat=0              " show matching brackets for 0.5 seconds
 set cursorline          " highlight cursor line
 set cursorcolumn        " highlight cursor column (breaks completion preview)
 
+" stuff
+set splitbelow
+set splitright
+
 "Sugar
 set ruler               " ruler display in status line
 set number              " show line numbers
@@ -149,6 +153,7 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=20000
 let g:ctrlp_dotfiles = 1
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|.git\'
 
 " Airline config
 set laststatus=2
@@ -218,5 +223,4 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Setting Colors
 hi CtrlPLinePre ctermbg=red ctermfg=red
-
 

@@ -23,7 +23,7 @@
 
 
 # Interface that should be spoofed
-interface=wlp3s0
+interface=wlp4s0
 
 # Get the current Mac address
 ipLinkString=($(ip link show $interface))
