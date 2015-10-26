@@ -1,4 +1,4 @@
-call plug#begin(expand('~/.nvimr/plug/'))
+call plug#begin(expand('~/.config/nvim/plug/'))
 
 " Language support
 Plug 'groenewege/vim-less'
