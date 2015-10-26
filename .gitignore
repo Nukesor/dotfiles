@@ -1,5 +1,5 @@
 *fish_history*
 *.save
 fish/fish_read_history
-vim/.vim/bundle
+nvim/.nvim/shada
 mpd/.config/mpd/*

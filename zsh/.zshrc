@@ -138,7 +138,6 @@ alias till='tmux kill-session -t'
 alias pad='pueue add'
 
 PATH=$PATH:/home/$USER/.scripts/
-PATH=$PATH:/home/$USER/.execs/
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
 [[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work

@@ -15,3 +15,4 @@ alias jarvis='ncmpcpp -h arne.beer'
 alias noblank='xset s off && xset -dpms && xset s noblank'
 xset -b
 
+PATH=$PATH:/home/$USER/.screenlayout/
