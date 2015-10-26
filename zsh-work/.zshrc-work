@@ -7,9 +7,6 @@ alias sambaMount="sudo mount -t cifs -o user=arnbee"
 #Rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-#Direnv
-eval "$(direnv hook zsh)"
-
 #Environment Variables
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 export JRE_HOME=/usr/lib/jvm/java-7-openjdk/jre
