@@ -1,5 +1,2 @@
-*fish_history*
-*.save
-fish/fish_read_history
 nvim/.nvim/shada
 mpd/.config/mpd/*
