@@ -35,6 +35,7 @@ if [ -n "$1" ]; then
     echo ""
     echo "New Name:" $1
     var=1
+    seperator="."
 
     for file in *
     do
@@ -48,9 +49,9 @@ if [ -n "$1" ]; then
         #Getting current file extension
         extension="${file##*.}"
         if [ -z "$2" ] ; then
-            echo "moving $file to ${name}.$extension"
+            echo "moving $file to ${name}$seperator$extension"
         elif [ "dry" = "$2" ] ; then
-            echo "moving $file to ${name}.$extension"
+            echo "moving $file to ${name}$seperator$extension"
         else
             echo "moving $file to $name$2"
         fi
@@ -59,8 +60,7 @@ if [ -n "$1" ]; then
         if [ -z "$2" ] ; then
             mv $file ${name}.$extension
         elif [ "dry" != "$2" ] ; then
-                name=$name$2
-                mv $file $name
+            mv $file ${name}.$2
         fi
         #Incrementing var
         ((var++))

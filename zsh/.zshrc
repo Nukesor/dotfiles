@@ -26,7 +26,7 @@ setopt nohashdirs           # disable hashing of dirs so we don't have to run
                             # rehash after installing new binaries (performance hit?)
 # History
 HISTFILE=~/.zsh_history
-HISTSIZE=2000
+HISTSIZE=8000
 SAVEHIST=$HISTSIZE
 setopt inc_append_history   # write to history immediately
 setopt hist_ignore_dups     # ignore second instance of same event
