@@ -47,6 +47,7 @@ Plug 'xuhdev/vim-latex-live-preview'
 Plug 'rhysd/vim-clang-format'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tomtom/tcomment_vim'
+Plug 'Chiel92/vim-autoformat'
 
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py --clang-completer --system-libclang --system-boost' }
 
@@ -177,6 +178,9 @@ let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checkers = ['flake8', 'python']
 let g:syntastic_python_flake8_args='--max-line-length=160'
+
+" vim git gutter
+let g:gitgutter_max_signs = 2000
 
 " Disable Tex Folding
 set nofoldenable    " disable folding
