@@ -164,6 +164,5 @@ bar {
 }
 
 # Startup programs
-exec conky
 exec xsetbg ~/.local/bg.jpg
 
