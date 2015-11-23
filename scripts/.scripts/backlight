@@ -1,6 +1,7 @@
 #!/bin/bash
 
 path=/sys/class/backlight/intel_backlight/brightness
+maxBright=$(cat /sys/class/backlight/intel_backlight/max_brightness)
 current=$(cat $path)
 
 if [ "$1" == "up" ]; then
@@ -9,6 +10,8 @@ if [ "$1" == "up" ]; then
 elif [ "$1" == "down" ]; then
     new=$(($current-20))
     sudo tee $path <<< $new
+elif [ "$1" == "max" ]; then
+    sudo tee $path <<< $maxBright
 else
     re='^[0-9]'
     if ! [[ $1 =~ $re ]] ; then

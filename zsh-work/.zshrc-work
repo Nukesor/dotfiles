@@ -1,6 +1,6 @@
 # Comdirect Aliases
-alias stopComdirect="source ~/setup/stopComdirect"
-alias startComdirect="source ~/setup/startComdirect"
+alias stopComdirect="source ~/work/comdirect/unix-server-setup/stopComdirect"
+alias startComdirect="source ~/work/comdirect/unix-server-setup/startComdirect"
 alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
 alias sambaMount="sudo mount -t cifs -o user=arnbee"
 
