@@ -22,11 +22,7 @@
 #SOFTWARE.
 
 if [ "$1" == "english" ]; then
-    setxkbmap us
-    xmodmap -e "clear lock" #disable caps lock switch
-    xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+    setxkbmap us -option caps:escape
 elif [ "$1" == "deutsch" ]; then
-    setxkbmap de
-    xmodmap -e "clear lock" #disable caps lock switch
-    xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+    setxkbmap de -option caps:escape
 fi
