@@ -165,5 +165,5 @@ bar {
 
 # Startup programs
 exec conky
-exec xsetbg ~/.local/lost-aurora-1080p.jpg
+exec xsetbg ~/.local/bg.jpg
 
