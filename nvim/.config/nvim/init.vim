@@ -185,6 +185,8 @@ let g:gitgutter_max_signs = 2000
 " Disable Tex Folding
 set nofoldenable    " disable folding
 
+" Disable auto commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " restore position
 autocmd BufReadPost *
