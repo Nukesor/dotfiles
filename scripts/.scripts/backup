@@ -4,8 +4,5 @@
 rsync --update --delete --recursive --progress ~/.Skype ~/Seafile/Backup/
 rsync --update --delete --recursive --progress ~/.ssh ~/Seafile/Backup/
 rsync --update --delete --recursive --progress ~/.thunderbird ~/Seafile/Backup/
-rsync --update --delete --recursive --progress ~/Dokument ~/Seafile/Backup/
-rsync --update --delete --recursive --progress ~/torrent ~/Seafile/Backup/
-rsync --update --delete --recursive --progress ~/.local/lost-aurora-1080p.jpg ~/Seafile/Backup/
-rsync --update --delete --recursive --progress ~/.LUFTRAUSERS ~/Seafile/Backup/
+rsync --update --delete --recursive --progress ~/.local/bg.jpg ~/Seafile/Backup/
 
