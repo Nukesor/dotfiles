@@ -4,6 +4,7 @@ alias upoff="blur && spacman -Syyu --noconfirm ; poweroff"
 
 # Helper
 alias clt='rm -rf ~/.local/share/Trash/* && rm -rf ~/Desktop'
+alias hotspot='sudo create_ap wlp4s0 enp7s0 lolnuke atomrofl'
 alias susp='i3lock-blur && systemctl suspend'
 
 # mpd & ncmpcpp
