@@ -39,7 +39,7 @@ for element in "${ipLinkString[@]}"; do
 done
 
 # Generating new random mac, first 3 bytes stay the
-#same to ensure a correct vendor id
+# same to ensure a correct vendor id
 firstMac=$(echo $currentMac | head -c 8 )
 lastMac=$(dd bs=1 count=3 if=/dev/random 2>/dev/null |hexdump -v -e '/1 ":%02X"')
 mac=$firstMac$lastMac

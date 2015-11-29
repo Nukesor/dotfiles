@@ -1,4 +1,5 @@
-#!/bin/zsh
+#!/bin/bash
+
 sudo systemctl stop mysqld.service
 echo "
 "|sudo pacman -Rnsc mariadb
