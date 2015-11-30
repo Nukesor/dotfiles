@@ -1,0 +1,15 @@
+#!/bin/bash
+
+current=$(pwd)
+cata=~/repos/games/cataclysm-dda
+
+cd $cata
+
+
+if [ "$1" == "build" ]; then
+    git pull
+    make TILES=1 USE_HOME_DIR=1 RELEASE=1
+fi
+
+./cataclysm-launcher
+cd $current
