@@ -171,8 +171,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
 
 " JSHint Config
-let g:syntastic_javascript_checkers = ['jsxhint']
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+let g:syntastic_javascript_checkers = ['eslint']
 
 " syntastic
 let g:syntastic_check_on_open = 1
@@ -208,8 +207,6 @@ map ; :
 :nmap <F1> :echo<CR>
 :imap <F1> <C-o>:echo<CR>
 
-    " Setting F2 to :JSHint
-nmap <silent> <F2> :JSHint <CR>
     " Ctrlp-funky
 nnoremap fu :CtrlPFunky<Cr>
 
