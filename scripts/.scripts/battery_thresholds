@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "save" ]; then
-    sudo tpacpi-bat -v -s startThreshold 0 40
+    sudo tpacpi-bat -v -s startThreshold 0 70
     sudo tpacpi-bat -v -s stopThreshold 0 80
 elif [ "$1" == "charge" ]; then
     sudo tpacpi-bat -v -s startThreshold 0 0

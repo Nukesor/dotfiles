@@ -126,13 +126,15 @@ alias watchgit='watch -d -n 5 -c git pull'
 alias rsync='rsync --recursive --partial --perms --progress'
 alias ursync='rsync --update'
 
-
 #Tmux
 alias tew='tmux new -s'
 alias tat='tmux attach -t'
 alias tet='tmux detach'
 alias tend='tmux send -t'
 alias till='tmux kill-session -t'
+
+#Tmux
+alias pkgclear='rm -rf *.tar.xz *.tar.gz *.log src pkg'
 
 #Pueue
 alias pad='pueue add'
