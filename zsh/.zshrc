@@ -103,7 +103,7 @@ alias systatus='systemctl --type=service --all'
 alias hate='sudo killall -9'
 alias logs='sudo journalctl -f'
 alias spacman='sudo pacman'
-alias updateall='sudo pacman -Syu --noconfirm && yaourt -Syua --devel --noconfirm && zgen update'
+alias updateall='sudo pacman -Syu --noconfirm && zgen update'
 alias pong='ping -D google.de'
 
 # Vim
