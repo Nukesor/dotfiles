@@ -68,11 +68,7 @@ set history=100         " 100 lines of command line history
 set encoding=utf-8
 set fileencoding=utf-8
 set t_Co=256            " set 256 color
-if has("gui_running")
-    colorscheme colorful
-else
-    colorscheme darkspectrum " define syntax color scheme
-endif
+colorscheme darkspectrum " define syntax color scheme
 
 set backspace=2         " full backspacing capabilities
 set shortmess+=I        " disable the welcome screen
@@ -102,11 +98,7 @@ set showmode            " show mode at bottom of screen
 set cmdheight=1         " set the command height
 set showcmd             " show incomplete command at bottom of screen
 
-
-autocmd Filetype tex,latex :set dictionary=~/.vim/dict/latex.dict
-
 filetype plugin on
-
 
 " wrap like other editors
 set wrap                " word wrap
@@ -162,10 +154,6 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" Latex config
-let g:latex_fold_enabled = 0
-let g:livepreview_previewer = 'okular'
-
 " YCM config
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
@@ -181,9 +169,6 @@ let g:syntastic_python_flake8_args='--max-line-length=160'
 
 " vim git gutter
 let g:gitgutter_max_signs = 2000
-
-" Disable Tex Folding
-set nofoldenable    " disable folding
 
 " Disable auto commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
