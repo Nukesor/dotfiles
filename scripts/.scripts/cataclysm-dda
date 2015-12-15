@@ -8,7 +8,7 @@ cd $cata
 
 if [ "$1" == "build" ]; then
     git pull
-    make TILES=1 USE_HOME_DIR=1 RELEASE=1
+    make TILES=1 USE_HOME_DIR=1 RELEASE=1 -j5
 fi
 
 ./cataclysm-launcher

@@ -4,6 +4,7 @@ call plug#begin(expand('~/.config/nvim/plug/'))
 Plug 'groenewege/vim-less'
 Plug 'plasticboy/vim-markdown', {'depends': 'godlygeek/tabular'}
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'hynek/vim-python-pep8-indent'
 Plug 'lervag/vim-latex'
 Plug 'chase/vim-ansible-yaml'
 Plug 'pangloss/vim-javascript'
@@ -32,7 +33,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
-Plug 'hynek/vim-python-pep8-indent'
 Plug 'vim-scripts/taglist.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -200,6 +200,7 @@ nnoremap fu :CtrlPFunky<Cr>
 command -nargs=* -complete=help Help vertical belowright help <args>
 command -nargs=* NERD NERDTree <args>
 command V vsplit | A
+command H split | A
 command T tabnew
 command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
 command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
