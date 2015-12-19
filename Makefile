@@ -4,9 +4,9 @@ basic:
 	mkdir -p ~/.config
 	mkdir -p ~/.config/mpd
 	stow -t ~/.config -R config
+	stow -t ~/ -R playlists
 	stow -t ~/ -R editorconf
 	stow -t ~/ -R git
-	stow -t ~/ -R playlists
 	stow -t ~/ -R scripts
 	stow -t ~/ -R various
 	stow -t ~/ -R nvim
