@@ -27,10 +27,13 @@ maxBright=$(cat /sys/class/backlight/intel_backlight/max_brightness)
 current=$(cat $path)
 
 if [ "$1" == "up" ]; then
-    new=$(($current+20))
+    new=$(($current+${maxBright}/20))
     sudo tee $path <<< $new
 elif [ "$1" == "down" ]; then
-    new=$(($current-20))
+    new=$(($current-$maxBright/20))
+    sudo tee $path <<< $new
+elif [ "$1" == "normal" ]; then
+    new=$(($maxBright/2))
     sudo tee $path <<< $new
 elif [ "$1" == "max" ]; then
     sudo tee $path <<< $maxBright

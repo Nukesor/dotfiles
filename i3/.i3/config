@@ -107,6 +107,12 @@ bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+h workspace prev
 bindsym $mod+Control+l workspace next
 
+# Backlight
+bindsym $mod+Shift+F5 exec ~/.scripts/backlight down
+bindsym $mod+Shift+F6 exec ~/.scripts/backlight up
+bindsym $mod+Shift+F7 exec ~/.scripts/backlight 0
+bindsym $mod+Shift+F8 exec ~/.scripts/backlight normal
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
