@@ -9,6 +9,13 @@ cd $cata
 if [ "$1" == "build" ]; then
     git pull
     make TILES=1 USE_HOME_DIR=1 RELEASE=1 -j5
+elif [ "$1" == "save" ]; then
+    rm -rf ~/.cataclysm-dda/save-bak
+    cp -r ~/.cataclysm-dda/save ~/.cataclysm-dda/save-bak
+
+elif [ "$1" == "restore" ]; then
+    rm -rf ~/.cataclysm-dda/save
+    cp -r ~/.cataclysm-dda/save-bak ~/.cataclysm-dda/save
 fi
 
 ./cataclysm-launcher
