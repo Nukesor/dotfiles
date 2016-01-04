@@ -139,7 +139,11 @@ alias pkgclear='rm -rf *.tar.xz *.tar.gz *.log src pkg'
 #Pueue
 alias pad='pueue add'
 
-PATH=$PATH:/home/$USER/.scripts/
+if [[ "$USER" = "root" ]]; then
+    PATH=$PATH:/root/.scripts/
+else
+    PATH=$PATH:/home/$USER/.scripts/
+fi
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
 [[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work
