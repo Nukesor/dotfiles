@@ -168,7 +168,7 @@ let g:syntastic_python_checkers = ['flake8', 'python']
 let g:syntastic_python_flake8_args='--max-line-length=160'
 
 " vim git gutter
-let g:gitgutter_max_signs = 2000
+let g:gitgutter_max_signs = 20000
 
 " Disable auto commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
