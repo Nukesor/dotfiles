@@ -16,13 +16,13 @@
     push-sandbox = !sh -c 'git push -f --set-upstream origin HEAD:sandbox/arnbee/$1' -
 
 [push]
-	default = simple
+    default = simple
 
 [core]
-	editor = vim
+    editor = vim
 
 [branch]
     autosetupmerge = always
 
 [push]
-	default = current
+    default = current
