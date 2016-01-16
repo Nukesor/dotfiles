@@ -1,3 +1,4 @@
 #Aliases
 alias setperms='chown root:nginx -R /srv/files'
 alias startSeafile='seaf-cli start -c ~/.seafile'
+alias poweroff='reboot'

@@ -86,6 +86,9 @@ ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
 # Environment Variables
 export EDITOR=vim
 
+# Key for reverse search
+bindkey "^R" history-incremental-search-backward
+
 # Aliases
 alias ls='ls --color=auto'
 alias lsa='ls -alh'
