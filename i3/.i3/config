@@ -84,7 +84,7 @@ bindsym $mod+u split v
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -98,14 +98,12 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Move Window to Worksapace
-bindsym $mod+Shift+Left move container to workspace prev
-bindsym $mod+Shift+Right move container to workspace next
+# bindsym $mod+Shift+Left move container to workspace prev
+# bindsym $mod+Shift+Right move container to workspace next
 
 # Move to Worksapace
-bindsym $mod+Control+Left workspace prev
-bindsym $mod+Control+Right workspace next
-bindsym $mod+Control+h workspace prev
-bindsym $mod+Control+l workspace next
+# bindsym $mod+Control+Left workspace prev
+# bindsym $mod+Control+Right workspace next
 
 # Backlight
 bindsym $mod+Shift+F5 exec ~/.scripts/backlight down
@@ -151,10 +149,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 5 ppt
+        bindsym j resize grow height 10 px or 5 ppt
+        bindsym k resize shrink height 10 px or 5 ppt
+        bindsym l resize shrink width 10 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"

@@ -49,8 +49,10 @@ Plug 'rhysd/vim-clang-format'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'Chiel92/vim-autoformat'
+Plug 'nixprime/cpsm', { 'do': './install.sh' }
 
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py --clang-completer --system-libclang --system-boost' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 call plug#end()
 
@@ -149,6 +151,8 @@ let g:ctrlp_max_files=20000
 let g:ctrlp_dotfiles = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git'
 let g:ctrlp_working_path_mode='.'
+" cpsm
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 " Airline config
 set laststatus=2
