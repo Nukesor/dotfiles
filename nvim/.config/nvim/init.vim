@@ -148,6 +148,7 @@ let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=20000
 let g:ctrlp_dotfiles = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git'
+let g:ctrlp_working_path_mode='.'
 
 " Airline config
 set laststatus=2
