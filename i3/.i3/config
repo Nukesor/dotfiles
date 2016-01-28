@@ -36,7 +36,7 @@ bindsym $mod+Control+t exec thunderbird
 # start nautilus
 bindsym $mod+Control+d exec pcmanfm
 # Screenshot
-bindsym $mod+Control+s exec scrot -u ~/screenshot.png
+bindsym $mod+Control+s exec scrot -u ~/screenshot$(date +%s%3N).png
 # start pidgin
 bindsym $mod+Control+m exec "skype; telegram"
 # start qalculate
