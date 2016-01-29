@@ -25,14 +25,13 @@
 #2. Parameter: Workspace
 
 while true; do
-    i3-msg -t "get_outputs" > temp
     string='"current_workspace":"'$2'"'
-    grep -r -I -q $string
+    output=$(i3-msg -t "get_outputs")
+    grep -q "$string" <<< "$output"
     if [[ $? -eq 0 ]] ; then
         scrot -q 100
     else
-        echo "Not on specified Workspace"
+        echo "Not on specified Workspace $2"
     fi
     sleep $1
-    rm temp
 done
