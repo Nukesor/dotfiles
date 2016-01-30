@@ -27,9 +27,14 @@
 while true; do
     string='"current_workspace":"'$2'"'
     output=$(i3-msg -t "get_outputs")
+    active=$(ps -aux | grep  i3-lock | wc -l)
     grep -q "$string" <<< "$output"
     if [[ $? -eq 0 ]] ; then
-        scrot -q 100
+        if [[ $active -eq 1  ]] ; then
+            scrot -q 100
+        else
+            echo "On worspace, but i3 lock is active"
+        fi
     else
         echo "Not on specified Workspace $2"
     fi
