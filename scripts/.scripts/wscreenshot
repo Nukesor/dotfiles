@@ -24,15 +24,18 @@
 #1. Parameter: Sleep time
 #2. Parameter: Workspace
 
-resolution=1920x2160
-outresolution=1920x1080
+resolution_x=1920
+resolution_y=2160
+outresolution_x=1920
+outresolution_y=1080
+
 
 while true; do
     string='"current_workspace":"'$2'"'
     output=$(i3-msg -t "get_outputs")
     active=$(ps -aux | grep  i3-lock | wc -l)
-    name=$(date +%Y-%m-%d-%H%M%S_${resolution}_scrot.png)
-    outname=$(date +%Y-%m-%d-%H%M%S_${outresolution}_scrot.png)
+    name=$(date +%Y-%m-%d-%H%M%S_${resolution_x}x${resoultion_y}_scrot.png)
+    outname=$(date +%Y-%m-%d-%H%M%S_${outresolution_x}x${outresoultion_y}_scrot.png)
     if [ $# == 3 ]; then
         name="/tmp/$name"
     fi
@@ -48,24 +51,24 @@ while true; do
         else
             echo "On worspace, but i3 lock is active"
         fi
+
+        # Cropping file to specified screen
+        if [ "$3" == "down" ]; then
+            convert $name -crop ${outresolution_x}x${outresoultion_y}+0+$(($resolution_y - $outresolution_y)) $outname
+        elif [ "$3" == "up" ]; then
+            convert $name -crop ${outresolution_x}x${outresoultion_y}+0+0 $outname
+        elif [ "$3" == "left" ]; then
+            convert $name -crop ${outresolution_x}x${outresoultion_y}+0+0 $outname
+        elif [ "$3" == "right" ]; then
+            convert $name -crop ${outresolution_x}x${outresoultion_y}+$(($resolution_x - $outresolution_x))+0 $outname
+        fi
+
+        # Cleanup of temporary file
+        if [ -z "$3" ]; then
+            rm /tmp/$name
+        fi
     else
         echo "Not on specified Workspace $2"
-    fi
-
-    # Cropping file to specified screen
-    if [ "$3" == "down" ]; then
-        convert $name -crop 1920x1080+0+1080 $outname
-    elif [ "$3" == "up" ]; then
-        convert $name -crop 1920x1080+0+0 $outname
-    elif [ "$3" == "left" ]; then
-        convert $name -crop 1920x1080+0+0 $outname
-    elif [ "$3" == "right" ]; then
-        convert $name -crop 1920x1080+1920+0 $outname
-    fi
-
-    # Cleanup of temporary file
-    if [ -z "$3" ]; then
-        rm /tmp/$name
     fi
     sleep $1
 done
