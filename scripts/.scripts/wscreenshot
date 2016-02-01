@@ -24,19 +24,48 @@
 #1. Parameter: Sleep time
 #2. Parameter: Workspace
 
+resolution=1920x2160
+outresolution=1920x1080
+
 while true; do
     string='"current_workspace":"'$2'"'
     output=$(i3-msg -t "get_outputs")
     active=$(ps -aux | grep  i3-lock | wc -l)
+    name=$(date +%Y-%m-%d-%H%M%S_${resolution}_scrot.png)
+    outname=$(date +%Y-%m-%d-%H%M%S_${outresolution}_scrot.png)
+    if [ $# == 3 ]; then
+        name="/tmp/$name"
+    fi
+
     grep -q "$string" <<< "$output"
+
+    # Actually do the screenshot
+    # Move the screenshot to /tmp/ in case
+    # it should be cropped later
     if [[ $? -eq 0 ]] ; then
-        if [[ $active -eq 1  ]] ; then
-            scrot -q 100
+        if [[ $active -eq 1  ]]; then
+            scrot -q 100 $name
         else
             echo "On worspace, but i3 lock is active"
         fi
     else
         echo "Not on specified Workspace $2"
+    fi
+
+    # Cropping file to specified screen
+    if [ "$3" == "down" ]; then
+        convert $name -crop 1920x1080+0+1080 $outname
+    elif [ "$3" == "up" ]; then
+        convert $name -crop 1920x1080+0+0 $outname
+    elif [ "$3" == "left" ]; then
+        convert $name -crop 1920x1080+0+0 $outname
+    elif [ "$3" == "right" ]; then
+        convert $name -crop 1920x1080+1920+0 $outname
+    fi
+
+    # Cleanup of temporary file
+    if [ -z "$3" ]; then
+        rm /tmp/$name
     fi
     sleep $1
 done
