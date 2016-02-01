@@ -64,8 +64,8 @@ while true; do
         fi
 
         # Cleanup of temporary file
-        if [ -z "$3" ]; then
-            rm /tmp/$name
+        if [ -n "$3" ]; then
+            rm $name
         fi
     else
         echo "Not on specified Workspace $2"
