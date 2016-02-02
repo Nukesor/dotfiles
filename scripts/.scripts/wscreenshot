@@ -48,24 +48,23 @@ while true; do
     if [[ $? -eq 0 ]] ; then
         if [[ $active -eq 1  ]]; then
             scrot -q 100 $name
+            # Cropping file to specified screen
+            if [ "$3" == "down" ]; then
+                convert $name -crop ${outresolution_x}x${outresolution_y}+0+$(($resolution_y - $outresolution_y)) $outname
+            elif [ "$3" == "up" ]; then
+                convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
+            elif [ "$3" == "left" ]; then
+                convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
+            elif [ "$3" == "right" ]; then
+                convert $name -crop ${outresolution_x}x${outresolution_y}+$(($resolution_x - $outresolution_x))+0 $outname
+            fi
+
+            # Cleanup of temporary file
+            if [ -n "$3" ]; then
+                rm $name
+            fi
         else
             echo "On worspace, but i3 lock is active"
-        fi
-
-        # Cropping file to specified screen
-        if [ "$3" == "down" ]; then
-            convert $name -crop ${outresolution_x}x${outresolution_y}+0+$(($resolution_y - $outresolution_y)) $outname
-        elif [ "$3" == "up" ]; then
-            convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
-        elif [ "$3" == "left" ]; then
-            convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
-        elif [ "$3" == "right" ]; then
-            convert $name -crop ${outresolution_x}x${outresolution_y}+$(($resolution_x - $outresolution_x))+0 $outname
-        fi
-
-        # Cleanup of temporary file
-        if [ -n "$3" ]; then
-            rm $name
         fi
     else
         echo "Not on specified Workspace $2"
