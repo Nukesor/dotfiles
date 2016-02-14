@@ -1,0 +1,24 @@
+import:
+  copy: yes
+  write: yes
+  log: ~/.config/beets/import.log
+  languages: ['en']
+
+plugins: chroma fromfilename badfiles duplicates fuzzy missing fetchart lastgenre
+
+match:
+    strong_rec_thresh: 0.08
+
+lastgenre:
+  whitelist: ~/.config/beets/whitelist.txt
+  canonical: yes
+  source: artist
+  fallback: ''
+
+paths:
+  default: $genre/$albumartist/$album%aunique{}/$track $title
+  singleton: $genre/$albumartist/Singletons/$title
+  comp: $genre/VA/$album/$track $title
+  albumtype:soundtrack: Soundtracks/$album/$track $title
+
+directory: ~/music

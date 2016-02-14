@@ -5,6 +5,7 @@ basic:
 	mkdir -p ~/.config/mpd
 	stow -t ~/.config -R config
 	stow -t ~/ -R playlists
+	stow -t ~/ -R beets
 	stow -t ~/ -R editorconf
 	stow -t ~/ -R git
 	stow -t ~/ -R scripts
