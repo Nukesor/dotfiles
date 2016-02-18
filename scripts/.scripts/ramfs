@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+    echo "Please specify the mountpoint"
+else
+    sudo mkfs -t ext2 -q /dev/ram1 1048576
+    [ ! -d $1 ] && mkdir -p $1
+    sudo mount /dev/ram1 $1
+fi

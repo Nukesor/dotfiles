@@ -1,5 +1,6 @@
 #Aliases
-alias km='killall skype Telegram'
+alias km='killall Telegram'
+alias ks='killall skype'
 alias upoff="blur && spacman -Syyu --noconfirm ; poweroff"
 
 # Helper
