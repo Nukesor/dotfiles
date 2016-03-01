@@ -1,14 +1,2 @@
-# Comdirect Aliases
-alias stopComdirect="source ~/work/comdirect/unix-server-setup/stopComdirect"
-alias startComdirect="source ~/work/comdirect/unix-server-setup/startComdirect"
-alias buildPbl="stopComdirect && cd /work/comdirect/workspace/pbl && ant build-pbl && startComdirect"
-alias sambaMount="sudo mount -t cifs -o user=arnbee"
 
-#Rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-#Environment Variables
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
-export JRE_HOME=/usr/lib/jvm/java-7-openjdk/jre
-source /usr/share/nvm/init-nvm.sh
-
+alias stve="source ./venv/bin/activate"
