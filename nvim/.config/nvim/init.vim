@@ -158,6 +158,12 @@ let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_b = ''
+let g:airline_section_gutter = ''
+let g:airline_section_x = ''
+let g:airline_section_z = ''
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
 
 " YCM config
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
