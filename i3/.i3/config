@@ -102,10 +102,14 @@ bindsym $mod+a focus parent
 # bindsym $mod+Shift+Right move container to workspace next
 
 # Move to Worksapace
-# bindsym $mod+Control+Left workspace prev
-# bindsym $mod+Control+Right workspace next
+bindsym Control+$mod+h workspace prev
+bindsym Control+$mod+l workspace next
 
 # Backlight
+bindsym $mod+Shift+F1 exec pactl set-sink-volume 1 0
+bindsym $mod+Shift+F2 exec pactl set-sink-volume 1 -3%
+bindsym $mod+Shift+F3 exec pactl set-sink-volume 1 +3%
+
 bindsym $mod+Shift+F5 exec ~/.scripts/backlight down
 bindsym $mod+Shift+F6 exec ~/.scripts/backlight up
 bindsym $mod+Shift+F7 exec ~/.scripts/backlight 0

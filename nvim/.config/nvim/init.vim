@@ -146,11 +146,12 @@ set completeopt=menuone,menu,longest,preview
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " CtrlP Config
-let g:ctrlp_max_depth=40
-let g:ctrlp_max_files=20000
+let g:ctrlp_max_depth = 40
+let g:ctrlp_max_files = 20000
 let g:ctrlp_dotfiles = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git'
 let g:ctrlp_working_path_mode='.'
+let g:ctrlp_switch_buffer = 0
 " cpsm
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
@@ -211,6 +212,7 @@ nnoremap fu :CtrlPFunky<Cr>
 command -nargs=* -complete=help Help vertical belowright help <args>
 command -nargs=* NERD NERDTree <args>
 command V vsplit | A
+command S vsplit | A
 command H split | A
 command T tabnew
 command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
