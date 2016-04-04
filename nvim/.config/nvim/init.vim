@@ -205,8 +205,10 @@ map ; :
 :nmap <F1> :echo<CR>
 :imap <F1> <C-o>:echo<CR>
 
-    " Ctrlp-funky
-nnoremap fu :CtrlPFunky<Cr>
+" Ctrlp-funky
+:nnoremap fu :CtrlPFunky<Cr>
+
+:map <C-]> :YcmCompleter GoTo<CR>
 
 "Opens help vertically by typing :Help .
 command -nargs=* -complete=help Help vertical belowright help <args>
@@ -217,6 +219,7 @@ command H split | A
 command T tabnew
 command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
 command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
+
 
 " UltiSnips completion shortcuts
 let g:UltiSnipsExpandTrigger="<c-j>"

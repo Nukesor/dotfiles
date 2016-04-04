@@ -10,12 +10,18 @@ if [ "$1" == "build" ]; then
     git pull
     make TILES=1 USE_HOME_DIR=1 RELEASE=1 -j5
 elif [ "$1" == "save" ]; then
+    echo "Saving"
     rm -rf ~/.cataclysm-dda/save-bak
     cp -r ~/.cataclysm-dda/save ~/.cataclysm-dda/save-bak
 
 elif [ "$1" == "restore" ]; then
+    echo "Restoring save"
     rm -rf ~/.cataclysm-dda/save
     cp -r ~/.cataclysm-dda/save-bak ~/.cataclysm-dda/save
+elif [ "$1" == "start" ]; then
+    echo "Starting"
+else
+    echo "Valid commands are `build`, `save` and `restore`"
 fi
 
 ./cataclysm-launcher

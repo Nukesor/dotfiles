@@ -1,5 +1,6 @@
 #zgen stuff
 source "$HOME/.zsh/zgen.zsh"
+source "/etc/profile.d/fzf.zsh"
 
 if ! zgen saved; then
     echo "Creating a zgen save"
@@ -82,12 +83,6 @@ zstyle ':completion:*:history-words' menu yes
 #Syntax Highlighting
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=002,bold'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
-
-# Environment Variables
-export EDITOR=vim
-
-# Key for reverse search
-bindkey "^R" history-incremental-search-backward
 
 # Aliases
 alias ls='ls --color=auto'
