@@ -1,4 +1,5 @@
 #Aliases
+alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted'
 alias setperms='chown root:nginx -R /srv/files'
 alias startSeafile='seaf-cli start -c ~/.seafile'
 alias poweroff='reboot'
