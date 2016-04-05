@@ -24,7 +24,9 @@
 
 [push]
     default = current
+
 [diff]
     tool = vimdiff
+
 [difftool]
     prompt = false
