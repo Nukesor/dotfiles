@@ -155,6 +155,9 @@ let g:ctrlp_switch_buffer = 0
 " cpsm
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
+" Nerd tree ignores
+let NERDTreeIgnore=['__pycache__', '\~$']
+
 " Airline config
 set laststatus=2
 let g:airline_powerline_fonts = 1
