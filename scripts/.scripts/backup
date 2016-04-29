@@ -1,8 +1,10 @@
-# A script that backups all my files in a specific Folder for Seafile
+#!/bin/bash
+# A script that creates a backup off all important files to my server
 
+zip -r --encrypt /tmp/dokumente.zip ~/Dokumente
+rsync --progress /tmp/dokumente.zip nuke@jarvis:backup/
+rm /tmp/dokumente.zip
 
-rsync --update --delete --recursive --progress ~/.Skype ~/Seafile/Backup/
-rsync --update --delete --recursive --progress ~/.ssh ~/Seafile/Backup/
-rsync --update --delete --recursive --progress ~/.thunderbird ~/Seafile/Backup/
-rsync --update --delete --recursive --progress ~/.local/bg.jpg ~/Seafile/Backup/
-
+zip -r --encrypt /tmp/thunderbird.zip ~/.thunderbird
+rsync --progress /tmp/thunderbird.zip nuke@jarvis:backup/
+rm /tmp/thunderbird.zip
