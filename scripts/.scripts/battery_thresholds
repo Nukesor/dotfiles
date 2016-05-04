@@ -1,8 +1,11 @@
 #!/bin/bash
 
+
 if [ "$1" == "save" ]; then
     sudo tpacpi-bat -v -s startThreshold ${2:-0} 70
     sudo tpacpi-bat -v -s stopThreshold ${2:-0} 80
+
+    systemctl --user stop pueue
 elif [ "$1" == "charge" ]; then
     sudo tpacpi-bat -v -s startThreshold ${2:-0} 99
     sudo tpacpi-bat -v -s stopThreshold ${2:-0} 99
