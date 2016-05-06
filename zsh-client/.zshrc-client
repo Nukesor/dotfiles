@@ -3,6 +3,9 @@ alias km='killall Telegram'
 alias ks='killall skype'
 alias upoff="blur && spacman -Syyu --noconfirm ; poweroff"
 
+# Seafile
+alias seafile='seafile-applet'
+
 # Helper
 alias clt='rm -rf ~/.local/share/Trash/* ; rm -rf ~/Desktop'
 alias hotspot="sudo create_ap $(getWlanId) $(getEthernetId) lolnuke atomrofl"
