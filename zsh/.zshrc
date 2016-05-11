@@ -1,6 +1,6 @@
 #zgen stuff
 source "$HOME/.zsh/zgen.zsh"
-source "/etc/profile.d/fzf.zsh"
+source "/usr/share/fzf/key-bindings.zsh"
 
 if ! zgen saved; then
     echo "Creating a zgen save"
