@@ -131,8 +131,8 @@ alias tet='tmux detach'
 alias tend='tmux send -t'
 alias till='tmux kill-session -t'
 
-#Tmux
-alias pkgclear='rm -rf *.tar.xz *.tar.gz *.log src pkg'
+#whatmp3
+alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted'
 
 #Pueue
 alias pad='pueue add'
