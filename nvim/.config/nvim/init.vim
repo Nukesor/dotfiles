@@ -173,6 +173,7 @@ let g:airline_section_warning = ''
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_goto_buffer_command = 'vertical-split'
 
 " JSHint Config
 let g:syntastic_javascript_checkers = ['jsxhint']
@@ -212,6 +213,7 @@ map ; :
 :nnoremap fu :CtrlPFunky<Cr>
 
 :map <C-]> :YcmCompleter GoTo<CR>
+:map <F8> :Tagbar <CR>
 
 "Opens help vertically by typing :Help .
 command -nargs=* -complete=help Help vertical belowright help <args>
