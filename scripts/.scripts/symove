@@ -46,7 +46,8 @@ def main():
             path = os.path.abspath(path)
 
             target_path = os.path.abspath(target)
-            target_path = os.path.join(target_path, basename)
+            if exists and is_dir:
+                target_path = os.path.join(target_path, basename)
 
             os.rename(path, target_path)
             os.symlink(target_path, path)
