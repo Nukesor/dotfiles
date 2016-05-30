@@ -31,20 +31,23 @@ def main():
             print('Please specify a directory if you want to move more than one file')
         elif exists and is_dir:
             for path in to_copy:
-                if not os.path.exists(path):
-                    print('Path not existing: {}'.format(path))
-                    sys.exit(1)
-            for path in to_copy:
                 basename = os.path.basename(path)
-                target_path = os.path.join(target, basename)
+                path = os.path.abspath(path)
+
+                target_path = os.path.abspath(target)
+                target_path = os.path.join(target_path, basename)
+
                 os.rename(path, target_path)
                 os.symlink(target_path, path)
                 print('Copied {} to {} and created backward symlink'.format(path, target_path))
 
         elif not exists and len(to_copy) == 1:
-            path = to_copy[0]
             basename = os.path.basename(path)
-            target_path = os.path.join(target, basename)
+            path = os.path.abspath(path)
+
+            target_path = os.path.abspath(target)
+            target_path = os.path.join(target_path, basename)
+
             os.rename(path, target_path)
             os.symlink(target_path, path)
 
