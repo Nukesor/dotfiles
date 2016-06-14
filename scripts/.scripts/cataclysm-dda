@@ -9,7 +9,7 @@ cd $cata
 if [ "$1" == "build" ]; then
     commit_hash=$(git rev-parse HEAD)
     git pull
-    make TILES=1 USE_HOME_DIR=1 RELEASE=1 -j5
+    make TILES=1 USE_HOME_DIR=1 RELEASE=1 CLANG=1 -j5
     if [ $? -eq 0 ]; then
         touch ~/.cataclysm-dda/clean-hashes
         grep $commit_hash ~/.cataclysm-dda/clean-hashes
@@ -21,16 +21,25 @@ elif [ "$1" == "save" ]; then
     echo "Saving"
     rm -rf ~/.cataclysm-dda/save-bak
     cp -r ~/.cataclysm-dda/save ~/.cataclysm-dda/save-bak
-
 elif [ "$1" == "restore" ]; then
     echo "Restoring save"
     rm -rf ~/.cataclysm-dda/save
     cp -r ~/.cataclysm-dda/save-bak ~/.cataclysm-dda/save
+elif [ "$1" == "hash" ]; then
+    commit_hash=$(git rev-parse HEAD)
+    touch ~/.cataclysm-dda/clean-hashes
+    grep $commit_hash ~/.cataclysm-dda/clean-hashes
+    if [ $? -ne 0 ]; then
+        echo $commit_hash >> ~/.cataclysm-dda/clean-hashes
+    fi
 elif [ "$1" == "start" ]; then
     echo "Starting"
 else
     echo "Starting game. Valid commands are 'build', 'save' and 'restore'"
 fi
 
-./cataclysm-launcher
+if [ "$1" != "hash" ]; then
+    ./cataclysm-launcher
+fi
+
 cd $current
