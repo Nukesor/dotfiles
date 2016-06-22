@@ -35,7 +35,7 @@ elif [ "$1" == "hash" ]; then
 elif [ "$1" == "start" ]; then
     echo "Starting"
 else
-    echo "Starting game. Valid commands are 'build', 'save' and 'restore'"
+    echo "Starting game. Valid commands are 'start', hash, 'build', 'save' and 'restore'"
 fi
 
 if [ "$1" != "hash" ]; then

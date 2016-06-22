@@ -204,18 +204,18 @@ def_key "space"
 #def_key "enter"
 #  play_item
 #
-#def_key "space"
-#  add_item_to_playlist
-#
+def_key "]"
+  add_item_to_playlist
+
 #def_key "space"
 #  toggle_lyrics_update_on_song_change
 #
 #def_key "space"
 #  toggle_visualization_type
 #
-#def_key "delete"
-#  delete_playlist_items
-#
+def_key "d"
+  delete_playlist_items
+
 #def_key "delete"
 #  delete_browser_items
 #
