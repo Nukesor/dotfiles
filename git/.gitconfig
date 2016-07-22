@@ -13,9 +13,6 @@
     ls = status
     d = difftool
 
-[push]
-    default = simple
-
 [core]
     editor = vim
 

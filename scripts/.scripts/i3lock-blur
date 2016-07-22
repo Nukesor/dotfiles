@@ -20,5 +20,5 @@ file2=$(mktemp --tmpdir i3lock-blur-XXXXXXXXXX.png)
 scrot -d0 "$file1"
 convert "$file1" -filter Point -resize 20% "$file1"
 convert "$file1" -filter Point -resize 500% "$file2"
-i3lock -i "$file2"
+i3lock -e -i "$file2"
 rm "$file1" "$file2"

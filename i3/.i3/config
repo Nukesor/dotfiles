@@ -44,15 +44,15 @@ bindsym $mod+Control+q exec qalculate
 # start dmenu
 bindsym $mod+F2 exec dmenu_run
 #Mpd volume
-bindsym Shift+Control+Right exec mpc volume +1
-bindsym Shift+Control+Left exec mpc volume -1
-bindsym Shift+Control+p exec mpc toggle
-bindsym Shift+Control+d exec mpc del 0
-bindsym Shift+Control+b exec mpc prev
-bindsym Shift+Control+n exec mpc next
-bindsym Shift+Control+z exec mpc seek -10%
-bindsym Shift+Control+x exec mpc seek +10%
-bindsym Shift+Control+r exec mpc single
+#bindsym Shift+Control+Right exec mpc volume +1
+#bindsym Shift+Control+Left exec mpc volume -1
+#bindsym Shift+Control+p exec mpc toggle
+#bindsym Shift+Control+d exec mpc del 0
+#bindsym Shift+Control+b exec mpc prev
+#bindsym Shift+Control+n exec mpc next
+#bindsym Shift+Control+z exec mpc seek -10%
+#bindsym Shift+Control+x exec mpc seek +10%
+#bindsym Shift+Control+r exec mpc single
 
 #German Layout
 bindsym $mod+Shift+q exec ~/.scripts/changeLanguage deutsch

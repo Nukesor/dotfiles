@@ -12,8 +12,6 @@ alias hotspot="sudo create_ap $(getWlanId) $(getEthernetId) lolnuke atomrofl"
 alias susp='i3lock-blur && systemctl suspend'
 
 # mpd & ncmpcpp
-alias mpds='mpd ~/.config/mpd/mpd.conf && music'
-alias music='mplayer http://arne.beer:8001'
 alias jarvis='ncmpcpp -h arne.beer'
 
 # Xset
