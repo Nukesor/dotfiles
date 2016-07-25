@@ -120,6 +120,7 @@ alias dirsize='du -ahl -d 0'
 # Git
 alias glg='git lg'
 alias gls='git ls'
+alias gpu='git push origin -u'
 alias watchgit='watch -d -n 5 -c git pull'
 alias rsync='rsync --recursive --partial --perms --progress'
 alias ursync='rsync --update'

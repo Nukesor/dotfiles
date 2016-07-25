@@ -20,7 +20,9 @@ if [ "$1" == "build" ]; then
 elif [ "$1" == "save" ]; then
     echo "Saving"
     rm -rf ~/.cataclysm-dda/save-bak
-    cp -r ~/.cataclysm-dda/save ~/.cataclysm-dda/save-bak
+    name=$(date +%Y-%m-%d-%H%M%S_save)
+    mkdir -p ~/.cataclysm-dda/backup/
+    zip -r ~/.cataclysm-dda/backup/$name.zip ~/.cataclysm-dda/save
 elif [ "$1" == "restore" ]; then
     echo "Restoring save"
     rm -rf ~/.cataclysm-dda/save
