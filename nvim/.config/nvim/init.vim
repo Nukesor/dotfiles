@@ -71,6 +71,8 @@ set encoding=utf-8
 set fileencoding=utf-8
 set t_Co=256            " set 256 color
 colorscheme darkspectrum " define syntax color scheme
+set spell spelllang=en_us
+
 
 set backspace=2         " full backspacing capabilities
 set shortmess+=I        " disable the welcome screen
