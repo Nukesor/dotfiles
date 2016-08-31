@@ -124,6 +124,7 @@ alias gpu='git push origin -u'
 alias gpo='git remote prune origin'
 alias watchgit='watch -d -n 5 -c git pull'
 alias rsync='rsync --recursive --partial --perms --progress'
+alias prsync='rsync --owner --group --perms --recursive --partial --progress'
 alias ursync='rsync --update'
 
 #Tmux
@@ -132,6 +133,9 @@ alias tat='tmux attach -t'
 alias tet='tmux detach'
 alias tend='tmux send -t'
 alias till='tmux kill-session -t'
+
+#SSH
+alias ssh="TERM='xterm-256color' ssh"
 
 #whatmp3
 alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted'
