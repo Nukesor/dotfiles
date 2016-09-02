@@ -69,6 +69,7 @@ set shell=zsh           " set zsh as standart vim shell
 set history=100         " 100 lines of command line history
 set encoding=utf-8
 set fileencoding=utf-8
+set termguicolors
 set t_Co=256            " set 256 color
 colorscheme darkspectrum " define syntax color scheme
 set spell spelllang=en_us
