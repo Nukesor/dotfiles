@@ -149,11 +149,11 @@ else
     path=(/home/$USER/.scripts/ $path)
 fi
 
-#if [[ "$USER" = "root" ]]; then
-#    fpath=(/root/.dotfiles/zshcompletion/ $fpath)
-#else
-#    fpath=(/home/$USER/.dotfiles/zshcompletion/ $fpath)
-#fi
+if [[ "$USER" = "root" ]]; then
+    fpath=(/root/.dotfiles/zshcompletion/ $fpath)
+else
+    fpath=(/home/$USER/.dotfiles/zshcompletion/ $fpath)
+fi
 
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
