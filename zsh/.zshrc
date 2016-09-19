@@ -144,10 +144,17 @@ alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted
 alias pad='pueue add'
 
 if [[ "$USER" = "root" ]]; then
-    PATH=$PATH:/root/.scripts/
+    path=(/root/.scripts/ $path)
 else
-    PATH=$PATH:/home/$USER/.scripts/
+    path=(/home/$USER/.scripts/ $path)
 fi
+
+#if [[ "$USER" = "root" ]]; then
+#    fpath=(/root/.dotfiles/zshcompletion/ $fpath)
+#else
+#    fpath=(/home/$USER/.dotfiles/zshcompletion/ $fpath)
+#fi
+
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
 [[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work

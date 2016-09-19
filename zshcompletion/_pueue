@@ -1,0 +1,58 @@
+#compdef pueue
+# ----------------------------------------------------
+#
+#  Completion script for pueue (https://github.com/nukesor/pueue).
+#
+# ----------------------------------------------------
+# Authors
+# -------
+#
+#  * Arne Beer (https://github.com/nukesor)
+#
+# ----------------------------------------------------
+
+
+_pueue_commands () {
+  declare -a subcommands
+  subcommands=(add remove switch send status show log reset pause stop start kill)
+  _describe -t pueue-commands "pueue subcommands" subcommands
+}
+
+_pueue_subcommand () {
+  case "$words[1]" in
+    (show)
+      _arguments '--watch[watch the output of the current process]:'
+      ;;
+    (add)
+      _alternative 'command:commands:{_command_names}'
+      ;;
+    (*)
+      _message 'Unknown subcommand'
+  esac
+}
+
+_pueue () {
+  local curcontext="$curcontext" state line
+  typeset -A opt_args
+
+  _arguments -C \
+    '-h[get help]:' \
+    '--daemon[Start the daemon]:' \
+    '--no-daemon[Start the daemon bound to the shell]:' \
+    '--stop-daemon[Stop the daemon]:' \
+    '(-): :->command' \
+    '(-)*:: :->arguments'
+
+  case $state in
+    (command)
+      _pueue_commands
+      ;;
+    (arguments)
+      curcontext=${curcontext%:*:*}:pueue-$words[1]:
+      _pueue_subcommand
+      ;;
+  esac
+}
+
+_pueue "$@"
+
