@@ -13,6 +13,7 @@ alias susp='i3lock-blur && systemctl suspend'
 
 # mpd & ncmpcpp
 alias jarvis='ncmpcpp -h arne.beer'
+alias localdev="FLASK_CONFIG='local' SQLALCHEMY_DATABASE_URI='postgresql://localhost/andyslist'"
 
 # Xset
 alias noblank='xset s off && xset -dpms && xset s noblank'

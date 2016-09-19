@@ -40,7 +40,7 @@ bindsym $mod+Control+s exec scrot -u ~/screenshot$(date +%s%3N).png
 # start pidgin
 bindsym $mod+Control+m exec telegram-desktop
 # start qalculate
-bindsym $mod+Control+q exec qalculate
+bindsym $mod+Control+q exec qalculate-gtk
 # start dmenu
 bindsym $mod+F2 exec dmenu_run
 #Mpd volume
