@@ -142,6 +142,7 @@ alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted
 
 #Pueue
 alias pad='pueue add'
+alias pst='pueue status'
 alias pt='pueue show | tail'
 
 if [[ "$USER" = "root" ]]; then
