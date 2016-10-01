@@ -196,5 +196,4 @@ bar {
 }
 
 # Startup programs
-exec xsetbg ~/.local/bg.jpg
-
+feh --bg-scale ~/.local/bg.jpg

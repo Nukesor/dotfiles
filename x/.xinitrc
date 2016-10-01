@@ -34,4 +34,5 @@ fi
 
 ~/.scripts/changeLanguage english
 
+compton -b
 exec i3

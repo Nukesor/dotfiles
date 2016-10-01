@@ -49,7 +49,8 @@ Plug 'rhysd/vim-clang-format'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'Chiel92/vim-autoformat'
-Plug 'nixprime/cpsm', { 'do': './install.sh' }
+Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
+Plug 'bronson/vim-visual-star-search'
 
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py --clang-completer --system-libclang --system-boost' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
@@ -157,6 +158,8 @@ let g:ctrlp_working_path_mode='.'
 let g:ctrlp_switch_buffer = 0
 " cpsm
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Nerd tree ignores
 let NERDTreeIgnore=['__pycache__', '\~$']

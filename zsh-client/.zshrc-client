@@ -14,6 +14,7 @@ alias susp='i3lock-blur && systemctl suspend'
 # mpd & ncmpcpp
 alias jarvis='ncmpcpp -h arne.beer'
 alias localdev="FLASK_CONFIG='local' SQLALCHEMY_DATABASE_URI='postgresql://localhost/andyslist'"
+alias steamfix="export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' && /usr/bin/steam"
 
 # Xset
 alias noblank='xset s off && xset -dpms && xset s noblank'
