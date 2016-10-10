@@ -20,3 +20,5 @@ alias steamfix="export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.s
 alias noblank='xset s off && xset -dpms && xset s noblank'
 
 PATH=$PATH:/home/$USER/.screenlayout/
+
+feh --bg-scale ~/.local/bg.jpg

@@ -21,6 +21,7 @@ client: basic
 	stow -t ~/ -R ncmpcpp
 	stow -t ~/ -R x
 	stow -t ~/ -R zsh-client
+	stow -t ~/ -R weechat
 
 work: basic client
 	stow -t ~/ -R zsh-work
