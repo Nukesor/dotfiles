@@ -1,2 +1,3 @@
 
 alias stve="source ./venv/bin/activate"
+alias localdev="FLASK_CONFIG='local' SQLALCHEMY_DATABASE_URI='postgresql://localhost/andyslist'"
