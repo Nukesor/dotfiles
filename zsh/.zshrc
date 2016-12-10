@@ -140,6 +140,9 @@ alias ssh="TERM='xterm-256color' ssh"
 #whatmp3
 alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted'
 
+#metasploit
+alias msfconsole="msfconsole --quiet -x \"db_connect ${USER}@msf\""
+
 #Pueue
 alias pad='pueue add'
 alias pst='pueue status'
