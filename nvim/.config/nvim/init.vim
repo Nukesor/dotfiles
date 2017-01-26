@@ -15,6 +15,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'mxw/vim-jsx'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'rust-lang/rust.vim'
 
 " Looks
 Plug 'bling/vim-airline'

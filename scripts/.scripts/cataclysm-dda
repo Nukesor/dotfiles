@@ -9,7 +9,7 @@ cd $cata
 if [ "$1" == "build" ]; then
     commit_hash=$(git rev-parse HEAD)
     git pull
-    make TILES=1 USE_HOME_DIR=1 RELEASE=1 CLANG=1 -j5
+    make TILES=1 USE_HOME_DIR=1 CLANG=1 -j5
     if [ $? -eq 0 ]; then
         touch ~/.cataclysm-dda/clean-hashes
         grep $commit_hash ~/.cataclysm-dda/clean-hashes
