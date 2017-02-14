@@ -13,7 +13,9 @@ alias susp='i3lock-blur && systemctl suspend'
 
 # mpd & ncmpcpp
 alias jarvis='ncmpcpp -h arne.beer'
-alias steamfix="export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' && /usr/bin/steam"
+
+# Games
+alias steamix="export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' && /usr/bin/steam"
 
 # Xset
 alias noblank='xset s off && xset -dpms && xset s noblank'
