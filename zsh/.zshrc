@@ -148,18 +148,6 @@ alias pad='pueue add'
 alias pst='pueue status'
 alias pt='pueue show | tail'
 
-if [[ "$USER" = "root" ]]; then
-    path=(/root/.scripts/ $path)
-else
-    path=(/home/$USER/.scripts/ $path)
-fi
-
-if [[ "$USER" = "root" ]]; then
-    fpath=(/root/.dotfiles/zshcompletion/ $fpath)
-else
-    fpath=(/home/$USER/.dotfiles/zshcompletion/ $fpath)
-fi
-
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
 [[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work

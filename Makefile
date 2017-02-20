@@ -17,7 +17,6 @@ client: basic
 	stow -t ~/ -R i3
 	stow -t ~/ -R termite
 	stow -t ~/ -R mpv
-	stow -t ~/ -R mpd
 	stow -t ~/ -R ncmpcpp
 	stow -t ~/ -R x
 	stow -t ~/ -R zsh-client
