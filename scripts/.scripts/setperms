@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+
+cd /srv/files/movies
+find -type d -exec chmod 755 {} \;
+find -type f -exec chmod 644 {} \;
+
+cd /srv/files/series
+find -type d -exec chmod 755 {} \;
+find -type f -exec chmod 644 {} \;
+
+cd /srv/files/talks
+find -type d -exec chmod 755 {} \;
+find -type f -exec chmod 644 {} \;
+
+cd /srv/files/music
+find -type d -exec chmod 755 {} \;
+find -type f -exec chmod 644 {} \;
+
+cd /srv/files/games
+find -type d -exec chmod 755 {} \;
+
+cd /srv/files/programs
+find -type d -exec chmod 755 {} \;
