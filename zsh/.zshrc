@@ -148,6 +148,8 @@ alias pad='pueue add'
 alias pst='pueue status'
 alias pt='pueue show | tail'
 
+# Rust
+alias senf='source local_env.sh'
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
 [[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work

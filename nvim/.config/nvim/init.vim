@@ -1,58 +1,62 @@
 call plug#begin(expand('~/.config/nvim/plug/'))
 
 " Language support
-Plug 'groenewege/vim-less'
-Plug 'plasticboy/vim-markdown', {'depends': 'godlygeek/tabular'}
-Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'lervag/vim-latex'
-Plug 'chase/vim-ansible-yaml'
-Plug 'pangloss/vim-javascript'
-Plug 'othree/html5.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'Shutnik/jshint2.vim'
-Plug 'digitaltoad/vim-jade'
-Plug 'mxw/vim-jsx'
-Plug 'sudar/vim-arduino-syntax'
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
+Plug 'hynek/vim-python-pep8-indent'
+
+    " Template and Markdown
+    Plug 'Shutnik/jshint2.vim'
+    Plug 'chase/vim-ansible-yaml'
+    Plug 'lervag/vim-latex'
+    Plug 'plasticboy/vim-markdown', {'depends': 'godlygeek/tabular'}
+
+    " Frontend
+    Plug 'pangloss/vim-javascript'
+    Plug 'othree/html5.vim'
+    Plug 'hail2u/vim-css3-syntax'
+
 
 " Looks
 Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'luochen1990/rainbow'
+Plug 'Valloric/MatchTagAlways'
+
+" Tools
+Plug 'rking/ag.vim'
 
 " Functionality
-Plug 'rking/ag.vim'
-Plug 'vim-scripts/a.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
-Plug 'airblade/vim-gitgutter'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'Valloric/MatchTagAlways'
-Plug 'tomtom/tcomment_vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
-Plug 'vim-scripts/taglist.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'easymotion/vim-easymotion'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tacahiroy/ctrlp-funky'
-Plug 'dyng/ctrlsf.vim'
-Plug 'thinca/vim-quickrun'
-Plug 'sjl/gundo.vim'
-Plug 'majutsushi/tagbar'
-Plug 'mattn/emmet-vim'
-Plug 'xuhdev/vim-latex-live-preview'
-Plug 'rhysd/vim-clang-format'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tomtom/tcomment_vim'
-Plug 'Chiel92/vim-autoformat'
-Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
+Plug 'xuhdev/vim-latex-live-preview'
 Plug 'bronson/vim-visual-star-search'
 
+" Git support
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+
+" Editing
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'
+
+" Navigation
+Plug 'vim-scripts/a.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'easymotion/vim-easymotion'
+Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
+Plug 'scrooloose/nerdtree'
+
+" Syntax checking support
+Plug 'scrooloose/syntastic'
+
+" Rust auto formatting
+Plug 'Chiel92/vim-autoformat'
+
+" Auto completion
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py --racer-completer --clang-completer --system-libclang --system-boost' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
