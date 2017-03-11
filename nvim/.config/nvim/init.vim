@@ -3,6 +3,7 @@ call plug#begin(expand('~/.config/nvim/plug/'))
 " Language support
 Plug 'rust-lang/rust.vim'
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'lifepillar/pgsql.vim'
 
     " Template and Markdown
     Plug 'Shutnik/jshint2.vim'
@@ -199,6 +200,8 @@ let g:syntastic_python_checkers = ['flake8', 'python']
     " Rust syntastic config
     let g:syntastic_rust_checkers = ['cargo']
 
+" Postgres syntax
+let g:sql_type_default = 'pgsql'
 
 " Vim git gutter
 let g:gitgutter_max_signs = 20000
