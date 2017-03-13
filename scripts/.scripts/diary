@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ~/Seafile/Tagebuch/
+mkdir -p $(date +"%Y")
+vim "$(date +'%Y-%m-%d')"
