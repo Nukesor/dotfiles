@@ -54,6 +54,7 @@ Plug 'scrooloose/nerdtree'
 
 " Syntax checking support
 Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 
 " Rust auto formatting
 Plug 'Chiel92/vim-autoformat'
