@@ -27,8 +27,9 @@ devices=$(lsblk -d -o NAME -n)
 
 for device in $devices; do
 	echo $device
-	smartctl -A /dev/$device | grep Power_On_Hours
-	smartctl -A /dev/$device | grep Reallocated_Sector_Ct
-	smartctl -A /dev/$device | grep Current_Pending_Sector
-	smartctl -A /dev/$device | grep Offline_Uncorrectable
+	smartctl -a /dev/$device | grep -e self-assessment \
+                                    -e Reallocated_Sector_Ct \
+                                    -e Current_Pending_Sector \
+                                    -e Offline_Uncorrectable \
+                                    -e Power_On_Hours
 done
