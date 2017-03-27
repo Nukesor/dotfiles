@@ -29,7 +29,7 @@ Plug 'rking/ag.vim'
 
 " Functionality
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'xuhdev/vim-latex-live-preview'
@@ -60,7 +60,7 @@ Plug 'neomake/neomake'
 Plug 'Chiel92/vim-autoformat'
 
 " Auto completion
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py --racer-completer --clang-completer --system-libclang --system-boost' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --racer-completer --clang-completer --system-libclang --system-boost' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 call plug#end()
@@ -81,7 +81,7 @@ set fileencoding=utf-8
 set termguicolors
 set t_Co=256            " set 256 color
 colorscheme darkspectrum " define syntax color scheme
-set spell spelllang=en_us
+set spell spelllang=en_us,de
 
 
 set backspace=2         " full backspacing capabilities

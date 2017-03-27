@@ -2,4 +2,5 @@
 
 cd ~/Seafile/Tagebuch/
 mkdir -p $(date +"%Y")
+cd $(date +"%Y")
 vim "$(date +'%Y-%m-%d')"

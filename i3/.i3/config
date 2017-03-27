@@ -43,16 +43,18 @@ bindsym $mod+Control+m exec telegram-desktop
 bindsym $mod+Control+q exec qalculate-gtk
 # start dmenu
 bindsym $mod+F2 exec dmenu_run
-#Mpd volume
-#bindsym Shift+Control+Right exec mpc volume +1
-#bindsym Shift+Control+Left exec mpc volume -1
-#bindsym Shift+Control+p exec mpc toggle
-#bindsym Shift+Control+d exec mpc del 0
-#bindsym Shift+Control+b exec mpc prev
-#bindsym Shift+Control+n exec mpc next
-#bindsym Shift+Control+z exec mpc seek -10%
-#bindsym Shift+Control+x exec mpc seek +10%
-#bindsym Shift+Control+r exec mpc single
+
+#Workspace renaming volume
+set $ws1 "1: debug"
+set $ws2 "2: dev"
+set $ws3 "3: docs"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7: music"
+set $ws8 "8"
+set $ws9 "9: chats"
+set $ws10 "10: mail"
 
 #German Layout
 bindsym $mod+Shift+q exec ~/.scripts/changeLanguage deutsch
