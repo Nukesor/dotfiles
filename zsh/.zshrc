@@ -143,10 +143,12 @@ alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted
 #metasploit
 alias msfconsole="msfconsole --quiet -x \"db_connect ${USER}@msf\""
 
-#Pueue
+#Pueue and encarne
 alias pad='pueue add'
 alias pst='pueue status'
 alias pt='pueue show | tail'
+alias et='systemctl status encarne.service'
+alias ets='find . -name "*265*.mkv" -type f | wc -l && find -name "*.mkv" | wc -l && find -name "*encarne-failed*" | wc -l'
 
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
