@@ -12,6 +12,7 @@ basic:
 	stow -t ~/ -R various
 	stow -t ~/ -R nvim
 	stow -t ~/ -R zsh
+	stow -t ~/ -R weechat
 
 client: basic
 	stow -t ~/ -R i3
@@ -20,7 +21,6 @@ client: basic
 	stow -t ~/ -R ncmpcpp
 	stow -t ~/ -R x
 	stow -t ~/ -R zsh-client
-	stow -t ~/ -R weechat
 
 work: basic client
 	stow -t ~/ -R zsh-work

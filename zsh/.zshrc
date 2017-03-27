@@ -150,6 +150,8 @@ alias pt='pueue show | tail'
 alias et='systemctl status encarne.service'
 alias ets='find . -name "*265*.mkv" -type f | wc -l && find -name "*.mkv" | wc -l && find -name "*encarne-failed*" | wc -l'
 
+# Rust
+alias senf='source local_env.sh'
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
 [[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work
