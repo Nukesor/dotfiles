@@ -111,6 +111,7 @@ alias svim='sudo nvim'
 # Netctl
 alias co='sudo netctl stop-all && sudo netctl start'
 alias disco='sudo netctl stop'
+alias discodisco='sudo netctl stop-all'
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
@@ -152,6 +153,9 @@ alias ets='find . -name "*265*.mkv" -type f | wc -l && find -name "*.mkv" | wc -
 
 # Rust
 alias senf='source local_env.sh'
+
+# Python
+alias venv='source ./venv/bin/activate'
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
 [[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work

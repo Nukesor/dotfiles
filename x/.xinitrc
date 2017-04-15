@@ -35,4 +35,5 @@ fi
 ~/.scripts/changeLanguage english
 
 compton -b
+feh --bg-scale ~/.local/bg.jpg
 exec i3

@@ -1,5 +1,5 @@
 #Aliases
-alias km='killall telegram-desktop'
+alias km='killall telegram-desktop; killall Telegram'
 alias ks='killall skypeforlinux'
 alias upoff="blur && spacman -Syyu --noconfirm ; poweroff"
 
@@ -18,5 +18,3 @@ alias jarvis='ncmpcpp -h arne.beer'
 alias noblank='xset s off && xset -dpms && xset s noblank'
 
 PATH=$PATH:/home/$USER/.screenlayout/
-
-feh --bg-scale ~/.local/bg.jpg

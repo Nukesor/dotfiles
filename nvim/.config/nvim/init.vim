@@ -5,6 +5,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
+Plug 'ElmCast/elm-vim'
 
     " Template and Markdown
     Plug 'Shutnik/jshint2.vim'
@@ -199,8 +200,10 @@ let g:syntastic_python_checkers = ['flake8', 'python']
     " JSHint syntastic config
     let g:syntastic_javascript_checkers = ['jsxhint']
 
-    " Rust syntastic config
-    let g:syntastic_rust_checkers = ['neomake']
+
+" Neomake
+let g:neomake_rust_enabled_makers = ['cargo']
+
 
 " Postgres syntax
 let g:sql_type_default = 'pgsql'
