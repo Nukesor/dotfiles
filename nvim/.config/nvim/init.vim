@@ -57,8 +57,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'neomake/neomake'
 
-" Rust auto formatting
+" Formatting
 Plug 'Chiel92/vim-autoformat'
+Plug 'vim-scripts/SQLUtilities'
+Plug 'vim-scripts/Align'
 
 " Auto completion
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --racer-completer --clang-completer --system-libclang --system-boost' }
@@ -163,7 +165,7 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 20000
 let g:ctrlp_dotfiles = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git'
+let g:ctrlp_custom_ignore = 'target\|node_modules\|DS_Store\|\.git\|elm-stuff'
 let g:ctrlp_working_path_mode='.'
 let g:ctrlp_switch_buffer = 0
     " Use CPSM for file finding
@@ -201,10 +203,6 @@ let g:syntastic_python_checkers = ['flake8', 'python']
     let g:syntastic_javascript_checkers = ['jsxhint']
 
 
-" Neomake
-let g:neomake_rust_enabled_makers = ['cargo']
-
-
 " Postgres syntax
 let g:sql_type_default = 'pgsql'
 
@@ -221,10 +219,23 @@ autocmd BufReadPost *
     \ endif
 augroup END
 
-" File types
-autocmd FileType python let python_highlight_all = 1
-autocmd FileType python let python_highlight_space_errors = 1
-autocmd FileType python let python_slow_sync = 1
+" Neomake configuration.
+    let g:neomake_rust_enabled_makers = ['cargo']
+
+    augroup my_neomake_cmds
+      autocmd!
+      " Have neomake run cargo when Rust files are saved.
+      autocmd BufWritePost *.rs Neomake! cargo
+    augroup END
+
+    let g:neomake_open_list=2
+    let g:neomake_list_height=5
+    let g:neomake_verbose=3
+
+" Python specific configs
+    autocmd FileType python let python_highlight_all = 1
+    autocmd FileType python let python_highlight_space_errors = 1
+    autocmd FileType python let python_slow_sync = 1
 
 " Map keys
     " Map ; to :

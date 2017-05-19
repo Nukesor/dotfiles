@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/Seafile/Tagebuch/normal
+cd ~/Seafile/Tagebuch/dreams
 year=$(date +"%Y")
 mkdir -p $year
 cd $year

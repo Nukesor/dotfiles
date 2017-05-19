@@ -1,0 +1,9 @@
+#!/bin/bash
+
+current=$(pwd)
+
+cd ~/.config/nvim/plug/YouCompleteMe
+python3 ./install.py --racer-completer --clang-completer --system-libclang --system-boost
+
+cd ~/.config/nvim/plug/cpsm
+PY3=ON ./install.sh
