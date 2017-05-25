@@ -1,3 +1,2 @@
 #Aliases
-alias startSeafile='seaf-cli start -c ~/.seafile'
 alias poweroff='reboot'

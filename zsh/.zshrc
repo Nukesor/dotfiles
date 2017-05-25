@@ -88,7 +88,6 @@ ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
 alias ls='ls --color=auto'
 alias lsa='ls -alh'
 alias lsl='ls -lh'
-alias lsr='ls -alhR'
 alias grep='grep --color=auto'
 
 # fasd
@@ -101,7 +100,6 @@ alias systatus='systemctl --type=service --all'
 alias hate='sudo killall -9'
 alias logs='sudo journalctl -f'
 alias spacman='sudo pacman'
-alias updateall='sudo pacman -Syu --noconfirm && zgen update'
 alias pong='ping -D google.de'
 
 # Vim
@@ -125,14 +123,10 @@ alias gpu='git push origin -u'
 alias gpo='git remote prune origin'
 alias watchgit='watch -d -n 5 -c git pull'
 alias rsync='rsync --recursive --partial --perms --progress'
-alias prsync='rsync --owner --group --perms --recursive --partial --progress'
-alias ursync='rsync --update'
 
 #Tmux
 alias tew='tmux new -s'
 alias tat='tmux attach -t'
-alias tet='tmux detach'
-alias tend='tmux send -t'
 alias till='tmux kill-session -t'
 
 #SSH
@@ -150,9 +144,6 @@ alias pst='pueue status'
 alias pt='pueue show | tail'
 alias et='systemctl status encarne.service'
 alias ets='find . -name "*265*.mkv" -type f | wc -l && find -name "*.mkv" | wc -l && find -name "*encarne-failed*" | wc -l'
-
-# Rust
-alias senf='source local_env.sh'
 
 # Python
 alias venv='source ./venv/bin/activate'
