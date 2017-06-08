@@ -113,7 +113,7 @@ alias discodisco='sudo netctl stop-all'
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
-alias dud='du -ah -d 1'
+alias dud='du -ahl -d 1'
 alias dirsize='du -ahl -d 0'
 
 # Git
@@ -135,8 +135,8 @@ alias ssh="TERM='xterm-256color' ssh"
 #whatmp3
 alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted'
 
-#metasploit
-alias msfconsole="msfconsole --quiet -x \"db_connect ${USER}@msf\""
+#docker
+alias clean_docker='rmi $(docker images -f "dangling=true" -q)'
 
 #Pueue and encarne
 alias pad='pueue add'

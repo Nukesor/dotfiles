@@ -6,6 +6,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
 Plug 'ElmCast/elm-vim'
+Plug 'shawncplus/phpcomplete.vim'
 
     " Template and Markdown
     Plug 'Shutnik/jshint2.vim'

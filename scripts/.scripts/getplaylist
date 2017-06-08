@@ -25,6 +25,7 @@ playlists_dir=$HOME/.config/mpd/playlists/
 
 if [ -z "$1" ]; then
     echo "Please specify the playlist names"
+    ls -l $playlists_dir
 else
     for playlist in "$@"; do
         # Check if playlist exists
