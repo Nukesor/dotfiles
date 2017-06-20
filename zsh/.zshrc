@@ -107,9 +107,9 @@ alias nvim='vim -c NERD'
 alias svim='sudo nvim'
 
 # Netctl
-alias co='sudo netctl stop-all && sudo netctl start'
+alias co='sudo netctl start'
 alias disco='sudo netctl stop'
-alias discodisco='sudo netctl stop-all'
+alias disca='sudo netctl stop-all'
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
