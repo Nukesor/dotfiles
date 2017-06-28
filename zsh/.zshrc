@@ -1,5 +1,5 @@
 #zgen stuff
-source "$HOME/.zsh/zgen.zsh"
+source "$HOME/.zsh/zgen/zgen.zsh"
 source "/usr/share/fzf/key-bindings.zsh"
 
 if ! zgen saved; then

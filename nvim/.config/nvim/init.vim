@@ -62,6 +62,7 @@ Plug 'neomake/neomake'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-scripts/SQLUtilities'
 Plug 'vim-scripts/Align'
+Plug 'stephpy/vim-php-cs-fixer'
 
 " Auto completion
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --racer-completer --clang-completer --system-libclang --system-boost' }
