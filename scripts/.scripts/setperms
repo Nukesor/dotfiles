@@ -1,8 +1,14 @@
 #!/bin/bash
 
+chown root:files -R /srv/files
+
 cd /srv/files/movies
 find -type d -exec chmod 755 {} \;
 find -type f -exec chmod 644 {} \;
+
+cd /srv/files/upload
+find -type d -exec chmod 775 {} \;
+find -type f -exec chmod 664 {} \;
 
 cd /srv/files/anime_shows
 find -type d -exec chmod 755 {} \;
