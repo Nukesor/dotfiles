@@ -36,6 +36,8 @@ Plug 'honza/vim-snippets'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'xuhdev/vim-latex-live-preview'
 Plug 'bronson/vim-visual-star-search'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'metakirby5/codi.vim'
 
 " Git support
 Plug 'tpope/vim-fugitive'
@@ -65,7 +67,7 @@ Plug 'vim-scripts/Align'
 Plug 'stephpy/vim-php-cs-fixer'
 
 " Auto completion
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --racer-completer --clang-completer --system-libclang --system-boost' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --racer-completer --clang-completer --system-libclang --omnisharp-completer --system-boost' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 call plug#end()
@@ -167,7 +169,7 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 20000
 let g:ctrlp_dotfiles = 1
-let g:ctrlp_custom_ignore = 'target\|node_modules\|DS_Store\|\.git\|elm-stuff'
+let g:ctrlp_custom_ignore = 'target\|venv\|vendor\|node_modules\|DS_Store\|\.git\|elm-stuff'
 let g:ctrlp_working_path_mode='.'
 let g:ctrlp_switch_buffer = 0
     " Use CPSM for file finding
