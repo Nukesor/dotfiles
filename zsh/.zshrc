@@ -105,6 +105,7 @@ alias pong='ping -D google.de'
 # Vim
 alias nvim='vim -c NERD'
 alias svim='sudo nvim'
+alias vimupdate='vim +Pluginstall +qall'
 
 # Netctl
 alias co='sudo netctl start'
@@ -132,10 +133,9 @@ alias till='tmux kill-session -t'
 #SSH
 alias ssh="TERM='xterm-256color' ssh"
 
-#whatmp3
+# Various
 alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted'
-
-#docker
+alias revision='printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"'
 alias clean_docker='rmi $(docker images -f "dangling=true" -q)'
 
 #Pueue and encarne

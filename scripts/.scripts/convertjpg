@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cwd=$(pwd)
+
+for folder in *; do
+    cd "${cwd}/${folder}"
+    mogrify -format png *.jpg
+    mogrify -format png *.JPEG
+    mogrify -format png *.JPG
+    rm -f *.jpg *.JPEG *.JPG
+done

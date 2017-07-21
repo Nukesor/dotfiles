@@ -6,7 +6,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
 Plug 'ElmCast/elm-vim'
-Plug 'shawncplus/phpcomplete.vim'
+Plug 'joonty/vim-phpqa'
 
     " Template and Markdown
     Plug 'Shutnik/jshint2.vim'
@@ -209,6 +209,9 @@ let g:syntastic_python_checkers = ['flake8', 'python']
 
 " Postgres syntax
 let g:sql_type_default = 'pgsql'
+
+" PHP syntax
+let g:phpqa_codesniffer_args = "--standard=PSR2"
 
 " Vim git gutter
 let g:gitgutter_max_signs = 20000
