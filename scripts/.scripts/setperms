@@ -1,5 +1,6 @@
 #!/bin/bash
 
+chown syncthing:syncthing -R /home/syncthing
 chown root:files -R /srv/files
 
 cd /srv/files/movies
@@ -15,6 +16,10 @@ find -type d -exec chmod 755 {} \;
 find -type f -exec chmod 644 {} \;
 
 cd /srv/files/shows
+find -type d -exec chmod 755 {} \;
+find -type f -exec chmod 644 {} \;
+
+cd /srv/files/books
 find -type d -exec chmod 755 {} \;
 find -type f -exec chmod 644 {} \;
 
