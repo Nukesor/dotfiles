@@ -1,6 +1,6 @@
 #Aliases
 alias km='killall telegram-desktop; killall Telegram'
-alias upoff="blur && spacman -Syyu --noconfirm ; poweroff"
+alias upoff="i3lock-blur && spacman -Syyu --noconfirm ; poweroff"
 
 # Helper
 alias clt='rm -rf ~/.local/share/Trash/* ; rm -rf ~/Desktop'

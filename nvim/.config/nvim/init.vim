@@ -57,8 +57,7 @@ Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
 Plug 'scrooloose/nerdtree'
 
 " Syntax checking support
-Plug 'scrooloose/syntastic'
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 
 " Formatting
 Plug 'Chiel92/vim-autoformat'
@@ -199,14 +198,6 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_goto_buffer_command = 'vertical-split'
 
-" Syntastic
-let g:syntastic_check_on_open = 1
-let g:syntastic_python_checkers = ['flake8', 'python']
-
-    " JSHint syntastic config
-    let g:syntastic_javascript_checkers = ['jsxhint']
-
-
 " Postgres syntax
 let g:sql_type_default = 'pgsql'
 
@@ -225,19 +216,6 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 augroup END
-
-" Neomake configuration.
-    let g:neomake_rust_enabled_makers = ['cargo']
-
-    augroup my_neomake_cmds
-      autocmd!
-      " Have neomake run cargo when Rust files are saved.
-      autocmd BufWritePost *.rs Neomake! cargo
-    augroup END
-
-    let g:neomake_open_list=2
-    let g:neomake_list_height=5
-    let g:neomake_verbose=3
 
 " Python specific configs
     autocmd FileType python let python_highlight_all = 1
