@@ -2,11 +2,11 @@ call plug#begin(expand('~/.config/nvim/plug/'))
 
 " Language support
 Plug 'rust-lang/rust.vim'
+Plug 'nvie/vim-flake8'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
 Plug 'ElmCast/elm-vim'
-Plug 'joonty/vim-phpqa'
 
     " Template and Markdown
     Plug 'Shutnik/jshint2.vim'
@@ -63,7 +63,6 @@ Plug 'w0rp/ale'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-scripts/SQLUtilities'
 Plug 'vim-scripts/Align'
-Plug 'stephpy/vim-php-cs-fixer'
 
 " Auto completion
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --racer-completer --clang-completer --system-libclang --omnisharp-completer --system-boost' }
@@ -174,6 +173,9 @@ let g:ctrlp_switch_buffer = 0
     " Use CPSM for file finding
     let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
+
+" Python
+let g:ycm_python_binary_path = './venv/bin/python3'
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
@@ -200,9 +202,6 @@ let g:ycm_goto_buffer_command = 'vertical-split'
 
 " Postgres syntax
 let g:sql_type_default = 'pgsql'
-
-" PHP syntax
-let g:phpqa_codesniffer_args = "--standard=PSR2"
 
 " Vim git gutter
 let g:gitgutter_max_signs = 20000
