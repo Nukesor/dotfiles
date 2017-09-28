@@ -65,7 +65,7 @@ Plug 'vim-scripts/SQLUtilities'
 Plug 'vim-scripts/Align'
 
 " Auto completion
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --racer-completer --clang-completer --system-libclang --omnisharp-completer --system-boost' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --omnisharp-completer --system-boost' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 call plug#end()
