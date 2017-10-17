@@ -136,7 +136,7 @@ alias ssh="TERM='xterm-256color' ssh"
 # Various
 alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted'
 alias revision='printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"'
-alias clean_docker='rmi $(docker images -f "dangling=true" -q)'
+alias drmi='docker image prune'
 
 #Pueue and encarne
 alias pad='pueue add'
