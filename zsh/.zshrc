@@ -124,6 +124,7 @@ alias gpu='git push origin -u'
 alias gpo='git remote prune origin'
 alias watchgit='watch -d -n 5 -c git pull'
 alias rsync='rsync --recursive --partial --perms --progress'
+alias arsync='rsync -a --partial --perms --progress'
 
 #Tmux
 alias tew='tmux new -s'
