@@ -8,6 +8,7 @@ basic:
 	stow -t ~/ -R beets
 	stow -t ~/ -R editorconf
 	stow -t ~/ -R git
+	stow -t ~/ -R tmux
 	stow -t ~/ -R scripts
 	stow -t ~/ -R various
 	stow -t ~/ -R nvim
