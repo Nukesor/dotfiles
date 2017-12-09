@@ -1,2 +1,3 @@
 #Aliases
 alias poweroff='reboot'
+alias filebot='filebot --format "{y}_{n.space('"'"'_'"'"')}_{vf}_{vc}" -rename'
