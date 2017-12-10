@@ -1,0 +1,3 @@
+#!/bin/bash
+
+chromium --new-window --app="https://app.plex.tv/"
