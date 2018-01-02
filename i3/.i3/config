@@ -29,8 +29,8 @@ focus_follows_mouse no
 bindsym $mod+Control+o exec xterm
 # start a termite
 bindsym $mod+Control+k exec termite
-# start chromium
-bindsym $mod+Control+i exec chromium
+# start firefox
+bindsym $mod+Control+i exec firefox
 # start Thunderbird
 bindsym $mod+Control+t exec thunderbird
 # start nautilus

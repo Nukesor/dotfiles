@@ -23,7 +23,7 @@ setopt autocd               # cd without writing cd
 setopt extended_glob        # extended glob syntax
 setopt nomatch              # print error if pattern matches nothing
 setopt notify               # report status of background jobs immediately
-setopt nohashdirs           # disable hashing of dirs so we don't have to run
+setopt nohashdirs           # disable hashing of dirs so we don not have to run
                             # rehash after installing new binaries (performance hit?)
 # History
 HISTFILE=~/.zsh_history
