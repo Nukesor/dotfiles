@@ -1,5 +1,2 @@
-nvim/.nvim/shada
-mpd/.config/mpd/*
-beets/.config/beets/*
-weechat/.weechat/**/*log
-weechat/.weechat/ecdsa.pem
+home/.weechat/**/*log
+home/.weechat/ecdsa.pem
