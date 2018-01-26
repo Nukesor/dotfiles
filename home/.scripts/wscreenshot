@@ -21,53 +21,67 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #SOFTWARE.
 
-#1. Parameter: Sleep time
-#2. Parameter: Workspace
+#1. Parameter: Workspace(s)
+#2. Parameter: Sleep time
+#3. Parameter: Quality
+
+#Example: wscreenshot 1,2,3 5 100
 
 resolution_x=1920
-resolution_y=2160
+resolution_y=1080
 outresolution_x=1920
 outresolution_y=1080
 
+workspaces=$(echo $1 | tr "," "\n")
+sleeptime=${2:-5}
+quality=${3:-100}
+
+allowed_spaces=()
+for space in $workspaces; do
+    allowed_spaces+=('"current_workspace":"'$space'"')
+done
+
+echo "Quality: $quality"
+echo "Sleeping for $sleeptime seconds"
 
 while true; do
-    string='"current_workspace":"'$2'"'
     output=$(i3-msg -t "get_outputs")
-    active=$(ps -aux | grep  i3-lock | wc -l)
+    lack_active=$(ps -aux | grep  i3-lock | wc -l)
     name=$(date +%Y-%m-%d-%H%M%S_${resolution_x}x${resolution_y}_scrot.png)
     outname=$(date +%Y-%m-%d-%H%M%S_${outresolution_x}x${outresolution_y}_scrot.png)
-    if [ $# == 3 ]; then
-        name="/tmp/$name"
-    fi
 
-    grep -q "$string" <<< "$output"
-
+    on_screen=false
+    for space in "${allowed_spaces[@]}"; do
+        grep -q "$space" <<< "$output"
+        if [[ $? -eq 0 ]] ; then
+            on_screen=true
+            break
+        fi
+    done
     # Actually do the screenshot
     # Move the screenshot to /tmp/ in case
     # it should be cropped later
-    if [[ $? -eq 0 ]] ; then
-        if [[ $active -eq 1  ]]; then
-            scrot -q 100 $name
-            # Cropping file to specified screen
-            if [ "$3" == "down" ]; then
-                convert $name -crop ${outresolution_x}x${outresolution_y}+0+$(($resolution_y - $outresolution_y)) $outname
-            elif [ "$3" == "up" ]; then
-                convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
-            elif [ "$3" == "left" ]; then
-                convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
-            elif [ "$3" == "right" ]; then
-                convert $name -crop ${outresolution_x}x${outresolution_y}+$(($resolution_x - $outresolution_x))+0 $outname
-            fi
-
-            # Cleanup of temporary file
-            if [ -n "$3" ]; then
-                rm $name
-            fi
-        else
-            echo "On worspace, but i3 lock is active"
-        fi
-    else
+    if [[ $lock_active -eq 1  ]]; then
+        echo "On worspace, but i3 lock is active"
+    elif [ "$on_screen" == false ]; then
         echo "Not on specified Workspace $2"
+    elif [ "$on_screen" == true ]; then
+        scrot -q $quality $name
+        # Cropping file to specified screen
+        if [ "$3" == "down" ]; then
+            convert $name -crop ${outresolution_x}x${outresolution_y}+0+$(($resolution_y - $outresolution_y)) $outname
+        elif [ "$3" == "up" ]; then
+            convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
+        elif [ "$3" == "left" ]; then
+            convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
+        elif [ "$3" == "right" ]; then
+            convert $name -crop ${outresolution_x}x${outresolution_y}+$(($resolution_x - $outresolution_x))+0 $outname
+        fi
+
+        # Cleanup of temporary file
+        if [ -n "$3" ]; then
+            rm $name
+        fi
     fi
-    sleep $1
+    sleep $sleeptime
 done
