@@ -16,4 +16,7 @@ alias noblank='xset s off && xset -dpms && xset s noblank'
 alias syncart='systemctl --user start syncthing'
 alias syncop='systemctl --user stop syncthing'
 
+alias shn='ssh nuke@jarvis'
+alias sj='ssh jarvis'
+
 PATH=$PATH:/home/$USER/.screenlayout/

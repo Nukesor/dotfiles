@@ -1,6 +1,7 @@
 #zgen stuff
 source "$HOME/.zsh/zgen/zgen.zsh"
 source "/usr/share/fzf/key-bindings.zsh"
+source "/usr/share/fzf/completion.zsh"
 
 if ! zgen saved; then
     echo "Creating a zgen save"
@@ -153,6 +154,14 @@ alias venv='source ./venv/bin/activate'
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
 [[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work
 [[ -r $HOME/.zshrc-server ]] && source $HOME/.zshrc-server
+
+# Stage files multi-selected modified files
+gflist() {
+  git ls-files -m | fzf -m --preview 'git diff --color {} | diff-so-fancy'
+}
+zle -N gflist
+# Bind it to ESC-i.
+bindkey "^g" gflist
 
 eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
 eval "$(dircolors -b ~/.dircolors)"
