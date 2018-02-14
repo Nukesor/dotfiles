@@ -156,12 +156,18 @@ alias venv='source ./venv/bin/activate'
 [[ -r $HOME/.zshrc-server ]] && source $HOME/.zshrc-server
 
 # Stage files multi-selected modified files
-gflist() {
-  git ls-files -m | fzf -m --preview 'git diff --color {} | diff-so-fancy'
+__gflist() {
+    local files=$(git ls-files -m)
+    local selection=( $($(__fzfcmd) -m --preview 'git diff --color {} | diff-so-fancy' <<< $files) )
+
+    LBUFFER="${LBUFFER} ${selection}"
+    local ret=$?
+    return $ret
 }
-zle -N gflist
-# Bind it to ESC-i.
-bindkey "^g" gflist
+
+# Bind it to CTRL-g
+zle -N __gflist
+bindkey "^g" __gflist
 
 eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
 eval "$(dircolors -b ~/.dircolors)"
