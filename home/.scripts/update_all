@@ -1,4 +1,0 @@
-#!/bin/bash
-
-rustup update
-vim -c PlugUpdate

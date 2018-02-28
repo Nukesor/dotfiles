@@ -4,8 +4,6 @@ current=$(pwd)
 cata=~/repos/games/cataclysm-dda
 
 cd $cata
-
-
 if [ "$1" == "build" ]; then
     commit_hash=$(git rev-parse HEAD)
     git pull

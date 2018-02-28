@@ -1,40 +1,19 @@
 #!/bin/sh
 
-#The MIT License (MIT)
-#Copyright (c) 2015 Arne Beer
-#
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights to
-#use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-#of the Software, and to permit persons to whom the Software is furnished to do
-#so, subject to the following conditions:
-#
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-#
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
+#1. Parameter: Sleep time
+#2. Parameter: Quality
+#3. Parameter: Workspace(s)
 
-#1. Parameter: Workspace(s)
-#2. Parameter: Sleep time
-#3. Parameter: Quality
-
-#Example: wscreenshot 1,2,3 5 100
+#Example: wscreenshot 5 100 1,2,3
 
 resolution_x=1920
 resolution_y=1080
 outresolution_x=1920
 outresolution_y=1080
 
-workspaces=$(echo $1 | tr "," "\n")
-sleeptime=${2:-5}
-quality=${3:-100}
+sleeptime=${1:-5}
+quality=${2:-100}
+workspaces=$(echo $3 | tr "," "\n")
 
 allowed_spaces=()
 for space in $workspaces; do
