@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #The MIT License (MIT)
 #Copyright (c) 2015 Arne Beer
 #
@@ -20,30 +21,7 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #SOFTWARE.
 
-
-
-path=/sys/class/backlight/intel_backlight/brightness
-maxBright=$(cat /sys/class/backlight/intel_backlight/max_brightness)
-current=$(cat $path)
-
-step=$(($maxBright/100))
-
-if [ "$1" == "up" ]; then
-    new=$(($current+$step))
-    sudo tee $path <<< $new
-elif [ "$1" == "down" ]; then
-    new=$(($current-$step))
-    sudo tee $path <<< $new
-elif [ "$1" == "normal" ]; then
-    new=$(($maxBright/2))
-    sudo tee $path <<< $new
-elif [ "$1" == "max" ]; then
-    sudo tee $path <<< $maxBright
-else
-    re='^[0-9]'
-    if ! [[ $1 =~ $re ]] ; then
-       echo "error: Not a number" >&2; exit 1
-       exit 1
-    fi
-    sudo tee $path <<< $1
-fi
+for book in *.epub; do
+    echo "Converting $book";
+    ebook-convert "$book" "$(basename "$book" .epub).mobi";
+done
