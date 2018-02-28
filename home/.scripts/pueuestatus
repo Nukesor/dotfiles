@@ -17,21 +17,20 @@ def main():
         else:
             # get last 4 keys from status list
             keys = sorted(data.keys())
-            keys.reverse()
             status_list = []
             first = None
-            for key in keys:
+            for index, key in enumerate(keys):
                 if data[key]['status'] == 'running':
-                    first = key
+                    first = index
                     break
 
             # Find first and last index for pueue list
-            first = first if (first is not None) else len(keys)-5
+            first = first if (first is not None) else len(keys)-4
             last = first+4
             # Last index is bigger than list
             # Set last to biggest index and first to last-4
             if last > len(keys):
-                last = len(keys)-1
+                last = len(keys)
                 first = last-4
                 # First is smaller than 0. Set to 0
                 if first < 0:
