@@ -35,8 +35,7 @@ def main():
                 # First is smaller than 0. Set to 0
                 if first < 0:
                     first = 0
-
-            for key in keys[first:last]:
+            for key in reversed(keys[first:last]):
                 entry_status = data[key]['status']
                 status_list.append(("{}: {}".format(key, entry_status)))
             print(', '.join(status_list))
