@@ -5,6 +5,7 @@ basic:
 	mkdir -p ~/.config/mpd
 	stow -t ~/.config -R config
 	stow -t ~/ -R home
+	stow -t ~/ -R zsh
 
 client: basic
 	stow -t ~/ -R zsh-client

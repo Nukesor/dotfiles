@@ -65,7 +65,7 @@ Plug 'vim-scripts/SQLUtilities'
 Plug 'vim-scripts/Align'
 
 " Auto completion
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --system-libclang --omnisharp-completer --system-boost' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --system-libclang --system-boost --all' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 call plug#end()
@@ -200,6 +200,12 @@ let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_goto_buffer_command = 'vertical-split'
+
+" Ale linter
+let g:ale_linters = {
+\   'python': ['flake8'],
+\   'rust': ['rls']
+\}
 
 " Postgres syntax
 let g:sql_type_default = 'pgsql'

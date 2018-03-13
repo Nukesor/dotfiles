@@ -5,10 +5,12 @@ import subprocess
 from pueue.daemon.queue import Queue
 from pueue.client.factories import command_factory
 
+host = 'root@jarvis'
+
 
 def main():
     try:
-        subprocess.run("rsync root@jarvis:~/.config/pueue/queue /tmp", shell=True, check=True)
+        subprocess.run(f"rsync {host}:~/.config/pueue/queue /tmp", shell=True, check=True)
         queue = Queue('/tmp')
         queue.read()
         data = queue.queue
@@ -35,10 +37,13 @@ def main():
                 # First is smaller than 0. Set to 0
                 if first < 0:
                     first = 0
+
+            # Get the status of selected entries
             for key in reversed(keys[first:last]):
                 entry_status = data[key]['status']
                 status_list.append(("{}: {}".format(key, entry_status)))
             print(', '.join(status_list))
+
     except KeyboardInterrupt:
         sys.exit(0)
 
