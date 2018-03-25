@@ -18,5 +18,6 @@ alias syncop='systemctl --user stop syncthing'
 
 alias shn='ssh nuke@jarvis'
 alias sj='ssh jarvis'
+alias yd='youtube-dl -f bestvideo+bestaudio'
 
 PATH=$PATH:/home/$USER/.screenlayout/
