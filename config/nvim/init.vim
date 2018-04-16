@@ -196,6 +196,7 @@ let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
 " YCM config
+let g:ycm_rust_src_path = "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -231,6 +232,9 @@ augroup END
 " Map keys
     " Map ; to :
     map ; :
+    noremap <silent> <C-S>          :update<CR>
+    vnoremap <silent> <C-S>         <C-C>:update<CR>
+    inoremap <silent> <C-S>         <C-O>:update<CR>
 
         " Disable F1 help
     :nmap <F1> :echo<CR>

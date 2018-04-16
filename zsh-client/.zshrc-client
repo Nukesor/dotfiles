@@ -18,6 +18,8 @@ alias syncop='systemctl --user stop syncthing'
 
 alias shn='ssh nuke@jarvis'
 alias sj='ssh jarvis'
-alias yd='youtube-dl -f bestvideo+bestaudio'
+alias yd='youtube-dl -f bestvideo+bestaudio --output "%(title)s.%(ext)s"'
+alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
 
-PATH=$PATH:/home/$USER/.screenlayout/
+PATH=$PATH:$HOME/.screenlayout/
+PATH=$PATH:$HOME/go/bin:$HOME/.screenlayout/
