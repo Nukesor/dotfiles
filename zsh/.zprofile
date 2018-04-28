@@ -1,9 +1,10 @@
-eval $(dircolors ~/.dircolors)
-path=(~/.scripts/ $path)
-path=(~/.cargo/bin $path)
+eval $(dircolors $HOME/.dircolors)
+path=($HOME/.scripts/ $path)
+path=($HOME/.cargo/bin $path)
+path=($HOME/go/bin $path)
 path=(./bin $path)
 GOPATH="$HOME/go"
 
-fpath=(~/.dotfiles/zshcompletion/ $fpath)
+fpath=($HOME/.dotfiles/zshcompletion/ $fpath)
 
 eval $(dircolors ~/.dircolors)
