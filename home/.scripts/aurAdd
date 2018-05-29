@@ -1,13 +1,13 @@
 #!/bin/bash
 
-pkglist=$HOME/.setup/yaourt-pkg
+pkglist=$HOME/.setup/aur-pkglist
 tmp=.tmp
 
 if [ -z "$1" ]; then
     echo "Please specify at least one package"
 else
     for package in "$@"; do
-        yaourt -S $package --noconfirm --needed
+        yay -S $package --noconfirm --needed
         if [ $? -ne 0 ]; then
             echo "$package not found or failed while installing"
         else

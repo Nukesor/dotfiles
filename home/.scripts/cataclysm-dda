@@ -1,7 +1,7 @@
 #!/bin/bash
 
 current=$(pwd)
-cata=~/repos/games/cataclysm-dda
+cata=$HOME/.cataclysm-dda/cataclysm-dda
 
 cd $cata
 if [ "$1" == "build" ]; then

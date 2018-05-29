@@ -1,3 +1,5 @@
+HISTSIZE=50000
+
 eval $(dircolors $HOME/.dircolors)
 path=($HOME/.scripts/ $path)
 path=($HOME/.cargo/bin $path)

@@ -1,12 +1,13 @@
 #!/bin/bash
 
-pkglist=$HOME/.setup/pkglist
+pkglist=$HOME/.setup/aur-pkglist
+tmp=.tmp
 
 if [ -z "$1" ]; then
     echo "Please specify at least one package"
 else
     for package in "$@"; do
-        sudo pacman -Rns $package --noconfirm
+        yay -Rns $package --noconfirm
         if [ $? -ne 0 ]; then
             echo "$package not installed"
         fi
