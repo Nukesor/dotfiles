@@ -148,6 +148,10 @@ alias pt='pueue show | tail'
 alias et='systemctl status encarne.service'
 alias ets='find . -name "*265*.mkv" -type f | wc -l && find -name "*.mkv" | wc -l && find -name "*encarne-failed*" | wc -l'
 
+# Youtube dl
+alias yd='youtube-dl -f bestvideo+bestaudio --output "%(title)s.%(ext)s"'
+alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
+
 # Python
 alias venv='source ./venv/bin/activate'
 
