@@ -5,38 +5,39 @@ chown root:files -R /srv/files
 
 cd /srv/files/movies
 chown plex:files -R /srv/files/movies
-find -type d -exec chmod 755 {} \;
+find -type d -exec chmod 02755 {} \;
 find -type f -exec chmod 644 {} \;
 
 cd /srv/files/upload
-find -type d -exec chmod 775 {} \;
+chown root:public -R /srv/files/movies
+find -type d -exec chmod 02775 {} \;
 find -type f -exec chmod 664 {} \;
 
 cd /srv/files/anime_shows
 chown plex:files -R /srv/files/anime_shows
-find -type d -exec chmod 755 {} \;
+find -type d -exec chmod 02755 {} \;
 find -type f -exec chmod 644 {} \;
 
 cd /srv/files/shows
 chown plex:files -R /srv/files/shows
-find -type d -exec chmod 755 {} \;
+find -type d -exec chmod 02755 {} \;
 find -type f -exec chmod 644 {} \;
 
 cd /srv/files/books
-find -type d -exec chmod 755 {} \;
+find -type d -exec chmod 02755 {} \;
 find -type f -exec chmod 644 {} \;
 
 cd /srv/files/talks
 chown plex:files -R /srv/files/talks
-find -type d -exec chmod 755 {} \;
+find -type d -exec chmod 02755 {} \;
 find -type f -exec chmod 644 {} \;
 
 cd /srv/files/music
-find -type d -exec chmod 755 {} \;
-find -type f -exec chmod 644 {} \;
+find -type d -exec chmod 02775 {} \;
+find -type f -exec chmod 664 {} \;
 
 cd /srv/files/games
-find -type d -exec chmod 755 {} \;
+find -type d -exec chmod 02755 {} \;
 
 cd /srv/files/programs
-find -type d -exec chmod 755 {} \;
+find -type d -exec chmod 02755 {} \;
