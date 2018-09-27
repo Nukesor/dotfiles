@@ -1,11 +1,12 @@
 #Aliases
 alias km='killall telegram-desktop; killall Telegram'
+alias susp='i3lock-blur && systemctl suspend'
 alias upoff="i3lock-blur && spacman -Syyu --noconfirm ; poweroff"
+alias upsups="i3lock-blur && spacman -Syyu --noconfirm ; systemctl suspend"
 
 # Helper
 alias clt='rm -rf ~/.local/share/Trash/* ; rm -rf ~/Desktop'
 alias hotspot="sudo create_ap $(getWlanId) $(getEthernetId) lolnuke atomrofl"
-alias susp='i3lock-blur && systemctl suspend'
 alias xclipx='xclip -selection c'
 
 # mpd & ncmpcpp

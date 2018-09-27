@@ -7,6 +7,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'lifepillar/pgsql.vim'
 Plug 'cespare/vim-toml'
 Plug 'ElmCast/elm-vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
     " Template and Markdown
     Plug 'Shutnik/jshint2.vim'
@@ -23,7 +24,12 @@ Plug 'ElmCast/elm-vim'
 " Looks
 Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
+
+" Rainbow parenthesis
 Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
+
+" HTML matching tag highlighting
 Plug 'Valloric/MatchTagAlways'
 
 " Tools
@@ -41,6 +47,7 @@ Plug 'metakirby5/codi.vim'
 
 " Git support
 Plug 'tpope/vim-fugitive'
+Plug 'jreybert/vimagit'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 
@@ -50,10 +57,26 @@ Plug 'tpope/vim-surround'
 
 " Navigation
 Plug 'vim-scripts/a.vim'
+
+" CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_max_depth = 40
+let g:ctrlp_max_files = 20000
+let g:ctrlp_dotfiles = 1
+let g:ctrlp_custom_ignore = 'target\|venv\|vendor\|node_modules\|DS_Store\|\.git\|elm-stuff'
+let g:ctrlp_working_path_mode='.'
+let g:ctrlp_switch_buffer = 0
+
+" Ctrlp-funky
 Plug 'tacahiroy/ctrlp-funky'
+:nnoremap fu :CtrlPFunky<Cr>
+
+"CPSM matching
+Plug 'ptzz/cpsm', { 'do': 'PY3=ON ./install.sh' }
+" Use CPSM for file finding
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+
 Plug 'easymotion/vim-easymotion'
-Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
 Plug 'scrooloose/nerdtree'
 
 " Syntax checking support
@@ -65,7 +88,7 @@ Plug 'vim-scripts/SQLUtilities'
 Plug 'vim-scripts/Align'
 
 " Auto completion
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --system-libclang --system-boost --all' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --system-libclang --system-boost --racer-completer --all' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 call plug#end()
@@ -164,19 +187,8 @@ set completeopt=menuone,menu,longest,preview
 " Automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
-" CtrlP configuration
-let g:ctrlp_max_depth = 40
-let g:ctrlp_max_files = 20000
-let g:ctrlp_dotfiles = 1
-let g:ctrlp_custom_ignore = 'target\|venv\|vendor\|node_modules\|DS_Store\|\.git\|elm-stuff'
-let g:ctrlp_working_path_mode='.'
-let g:ctrlp_switch_buffer = 0
-    " Use CPSM for file finding
-    let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-
 
 " Python
-let g:ycm_python_binary_path = './venv/bin/python3'
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
@@ -196,16 +208,17 @@ let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
 " YCM config
-let g:ycm_rust_src_path = "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu"
+let g:ycm_python_binary_path = './venv/bin/python3'
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_extra_conf_globlist = ['~/prj/*']
 let g:ycm_goto_buffer_command = 'vertical-split'
+let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu//lib/rustlib/src/rust/src/'
 
 " Ale linter
+
 let g:ale_linters = {
 \   'python': ['flake8'],
-\   'rust': ['rls']
+\   'rust': ['cargo']
 \}
 
 " Postgres syntax
@@ -232,6 +245,8 @@ augroup END
 " Map keys
     " Map ; to :
     map ; :
+
+    " Save with CTRL + S
     noremap <silent> <C-S>          :update<CR>
     vnoremap <silent> <C-S>         <C-C>:update<CR>
     inoremap <silent> <C-S>         <C-O>:update<CR>
@@ -239,9 +254,6 @@ augroup END
         " Disable F1 help
     :nmap <F1> :echo<CR>
     :imap <F1> <C-o>:echo<CR>
-
-    " Ctrlp-funky
-    :nnoremap fu :CtrlPFunky<Cr>
 
     :map <C-]> :YcmCompleter GoTo<CR>
     :map <F8> :Tagbar <CR>

@@ -48,6 +48,8 @@ setopt auto_list            # automatically list choices on ambiguous completion
 setopt auto_param_slash     # if completed parameter is a directory, add a trailing slash
 unsetopt menu_complete      # do not autoselect the first completion entry
 unsetopt flow_control       # disable start/stop characters in shell editor
+unsetopt auto_cd            # disable auto cd
+
 
 ## Group matches and describe.
 # zstyle ':completion:*:*:*:*:*' menu select
@@ -102,6 +104,7 @@ alias hate='sudo killall -9'
 alias logs='sudo journalctl -f'
 alias spacman='sudo pacman'
 alias pong='ping -D google.de'
+alias mksrcinfo='makepkg --printsrcinfo > .SRCINFO'
 
 # Vim
 alias nvim='vim -c NERD'
