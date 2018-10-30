@@ -30,7 +30,7 @@ Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
 " HTML matching tag highlighting
-Plug 'Valloric/MatchTagAlways'
+"Plug 'Valloric/MatchTagAlways'
 
 " Tools
 Plug 'rking/ag.vim'
@@ -72,7 +72,7 @@ Plug 'tacahiroy/ctrlp-funky'
 :nnoremap fu :CtrlPFunky<Cr>
 
 "CPSM matching
-Plug 'ptzz/cpsm', { 'do': 'PY3=ON ./install.sh' }
+Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
 " Use CPSM for file finding
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
@@ -108,7 +108,9 @@ set encoding=utf-8
 set fileencoding=utf-8
 set termguicolors
 set t_Co=256            " set 256 color
-colorscheme darkspectrum " define syntax color scheme
+set background=dark
+"colorscheme inori
+colorscheme earendel    " define syntax color scheme
 set spell spelllang=en_us,de
 
 
