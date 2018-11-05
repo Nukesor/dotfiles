@@ -42,7 +42,7 @@ bindsym $mod+Control+m exec telegram-desktop
 # start qalculate
 bindsym $mod+Control+q exec qalculate-gtk
 # start rofi-pass
-bindsym $mod+Control+q exec rofi-pass
+bindsym $mod+Control+u exec rofi-pass
 # start dmenu
 bindsym $mod+F2 exec dmenu_run
 
