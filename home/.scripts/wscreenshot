@@ -6,10 +6,8 @@
 
 #Example: wscreenshot 5 100 1,2,3
 
-resolution_x=1920
-resolution_y=1080
-outresolution_x=1920
-outresolution_y=1080
+resolution_x=2560
+resolution_y=2560
 
 sleeptime=${1:-5}
 quality=${2:-100}
@@ -46,21 +44,6 @@ while true; do
         echo "Not on specified Workspaces"
     elif [ "$on_screen" == true ]; then
         scrot -q $quality $name
-        # Cropping file to specified screen
-        if [ "$4" == "down" ]; then
-            convert $name -crop ${outresolution_x}x${outresolution_y}+0+$(($resolution_y - $outresolution_y)) $outname
-        elif [ "$4" == "up" ]; then
-            convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
-        elif [ "$4" == "left" ]; then
-            convert $name -crop ${outresolution_x}x${outresolution_y}+0+0 $outname
-        elif [ "$4" == "right" ]; then
-            convert $name -crop ${outresolution_x}x${outresolution_y}+$(($resolution_x - $outresolution_x))+0 $outname
-        fi
-
-        # Cleanup of temporary file
-        if [ -n "$4" ]; then
-            rm $name
-        fi
     fi
     sleep $sleeptime
 done
