@@ -38,7 +38,7 @@ while true; do
     # Actually do the screenshot
     # it should be cropped later
     if [[ $lock_active -gt 1  ]]; then
-        echo "On worspace, but i3 lock is active"
+        echo "i3 lock is active"
     elif [ "$on_screen" == false ]; then
         echo "Not on specified Workspaces"
     elif [ "$on_screen" == true ]; then
