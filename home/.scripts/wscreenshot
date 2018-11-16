@@ -4,7 +4,7 @@
 #2. Parameter: Quality
 #3. Parameter: Workspace(s)
 
-#Example: wscreenshot 5 100 1,2,3
+#Example: wscreenshot 5 80 1,2,3
 
 resolution_x=2560
 resolution_y=1440
@@ -36,7 +36,6 @@ while true; do
         fi
     done
     # Actually do the screenshot
-    # Move the screenshot to /tmp/ in case
     # it should be cropped later
     if [[ $lock_active -gt 1  ]]; then
         echo "On worspace, but i3 lock is active"
