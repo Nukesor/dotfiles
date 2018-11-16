@@ -7,7 +7,7 @@
 #Example: wscreenshot 5 100 1,2,3
 
 resolution_x=2560
-resolution_y=2560
+resolution_y=1440
 
 sleeptime=${1:-5}
 quality=${2:-100}
