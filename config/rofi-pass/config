@@ -55,7 +55,7 @@ BROWSER='xdg-open'
 ## Misc settings
 
 default_do='menu' # menu, autotype, copyPass, typeUser, typePass, copyUser, copyUrl, viewEntry, typeMenu, actionMenu, copyMenu, openUrl
-auto_enter='false'
+auto_enter='true'
 notify='false'
 default_autotype='user :tab pass'
 
@@ -76,7 +76,7 @@ clip_clear=45
 edit_new_pass="true"
 
 # default_user is also used for password files that have no user field.
-#default_user="${ROFI_PASS_DEFAULT_USER-$(whoami)}"
+default_user="Nukesor"
 #default_user2=mary_ann
 #password_length=12
 
