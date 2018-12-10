@@ -1,10 +1,11 @@
 HISTSIZE=50000
 
 eval $(dircolors $HOME/.dircolors)
-path=($HOME/.scripts/ $path)
-path=($HOME/.cargo/bin $path)
-path=(./bin $path)
+path=($path $HOME/.scripts/)
+path=($path $HOME/.cargo/bin)
+path=($path ./bin)
+path=($path ./node_modules/.bin)
 
-fpath=($HOME/.dotfiles/zshcompletion/ $fpath)
+fpath=($fpath $HOME/.dotfiles/zshcompletion/)
 
 eval $(dircolors ~/.dircolors)

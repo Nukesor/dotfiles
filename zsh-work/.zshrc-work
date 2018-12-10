@@ -2,3 +2,4 @@
 alias localdev="FLASK_CONFIG='local' SQLALCHEMY_DATABASE_URI='postgresql://localhost/andyslist'"
 
 alias phpunit="./bin/portaldocker phpunit"
+alias workssh=`keychain --eval --agents 'ssh' -Q -q keyfiles/id_rsa`

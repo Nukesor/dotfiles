@@ -176,5 +176,5 @@ __gflist() {
 zle -N __gflist
 bindkey "^g" __gflist
 
-eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
 eval "$(dircolors -b ~/.dircolors)"
+eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
