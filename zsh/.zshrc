@@ -143,6 +143,7 @@ alias ssh="TERM='xterm-256color' ssh"
 alias mp3='mkdir -p ~/converted && whatmp3 --notorrent -L -w --V0 -o ~/converted'
 alias drmi='docker image prune'
 alias trust='gpg --recv-key'
+alias dstat='dstat -tdnclmpry'
 
 #Pueue and encarne
 alias pad='pueue add'
@@ -176,5 +177,5 @@ __gflist() {
 zle -N __gflist
 bindkey "^g" __gflist
 
-eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
 eval "$(dircolors -b ~/.dircolors)"
+eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
