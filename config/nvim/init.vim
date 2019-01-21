@@ -111,7 +111,8 @@ set t_Co=256            " set 256 color
 set background=dark
 "colorscheme inori
 colorscheme earendel    " define syntax color scheme
-set spell spelllang=en_us,de
+set spelllang=en_us,de
+"set spell
 
 
 set backspace=2         " full backspacing capabilities
