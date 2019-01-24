@@ -275,6 +275,9 @@ command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
 " Vim sudo hack
 cmap w!! w !sudo tee > /dev/null %
 
+" Json prettify
+cmap Json %!python -m json.tool
+
 " UltiSnips completion shortcuts
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
