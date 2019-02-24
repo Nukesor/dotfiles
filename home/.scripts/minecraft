@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/games/atlauncher/
+java -jar ATLauncher.jar
