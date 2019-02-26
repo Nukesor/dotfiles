@@ -56,11 +56,6 @@ set $ws8 "8"
 set $ws9 "9: chats"
 set $ws10 "10: mail"
 
-#German Layout
-bindsym $mod+Shift+q exec ~/.scripts/changeLanguage deutsch
-#US Layout
-bindsym $mod+Shift+w exec ~/.scripts/changeLanguage english
-
 # kill focused window
 bindsym $mod+F4 kill
 

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+setxkbmap -layout us -variant altgr-intl -option caps:escape -option lv3:ralt_switch
+xmodmap -e "keycode 94 = less greater bar"
