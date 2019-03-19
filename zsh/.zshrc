@@ -96,6 +96,7 @@ alias grep='grep --color=auto'
 # fasd
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
+alias sd='/usr/bin/sd'
 
 #Various
 alias sys='sudo systemctl'

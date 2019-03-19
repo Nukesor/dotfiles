@@ -33,7 +33,7 @@ let g:rainbow_active = 1
 "Plug 'Valloric/MatchTagAlways'
 
 " Tools
-Plug 'rking/ag.vim'
+Plug 'jremmen/vim-ripgrep'
 
 " Functionality
 Plug 'michaeljsmith/vim-indent-object'
@@ -179,7 +179,6 @@ set smartcase           " upper-case sensitive search
 syntax on               " enable syntax highlighting
 
 " Auto completion stuff
-filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 " Enable dictionary completion
@@ -189,7 +188,6 @@ set completeopt=menuone,menu,longest,preview
 
 " Automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-
 
 " Python
 let g:python_host_prog = '/usr/bin/python2'
