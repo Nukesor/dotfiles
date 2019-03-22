@@ -2,6 +2,6 @@
 
 setxkbmap -layout us -variant altgr-intl -option caps:escape -option lv3:ralt_switch
 xmodmap -e "keycode 94 = less greater bar"
-xmodmap -e "keycode 38 = a A adiaeresis adiaeresis adiaeresis adiaeresis"
-xmodmap -e "keycode 40 = d D odiaeresis odiaeresis odiaeresis odiaeresis"
-xmodmap -e "keycode 41 = f F udiaeresis udiaeresis udiaeresis udiaeresis"
+xmodmap -e "keycode 38 = a A adiaeresis Adiaeresis adiaeresis Adiaeresis"
+xmodmap -e "keycode 40 = d D odiaeresis Odiaeresis odiaeresis Odiaeresis"
+xmodmap -e "keycode 41 = f F udiaeresis Udiaeresis udiaeresis Udiaeresis"
