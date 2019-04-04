@@ -1,6 +1,6 @@
 #Aliases
 #alias km="ps -aux | rg telegram-desktop | head -n 1 |tr -s ' ' | cut -d' ' -f2 | xargs kill"
-alias km="killall telegram-desktop"
+alias km="killall telegram-deskto"
 alias susp='i3lock-blur && systemctl suspend'
 alias upoff="i3lock-blur && spacman -Syyu --noconfirm ; poweroff"
 alias upsups="i3lock-blur && spacman -Syyu --noconfirm ; systemctl suspend"
