@@ -1,41 +1,46 @@
 #!/bin/bash
 
 current=$(pwd)
-cata=$HOME/.cataclysm-dda/cataclysm-dda
+save_dir=$HOME/.cataclysm-dda
 
-cd $cata
+build_dir=$save_dir/cataclysm-dda
+
+
+if [ ! -d "$save_dir" ]; then
+    mkdir -p $save_dir
+fi
+
+if [ ! -d "$build_dir" ]; then
+    git clone git@github.com:CleverRaven/Cataclysm-DDA.git $build_dir
+fi
+
+cd $build_dir
 if [ "$1" == "build" ]; then
     commit_hash=$(git rev-parse HEAD)
     git pull
     make RELEASE=1 TILES=1 USE_HOME_DIR=1 CLANG=1 LUA=1 LTO=1 CCACHE=1 -j9
     if [ $? -eq 0 ]; then
-        touch ~/.cataclysm-dda/clean-hashes
-        grep $commit_hash ~/.cataclysm-dda/clean-hashes
+        touch $save_dir/clean-hashes
+        grep $commit_hash $save_dir/clean-hashes
         if [ $? -ne 0 ]; then
-            echo $commit_hash >> ~/.cataclysm-dda/clean-hashes
+            echo $commit_hash >> $save_dir/clean-hashes
         fi
     fi
 elif [ "$1" == "save" ]; then
     echo "Saving"
-    rm -rf ~/.cataclysm-dda/save-bak
+    rm -rf $save_dir/save-bak
+    cp -r $save_dir/save $save_dir/save-bak
     name=$(date +%Y-%m-%d-%H%M%S_save)
-    mkdir -p ~/.cataclysm-dda/backup/
-    zip -r ~/.cataclysm-dda/backup/$name.zip ~/.cataclysm-dda/save
+    mkdir -p $save_dir/backup/
+    zip -r $save_dir/backup/$name.zip $save_dir/save
 elif [ "$1" == "restore" ]; then
     echo "Restoring save"
-    rm -rf ~/.cataclysm-dda/save
-    cp -r ~/.cataclysm-dda/save-bak ~/.cataclysm-dda/save
-elif [ "$1" == "hash" ]; then
-    commit_hash=$(git rev-parse HEAD)
-    touch ~/.cataclysm-dda/clean-hashes
-    grep $commit_hash ~/.cataclysm-dda/clean-hashes
-    if [ $? -ne 0 ]; then
-        echo $commit_hash >> ~/.cataclysm-dda/clean-hashes
-    fi
+    rm -rf $save_dir/save
+    cp -r $save_dir/save-bak $save_dir/save
 elif [ "$1" == "start" ]; then
     echo "Starting"
 else
-    echo "Starting game. Valid commands are 'start', hash, 'build', 'save' and 'restore'"
+    echo "Starting game. Valid commands are 'start', 'build', 'save' and 'restore'"
 fi
 
 if [ "$1" != "hash" ]; then
