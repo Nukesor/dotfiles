@@ -97,6 +97,8 @@ alias grep='grep --color=auto'
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 
+alias sdi='/usr/bin/sd'
+
 #Various
 alias sys='sudo systemctl'
 alias systatus='systemctl --type=service --all'
@@ -171,6 +173,18 @@ __gflist() {
     LBUFFER="${LBUFFER} ${selection}"
     local ret=$?
     return $ret
+}
+
+function printuni() {
+    file=$1
+    printer='g122_fa4'
+    read 'answer?Are you sure you want to print <'$file'> on <'${printer}'> ? (y/n) '
+    if [ [ $answer == 'y' ]] ; then
+        echo 'Ok, printing'
+        cat "$file" | ssh 2beer@rzssh1.informatik.uni-hamburg.de lpr -P$printer -o sides=one-sided
+    else
+        echo 'Ok, not printing'
+    fi
 }
 
 # Bind it to CTRL-g

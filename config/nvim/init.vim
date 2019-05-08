@@ -33,7 +33,7 @@ let g:rainbow_active = 1
 "Plug 'Valloric/MatchTagAlways'
 
 " Tools
-Plug 'rking/ag.vim'
+Plug 'jremmen/vim-ripgrep'
 
 " Functionality
 Plug 'michaeljsmith/vim-indent-object'
@@ -111,7 +111,8 @@ set t_Co=256            " set 256 color
 set background=dark
 "colorscheme inori
 colorscheme earendel    " define syntax color scheme
-set spell spelllang=en_us,de
+set spelllang=en_us,de
+"set spell
 
 
 set backspace=2         " full backspacing capabilities
@@ -178,7 +179,6 @@ set smartcase           " upper-case sensitive search
 syntax on               " enable syntax highlighting
 
 " Auto completion stuff
-filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 " Enable dictionary completion
@@ -188,7 +188,6 @@ set completeopt=menuone,menu,longest,preview
 
 " Automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-
 
 " Python
 let g:python_host_prog = '/usr/bin/python2'
@@ -273,6 +272,9 @@ command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
 
 " Vim sudo hack
 cmap w!! w !sudo tee > /dev/null %
+
+" Json prettify
+cmap Json %!python -m json.tool
 
 " UltiSnips completion shortcuts
 let g:UltiSnipsExpandTrigger="<c-j>"

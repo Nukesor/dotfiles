@@ -34,7 +34,7 @@ bindsym $mod+Control+t exec thunderbird
 # start nautilus
 bindsym $mod+Control+d exec pcmanfm
 # Screenshot
-bindsym $mod+Control+s exec scrot -u ~/screenshot$(date +%s%3N).png
+bindsym $mod+Control+s exec ~/.scripts/screenshot
 # start pidgin
 bindsym $mod+Control+m exec telegram-desktop
 # start qalculate
@@ -55,11 +55,6 @@ set $ws7 "7: music"
 set $ws8 "8"
 set $ws9 "9: chats"
 set $ws10 "10: mail"
-
-#German Layout
-bindsym $mod+Shift+q exec ~/.scripts/changeLanguage deutsch
-#US Layout
-bindsym $mod+Shift+w exec ~/.scripts/changeLanguage english
 
 # kill focused window
 bindsym $mod+F4 kill
@@ -177,6 +172,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # lock screen
 bindsym $mod+Control+p exec /home/nuke/.scripts/i3lock-blur
+bindsym Mod5+Control+p exec /home/nuke/.scripts/i3lock-blur
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"

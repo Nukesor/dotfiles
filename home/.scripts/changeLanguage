@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [ "$1" == "english" ]; then
-    setxkbmap us -option caps:escape
-elif [ "$1" == "deutsch" ]; then
-    setxkbmap de -option caps:escape
-fi
