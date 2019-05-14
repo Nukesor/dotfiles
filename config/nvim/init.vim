@@ -58,6 +58,9 @@ Plug 'tpope/vim-surround'
 " Navigation
 Plug 'vim-scripts/a.vim'
 
+" New CtrlP
+Plug 'nukesor/ctrlp-rs.vim'
+
 " CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_max_depth = 40
@@ -71,7 +74,7 @@ let g:ctrlp_switch_buffer = 0
 Plug 'tacahiroy/ctrlp-funky'
 :nnoremap fu :CtrlPFunky<Cr>
 
-"CPSM matching
+" CPSM matching
 Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
 " Use CPSM for file finding
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
@@ -209,7 +212,7 @@ let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
 " YCM config
-let g:ycm_python_binary_path = './venv/bin/python3'
+let g:ycm_python_binary_path = '/bin/python'
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 "let g:ycm_extra_conf_globlist = ['~/prj/*']
 let g:ycm_goto_buffer_command = 'vertical-split'

@@ -108,9 +108,9 @@ bindsym Control+$mod+h workspace prev
 bindsym Control+$mod+l workspace next
 
 # Backlight
-bindsym $mod+Shift+F1 exec "pactl set-sink-volume 1 0 & pactl set-sink-volume 0 0"
-bindsym $mod+Shift+F2 exec "pactl set-sink-volume 1 -2% & pactl set-sink-volume 0 -2%"
-bindsym $mod+Shift+F3 exec "pactl set-sink-volume 1 +2% & pactl set-sink-volume 0 +2%"
+bindsym $mod+Shift+F1 exec "pactl set-sink-volume 0 0 & pactl set-sink-volume 1 0 & pactl set-sink-volume 2 0"
+bindsym $mod+Shift+F2 exec "pactl set-sink-volume 0 -2% & pactl set-sink-volume 1 -4% & pactl set-sink-volume 2 -4%"
+bindsym $mod+Shift+F3 exec "pactl set-sink-volume 0 +2% & pactl set-sink-volume 1 +4% & pactl set-sink-volume 2 +4%"
 
 bindsym $mod+Shift+F5 exec ~/.scripts/backlight down
 bindsym $mod+Shift+F6 exec ~/.scripts/backlight up
