@@ -1,55 +1,114 @@
 call plug#begin(expand('~/.config/nvim/plug/'))
 
 " Language support
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'justinmk/vim-syntax-extra'
+Plug 'tfnico/vim-gradle'
 Plug 'rust-lang/rust.vim'
-Plug 'nvie/vim-flake8'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'lifepillar/pgsql.vim'
-Plug 'cespare/vim-toml'
-Plug 'ElmCast/elm-vim'
+Plug 'lervag/vimtex'
+Plug 'pearofducks/ansible-vim'
+Plug 'sudar/vim-arduino-syntax'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'guns/vim-clojure-static'
+Plug 'kchmck/vim-coffee-script'
+Plug 'JulesWang/css.vim'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'tpope/vim-git'
+Plug 'tikhomirov/vim-glsl'
+Plug 'fatih/vim-go'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'othree/html5.vim'
+Plug 'digitaltoad/vim-jade'
 Plug 'Glench/Vim-Jinja2-Syntax'
-
-    " Template and Markdown
-    Plug 'Shutnik/jshint2.vim'
-    Plug 'chase/vim-ansible-yaml'
-    Plug 'lervag/vim-latex'
-    Plug 'plasticboy/vim-markdown', {'depends': 'godlygeek/tabular'}
-
-    " Frontend
-    Plug 'pangloss/vim-javascript'
-    Plug 'othree/html5.vim'
-    Plug 'hail2u/vim-css3-syntax'
-
+Plug 'sheerun/vim-json'
+Plug 'groenewege/vim-less'
+Plug 'nginx/nginx', {'rtp': 'contrib/vim'}
+Plug 'zah/nim.vim'
+Plug 'petRUShka/vim-opencl'
+Plug 'vim-perl/vim-perl'
+Plug 'StanAngeloff/php.vim'
+Plug 'uarun/vim-protobuf'
+Plug 'rodjek/vim-puppet'
+Plug 'mitsuhiko/vim-python-combined'
+Plug 'peterhoeg/vim-qml'
+Plug 'vim-ruby/vim-ruby'
+Plug 'kurayama/systemd-vim-syntax'
+Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
+Plug 'Firef0x/PKGBUILD.vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+Plug 'chase/vim-ansible-yaml'
 
 " Looks
 Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
-
-" Rainbow parenthesis
+Plug 'ap/vim-css-color'
+Plug 'Valloric/MatchTagAlways'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
-" HTML matching tag highlighting
-"Plug 'Valloric/MatchTagAlways'
-
-" Tools
-Plug 'jremmen/vim-ripgrep'
-
 " Functionality
+Plug 'jremmen/vim-ripgrep'
 Plug 'michaeljsmith/vim-indent-object'
-"Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'xuhdev/vim-latex-live-preview'
-Plug 'bronson/vim-visual-star-search'
+Plug 'vim-scripts/SQLUtilities'
+Plug 'mhinz/neovim-remote'
+Plug 'vim-scripts/a.vim'
+Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'w0rp/ale'
+Plug 'vim-scripts/taglist.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'nixprime/cpsm', { 'do': './install.sh' }
+Plug 'dyng/ctrlsf.vim'
+Plug 'thinca/vim-quickrun'
+Plug 'sjl/gundo.vim'
+Plug 'mattn/emmet-vim'
+Plug 'godlygeek/tabular'
+
+" NCM2
+Plug 'roxma/nvim-yarp' | Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-html-subscope'
+Plug 'ncm2/ncm2-markdown-subscope'
+Plug 'Chiel92/vim-autoformat'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'metakirby5/codi.vim'
+Plug 'bronson/vim-visual-star-search'
+Plug 'machakann/vim-highlightedyank'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+
+Plug 'junegunn/fzf'
+
+" LanguageClient
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+\ }
+
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Git support
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'jreybert/vimagit'
 Plug 'airblade/vim-gitgutter'
-Plug 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 
 " Editing
 Plug 'tomtom/tcomment_vim'
@@ -57,50 +116,16 @@ Plug 'tpope/vim-surround'
 
 " Navigation
 Plug 'vim-scripts/a.vim'
-
-" New CtrlP
-Plug 'nukesor/ctrlp-rs.vim'
-
-" CtrlP
-Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_max_depth = 40
-let g:ctrlp_max_files = 20000
-let g:ctrlp_dotfiles = 1
-let g:ctrlp_custom_ignore = 'target\|venv\|vendor\|node_modules\|DS_Store\|\.git\|elm-stuff'
-let g:ctrlp_working_path_mode='.'
-let g:ctrlp_switch_buffer = 0
-
-" Ctrlp-funky
-Plug 'tacahiroy/ctrlp-funky'
-:nnoremap fu :CtrlPFunky<Cr>
-
-" CPSM matching
-Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
-" Use CPSM for file finding
-let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
 
-" Syntax checking support
-Plug 'w0rp/ale'
-
-" Formatting
-Plug 'Chiel92/vim-autoformat'
-Plug 'vim-scripts/SQLUtilities'
-Plug 'vim-scripts/Align'
-
-" Auto completion
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --system-libclang --system-boost --racer-completer --all' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-
+Plug 'nukesor/ctrlp-rs.vim'
 call plug#end()
 
 " Required:
 filetype plugin indent on
-
-" Setting Runtimepath for jshint
-set runtimepath+=~/.vim/bundle/jshint2.vim/
 
 " Basics settings
 set showmatch           " show matching brackets (),{},[]
@@ -119,7 +144,7 @@ set spelllang=en_us,de
 
 
 set backspace=2         " full backspacing capabilities
-set shortmess+=I        " disable the welcome screen
+set shortmess+=c        " disable the welcome screen
 set clipboard=unnamedplus  " yank and copy to X clipboard
 set ww=<,>,[,]          " whichwrap -- left/right keys can traverse up/down
 
@@ -181,20 +206,41 @@ set smartcase           " upper-case sensitive search
 " Syntax highlighting
 syntax on               " enable syntax highlighting
 
+" Disable auto commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Auto completion stuff
 set ofu=syntaxcomplete#Complete
 
 " Enable dictionary completion
 set complete+=k
 
-set completeopt=menuone,menu,longest,preview
+set completeopt=noinsert,menuone,noselect
 
 " Automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
-" Python
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+
+" ncm2
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" CtrlP
+let g:ctrlp_max_depth = 40
+let g:ctrlp_max_files = 20000
+let g:ctrlp_working_path_mode='.'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_user_command = 'rg %s --files -i --color=never --glob ''!.git'' --glob ''!.DS_Store'' --glob ''!node_modules'' --glob ''!vendor'' --glob ''!target'' --no-messages --hidden -g ""'
+" CPSM matching
+" Use CPSM for file finding
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+
+" Ctrlp-funky
+:nnoremap fu :CtrlPFunky<Cr>
+let g:ctrlp_funky_matchtype = 'path'
+let g:ctrlp_funky_syntax_highlight = 1
 
 " Nerd tree ignores
 let NERDTreeIgnore=['__pycache__', '\~$']
@@ -211,40 +257,44 @@ let g:airline_section_z = ''
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
-" YCM config
-let g:ycm_python_binary_path = '/bin/python'
-let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
-"let g:ycm_extra_conf_globlist = ['~/prj/*']
-let g:ycm_goto_buffer_command = 'vertical-split'
-let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu//lib/rustlib/src/rust/src/'
 
-" Ale linter
+" LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rls'],
+    \ 'python': ['pyls'],
+    \ 'sh': ['bash-language-server', 'start'],
+    \ 'c': ['clangd'],
+    \ 'cpp': ['clangd'],
+    \ 'cuda': ['clangd'],
+    \ 'obcj': ['clangd'],
+    \ 'java': ['jdtls', '-data', getcwd()],
+    \ 'php': ['jdtls', '-data', getcwd()],
+    \ }
 
-let g:ale_linters = {
-\   'python': ['flake8'],
-\   'rust': ['cargo']
-\}
+let $RUST_BACKTRACE = 1
+let g:LanguageClient_loggingLevel = 'WARNING'
+let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/LanguageClient.log')
+let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
 
-" Postgres syntax
-let g:sql_type_default = 'pgsql'
+function SetLSPShortcuts()
+  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+endfunction()
+
+augroup LSP
+  autocmd!
+  autocmd FileType rust,python,dart,sh,c,cpp,cude,obj,java call SetLSPShortcuts()
+augroup END
 
 " Vim git gutter
 let g:gitgutter_max_signs = 20000
 
-" Disable auto commenting
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Restore position
-autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-augroup END
-
 " Python specific configs
-    autocmd FileType python let python_highlight_all = 1
-    autocmd FileType python let python_highlight_space_errors = 1
-    autocmd FileType python let python_slow_sync = 1
+autocmd FileType python let python_highlight_all = 1
+autocmd FileType python let python_highlight_space_errors = 1
+autocmd FileType python let python_slow_sync = 1
 
 " Map keys
     " Map ; to :
@@ -255,15 +305,15 @@ augroup END
     vnoremap <silent> <C-S>         <C-C>:update<CR>
     inoremap <silent> <C-S>         <C-O>:update<CR>
 
-        " Disable F1 help
+    " Disable F1 help
     :nmap <F1> :echo<CR>
     :imap <F1> <C-o>:echo<CR>
 
-    :map <C-]> :YcmCompleter GoTo<CR>
-    :map <F8> :Tagbar <CR>
+    inoremap <c-c> <ESC>
 
-" Open help vertically by typing :Help .
-command -nargs=* -complete=help Help vertical belowright help <args>
+    " ncm2 keys
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Split shortcuts
 command V vsplit | A
@@ -273,18 +323,13 @@ command T tabnew
 command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
 command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
 
-" Vim sudo hack
-cmap w!! w !sudo tee > /dev/null %
-
-" Json prettify
-cmap Json %!python -m json.tool
-
 " UltiSnips completion shortcuts
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
+autocmd FileType help unmap <C-]>
+" Vim sudo hack
+cmap w!! w !sudo tee > /dev/null %
 
 " Set Colors
 hi CtrlPLinePre ctermbg=red ctermfg=red
-
