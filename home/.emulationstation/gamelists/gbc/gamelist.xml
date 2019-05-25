@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<gameList>
+	<game>
+		<path>./pokemon_yellow_version.gbc</path>
+		<name>pokemon_yellow_version</name>
+		<playcount>1</playcount>
+		<lastplayed>20190525T172545</lastplayed>
+	</game>
+	<game>
+		<path>./pokeon_red_version.gb</path>
+		<name>pokeon_red_version</name>
+		<playcount>2</playcount>
+		<lastplayed>20190525T172654</lastplayed>
+	</game>
+</gameList>

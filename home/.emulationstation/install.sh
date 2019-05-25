@@ -3,6 +3,13 @@ yay -S emulationstation emulationstation-autoscraper --noconfirm
 # Emulators:
 sudo pacman -S retroarch libretro-shaders-cg --noconfirm
 
+# Bluetooth setup
+sudo pacman -S bluez bluez-utils --noconfirm
+sudo pacman -S blueman --noconfirm
+
+# XBox 360 Wireless
+yay -S xboxdrv --noconfirm
+
 # retro arch cores
 # Nintendo 3DS:
 sudo pacman -S libretro-citra --noconfirm
