@@ -120,7 +120,7 @@ alias disca='sudo netctl stop-all'
 
 # df Human readable
 alias dfh='df -h -x tmpfs'
-alias dud='du -ahl -d 1'
+alias dud='du -ahl -d 1 | sort -h'
 alias dirsize='du -ahl -d 0'
 
 # Git
