@@ -114,7 +114,7 @@ alias svim='sudo nvim'
 alias vimupdate='vim +Pluginstall +qall'
 
 # Netctl
-alias co='sudo netctl start'
+alias co='sudo netctl stop-all && sudo netctl start'
 alias disco='sudo netctl stop'
 alias disca='sudo netctl stop-all'
 
@@ -178,10 +178,11 @@ __gflist() {
 function printuni() {
     file=$1
     printer='g122_fa4'
+#    printer='g122_sw4'
     read "answer?Are you sure you want to print ${file} on ${printer}? (y/n):"
     if [[ $answer == 'y' ]] ; then
         echo 'Ok, printing'
-        cat "$file" | ssh 2beer@rzssh1.informatik.uni-hamburg.de lpr -P$printer -o sides=one-sided
+        cat "$file" | ssh 2beer@rzh lpr -P$printer -o sides=one-sided
     else
         echo 'Ok, not printing'
     fi

@@ -62,7 +62,6 @@ Plug 'xuhdev/vim-latex-live-preview'
 Plug 'vim-scripts/SQLUtilities'
 Plug 'mhinz/neovim-remote'
 Plug 'vim-scripts/a.vim'
-Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'w0rp/ale'
@@ -74,32 +73,32 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'nixprime/cpsm', { 'do': './install.sh' }
 Plug 'dyng/ctrlsf.vim'
-Plug 'thinca/vim-quickrun'
 Plug 'sjl/gundo.vim'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
+Plug 'Chiel92/vim-autoformat'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'metakirby5/codi.vim'
+Plug 'bronson/vim-visual-star-search'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'junegunn/fzf'
 
 " NCM2
 Plug 'roxma/nvim-yarp' | Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-racer'
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'ncm2/ncm2-html-subscope'
 Plug 'ncm2/ncm2-markdown-subscope'
-Plug 'Chiel92/vim-autoformat'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'metakirby5/codi.vim'
-Plug 'bronson/vim-visual-star-search'
-Plug 'machakann/vim-highlightedyank'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-
-Plug 'junegunn/fzf'
 
 " LanguageClient
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
 \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -215,7 +214,6 @@ set ofu=syntaxcomplete#Complete
 " Enable dictionary completion
 set complete+=k
 
-set completeopt=noinsert,menuone,noselect
 
 " Automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -224,13 +222,17 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 " ncm2
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+" NOTE: you need to install completion sources to get completions. Check
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+
 
 " CtrlP
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 20000
 let g:ctrlp_working_path_mode='.'
+let g:ctrlp_mruf_relative = 1
 let g:ctrlp_use_caching = 0
-let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_user_command = 'rg %s --files -i --color=never --glob ''!.git'' --glob ''!.DS_Store'' --glob ''!node_modules'' --glob ''!vendor'' --glob ''!target'' --no-messages --hidden -g ""'
 " CPSM matching

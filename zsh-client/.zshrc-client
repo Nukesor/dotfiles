@@ -23,3 +23,5 @@ alias sj='ssh jarvis'
 
 PATH=$PATH:$HOME/.screenlayout/
 PATH=$PATH:$HOME/go/bin:$HOME/.screenlayout/
+
+source ~/.scripts/set_keyboard_layout
