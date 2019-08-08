@@ -44,7 +44,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
-Plug 'chase/vim-ansible-yaml'
 
 " Looks
 Plug 'bling/vim-airline'
@@ -263,7 +262,7 @@ let g:airline_section_warning = ''
 " LanguageClient-neovim
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rls'],
-    \ 'python': ['pyls'],
+    \ 'python': ['/usr/bin/pyls'],
     \ 'sh': ['bash-language-server', 'start'],
     \ 'c': ['clangd'],
     \ 'cpp': ['clangd'],
@@ -274,14 +273,14 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 let $RUST_BACKTRACE = 1
-let g:LanguageClient_loggingLevel = 'WARNING'
+let g:LanguageClient_loggingLevel = 'DEBUG'
 let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/LanguageClient.log')
 let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
 
 function SetLSPShortcuts()
   nnoremap <F5> :call LanguageClient_contextMenu()<CR>
   nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
   nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 endfunction()
 
@@ -299,23 +298,24 @@ autocmd FileType python let python_highlight_space_errors = 1
 autocmd FileType python let python_slow_sync = 1
 
 " Map keys
-    " Map ; to :
-    map ; :
+" Map ; to :
+map ; :
 
-    " Save with CTRL + S
-    noremap <silent> <C-S>          :update<CR>
-    vnoremap <silent> <C-S>         <C-C>:update<CR>
-    inoremap <silent> <C-S>         <C-O>:update<CR>
+" Save with CTRL + S
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
 
-    " Disable F1 help
-    :nmap <F1> :echo<CR>
-    :imap <F1> <C-o>:echo<CR>
+" Disable F1 help
+:nmap <F1> :echo<CR>
+:imap <F1> <C-o>:echo<CR>
 
-    inoremap <c-c> <ESC>
+inoremap <c-c> <ESC>
 
-    " ncm2 keys
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" ncm2 keys
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 
 " Split shortcuts
 command V vsplit | A
@@ -324,6 +324,7 @@ command H split | A
 command T tabnew
 command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
 command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
+command Spell set spell spellang=en_us
 
 " UltiSnips completion shortcuts
 let g:UltiSnipsExpandTrigger="<c-j>"

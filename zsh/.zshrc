@@ -129,6 +129,7 @@ alias gls='git ls'
 alias gpu='git push origin -u'
 alias gpo='git remote prune origin'
 alias gitv="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g;s/v//'"
+alias watch='watch -c'
 alias watchgit='watch -d -n 5 -c git pull'
 alias rsync='rsync --recursive --partial --perms --progress'
 alias arsync='rsync -a --partial --perms --progress'
