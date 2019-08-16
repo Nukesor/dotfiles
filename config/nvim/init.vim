@@ -1,6 +1,7 @@
 call plug#begin(expand('~/.config/nvim/plug/'))
 
 " Language support
+Plug 'w0rp/ale'
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'justinmk/vim-syntax-extra'
@@ -63,7 +64,6 @@ Plug 'mhinz/neovim-remote'
 Plug 'vim-scripts/a.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'w0rp/ale'
 Plug 'vim-scripts/taglist.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -274,8 +274,11 @@ let g:LanguageClient_serverCommands = {
 
 let $RUST_BACKTRACE = 1
 let g:LanguageClient_loggingLevel = 'DEBUG'
+let g:LanguageClient_useVirtualText = 0
+let g:LanguageClient_autoStart = 1
 let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/LanguageClient.log')
 let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
+let g:LanguageClient_diagnosticsList = 'Disabled'
 
 function SetLSPShortcuts()
   nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -310,6 +313,9 @@ inoremap <silent> <C-S>         <C-O>:update<CR>
 :nmap <F1> :echo<CR>
 :imap <F1> <C-o>:echo<CR>
 
+" Enable spell
+:nmap <F8> :set spell spellang=en_us <CR>
+
 inoremap <c-c> <ESC>
 
 " ncm2 keys
@@ -324,7 +330,6 @@ command H split | A
 command T tabnew
 command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
 command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
-command Spell set spell spellang=en_us
 
 " UltiSnips completion shortcuts
 let g:UltiSnipsExpandTrigger="<c-j>"
