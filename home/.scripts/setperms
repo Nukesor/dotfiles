@@ -27,11 +27,6 @@ cd /srv/files/books
 find -type d -exec chmod 02755 {} \;
 find -type f -exec chmod 644 {} \;
 
-cd /srv/files/talks
-chown plex:files -R /srv/files/talks
-find -type d -exec chmod 02755 {} \;
-find -type f -exec chmod 644 {} \;
-
 cd /srv/files/trash_movies
 chown plex:files -R /srv/files/talks
 find -type d -exec chmod 02755 {} \;
@@ -44,5 +39,5 @@ find -type f -exec chmod 664 {} \;
 cd /srv/files/games
 find -type d -exec chmod 02755 {} \;
 
-cd /srv/files/programs
+cd /srv/files/apps
 find -type d -exec chmod 02755 {} \;
