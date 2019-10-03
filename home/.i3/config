@@ -43,6 +43,7 @@ bindsym $mod+Control+q exec qalculate-gtk
 bindsym $mod+Control+u exec rofi-pass
 # start dmenu
 bindsym $mod+F2 exec rofi -show run -theme /usr/share/rofi/themes/android_notification
+bindsym $mod+F3 exec rofi -show window -theme /usr/share/rofi/themes/android_notification
 
 #Workspace renaming volume
 set $ws1 "1: debug"
