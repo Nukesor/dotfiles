@@ -81,9 +81,6 @@ alias tew='tmux new -s'
 alias tat='tmux attach -t'
 alias till='tmux kill-session -t'
 
-#SSH
-alias ssh="TERM='xterm-256color' ssh"
-
 #Pueue and encarne
 alias pad='pueue add'
 alias pst='pueue status'
@@ -126,3 +123,5 @@ bindkey "^g" __gflist
 
 eval "$(dircolors -b ~/.dircolors)"
 eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
+
+export TERM='xterm-256color'
