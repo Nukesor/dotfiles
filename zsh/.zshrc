@@ -121,7 +121,6 @@ function printuni() {
 zle -N __gflist
 bindkey "^g" __gflist
 
-eval "$(dircolors -b ~/.dircolors)"
 eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
 
 export TERM='xterm-256color'
