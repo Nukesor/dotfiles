@@ -172,7 +172,7 @@ set showcmd             " show incomplete command at bottom of screen
 filetype plugin on
 
 " Wrap like other editors
-set wrap                " word wrap
+set nowrap                " word wrap
 set lbr                 " line break
 set display=lastline    " don't display @ with long paragraphs
 
@@ -267,6 +267,7 @@ let g:airline_section_warning = ''
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rls'],
     \ 'python': ['/usr/bin/pyls'],
+    \ 'javascript': ['/usr/bin/javascript-typescript-langserver'],
     \ 'sh': ['bash-language-server', 'start'],
     \ 'c': ['clangd'],
     \ 'cpp': ['clangd'],

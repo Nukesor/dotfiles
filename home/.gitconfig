@@ -27,3 +27,9 @@
 
 [difftool]
     prompt = false
+
+[pager]
+    # diff-highlight is script provided by git that shows word-by-word diff
+    log  = /usr/share/git/diff-highlight/diff-highlight | less
+    show = /usr/share/git/diff-highlight/diff-highlight | less
+    diff = /usr/share/git/diff-highlight/diff-highlight | less
