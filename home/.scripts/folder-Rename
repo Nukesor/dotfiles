@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # First Parameter: New file names for instance `asdf`
 # Second Parameter: If given, this will be the new file extension `.jpg`

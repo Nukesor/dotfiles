@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 file1="/tmp/i3lock-blur.png"
 file2="/tmp/i3lock-blur_temp.png"
