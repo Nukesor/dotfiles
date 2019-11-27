@@ -46,6 +46,7 @@ alias j='fasd_cd -d'
 
 #Various
 alias sys='sudo systemctl'
+alias systatus='systemctl --type=service --all'
 alias logs='sudo journalctl -f'
 alias dstat='dstat -tdnclmpry'
 alias pong='ping -D google.de'

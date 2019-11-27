@@ -29,6 +29,7 @@ Plug 'pangloss/vim-javascript'
 " Looks
 Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
+Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ap/vim-css-color'
 Plug 'Valloric/MatchTagAlways'
 Plug 'luochen1990/rainbow'
