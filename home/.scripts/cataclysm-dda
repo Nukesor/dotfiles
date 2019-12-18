@@ -1,6 +1,4 @@
 #!/bin/bash
-set -euo pipefail
-
 current=$(pwd)
 save_dir=$HOME/.cataclysm-dda
 

@@ -83,12 +83,13 @@ alias tat='tmux attach -t'
 alias till='tmux kill-session -t'
 
 #Pueue and encarne
-alias pad='pueue add'
+alias pad='pueue add --'
 alias pst='pueue status'
 alias pt='pueue show | tail'
 
 # Youtube dl
 alias yd='youtube-dl -f bestvideo+bestaudio --output "%(title)s.%(ext)s"'
+alias ydp='youtube-dl -f bestvideo+bestaudio --output "%(playlist_index)s-%(title)s.%(ext)s"'
 alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
 
 [[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
