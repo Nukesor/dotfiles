@@ -218,6 +218,7 @@ let g:ctrlp_max_files = 20000
 let g:ctrlp_working_path_mode='.'
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_use_caching = 0
+let g:ctrlp_switch_buffer = 'v'
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_user_command = 'rg %s --files -i --color=never --glob ''!.git'' --glob ''!.DS_Store'' --glob ''!node_modules'' --glob ''!vendor'' --glob ''!target'' --no-messages --hidden -g ""'
 " CPSM matching
