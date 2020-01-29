@@ -262,7 +262,6 @@ let g:LanguageClient_serverCommands = {
 
 let $RUST_BACKTRACE = 1
 let g:LanguageClient_loggingLevel = 'DEBUG'
-let g:LanguageClient_useVirtualText = 0
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/LanguageClient.log')
 let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
