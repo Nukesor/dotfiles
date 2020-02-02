@@ -26,7 +26,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a termite
-bindsym $mod+Control+k exec termite
+bindsym $mod+Control+k exec WINIT_HIDPI_FACTOR=1 alacritty
 # start firefox
 bindsym $mod+Control+i exec firefox
 # start Thunderbird
