@@ -72,6 +72,7 @@ alias duh='du -ahl -d 1 | sort -h'
 alias dud='du -ahl -d 0'
 
 # Git
+alias gb='git branch'
 alias glg='git lg'
 alias gls='git ls'
 alias gpu='git push origin -u'
