@@ -313,7 +313,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Split shortcuts
 command V vsplit | A
-command S vsplit | A
 command H split | A
 command T tabnew
 command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
