@@ -25,7 +25,6 @@ Plug 'stephpy/vim-yaml'
 Plug 'Firef0x/PKGBUILD.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'pangloss/vim-javascript'
-Plug 'xolox /vim-lua-ftplugin'
 
 " Looks
 Plug 'bling/vim-airline'

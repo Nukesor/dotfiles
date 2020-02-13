@@ -74,6 +74,7 @@ alias dud='du -ahl -d 0'
 # Git
 alias gb='git branch'
 alias glg='git lg'
+alias gcm='git commit -m'
 alias gls='git ls'
 alias gpu='git push origin -u'
 alias gpo='git remote prune origin'

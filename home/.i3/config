@@ -25,8 +25,9 @@ floating_modifier $mod
 # mouse floating causing no longer change of window focus
 focus_follows_mouse no
 
-# start a termite
-bindsym $mod+Control+k exec WINIT_HIDPI_FACTOR=1 alacritty
+# start a terminal
+#bindsym $mod+Control+k exec WINIT_HIDPI_FACTOR=1 alacritty
+bindsym $mod+Control+k exec termite
 # start firefox
 bindsym $mod+Control+i exec firefox
 # start Thunderbird
@@ -42,8 +43,8 @@ bindsym $mod+Control+q exec qalculate-gtk
 # start rofi-pass
 bindsym $mod+Control+u exec rofi-pass
 # start dmenu
-bindsym $mod+F2 exec rofi -show run -theme /usr/share/rofi/themes/android_notification
-bindsym $mod+F3 exec rofi -show window -theme /usr/share/rofi/themes/android_notification
+bindsym $mod+d exec rofi -show run -theme /usr/share/rofi/themes/android_notification
+bindsym $mod+s exec rofi -show window -theme /usr/share/rofi/themes/android_notification
 
 #Workspace renaming volume
 set $ws1 "1: debug"
@@ -58,7 +59,7 @@ set $ws9 "9: chats"
 set $ws10 "10: mail"
 
 # kill focused window
-bindsym $mod+F4 kill
+bindsym $mod+x kill
 
 # change focus
 bindsym $mod+h focus left
@@ -94,7 +95,7 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
-bindsym $mod+d focus child
+bindsym $mod+z focus child
 
 # Move Window to Worksapace
 bindsym $mod+Shift+comma move workspace to output down
