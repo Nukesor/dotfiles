@@ -25,6 +25,7 @@ Plug 'stephpy/vim-yaml'
 Plug 'Firef0x/PKGBUILD.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'pangloss/vim-javascript'
+Plug 'vim-vdebug/vdebug'
 
 " Looks
 Plug 'bling/vim-airline'
@@ -268,10 +269,10 @@ let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.l
 let g:LanguageClient_diagnosticsList = 'Disabled'
 
 function SetLSPShortcuts()
-  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+  nnoremap <F7> :call LanguageClient_contextMenu()<CR>
   nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
   nnoremap <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+"  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 endfunction()
 
 augroup LSP
