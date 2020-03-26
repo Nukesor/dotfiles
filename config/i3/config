@@ -35,7 +35,7 @@ bindsym $mod+Control+t exec thunderbird
 # start nautilus
 bindsym $mod+Control+d exec pcmanfm
 # Screenshot
-bindsym $mod+Control+s exec ~/.scripts/screenshot
+bindsym $mod+Control+s exec ~/.bin/screenshot
 # start pidgin
 bindsym $mod+Control+m exec telegram-desktop
 # start qalculate
@@ -114,11 +114,11 @@ bindsym $mod+Shift+F1 exec "pactl set-sink-volume @DEFAULT_SINK@ 0"
 bindsym $mod+Shift+F2 exec "pactl set-sink-volume @DEFAULT_SINK@ -2%"
 bindsym $mod+Shift+F3 exec "pactl set-sink-volume @DEFAULT_SINK@ +2%"
 
-bindsym $mod+Shift+F5 exec ~/.scripts/backlight down
-bindsym $mod+Shift+F6 exec ~/.scripts/backlight up
-bindsym $mod+Shift+F7 exec ~/.scripts/backlight 0
-bindsym $mod+Shift+F8 exec ~/.scripts/backlight normal
-bindsym $mod+Shift+F9 exec ~/.scripts/backlight max
+bindsym $mod+Shift+F5 exec ~/.bin/backlight down
+bindsym $mod+Shift+F6 exec ~/.bin/backlight up
+bindsym $mod+Shift+F7 exec ~/.bin/backlight 0
+bindsym $mod+Shift+F8 exec ~/.bin/backlight normal
+bindsym $mod+Shift+F9 exec ~/.bin/backlight max
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -173,8 +173,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # lock screen
-bindsym $mod+Control+p exec /home/nuke/.scripts/i3lock-blur
-bindsym Mod5+Control+p exec /home/nuke/.scripts/i3lock-blur
+bindsym $mod+Control+p exec /home/nuke/.bin/i3lock-blur
+bindsym Mod5+Control+p exec /home/nuke/.bin/i3lock-blur
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -198,5 +198,5 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command py3status -c ~/.i3/.i3status.conf
+        status_command py3status
 }

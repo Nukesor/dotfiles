@@ -1,18 +1,16 @@
 .PHONY: ncmpcpp config
 
 basic:
-	mkdir -p ~/.config
-	mkdir -p ~/.config/mpd
+	./init_directories.sh
 	stow -t ~/.config -R config
 	stow -t ~/ -R home
-	stow -t ~/ -R zsh
 
 client: basic
-	stow -t ~/ -R zsh-client
+	stow -t ~/.config/zsh -R client
 
 work: basic client
-	stow -t ~/ -R zsh-work
+	stow -t ~/.config/zsh -R work
 
 server: basic
-	stow -t ~/ -R zsh-server
+	stow -t ~/.config/zsh -R server
 

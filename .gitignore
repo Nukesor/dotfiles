@@ -1,2 +1,5 @@
-home/.weechat/**/*log
-home/.weechat/ecdsa.pem
+*/weechat/**/*log
+*/weechat/ecdsa.pem
+
+config/zsh/.zcompdump
+config/zsh/.zgen

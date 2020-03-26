@@ -233,6 +233,7 @@ let g:ctrlp_funky_syntax_highlight = 1
 
 " Nerd tree ignores
 let NERDTreeIgnore=['__pycache__', '\~$']
+let g:NERDTreeBookmarksFile = '$HOME/.cache/NERDTreeBookmarks'
 command -nargs=* NERD NERDTree <args>
 
 " Airline configuration

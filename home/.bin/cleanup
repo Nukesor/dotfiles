@@ -1,0 +1,19 @@
+#!/bin/bash
+rm -rf ~/Desktop
+
+# Cache stuff
+rm -rf ~/.pkg-cache
+rm -rf ~/.cmake
+rm -rf ~/.subversion
+
+# History stuff
+rm -rf ~/.wget-hsts
+rm -rf ~/.NERDTreeBookmarks
+rm -rf ~/.bash_history
+
+# Java stuff
+rm -rf ~/.java
+rm -rf ~/.gradle
+
+# Wtf
+rm -rf ~/.esd_auth

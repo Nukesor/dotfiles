@@ -1,5 +1,5 @@
 #zgen stuff
-source "$HOME/.zsh/zgen/zgen.zsh"
+source "$ZDOTDIR/zgen/zgen.zsh"
 source "/usr/share/fzf/key-bindings.zsh"
 source "/usr/share/fzf/completion.zsh"
 
@@ -20,8 +20,7 @@ autoload -U compinit && compinit
 autoload -U promptinit && promptinit
 
 # History
-HISTFILE=~/.zsh_history
-HISTSIZE=8000
+HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 setopt inc_append_history   # write to history immediately
 setopt hist_ignore_dups     # ignore second instance of same event
@@ -80,6 +79,7 @@ alias gpu='git push origin -u'
 alias gpo='git remote prune origin'
 
 #Tmux
+alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias tew='tmux new -s'
 alias tat='tmux attach -t'
 alias till='tmux kill-session -t'
@@ -94,9 +94,9 @@ alias yd='youtube-dl -f bestvideo+bestaudio --output "%(title)s.%(ext)s"'
 alias ydp='youtube-dl -f bestvideo+bestaudio --output "%(playlist_index)s-%(title)s.%(ext)s"'
 alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
 
-[[ -r $HOME/.zshrc-client ]] && source $HOME/.zshrc-client
-[[ -r $HOME/.zshrc-work   ]] && source $HOME/.zshrc-work
-[[ -r $HOME/.zshrc-server ]] && source $HOME/.zshrc-server
+[[ -r $ZDOTDIR/.zshrc-client ]] && source $ZDOTDIR/.zshrc-client
+[[ -r $ZDOTDIR/.zshrc-work   ]] && source $ZDOTDIR/.zshrc-work
+[[ -r $ZDOTDIR/.zshrc-server ]] && source $ZDOTDIR/.zshrc-server
 
 # Stage files multi-selected modified files
 __gflist() {

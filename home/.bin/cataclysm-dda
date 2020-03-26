@@ -1,8 +1,7 @@
 #!/bin/bash
 current=$(pwd)
-save_dir=$HOME/.cataclysm-dda
-
-build_dir=$save_dir/cataclysm-dda
+save_dir=$HOME/.local/share/cataclysm-dda
+build_dir=$HOME/.cache/cataclysm-dda
 
 
 if [ ! -d "$save_dir" ]; then
@@ -17,7 +16,7 @@ cd $build_dir
 if [ "$1" == "build" ]; then
     commit_hash=$(git rev-parse HEAD)
     git pull
-    make RELEASE=1 TILES=1 USE_HOME_DIR=1 CLANG=1 LUA=1 LTO=1 CCACHE=1 LOCALIZE=0 -j9
+    make RELEASE=1 TILES=1 USE_XDG_DIR=1 CLANG=1 LUA=1 LTO=1 CCACHE=1 LOCALIZE=0 -j9
     if [ $? -eq 0 ]; then
         touch $save_dir/clean-hashes
         grep $commit_hash $save_dir/clean-hashes

@@ -24,7 +24,7 @@ order += "tztime local"
 
 
 #external_script {
-#    script_path = "~/.scripts/pueuestatus"
+#    script_path = "~/.bin/pueuestatus"
 #}
 
 # Disk status
