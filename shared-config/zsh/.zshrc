@@ -94,9 +94,9 @@ alias yd='youtube-dl -f bestvideo+bestaudio --output "%(title)s.%(ext)s"'
 alias ydp='youtube-dl -f bestvideo+bestaudio --output "%(playlist_index)s-%(title)s.%(ext)s"'
 alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
 
-[[ -r $ZDOTDIR/.zshrc-client ]] && source $ZDOTDIR/.zshrc-client
-[[ -r $ZDOTDIR/.zshrc-work   ]] && source $ZDOTDIR/.zshrc-work
-[[ -r $ZDOTDIR/.zshrc-server ]] && source $ZDOTDIR/.zshrc-server
+[[ -r $ZDOTDIR/zshrc-client ]] && source $ZDOTDIR/zshrc-client
+[[ -r $ZDOTDIR/zshrc-work   ]] && source $ZDOTDIR/zshrc-work
+[[ -r $ZDOTDIR/zshrc-server ]] && source $ZDOTDIR/zshrc-server
 
 # Stage files multi-selected modified files
 __gflist() {

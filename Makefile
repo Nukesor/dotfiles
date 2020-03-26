@@ -2,15 +2,15 @@
 
 basic:
 	./init_directories.sh
-	stow -t ~/.config -R config
-	stow -t ~/ -R home
+	stow -t ~/.config -R shared-config
+	stow -t ~/ -R shared-home
 
 client: basic
-	stow -t ~/.config/zsh -R client
+	stow -t ~/.config -R client-config
 
 work: basic client
-	stow -t ~/.config/zsh -R work
+	stow -t ~/.config -R work-config
 
 server: basic
-	stow -t ~/.config/zsh -R server
+	stow -t ~/.config -R server-config
 
