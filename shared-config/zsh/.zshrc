@@ -16,7 +16,7 @@ if ! zgen saved; then
 fi
 
 # General configuration
-autoload -U compinit && compinit
+autoload -U compinit && compinit -d ~/.cache/zsh/zcompdump
 autoload -U promptinit && promptinit
 
 # History
