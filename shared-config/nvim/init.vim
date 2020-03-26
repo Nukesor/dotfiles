@@ -188,7 +188,7 @@ set smartcase           " upper-case sensitive search
 syntax on               " enable syntax highlighting
 
 " Disable auto commenting
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+"autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Auto completion stuff
 set ofu=syntaxcomplete#Complete
