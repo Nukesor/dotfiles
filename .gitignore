@@ -1,5 +1,5 @@
 */weechat/**/*log
 */weechat/ecdsa.pem
 
-shared-config/zsh/.zcompdump
+.zcompdump
 shared-config/zsh/.zgen
