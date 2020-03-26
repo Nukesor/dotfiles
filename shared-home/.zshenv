@@ -17,6 +17,7 @@ export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 # Cache cleanup
+export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump
 export _FASD_DATA=$XDG_CACHE_HOME/fasd/fasd_history
 export CARGO_HOME=$XDG_CACHE_HOME/cargo
 export LESSHISTFILE=-

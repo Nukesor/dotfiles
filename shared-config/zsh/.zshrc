@@ -3,6 +3,8 @@ source "$ZDOTDIR/zgen/zgen.zsh"
 source "/usr/share/fzf/key-bindings.zsh"
 source "/usr/share/fzf/completion.zsh"
 
+autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump
+
 if ! zgen saved; then
     echo "Creating a zgen save"
 
@@ -16,7 +18,7 @@ if ! zgen saved; then
 fi
 
 # General configuration
-autoload -U compinit && compinit -d ~/.cache/zsh/zcompdump
+autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 autoload -U promptinit && promptinit
 
 # History
