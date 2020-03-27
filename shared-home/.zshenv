@@ -17,12 +17,14 @@ export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 # Cache cleanup
-export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump
-export _FASD_DATA=$XDG_CACHE_HOME/fasd/fasd_history
-export CARGO_HOME=$XDG_CACHE_HOME/cargo
 export LESSHISTFILE=-
-export CCACHE_DIR=$XDG_CACHE_HOME/ccache
+export _FASD_DATA=$XDG_CACHE_HOME/fasd/fasd_history
+export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
+export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite_history
 
+export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump
+export CARGO_HOME=$XDG_CACHE_HOME/cargo
+export CCACHE_DIR=$XDG_CACHE_HOME/ccache
 export ANSIBLE_LOCAL_TEMP=$XDG_CACHE_HOME/ansible/tmp
 export ANSIBLE_SSH_CONTROL_PATH_DIR=$XDG_CACHE_HOME/ansible/cp
 
@@ -31,7 +33,6 @@ export HISTFILE=$XDG_DATA_HOME/zsh/history
 export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
-
 
 # Runtime cleanup
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
