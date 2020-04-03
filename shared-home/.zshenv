@@ -1,6 +1,6 @@
 # Path setup
 path=($path $HOME/.bin)
-path=($path $HOME/.cargo/bin)
+path=($path $HOME/.cache/cargo/bin)
 path=($path ./bin)
 path=($path ./node_modules/.bin)
 
@@ -15,6 +15,7 @@ export WEECHAT_HOME=$XDG_CONFIG_HOME/weechat
 export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
 export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 # Cache cleanup
 export LESSHISTFILE=-
@@ -39,7 +40,7 @@ export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 
 # Vim setup
-export EDITOR=vim
+export EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 

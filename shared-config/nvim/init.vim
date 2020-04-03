@@ -65,6 +65,9 @@ Plug 'bronson/vim-visual-star-search'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'junegunn/fzf'
 
+" Formatting
+Plug 'psf/black'
+
 " NCM2
 Plug 'roxma/nvim-yarp' | Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
@@ -285,6 +288,7 @@ augroup END
 let g:gitgutter_max_signs = 20000
 
 " Python specific configs
+autocmd BufWritePre *.py execute ':Black'
 autocmd FileType python let python_highlight_all = 1
 autocmd FileType python let python_highlight_space_errors = 1
 autocmd FileType python let python_slow_sync = 1
