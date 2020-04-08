@@ -288,7 +288,7 @@ augroup END
 let g:gitgutter_max_signs = 20000
 
 " Python specific configs
-autocmd BufWritePre *.py execute ':Black'
+"autocmd BufWritePre *.py execute ':Black'
 autocmd FileType python let python_highlight_all = 1
 autocmd FileType python let python_highlight_space_errors = 1
 autocmd FileType python let python_slow_sync = 1
