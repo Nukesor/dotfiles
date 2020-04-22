@@ -103,7 +103,10 @@ alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --outp
 # Stage files multi-selected modified files
 __gflist() {
     local files=$(git ls-files -m)
-    local selection=( $($(__fzfcmd) -m --preview 'git diff --color {} | diff-so-fancy' <<< $files) )
+    local selection=( $($(__fzfcmd) -m \
+        --preview 'git diff --color {} | diff-so-fancy' \
+        --preview-window up:60%  \
+        --bind=ctrl-j:down,ctrl-k:up,ctrl-l:preview-down,ctrl-h:preview-up,q:abort <<< $files) )
 
     LBUFFER="${LBUFFER} ${selection}"
     local ret=$?

@@ -50,7 +50,6 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'vim-scripts/taglist.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Lokaltog/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'nixprime/cpsm', { 'do': './install.sh' }
@@ -199,6 +198,8 @@ set ofu=syntaxcomplete#Complete
 " Enable dictionary completion
 set complete+=k
 
+:let mapleader = ","
+
 
 " Automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -215,6 +216,8 @@ set completeopt=noinsert,menuone,noselect
 " NOTE: you need to install completion sources to get completions. Check
 " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
 
+" Easymotion
+map <Leader> <Plug>(easymotion-prefix)
 
 " CtrlP
 let g:ctrlp_max_depth = 40
@@ -315,13 +318,10 @@ inoremap <c-c> <ESC>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-
-" Split shortcuts
+" Split/tab shortcuts
 command V vsplit | A
 command H split | A
 command T tabnew
-command U set tabstop=4 | set shiftwidth=4 | set softtabstop=4
-command I set tabstop=2 | set shiftwidth=2 | set softtabstop=2
 
 " UltiSnips completion shortcuts
 let g:UltiSnipsExpandTrigger="<c-j>"

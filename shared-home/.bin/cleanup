@@ -2,6 +2,7 @@
 rm -rf ~/Desktop
 
 # Cache stuff
+rm -rf ~/.ansible
 rm -rf ~/.pkg-cache
 rm -rf ~/.cmake
 rm -rf ~/.subversion

@@ -1,6 +1,6 @@
 # Path setup
-path=($path $HOME/.bin)
-path=($path $HOME/.cache/cargo/bin)
+path=($HOME/.bin $path)
+path=($HOME/.cache/cargo/bin $path)
 path=($path ./bin)
 path=($path ./node_modules/.bin)
 
@@ -26,8 +26,6 @@ export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite_history
 export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump
 export CARGO_HOME=$XDG_CACHE_HOME/cargo
 export CCACHE_DIR=$XDG_CACHE_HOME/ccache
-export ANSIBLE_LOCAL_TEMP=$XDG_CACHE_HOME/ansible/tmp
-export ANSIBLE_SSH_CONTROL_PATH_DIR=$XDG_CACHE_HOME/ansible/cp
 
 # Data cleanup
 export HISTFILE=$XDG_DATA_HOME/zsh/history
