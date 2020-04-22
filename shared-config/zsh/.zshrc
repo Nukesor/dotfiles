@@ -106,7 +106,7 @@ __gflist() {
     local selection=( $($(__fzfcmd) -m \
         --preview 'git diff --color {} | diff-so-fancy' \
         --preview-window up:60%  \
-        --bind=ctrl-j:down,ctrl-k:up,ctrl-l:preview-down,ctrl-h:preview-up,q:abort <<< $files) )
+        --bind=ctrl-j:down,ctrl-k:up,ctrl-l:preview-down,ctrl-h:preview-up,q:abort,tab:toggle,ctrl-i:toggle,ctrl-p:toggle-preview <<< $files) )
 
     LBUFFER="${LBUFFER} ${selection}"
     local ret=$?
