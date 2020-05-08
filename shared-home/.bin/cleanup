@@ -6,11 +6,15 @@ rm -rf ~/.ansible
 rm -rf ~/.pkg-cache
 rm -rf ~/.cmake
 rm -rf ~/.subversion
+rm -rf ~/.dotnet
+rm -rf ~/.ipfs
+rm -rf ~/.nuget
 
 # History stuff
 rm -rf ~/.wget-hsts
 rm -rf ~/.NERDTreeBookmarks
 rm -rf ~/.bash_history
+rm -rf ~/.python_history
 
 # Java stuff
 rm -rf ~/.java
