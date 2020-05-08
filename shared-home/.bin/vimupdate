@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ~/.config/nvim/plug/cpsm
+
+./install.sh
