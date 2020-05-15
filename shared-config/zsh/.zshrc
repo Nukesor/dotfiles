@@ -87,8 +87,10 @@ alias till='tmux kill-session -t'
 
 #Pueue and encarne
 alias pad='pueue add --'
+alias padh='pueue add -g hdd --'
+alias padc='pueue add -g cpu --'
 alias pst='pueue status'
-alias pt='pueue show | tail'
+alias pt='pueue follow'
 
 # Youtube dl
 alias yd='youtube-dl -f bestvideo+bestaudio --output "%(title)s.%(ext)s"'
