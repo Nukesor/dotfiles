@@ -2,6 +2,7 @@
 path=($HOME/.bin $path)
 path=($HOME/.cache/cargo/bin $path)
 path=($path ./bin)
+path=($path $HOME/.screenlayout)
 path=($path ./node_modules/.bin)
 
 # XDG Setup

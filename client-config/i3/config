@@ -200,3 +200,5 @@ bindsym $mod+r mode "resize"
 bar {
         status_command py3status
 }
+
+exec --no-startup-id picom -b

@@ -10,8 +10,6 @@ alias hotspot="sudo create_ap $(get-wlan-interface) $(get-ethernet-interface) lo
 alias xclipx='xclip -selection c'
 alias noblank='xset s off && xset -dpms && xset s noblank'
 
-alias steam="firejail --private=/home/nuke/.cache/steam steam"
-
 # mpd & ncmpcpp
 alias jarvis='ncmpcpp -h arne.beer'
 
