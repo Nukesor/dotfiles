@@ -1,10 +1,10 @@
 "----------------------------------------------  Plugin initialization ----------------------------------------------
-"
+
 call plug#begin(expand('~/.config/nvim/plug/'))
 "----- Programming language support ------
-    " NCM2
-    " NOTE: you need to install completion sources to get completions. Check
-    " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+" NCM2
+" NOTE: you need to install completion sources to get completions. Check
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
 Plug 'roxma/nvim-yarp' | Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
@@ -12,7 +12,7 @@ Plug 'ncm2/ncm2-jedi'
 Plug 'ncm2/ncm2-racer'
 Plug 'ncm2/ncm2-markdown-subscope'
 
-    " LanguageClient
+" LanguageClient
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -71,7 +71,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'vim-scripts/taglist.vim'
 
 " Formatting
-Plug 'psf/black'
+Plug 'psf/black', { 'branch': 'stable' }
 "Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
@@ -83,9 +83,12 @@ filetype plugin indent on
 "----- NCM2 ------
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
+" Enable logging for vim. Good for ncm2 debugging
+"let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
+"let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
 
+" :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
 " keys
 inoremap <c-c> <ESC>
 " Use <TAB> to select the popup menu:
@@ -194,10 +197,6 @@ set listchars=tab:→,trail:¸ " show trail spaces and tabstchars
 
 :let mapleader = ","    " Set the map leader for custom commands
 
-" Enable logging for vim
-let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
-let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
-
 
 "----- Functionality ------
 " Spell checking
@@ -261,7 +260,7 @@ set smartcase           " upper-case sensitive search
 
 "----- Languages ------
 " Python specific configs
-"autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py execute ':Black'
 autocmd FileType python let python_highlight_all = 1
 autocmd FileType python let python_highlight_space_errors = 1
 autocmd FileType python let python_slow_sync = 1
