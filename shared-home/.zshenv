@@ -45,3 +45,6 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 # Rust init
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src
+
+# Styling
+export GTK_THEME=Advaita:dark
