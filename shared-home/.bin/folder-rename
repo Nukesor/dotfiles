@@ -1,12 +1,7 @@
 #!/bin/bash
-set -euo pipefail
-
 # First Parameter: New file names for instance `asdf`
 # Second Parameter: If given, this will be the new file extension `.jpg`
 # Example: `folder-rename test .jpg` would result in => test1.jpg, test2.jpg..
-
-IFS='
-'
 
 if [ -n "$1" ]; then
     echo "Renaming all Files in Directory"
@@ -28,18 +23,15 @@ if [ -n "$1" ]; then
         extension="${file##*.}"
         if [ -z "$2" ] ; then
             echo "moving $file to ${name}$seperator$extension"
+            mv $file ${name}.$extension
         elif [ "dry" = "$2" ] ; then
             echo "moving $file to ${name}$seperator$extension"
         else
-            echo "moving $file to $name$2"
+            echo "moving $file to $name.$2"
+            mv $file ${name}.$2
         fi
         # If third parameter exists this script will perform a dry run
         # Second parameter becomes file ending
-        if [ -z "$2" ] ; then
-            mv $file ${name}.$extension
-        elif [ "dry" != "$2" ] ; then
-            mv $file ${name}.$2
-        fi
         #Incrementing var
         ((var++))
     done
