@@ -33,7 +33,7 @@ bindsym $mod+Control+i exec firefox
 # start Thunderbird
 bindsym $mod+Control+t exec thunderbird
 # start nautilus
-bindsym $mod+Control+d exec termite -e ranger ~/
+bindsym $mod+Control+d exec nemo
 # Screenshot
 bindsym $mod+Control+s exec ~/.bin/screenshot
 # start pidgin
@@ -202,3 +202,4 @@ bar {
 }
 
 exec --no-startup-id picom -b
+exec ./bin/set_keyboard_layout

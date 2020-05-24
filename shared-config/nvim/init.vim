@@ -83,6 +83,7 @@ filetype plugin indent on
 "----- NCM2 ------
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
+autocmd TextChangedI * call ncm2#auto_trigger()
 " Enable logging for vim. Good for ncm2 debugging
 "let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 "let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
@@ -91,7 +92,8 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 " keys
 inoremap <c-c> <ESC>
-" Use <TAB> to select the popup menu:
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" Use <TAB> to select an item in the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
@@ -101,10 +103,6 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['/usr/bin/pyls'],
     \ 'javascript': ['/usr/bin/javascript-typescript-langserver'],
     \ 'sh': ['bash-language-server', 'start'],
-    \ 'c': ['clangd'],
-    \ 'cpp': ['clangd'],
-    \ 'cuda': ['clangd'],
-    \ 'obcj': ['clangd'],
     \ 'java': ['jdtls', '-data', getcwd()],
     \ 'php': ['jdtls', '-data', getcwd()],
     \ }
@@ -173,13 +171,13 @@ let g:gitgutter_max_signs = 20000
 
 "----------------------------------------------  Vim internal options ----------------------------------------------
 "----- Basics settings ------
-set shell=zsh           " set zsh as standart vim shell
-set history=100         " 100 lines of command line history
+set shell=zsh                   " set zsh as standart vim shell
+set history=100                 " 100 lines of command line history
 set encoding=utf-8
 set fileencoding=utf-8
-set backspace=indent,eol    " full backspacing capabilities
-set clipboard=unnamedplus   " yank and copy to X clipboard
-set shortmess+=c            " disable the welcome screen
+set backspace=indent,eol,start  " full backspacing capabilities
+set clipboard=unnamedplus       " yank and copy to X clipboard
+set shortmess+=c                " disable the welcome screen
 
 " Backup settings
 set noswapfile          " don't create a swap file
@@ -260,7 +258,7 @@ set smartcase           " upper-case sensitive search
 
 "----- Languages ------
 " Python specific configs
-autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py silent! execute ':Black'
 autocmd FileType python let python_highlight_all = 1
 autocmd FileType python let python_highlight_space_errors = 1
 autocmd FileType python let python_slow_sync = 1

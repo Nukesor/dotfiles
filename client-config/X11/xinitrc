@@ -34,4 +34,3 @@ fi
 
 feh --no-fehbg --bg-scale ~/.local/bg.jpg
 exec i3
-./bin/set_keyboard_layout

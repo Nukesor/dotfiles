@@ -1,0 +1,12 @@
+#!/bin/bash
+
+game=$1
+allGames=( 'heroes' )
+
+if [ "$game" == "heroes" ]; then
+    cd ~/.wine/drive_c/GOG\ Games/Heroes\ of\ Might\ and\ Magic\ 4\ Complete/
+    WINEPREFIX=~/.wine32 WINEARCH=win32 wine heroes4.exe
+    cd ~/
+else
+    echo "Available games are:" ${allGames[*]}
+fi
