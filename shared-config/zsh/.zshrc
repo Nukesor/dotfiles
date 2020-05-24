@@ -1,10 +1,11 @@
-#zgen stuff
+# -------------------- External plugin init --------------------
 source "$ZDOTDIR/zgen/zgen.zsh"
 source "/usr/share/fzf/key-bindings.zsh"
 source "/usr/share/fzf/completion.zsh"
 
 autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 
+# -------------------- Packages --------------------
 if ! zgen saved; then
     echo "Creating a zgen save"
 
@@ -17,7 +18,8 @@ if ! zgen saved; then
     zgen save
 fi
 
-# General configuration
+
+# -------------------- General configuration --------------------
 autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 autoload -U promptinit && promptinit
 
@@ -35,28 +37,37 @@ setopt hist_ignore_space    # ignore entries with leading space
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=002,bold'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
 
-# Aliases
+# -------------------- Aliases --------------------
+#Various
+alias dstat='dstat -tdnclmpry'
+alias grep='grep --color=auto'
+alias pong='ping -D google.de'
+alias spacman='sudo pacman'
+alias mksrcinfo='updpkgsums && makepkg --printsrcinfo > .SRCINFO'
+alias watch='watch -c'
+alias sdi='/usr/bin/sd'
+
+# Systemctl
+alias sys='sudo systemctl'
+alias systatus='systemctl --type=service --all'
+alias logs='sudo journalctl -u'
+
+# Rsync
+alias rsync='rsync --recursive --partial --perms --progress'
+alias arsync='rsync -a --partial --perms --progress'
+
+# Ls
 alias ls='ls --color=auto'
 alias lh='ls -lh'
 alias la='ls -alh'
-alias grep='grep --color=auto'
 
 # fasd
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 
-#Various
-alias sys='sudo systemctl'
-alias systatus='systemctl --type=service --all'
-alias logs='sudo journalctl -f'
-alias dstat='dstat -tdnclmpry'
-alias pong='ping -D google.de'
-alias spacman='sudo pacman'
-alias mksrcinfo='updpkgsums && makepkg --printsrcinfo > .SRCINFO'
-alias watch='watch -c'
-alias rsync='rsync --recursive --partial --perms --progress'
-alias arsync='rsync -a --partial --perms --progress'
-alias sdi='/usr/bin/sd'
+# Tar
+alias tarz='tar -I zstd -cvf'
+alias untarz='tar -I zstd -xvf'
 
 # Vim
 alias nvim='vim -c NERD'
@@ -101,6 +112,7 @@ alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --outp
 [[ -r $ZDOTDIR/zshrc-work   ]] && source $ZDOTDIR/zshrc-work
 [[ -r $ZDOTDIR/zshrc-server ]] && source $ZDOTDIR/zshrc-server
 
+# -------------------- Custom functions--------------------
 # Stage files multi-selected modified files
 __gflist() {
     local files=$(git ls-files -m)
@@ -114,23 +126,11 @@ __gflist() {
     return $ret
 }
 
-function printuni() {
-    file=$1
-    printer='g122_fa4'
-#    printer='g122_sw4'
-    read "answer?Are you sure you want to print ${file} on ${printer}? (y/n):"
-    if [[ $answer == 'y' ]] ; then
-        echo 'Ok, printing'
-        cat "$file" | ssh 2beer@rzh lpr -P$printer -o sides=one-sided
-    else
-        echo 'Ok, not printing'
-    fi
-}
-
+# -------------------- Key bindings --------------------
 # Bind it to CTRL-g
 zle -N __gflist
 bindkey "^g" __gflist
 
+# -------------------- Other stuff --------------------
 eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
-
 export TERM='xterm-256color'
