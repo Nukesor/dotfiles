@@ -35,6 +35,6 @@ eval $rotate_command
 if [ $? -eq 0 ]; then
     mv $temp_file $file
 else
-    echo "FAILED MOTHERFUCKER!!!"
+    echo "Errored"
 fi
 
