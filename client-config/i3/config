@@ -201,5 +201,5 @@ bar {
         status_command py3status
 }
 
-exec --no-startup-id picom -b
+#exec --no-startup-id picom -b
 exec ./bin/set_keyboard_layout

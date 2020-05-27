@@ -23,6 +23,7 @@ export LESSHISTFILE=-
 export _FASD_DATA=$XDG_CACHE_HOME/fasd/fasd_history
 export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
 export SQLITE_HISTORY=$XDG_CACHE_HOME/sqlite_history
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 
 export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump
 export CARGO_HOME=$XDG_CACHE_HOME/cargo
@@ -33,6 +34,7 @@ export HISTFILE=$XDG_DATA_HOME/zsh/history
 export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
+export WINEPREFIX=$XDG_DATA_HOME/wine
 
 # Runtime cleanup
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority

@@ -3,6 +3,9 @@
 game=$1
 allGames=( 'heroes' )
 
+mkdir -p ~/.wine
+mkdir -p ~/.wine32
+
 if [ "$game" == "heroes" ]; then
     cd ~/.wine/drive_c/GOG\ Games/Heroes\ of\ Might\ and\ Magic\ 4\ Complete/
     WINEPREFIX=~/.wine32 WINEARCH=win32 wine heroes4.exe
