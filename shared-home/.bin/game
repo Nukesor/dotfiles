@@ -3,13 +3,13 @@
 game=$1
 allGames=( 'heroes' )
 
-mkdir -p ~/.wine
-mkdir -p ~/.wine32
+mkdir -p $XDG_DATA_HOME/wine
+mkdir -p $XDG_DATA_HOME/wine32
 
 if [ "$game" == "heroes" ]; then
-    cd ~/.wine/drive_c/GOG\ Games/Heroes\ of\ Might\ and\ Magic\ 4\ Complete/
-    WINEPREFIX=~/.wine32 WINEARCH=win32 wine heroes4.exe
+    cd $XDG_DATA_HOME/wine32/drive_c/GOG\ Games/Heroes\ of\ Might\ and\ Magic\ 4\ Complete/
+    WINEPREFIX=$XDG_DATA_HOME/wine32 WINEARCH=win32 wine heroes4.exe
     cd ~/
 else
-    echo "Available games are:" ${allGames[*]}
+    echo "Available games are: " ${allGames[*]}
 fi
