@@ -115,6 +115,7 @@ bindsym $mod+Shift+F2 exec "pactl set-sink-volume @DEFAULT_SINK@ -2%"
 bindsym $mod+Shift+F3 exec "pactl set-sink-volume @DEFAULT_SINK@ +2%"
 bindsym $mod+F1 exec ~/.bin/change-sink 1
 bindsym $mod+F2 exec ~/.bin/change-sink 2
+bindsym $mod+F3 exec ~/.bin/change-sink 0
 
 bindsym $mod+Shift+F8 exec ~/.bin/backlight down
 bindsym $mod+Shift+F9 exec ~/.bin/backlight up

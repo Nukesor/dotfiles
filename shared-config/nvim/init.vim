@@ -2,28 +2,16 @@
 
 call plug#begin(expand('~/.config/nvim/plug/'))
 "----- Programming language support ------
-" NCM2
-" NOTE: you need to install completion sources to get completions. Check
-" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-Plug 'roxma/nvim-yarp' | Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-racer'
-Plug 'ncm2/ncm2-markdown-subscope'
-
-" LanguageClient
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-\ }
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-json'
+Plug 'neoclide/coc-python'
+Plug 'fannheyward/coc-rust-analyzer'
 
 "----- Other language support ------
 " Markup/Data structure support
-"Plug 'sheerun/vim-json'
-"Plug 'cespare/vim-toml'
-"Plug 'stephpy/vim-yaml'
+Plug 'sheerun/vim-json'
+Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
 "Plug 'mustache/vim-mustache-handlebars'
 
 " Tools
@@ -47,6 +35,10 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'junegunn/fzf'
 Plug 'sjl/gundo.vim'
+
+" Completion
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Git support
 Plug 'tpope/vim-fugitive'
@@ -80,51 +72,58 @@ call plug#end()
 filetype plugin indent on
 
 "----------------------------------------------  Plugin Config ----------------------------------------------
-"----- NCM2 ------
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-autocmd TextChangedI * call ncm2#auto_trigger()
-" Enable logging for vim. Good for ncm2 debugging
-"let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
-"let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+:let mapleader = ","    " Set the map leader for custom commands
 
-" :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-" keys
-inoremap <c-c> <ESC>
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-" Use <TAB> to select an item in the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"----- Coc ------
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <C-j> pumvisible() ? "\<C-n>" :<SID>check_back_space() ? "\<C-j>" :coc#refresh()
+inoremap <expr><C-k> pumvisible() ? "\<C-k>" : "\<C-h>"
 
-"----- LanguageClient ------
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rls'],
-    \ 'python': ['/usr/bin/pyls'],
-    \ 'javascript': ['/usr/bin/javascript-typescript-langserver'],
-    \ 'sh': ['bash-language-server', 'start'],
-    \ 'java': ['jdtls', '-data', getcwd()],
-    \ 'php': ['jdtls', '-data', getcwd()],
-    \ }
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-let $RUST_BACKTRACE = 1
-let g:LanguageClient_loggingLevel = 'DEBUG'
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/LanguageClient.log')
-let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
-let g:LanguageClient_diagnosticsList = 'Disabled'
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 
-function SetLSPShortcuts()
-  nnoremap <F7> :call LanguageClient_contextMenu()<CR>
-  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-endfunction()
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-augroup LSP
-  autocmd!
-  autocmd FileType rust,python,dart,sh,c,cpp,cude,obj,java call SetLSPShortcuts()
-augroup END
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
 
 "----- Easymotion ------
 map <Leader> <Plug>(easymotion-prefix)
@@ -178,6 +177,7 @@ set fileencoding=utf-8
 set backspace=indent,eol,start  " full backspacing capabilities
 set clipboard=unnamedplus       " yank and copy to X clipboard
 set shortmess+=c                " disable the welcome screen
+set updatetime=300              " Milliseconds to swap file write
 
 " Backup settings
 set noswapfile          " don't create a swap file
@@ -192,8 +192,6 @@ set shiftwidth=4        " allows the use of < and > for VISUAL indenting
 set softtabstop=4       " counts n spaces when DELETE or BCKSPCE is used
 set autoindent          " auto indents next new line
 set listchars=tab:→,trail:¸ " show trail spaces and tabstchars
-
-:let mapleader = ","    " Set the map leader for custom commands
 
 
 "----- Functionality ------
