@@ -3,9 +3,9 @@
 call plug#begin(expand('~/.config/nvim/plug/'))
 "----- Programming language support ------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-json'
-Plug 'neoclide/coc-python'
-Plug 'fannheyward/coc-rust-analyzer'
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 
 "----- Other language support ------
 " Markup/Data structure support
@@ -75,10 +75,10 @@ filetype plugin indent on
 :let mapleader = ","    " Set the map leader for custom commands
 
 "----- Coc ------
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <C-j> pumvisible() ? "\<C-n>" :<SID>check_back_space() ? "\<C-j>" :coc#refresh()
 inoremap <expr><C-k> pumvisible() ? "\<C-k>" : "\<C-h>"
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -104,8 +104,35 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Local action menu
+xmap <leader>la <Plug>(coc-codeaction-selected)
+" Word action menu
+nmap <leader>wa :call <SID>show_word_code_actions()<CR>
+xmap <leader>wa :call <SID>show_word_code_actions()<CR>
+" Buffer (file) action menu
+nmap <leader>ba <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf <Plug>(coc-fix-current)
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+" organize imports of the current buffer.
+nmap <leader>o <Plug>(coc-action-organizeImport)
+" format current buffer.
+nmap <leader>f <Plug>(coc-action-format)
+" List workspace symbols.
+nmap <leader>s  <Plug>(coc-list-symbols)
+" Do default action for next item.
+nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_word_code_actions()
+    execute "normal! viw"
+    execute "visual! '<,'>CocAction()"
+endfunction
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -115,18 +142,8 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-
 "----- Easymotion ------
-map <Leader> <Plug>(easymotion-prefix)
+"map <Leader> <Plug>(easymotion-prefix)
 
 "----- CtrlP ------
 let g:ctrlp_max_depth = 40
