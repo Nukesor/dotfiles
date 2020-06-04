@@ -6,6 +6,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 
 "----- Other language support ------
 " Markup/Data structure support
@@ -131,7 +132,7 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_word_code_actions()
     execute "normal! viw"
-    execute "visual! '<,'>CocAction()"
+    <Plug>(coc-codeaction-selected)
 endfunction
 
 function! s:show_documentation()

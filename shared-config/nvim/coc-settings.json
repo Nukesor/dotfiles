@@ -1,4 +1,7 @@
 {
-	"python.jediEnabled": false,
-    "rust-analyzer.serverPath": "/usr/bin/rust-analyzer"
+    "python.jediEnabled": false,
+    "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
+    "markdownlint.config": {
+        "line_length": false
+    }
 }

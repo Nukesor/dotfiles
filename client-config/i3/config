@@ -117,9 +117,9 @@ bindsym $mod+F1 exec ~/.bin/change-sink 1
 bindsym $mod+F2 exec ~/.bin/change-sink 2
 bindsym $mod+F3 exec ~/.bin/change-sink 0
 
-bindsym $mod+Shift+F8 exec ~/.bin/backlight down
-bindsym $mod+Shift+F9 exec ~/.bin/backlight up
-bindsym $mod+Shift+F10 exec ~/.bin/backlight normal
+bindsym $mod+Shift+F5 exec ~/.bin/backlight down
+bindsym $mod+Shift+F6 exec ~/.bin/backlight up
+bindsym $mod+Shift+F7 exec ~/.bin/backlight normal
 
 # switch to workspace
 bindsym $mod+1 workspace 1
