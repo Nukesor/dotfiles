@@ -108,6 +108,9 @@ alias yd='youtube-dl -f bestvideo+bestaudio --output "%(title)s.%(ext)s"'
 alias ydp='youtube-dl -f bestvideo+bestaudio --output "%(playlist_index)s-%(title)s.%(ext)s"'
 alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
 
+# Json formatting
+alias jsonformat='python -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=4))" <'
+
 [[ -r $ZDOTDIR/zshrc-client ]] && source $ZDOTDIR/zshrc-client
 [[ -r $ZDOTDIR/zshrc-work   ]] && source $ZDOTDIR/zshrc-work
 [[ -r $ZDOTDIR/zshrc-server ]] && source $ZDOTDIR/zshrc-server
