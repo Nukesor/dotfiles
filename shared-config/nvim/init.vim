@@ -34,7 +34,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'junegunn/fzf'
 Plug 'sjl/gundo.vim'
 
 " Completion
@@ -54,14 +53,12 @@ Plug 'tpope/vim-surround'
 
 " Navigation
 Plug 'bronson/vim-visual-star-search'
-Plug 'jremmen/vim-ripgrep'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tacahiroy/ctrlp-funky'
-Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
 Plug 'dyng/ctrlsf.vim'
 Plug 'vim-scripts/taglist.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Formatting
 Plug 'psf/black', { 'branch': 'stable' }
@@ -143,29 +140,25 @@ function! s:show_documentation()
   endif
 endfunction
 
+"----- fzf ------
+nnoremap <C-p> :Files<Cr>
+
+" use proximity-sort to make sure that files are sorted according
+function! s:list_cmd()
+  let base = fnamemodify(expand('%'), ':h:.:S')
+  return base == '.' ? 'fd -t f' : printf('fd -t f | proximity-sort %s', expand('%'))
+endfunction
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': s:list_cmd(),
+  \                               'options': '--tiebreak=index'}), <bang>0)
+
+
+"----- ctrlsf ------
+nmap <C-k> <Plug>CtrlSFPrompt
+
 "----- Easymotion ------
 "map <Leader> <Plug>(easymotion-prefix)
-
-"----- CtrlP ------
-let g:ctrlp_max_depth = 40
-let g:ctrlp_max_files = 20000
-let g:ctrlp_working_path_mode='.'
-let g:ctrlp_mruf_relative = 1
-let g:ctrlp_use_caching = 0
-let g:ctrlp_switch_buffer = 'v'
-let g:ctrlp_extensions = ['funky']
-let g:ctrlp_user_command = 'rg %s --files -i --color=never --glob ''!.git'' --glob ''!.DS_Store'' --glob ''!node_modules'' --glob ''!vendor'' --glob ''!target'' --no-messages --hidden -g ""'
-" Some special CTRLP styling
-"hi CtrlPLinePre ctermbg=red ctermfg=red
-
-" CPSM matching
-" Use CPSM for file finding
-let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-
-" Ctrlp-funky
-:nnoremap fu :CtrlPFunky<Cr>
-let g:ctrlp_funky_matchtype = 'path'
-let g:ctrlp_funky_syntax_highlight = 1
 
 "----- NERDTree ------
 let NERDTreeIgnore=['__pycache__', '\~$']
