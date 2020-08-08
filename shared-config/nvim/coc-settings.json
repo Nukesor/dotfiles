@@ -1,5 +1,6 @@
 {
     "python.jediEnabled": false,
+    "python.venvPath": "/home/nuke/.cache/pypoetry/virtualenvs",
     "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
     "markdownlint.config": {
         "line_length": false
