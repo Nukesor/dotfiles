@@ -154,7 +154,7 @@ endfunction
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': s:list_cmd(),
-  \                               'options': '--tiebreak=index'}), <bang>0)
+  \                               'options': '--tiebreak=index --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort'}), <bang>0)
 
 
 "----- ctrlsf ------
@@ -292,6 +292,6 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 :nnoremap <F8> :set spell spellang=en_us <CR>
 
 " Split/tab shortcuts
-command V vsplit | A
-command H split | A
-command T tabnew
+nmap <leader>v :vsplit<CR>
+nmap <leader>h :split<CR>
+nmap <leader>t :tabnew<CR>

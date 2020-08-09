@@ -50,3 +50,6 @@ export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src
 
 # Styling
 export GTK_THEME=Advaita:dark
+
+# Convenience stuff
+export RC=$ZDOTDIR/.zshrc
