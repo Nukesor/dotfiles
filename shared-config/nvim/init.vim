@@ -2,6 +2,7 @@
 
 call plug#begin(expand('~/.config/nvim/plug/'))
 "----- Programming language support ------
+Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
@@ -70,9 +71,21 @@ call plug#end()
 filetype plugin indent on
 
 "----------------------------------------------  Plugin Config ----------------------------------------------
-:let mapleader = ","    " Set the map leader for custom commands
+let mapleader = ","    " Set the map leader for custom commands
 
 "----- Coc ------
+" Some servers have issues with backup files, see #649.
+set nowritebackup
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+    " Recently vim can merge signcolumn and number column into one
+    set signcolumn=number
+else
+    set signcolumn=yes
+endif
+
 inoremap <silent><expr> <C-j> pumvisible() ? "\<C-n>" :<SID>check_back_space() ? "\<C-j>" :coc#refresh()
 inoremap <expr><C-k> pumvisible() ? "\<C-k>" : "\<C-h>"
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
@@ -82,17 +95,17 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 command! -nargs=0 Format :call CocAction('format')
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -108,7 +121,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Hover code action menu
+" Buffer code action menu
 nmap <leader>af <Plug>(coc-codeaction)
 " Selected code action menu
 nmap <leader>al <Plug>(coc-codeaction-line)
@@ -127,7 +140,7 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>o <Plug>(coc-action-organizeImport)
 
 " List workspace symbols.
-nmap <leader>s  <Plug>(coc-list-symbols)
+nmap <leader>s <Plug>(coc-list-symbols)
 
 " Do default action for next item.
 nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
@@ -137,17 +150,12 @@ nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-function! s:show_word_code_actions()
-    execute "normal! viw"
-    <Plug>(coc-codeaction-selected)
-endfunction
-
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
 
 "----- fzf ------
@@ -155,13 +163,13 @@ nnoremap <C-p> :Files<Cr>
 
 " use proximity-sort to make sure that files are sorted according
 function! s:list_cmd()
-  let base = fnamemodify(expand('%'), ':h:.:S')
-  return base == '.' ? 'fd -t f' : printf('fd -t f | proximity-sort %s', expand('%'))
+    let base = fnamemodify(expand('%'), ':h:.:S')
+    return base == '.' ? 'fd -t f' : printf('fd -t f | proximity-sort %s', expand('%'))
 endfunction
 
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': s:list_cmd(),
-  \                               'options': '--tiebreak=index --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort'}), <bang>0)
+            \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': s:list_cmd(),
+            \                               'options': '--tiebreak=index --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort'}), <bang>0)
 
 
 "----- ctrlsf ------
