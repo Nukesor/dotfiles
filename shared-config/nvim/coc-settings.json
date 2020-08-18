@@ -1,6 +1,10 @@
 {
     "python.jediEnabled": false,
     "python.formatting.provider": "black",
+    "python.sortImports.args": [
+        "--profile black"
+    ],
+    "python.sortImports.path": "/usr/bin/isort",
     "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
     "markdownlint.config": {
         "line_length": false

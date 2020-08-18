@@ -1,0 +1,3 @@
+#!/bin/bash
+
+firefox --ssb https://toggl.com/app/timer
