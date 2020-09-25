@@ -1,6 +1,7 @@
 {
     "python.jediEnabled": false,
     "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/usr/bin/black",
     "python.sortImports.args": [
         "--profile black"
     ],

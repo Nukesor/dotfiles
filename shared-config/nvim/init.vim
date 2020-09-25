@@ -169,7 +169,7 @@ endfunction
 
 command! -bang -nargs=? -complete=dir Files
             \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': s:list_cmd(),
-            \                               'options': '--tiebreak=index --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort'}), <bang>0)
+            \                               'options': '--tiebreak=index --bind=ctrl-n:preview-down,ctrl-p:preview-up'}), <bang>0)
 
 
 "----- ctrlsf ------
