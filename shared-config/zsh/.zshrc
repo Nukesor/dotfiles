@@ -61,6 +61,9 @@ alias ls='ls --color=auto'
 alias lh='ls -lh'
 alias la='ls -alh'
 
+# cp
+alias cp='cp --reflink=auto'
+
 # fasd
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
