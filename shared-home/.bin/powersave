@@ -1,5 +1,0 @@
-#!/bin/sh
-
-killall telegram-deskto
-killall py3status
-sudo systemctl stop syncthing@nuke

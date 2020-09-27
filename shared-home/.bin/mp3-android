@@ -1,7 +1,0 @@
-#!/bin/bash
-
-targetdir=/home/syncthing/AndroidCamera/music
-
-mkdir -p $targetdir
-whatmp3 --notorrent -L -w --V0 -o $targetdir $1
-chown syncthing:syncthing -R $targetdir

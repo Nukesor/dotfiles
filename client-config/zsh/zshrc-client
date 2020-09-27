@@ -6,7 +6,6 @@ alias upsups="i3lock-blur && spacman -Syyu --noconfirm ; systemctl suspend"
 
 # Helper
 alias clt='rm -rf ~/.local/share/Trash/* ; rm -rf ~/Desktop'
-alias hotspot="sudo create_ap $(get-wlan-interface) $(get-ethernet-interface) lolnuke atomrofl"
 alias xclipx='xclip -selection c'
 alias noblank='xset s off && xset -dpms && xset s noblank'
 

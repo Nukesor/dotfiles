@@ -1,4 +1,0 @@
-#!/bin/env bash
-
-mkdir -p ~/.cache/steam
-firejail --private=/home/nuke/.cache/steam steam

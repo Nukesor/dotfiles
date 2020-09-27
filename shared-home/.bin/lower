@@ -1,7 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-for file in *; do
-    newname=`echo $file | tr '[A-Z]' '[a-z]'`
-    mv $file $newname
-done
