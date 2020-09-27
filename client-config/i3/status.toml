@@ -1,0 +1,47 @@
+theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "root:"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "custom"
+command = '~/.bin/netinfo'
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "Mem: {Mup}%"
+format_swap = "{SUp}%"
+clickable = false
+
+[[block]]
+block = "cpu"
+format = "{barchart} {utilization}%"
+interval = 1
+info = 80
+warning = 90
+critical = 95
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+info = 7
+warning = 7.5
+critical = 7.9
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
