@@ -1,4 +1,4 @@
-theme = "solarized-dark"
+theme = "modern"
 icons = "awesome"
 
 [[block]]
@@ -37,6 +37,22 @@ format = "{1m}"
 info = 7
 warning = 7.5
 critical = 7.9
+
+[[block]]
+block = "battery"
+device = "BAT0"
+driver = "sysfs"
+allow_missing_battery = true
+hide_missing_battery = true
+format = "Bat0: {percentage}% {time}"
+
+[[block]]
+block = "battery"
+device = "BAT1"
+driver = "sysfs"
+allow_missing_battery = true
+hide_missing_battery = true
+format = "Bat1: {percentage}% {time}"
 
 [[block]]
 block = "sound"
