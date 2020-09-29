@@ -13,7 +13,7 @@ alert = 10.0
 
 [[block]]
 block = "custom"
-command = '~/.bin/netinfo'
+command = '~/.config/i3/scripts/netinfo'
 
 [[block]]
 block = "memory"
@@ -58,5 +58,5 @@ block = "sound"
 
 [[block]]
 block = "time"
-interval = 60
-format = "%a %d-%m-%y %R"
+format = "%a %d-%m-%y %T"
+interval = 1
