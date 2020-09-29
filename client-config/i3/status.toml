@@ -19,7 +19,6 @@ command = '~/.bin/netinfo'
 block = "memory"
 display_type = "memory"
 format_mem = "Mem: {Mup}%"
-format_swap = "{SUp}%"
 clickable = false
 
 [[block]]
@@ -60,4 +59,4 @@ block = "sound"
 [[block]]
 block = "time"
 interval = 60
-format = "%a %d/%m %R"
+format = "%a %d-%m-%y %R"
