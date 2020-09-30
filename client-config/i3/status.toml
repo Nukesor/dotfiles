@@ -61,6 +61,7 @@ buttons = ["prev", "play", "next"]
 
 [[block]]
 block = "sound"
+step_width = 2
 
 [[block]]
 block = "custom"
