@@ -19,4 +19,4 @@ alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
 path=($path $HOME/.local/share/screenlayout)
 path=($path $HOME/go/bin)
 
-source ~/.bin/keyboard-layout
+~/.bin/keyboard-layout en &>/dev/null
