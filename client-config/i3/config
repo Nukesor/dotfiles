@@ -218,4 +218,4 @@ bar {
 }
 
 #exec --no-startup-id picom -b
-exec ./bin/set_keyboard_layout
+exec ./bin/set_keyboard_layout en

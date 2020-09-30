@@ -30,14 +30,6 @@ warning = 90
 critical = 95
 
 [[block]]
-block = "load"
-interval = 1
-format = "{1m}"
-info = 7
-warning = 7.5
-critical = 7.9
-
-[[block]]
 block = "hueshift"
 step = 50
 hue_shifter = "redshift"
@@ -59,7 +51,21 @@ hide_missing = true
 format = "Bat1: {percentage}% {time}"
 
 [[block]]
+block = "music"
+player = "spotify"
+max_width = 15
+marquee = true
+marquee_interval = 10
+marquee_speed = 0.25
+buttons = ["prev", "play", "next"]
+
+[[block]]
 block = "sound"
+
+[[block]]
+block = "custom"
+cycle = ["~/.bin/keyboard-layout en", "~/.bin/keyboard-layout de"]
+json = true
 
 [[block]]
 block = "time"
