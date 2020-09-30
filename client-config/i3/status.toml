@@ -38,19 +38,24 @@ warning = 7.5
 critical = 7.9
 
 [[block]]
+block = "hueshift"
+step = 50
+hue_shifter = "redshift"
+
+[[block]]
 block = "battery"
 device = "BAT0"
 driver = "sysfs"
-allow_missing_battery = true
-hide_missing_battery = true
+allow_missing = true
+hide_missing = true
 format = "Bat0: {percentage}% {time}"
 
 [[block]]
 block = "battery"
 device = "BAT1"
 driver = "sysfs"
-allow_missing_battery = true
-hide_missing_battery = true
+allow_missing = true
+hide_missing = true
 format = "Bat1: {percentage}% {time}"
 
 [[block]]
