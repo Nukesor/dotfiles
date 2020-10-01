@@ -126,7 +126,7 @@ alias jsonformat='python -c "import json, sys, collections; print(json.dumps(jso
 # -------------------- Custom functions--------------------
 # Stage files multi-selected modified files
 __gflist() {
-    local files=$(git ls-files -m)
+    local files=$(git ls-files -m -o -d --exclude-standard | uniq)
     local selection=( $($(__fzfcmd) -m \
         --preview 'git diff --color {} | diff-so-fancy' \
         --preview-window up:60%  \
