@@ -32,7 +32,8 @@
     prompt = false
 
 [pager]
+    log  = bat --style=plain
     # diff-highlight is script provided by git that shows word-by-word diff
-    log  = /usr/share/git/diff-highlight/diff-highlight | less
-    show = /usr/share/git/diff-highlight/diff-highlight | less
-    diff = /usr/share/git/diff-highlight/diff-highlight | less
+    show = /usr/share/git/diff-highlight/diff-highlight | bat --style=changes
+    diff = /usr/share/git/diff-highlight/diff-highlight | bat --style=changes
+    tag = less

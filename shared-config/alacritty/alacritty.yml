@@ -100,7 +100,8 @@
 #tabspaces: 8
 
 # Font configuration
-#font:
+font:
+  size: 9
   # Normal (roman) font face
   #normal:
     # Font family
@@ -618,31 +619,116 @@ schemes:
       cyan:    '0x5c8482'
       white:   '0x828282'
 
-  darkside: &darkside
+  # Colors (Monokai Pro)
+  monokai_pro: &monokai_pro
+    # Default colors
     primary:
-      background: "0x222324"
-      foreground: "0xBABABA"
+      background: '#2D2A2E'
+      foreground: '#FCFCFA'
 
     # Normal colors
     normal:
-      black:    "0x000000"
-      red:      "0xE8341C"
-      green:    "0x68C256"
-      yellow:   "0xF2D42C"
-      blue:     "0x1C98E8"
-      magenta:  "0x8E69C9"
-      cyan:     "0x1C98E8"
-      white:    "0xBABABA"
+      black:   '#403E41'
+      red:     '#FF6188'
+      green:   '#A9DC76'
+      yellow:  '#FFD866'
+      blue:    '#FC9867'
+      magenta: '#AB9DF2'
+      cyan:    '#78DCE8'
+      white:   '#FCFCFA'
 
     # Bright colors
     bright:
-      black:    "0x666666"
-      red:      "0xE05A4F"
-      green:    "0x77B869"
-      yellow:   "0xEFD64B"
-      blue:     "0x387CD3"
-      magenta:  "0x957BBE"
-      cyan:     "0x3D97E2"
-      white:    "0xBABABA"
+      black:   '#727072'
+      red:     '#FF6188'
+      green:   '#A9DC76'
+      yellow:  '#FFD866'
+      blue:    '#FC9867'
+      magenta: '#AB9DF2'
+      cyan:    '#78DCE8'
+      white:   '#FCFCFA'
 
-colors: *darkside
+  # Colors (New Moon)
+  new_moon: &new_moon
+    # Default colors
+    primary:
+      background: '#2D2D2D'
+      foreground: '#B3B9C5'
+    # Normal colors
+    normal:
+      black: '#2D2D2D'
+      red: '#F2777A'
+      green: '#92D192'
+      yellow: '#FFD479'
+      blue: '#6AB0F3'
+      magenta: '#E1A6F2'
+      cyan: '#76D4D6'
+      white: '#B3B9C5'
+    # Bright colors
+    bright:
+      black: '#777C85'
+      red: '#F2777A'
+      green: '#76D4D6'
+      yellow: '#FFEEA6'
+      blue: '#6AB0F3'
+      magenta: '#E1A6F2'
+      cyan: '#76D4D6'
+      white: '#FFFFFF'
+
+  # Colors (New Moon)
+  custom: &custom
+    # Default colors
+    primary:
+      background: '#202020'
+      foreground: '#B3B9C5'
+    # Normal colors
+    normal:
+      black: '#2D2D2D'
+      red: '#FF676A'
+      green: '#92D192'
+      yellow: '#FFD479'
+      blue: '#4AB0F3'
+      magenta: '#C196E2'
+      cyan: '#66C4D6'
+      white: '#B3B9C5'
+    # Bright colors
+    bright:
+      black: '#777C85'
+      red: '#F2777A'
+      green: '#76D4D6'
+      yellow: '#FFEEA6'
+      blue: '#6AB0F3'
+      magenta: '#E1A6F2'
+      cyan: '#76D4D6'
+      white: '#FFFFFF'
+
+  # Colors (Ayu Dark)
+  ayu_dark: &ayu_dark
+    # Default colors
+    primary:
+      background: '#0A0E14'
+      foreground: '#B3B1AD'
+
+    # Normal colors
+    normal:
+      black: '#01060E'
+      red: '#EA6C73'
+      green: '#91B362'
+      yellow: '#F9AF4F'
+      blue: '#53BDFA'
+      magenta: '#FAE994'
+      cyan: '#90E1C6'
+      white: '#C7C7C7'
+
+    # Bright colors
+    bright:
+      black: '#686868'
+      red: '#F07178'
+      green: '#C2D94C'
+      yellow: '#FFB454'
+      blue: '#59C2FF'
+      magenta: '#FFEE99'
+      cyan: '#95E6CB'
+      white: '#FFFFFF'
+
+colors: *ayu_dark
