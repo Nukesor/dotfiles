@@ -1,0 +1,21 @@
+""" Config --------------------------------
+let mapleader = ","
+set clipboard=unnamedplus
+
+""" Plugins --------------------------------
+set commentary
+set ReplaceWithRegister
+set multiple-cursors
+set easymotion
+
+""" Mappings --------------------------------
+map <leader>v :vsplit<CR>
+map <leader>h :split<CR>
+map <leader>t :tab<CR>
+
+""" Actions --------------------------------
+map <leader>rn :action RenameElement<CR>
+map <leader>gd :action GotoDeclaration<CR>
+map <leader>gi :action ShowUsages<CR>
+map <leader>f :action ReformatCode<CR>
+map <leader>o :action OptimizeImports<CR>

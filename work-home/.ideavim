@@ -1,3 +1,0 @@
-command V vsplit
-command H split
-set clipboard+=unnamed
