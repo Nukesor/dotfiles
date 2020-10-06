@@ -19,3 +19,5 @@ map <leader>gd :action GotoDeclaration<CR>
 map <leader>gi :action ShowUsages<CR>
 map <leader>f :action ReformatCode<CR>
 map <leader>o :action OptimizeImports<CR>
+
+map <leader>cp :action CopyAbsolutePath<CR>
