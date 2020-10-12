@@ -11,9 +11,9 @@ interval = 20
 warning = 20.0
 alert = 10.0
 
-[[block]]
-block = "custom"
-command = '~/.config/i3/scripts/netinfo'
+#[[block]]
+#block = "custom"
+#command = '~/.config/i3/scripts/netinfo'
 
 [[block]]
 block = "memory"
@@ -24,7 +24,7 @@ clickable = false
 [[block]]
 block = "cpu"
 format = "{barchart} {utilization}%"
-interval = 1
+interval = 3
 info = 80
 warning = 90
 critical = 95
@@ -66,9 +66,10 @@ step_width = 2
 [[block]]
 block = "custom"
 cycle = ["~/.bin/keyboard-layout en", "~/.bin/keyboard-layout de"]
+interval = "once"
 json = true
 
 [[block]]
 block = "time"
 format = "%a %d-%m-%y %T"
-interval = 1
+interval = 5
