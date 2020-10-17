@@ -9,12 +9,14 @@ rm -rf ~/.subversion
 rm -rf ~/.dotnet
 rm -rf ~/.ipfs
 rm -rf ~/.nuget
+rm -rf ~/.mono
 
 # History stuff
 rm -rf ~/.wget-hsts
 rm -rf ~/.NERDTreeBookmarks
 rm -rf ~/.bash_history
 rm -rf ~/.python_history
+rm -rf ~/.putty
 
 # Java stuff
 rm -rf ~/.java

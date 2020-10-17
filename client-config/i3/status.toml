@@ -11,9 +11,9 @@ interval = 20
 warning = 20.0
 alert = 10.0
 
-#[[block]]
-#block = "custom"
-#command = '~/.config/i3/scripts/netinfo'
+[[block]]
+block = "custom"
+command = '~/.config/i3/scripts/netinfo'
 
 [[block]]
 block = "memory"

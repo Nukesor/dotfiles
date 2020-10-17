@@ -282,7 +282,6 @@ set smartcase           " upper-case sensitive search
 " Enable dictionary completion
 "set complete+=k
 
-
 "----- Languages ------
 " Python specific configs
 autocmd BufWritePre * silent! execute ':Format'
