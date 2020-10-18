@@ -1,1 +1,2 @@
 rsync: "rsync --recursive --partial --perms --progress"
+arsync: "rsync -a --progress"
