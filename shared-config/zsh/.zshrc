@@ -92,6 +92,7 @@ alias gcm='git commit -m'
 alias gls='git ls'
 alias gpu='git push origin -u'
 alias gpo='git remote prune origin'
+alias git_describe="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g'"
 
 #Tmux
 alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"

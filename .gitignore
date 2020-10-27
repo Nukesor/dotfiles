@@ -3,3 +3,5 @@
 
 .zcompdump
 shared-config/zsh/.zgen
+shared-config/pueue/pueue.yml
+shared-config/pueue/remote.yml
