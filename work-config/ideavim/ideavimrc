@@ -8,10 +8,15 @@ set ReplaceWithRegister
 set multiple-cursors
 set easymotion
 
+""" Navigation
+map gt :action NextTab<CR>
+map gT :action PreviousTab<CR>
+
 """ Mappings --------------------------------
 map <leader>v :vsplit<CR>
 map <leader>h :split<CR>
 map <leader>t :tab<CR>
+
 
 """ Actions --------------------------------
 map <leader>rn :action RenameElement<CR>
