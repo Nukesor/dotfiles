@@ -36,6 +36,7 @@ bindsym $mod+Control+t exec thunderbird
 bindsym $mod+Control+d exec nemo
 # Screenshot
 bindsym $mod+Control+s exec ~/.bin/screenshot
+bindsym $mod+Control+a exec maim -s $(date '+%Y-%m-%d_%H_%M_%S')
 # start pidgin
 bindsym $mod+Control+m exec telegram-desktop
 # start qalculate
