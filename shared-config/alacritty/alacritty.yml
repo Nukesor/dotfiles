@@ -48,7 +48,7 @@ font:
     family: monospace
 
   # Point size
-  size: 5
+  size: 5.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -400,7 +400,7 @@ schemes:
       black: '#2D2D2D'
       red: '#FF4040'
       green: '#40FF40'
-      yellow: '#FFD479'
+      yellow: '#FFFF40'
       blue: '#4040FF'
       magenta: '#bd00bd'
       cyan: '#40FFFF'
