@@ -20,6 +20,7 @@ Plug 'stephpy/vim-yaml'
 " Tools
 Plug 'nginx/nginx', {'rtp': 'contrib/vim'}
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'hashivim/vim-hashicorp-tools'
 "Plug 'pearofducks/ansible-vim'
 "Plug 'Firef0x/PKGBUILD.vim'
 
@@ -37,6 +38,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sjl/gundo.vim'
+Plug 'vim-scripts/ReplaceWithRegister'
 
 " Completion
 Plug 'SirVer/ultisnips'
