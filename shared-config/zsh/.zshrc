@@ -40,7 +40,6 @@ ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
 # -------------------- Aliases --------------------
 #Various
 alias dstat='dstat -tdnclmpry'
-alias grep='grep --color=auto'
 alias pong='ping -D google.de'
 alias spacman='sudo pacman'
 alias mksrcinfo='updpkgsums && makepkg --printsrcinfo > .SRCINFO'
@@ -80,10 +79,8 @@ alias svim='sudo nvim'
 alias co='sudo netctl stop-all && sudo netctl start'
 alias disca='sudo netctl stop-all'
 
-# df Human readable
-alias dfh='df -h -x tmpfs'
-alias duh='du -ahl -d 1 | sort -h'
-alias dud='du -ahl -d 0'
+# dust default Human readable
+alias dud='dust -d1'
 
 # Git
 alias gb='git branch'
@@ -100,7 +97,10 @@ alias tew='tmux new -s'
 alias tat='tmux attach -t'
 alias till='tmux kill-session -t'
 
-#Pueue and encarne
+#Docker
+alias dcu='docker-compose up'
+
+#Pueue
 alias pad='pueue add --'
 alias padh='pueue add -g hdd --'
 alias padc='pueue add -g cpu --'

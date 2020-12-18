@@ -131,7 +131,8 @@ nmap <leader>al <Plug>(coc-codeaction-line)
 " Selected code action menu
 xmap <leader>as <Plug>(coc-codeaction-selected)
 " Word action menu
-nmap <leader>aw :call <SID>show_word_code_actions()<CR>
+nmap <leader>aw viw<Plug>(coc-codeaction-selected)
+vmap <leader>aw <Plug>(coc-codeaction-selected)
 
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf <Plug>(coc-fix-current)
