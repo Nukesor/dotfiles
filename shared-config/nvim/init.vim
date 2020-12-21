@@ -41,7 +41,7 @@ Plug 'sjl/gundo.vim'
 Plug 'vim-scripts/ReplaceWithRegister'
 
 " Completion
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Git support
