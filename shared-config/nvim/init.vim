@@ -6,7 +6,7 @@ Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 
@@ -172,9 +172,14 @@ function! s:list_cmd()
 endfunction
 
 command! -bang -nargs=? -complete=dir Files
-            \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': s:list_cmd(),
-            \                               'options': '--tiebreak=index --bind=ctrl-n:preview-down,ctrl-p:preview-up'}), <bang>0)
-
+    \ call fzf#vim#files(
+    \   <q-args>,
+    \   fzf#vim#with_preview({
+    \      'source': s:list_cmd(),
+    \      'options': '--tiebreak=index --bind=ctrl-n:preview-down,ctrl-p:preview-up'
+    \   }),
+    \   <bang>0
+    \ )
 
 "----- ctrlsf ------
 nmap <C-k> <Plug>CtrlSFPrompt
