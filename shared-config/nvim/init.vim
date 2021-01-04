@@ -11,10 +11,11 @@ Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 
 "----- Other language support ------
-" Markup/Data structure support
+" Markup/Data structure/Templating support
 Plug 'sheerun/vim-json'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
+Plug 'Glench/Vim-Jinja2-Syntax'
 "Plug 'mustache/vim-mustache-handlebars'
 
 " Tools

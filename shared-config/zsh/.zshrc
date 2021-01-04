@@ -115,6 +115,10 @@ alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --outp
 # Json formatting
 alias jsonformat='python -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=4))" <'
 
+# Trans
+alias t="trans :en"
+alias td="trans :de"
+
 [[ -r $ZDOTDIR/zshrc-client ]] && source $ZDOTDIR/zshrc-client
 [[ -r $ZDOTDIR/zshrc-work   ]] && source $ZDOTDIR/zshrc-work
 [[ -r $ZDOTDIR/zshrc-server ]] && source $ZDOTDIR/zshrc-server
