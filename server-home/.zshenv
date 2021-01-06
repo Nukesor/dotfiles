@@ -1,0 +1,45 @@
+# Path setup
+path=($HOME/.bin $path)
+path=($HOME/.cache/cargo/bin $path)
+path=($path ./bin)
+path=($path $HOME/.screenlayout)
+path=($path ./node_modules/.bin)
+
+# XDG Setup
+export CONFIG_HOME="$HOME/.config"
+export CACHE_HOME="$HOME/.cache"
+export DATA_HOME="$HOME/.local/share"
+
+# Config cleanup
+export ZDOTDIR=$CONFIG_HOME/zsh
+export WEECHAT_HOME=$CONFIG_HOME/weechat
+export NPM_CONFIG_USERCONFIG=$CONFIG_HOME/npm/npmrc
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$CONFIG_HOME"/java
+
+# Cache cleanup
+export LESSHISTFILE=-
+export _FASD_DATA=$CACHE_HOME/fasd/fasd_history
+export PSQL_HISTORY="$CACHE_HOME/pg/psql_history"
+export SQLITE_HISTORY=$CACHE_HOME/sqlite_history
+export CUDA_CACHE_PATH="$CACHE_HOME"/nv
+
+export ZSH_COMPDUMP=$CACHE_HOME/zsh/zcompdump
+export CARGO_HOME=$CACHE_HOME/cargo
+export CCACHE_DIR=$CACHE_HOME/ccache
+
+# Data cleanup
+export HISTFILE=$DATA_HOME/zsh/history
+export VAGRANT_HOME=$DATA_HOME/vagrant
+export RUSTUP_HOME=$DATA_HOME/rustup
+
+# Runtime cleanup
+export TMUX_TMPDIR="$RUNTIME_DIR"
+
+# Vim setup
+export EDITOR=nvim
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+# Convenience stuff
+export RC=$ZDOTDIR/.zshrc
+export NVIM=$CONFIG_HOME/nvim/
