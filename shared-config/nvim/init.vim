@@ -117,13 +117,13 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> ghd :call CocAction('jumpDefinition', 'split')<CR>
-nnoremap <silent> gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nnoremap <silent> <leader>ghd :call CocAction('jumpDefinition', 'split')<CR>
+nnoremap <silent> <leader>gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
 
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
 
 " Buffer code action menu
 nmap <leader>af <Plug>(coc-codeaction)
