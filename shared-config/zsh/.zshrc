@@ -13,7 +13,7 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load nojhan/liquidprompt
     zgen load chrissicool/zsh-256color
-    zgen load zsh-users/zsh-completions src
+    #zgen load zsh-users/zsh-completions src
 
     zgen save
 fi
