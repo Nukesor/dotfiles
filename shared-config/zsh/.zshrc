@@ -143,6 +143,7 @@ zle -N __gflist
 bindkey "^g" __gflist
 
 # -------------------- Other stuff --------------------
-if [[ -f "~/.ssh/id_rsa" ]]; then
+export TERM='xterm-256color'
+if [[ -f ~/.ssh/id_rsa ]]; then
     eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
 fi
