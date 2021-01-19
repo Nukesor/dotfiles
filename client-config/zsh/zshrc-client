@@ -13,8 +13,11 @@ alias wine32='WINEPREFIX=$XDG_DATA_HOME/wine32 WINEARCH=win32 wine'
 
 # mpd & ncmpcpp
 alias jarvis='ncmpcpp -h arne.beer'
-
 alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
+
+# VPN
+alias vpnoff='sudo systemctl stop wg-quick@vpn systemd-resolved'
+alias vpnon='sudo systemctl start wg-quick@vpn systemd-resolved'
 
 path=($path $HOME/.local/share/screenlayout)
 path=($path $HOME/go/bin)
