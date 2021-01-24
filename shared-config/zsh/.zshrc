@@ -115,6 +115,9 @@ alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --outp
 # Json formatting
 alias jsonformat='python -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=4))" <'
 
+# Python
+alias venv="source .venv/bin/activate"
+
 # Trans
 alias t="trans de:en"
 alias td="trans :de"

@@ -1,13 +1,10 @@
 {
-    "python.venvPath": ".venv",
+    "python.venvPath": "./",
     "python.analysis.useLibraryCodeForTypes": false,
+    "python.linting.pydocstyleEnabled": true,
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "/usr/bin/black",
-    "python.sortImports.args": [
-        "--profile black"
-    ],
-    "python.sortImports.path": "/usr/bin/isort",
-    "rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
+    "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
     "markdownlint.config": {
         "line_length": false
     }
