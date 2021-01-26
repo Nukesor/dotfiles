@@ -192,6 +192,8 @@ nmap <C-k> <Plug>CtrlSFPrompt
 let NERDTreeIgnore=['__pycache__', '\~$']
 let g:NERDTreeBookmarksFile = '$HOME/.cache/NERDTreeBookmarks'
 command -nargs=* NERD NERDTree <args>
+" Jumps to file in current buffer
+nnoremap <C-f> :NERDTreeFind<CR>
 
 "----- AirLine ------
 set laststatus=2
