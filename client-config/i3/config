@@ -149,9 +149,9 @@ bindsym $mod+Control+s exec "pactl set-sink-volume @DEFAULT_SINK@ -2% &"
 bindsym $mod+Control+d exec "pactl set-sink-volume @DEFAULT_SINK@ +2% &"
 
 # Backlight panel
-bindsym $mod+Control+q exec ~/.bin/backlight down
-bindsym $mod+Control+w exec ~/.bin/backlight up
-bindsym $mod+Control+e exec ~/.bin/backlight normal
+bindsym $mod+Control+q exec ~/.bin/backlight normal
+bindsym $mod+Control+w exec ~/.bin/backlight down
+bindsym $mod+Control+e exec ~/.bin/backlight up
 
 ## ---------------- Styling ----------------
 
