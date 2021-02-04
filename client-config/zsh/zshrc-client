@@ -19,6 +19,8 @@ alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
 alias vpndown='sudo systemctl stop wg-quick@vpn'
 alias vpnup='sudo systemctl start wg-quick@vpn'
 
+alias oldssh="ssh-add ~/.ssh/id_rsa"
+
 path=($path $HOME/.local/share/screenlayout)
 path=($path $HOME/go/bin)
 
