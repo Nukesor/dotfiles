@@ -117,6 +117,7 @@ bindsym $mod+n exec alacritty
 bindsym Ctrl+$mod+u exec rofi-pass
 bindsym Ctrl+$mod+i exec firefox
 bindsym Ctrl+$mod+c exec ~/.bin/screenshot
+bindsym Ctrl+$mod+z exec "maim -s ~/$(date +%Y-%m-%d_%H-%M-%S).png"
 
 # Other apps
 bindsym Ctrl+$mod+t exec thunderbird
