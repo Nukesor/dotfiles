@@ -40,3 +40,6 @@
     show = /usr/share/git/diff-highlight/diff-highlight | bat --style=changes
     diff = /usr/share/git/diff-highlight/diff-highlight | bat --style=changes
     tag = less
+
+[submodule]
+	recurse = true
