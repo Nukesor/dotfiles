@@ -1,18 +1,12 @@
 #Aliases
 alias km="killall telegram-deskto"
 alias susp='i3lock-blur && systemctl suspend'
-alias upoff="i3lock-blur && spacman -Syyu --noconfirm ; poweroff"
-alias upsups="i3lock-blur && spacman -Syyu --noconfirm ; systemctl suspend"
 
 # Helper
 alias clt='rm -rf ~/.local/share/Trash/* ; rm -rf ~/Desktop'
-alias xclipx='xclip -selection c'
 alias noblank='xset s off && xset -dpms && xset s noblank'
 
-alias wine32='WINEPREFIX=$XDG_DATA_HOME/wine32 WINEARCH=win32 wine'
-
-# mpd & ncmpcpp
-alias jarvis='ncmpcpp -h arne.beer'
+# X
 alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
 
 # VPN
