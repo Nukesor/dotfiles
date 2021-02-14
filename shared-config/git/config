@@ -1,6 +1,7 @@
 [user]
     name = Arne Beer
     email = contact@arne.beer
+    signingkey = A48523572AFDFFAE
 
 [color]
     diff = auto
@@ -43,3 +44,5 @@
 
 [submodule]
 	recurse = true
+[commit]
+	gpgsign = true
