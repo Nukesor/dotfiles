@@ -1,7 +1,7 @@
 [user]
     name = Arne Beer
     email = contact@arne.beer
-    signingkey = A48523572AFDFFAE
+    signingkey = CC9408F679023B65
 
 [color]
     diff = auto
