@@ -24,7 +24,7 @@ autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 autoload -U promptinit && promptinit
 
 # History
-HISTSIZE=10000
+HISTSIZE=1000000
 SAVEHIST=$HISTSIZE
 setopt inc_append_history   # write to history immediately
 setopt hist_ignore_dups     # ignore second instance of same event
@@ -117,6 +117,10 @@ alias jsonformat='python -c "import json, sys, collections; print(json.dumps(jso
 
 # Python
 alias venv="source .venv/bin/activate"
+
+# Taskwarrior
+alias tl='clear && task calendar && task'
+alias tui='taskwarrior-tui'
 
 # Trans
 alias t="trans de:en"

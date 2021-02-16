@@ -16,6 +16,7 @@ export WEECHAT_HOME=$XDG_CONFIG_HOME/weechat
 export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
 export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export TASKRC=$XDG_CONFIG_HOME/task/taskrc
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 # Cache cleanup
