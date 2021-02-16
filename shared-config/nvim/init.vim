@@ -222,8 +222,7 @@ set updatetime=300              " Milliseconds to swap file write
 
 " Backup settings
 set noswapfile          " don't create a swap file
-set backup              " keep a backup file
-set backupdir=/tmp      " backup dir
+set nobackup              " keep a backup file
 set directory=/tmp      " swap file directory
 
 " Tabs and indenting
