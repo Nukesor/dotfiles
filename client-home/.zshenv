@@ -52,3 +52,6 @@ export GTK_THEME=Advaita:dark
 # Convenience stuff
 export RC=$ZDOTDIR/.zshrc
 export NVIM=$XDG_CONFIG_HOME/nvim/
+
+# Application logic
+export VAGRANT_EXPERIMENTAL="disks"
