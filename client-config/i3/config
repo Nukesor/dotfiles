@@ -14,6 +14,7 @@ floating_modifier $mod
 
 # mouse floating causing no longer change of window focus
 focus_follows_mouse no
+mouse_warping none
 
 # Workspace names
 set $ws1 "1: debug"

@@ -1,9 +1,13 @@
 # -------------------- External plugin init --------------------
 source "$ZDOTDIR/zgen/zgen.zsh"
-source "/usr/share/fzf/key-bindings.zsh"
-source "/usr/share/fzf/completion.zsh"
+if [[ -f "/usr/share/fzf/key-bindings.zsh" ]]; then
+    source "/usr/share/fzf/key-bindings.zsh"
+fi
+if [[ -f "/usr/share/fzf/completion.zsh" ]]; then
+    source "/usr/share/fzf/completion.zsh"
+fi
 
-autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump
+autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
 
 # -------------------- Packages --------------------
 if ! zgen saved; then
@@ -20,7 +24,6 @@ fi
 
 
 # -------------------- General configuration --------------------
-autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 autoload -U promptinit && promptinit
 
 # History
@@ -92,7 +95,9 @@ alias gpo='git remote prune origin'
 alias git_describe="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g'"
 
 #Tmux
-alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
+if [[ -f "$HOME/.config/tmux/tmux.conf" ]]; then
+    alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+fi
 alias tew='tmux new -s'
 alias tat='tmux attach -t'
 alias till='tmux kill-session -t'
