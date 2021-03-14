@@ -3,7 +3,6 @@ alias km="killall telegram-deskto"
 alias susp='i3lock-blur && systemctl suspend'
 
 # Helper
-alias clt='rm -rf ~/.local/share/Trash/* ; rm -rf ~/Desktop'
 alias noblank='xset s off && xset -dpms && xset s noblank'
 
 # X
@@ -12,8 +11,6 @@ alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
 # VPN
 alias vpndown='sudo systemctl stop wg-quick@vpn'
 alias vpnup='sudo systemctl start wg-quick@vpn'
-
-alias oldssh="ssh-add ~/.ssh/id_rsa"
 
 path=($path $HOME/.local/share/screenlayout)
 path=($path $HOME/go/bin)
