@@ -50,7 +50,7 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 export GTK_THEME=Advaita:dark
 
 # Convenience stuff
-export RC=$ZDOTDIR/.zshrc
+export ZRC=$ZDOTDIR/.zshrc
 export NVIM=$XDG_CONFIG_HOME/nvim/
 
 # Application logic
