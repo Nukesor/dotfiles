@@ -3,9 +3,10 @@
 call plug#begin(expand('~/.config/nvim/plug/'))
 "----- Programming language support ------
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
+Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
+Plug 'kristijanhusak/vim-dadbod-completion', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
@@ -66,7 +67,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Formatting
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'psf/black'
 "Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
