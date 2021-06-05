@@ -113,8 +113,8 @@ alias pst='pueue status'
 alias pt='pueue follow'
 
 # Youtube dl
-alias yd='youtube-dl -f bestvideo+bestaudio --output "%(title)s.%(ext)s"'
-alias ydp='youtube-dl -f bestvideo+bestaudio --output "%(playlist_index)s-%(title)s.%(ext)s"'
+alias yd='youtube-dl -f best --output "%(title)s.%(ext)s"'
+alias ydp='youtube-dl -f best --output "%(playlist_index)s-%(title)s.%(ext)s"'
 alias ym='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
 
 # Json formatting
