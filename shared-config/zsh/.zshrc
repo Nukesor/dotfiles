@@ -26,16 +26,6 @@ fi
 # -------------------- General configuration --------------------
 autoload -U promptinit && promptinit
 
-# History
-HISTSIZE=1000000
-SAVEHIST=$HISTSIZE
-setopt inc_append_history   # write to history immediately
-setopt hist_ignore_dups     # ignore second instance of same event
-setopt share_history        # share history between session
-setopt extended_history     # special history format with timestamp
-setopt no_hist_beep         # fucking beep
-setopt hist_ignore_space    # ignore entries with leading space
-
 #Syntax Highlighting
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=002,bold'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
@@ -161,3 +151,13 @@ if [[ -f ~/.ssh/id_ed25519 ]]; then
 elif [[ -f ~/.ssh/id_rsa ]]; then
     eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
 fi
+
+# History
+HISTSIZE=1000000
+SAVEHIST=$HISTSIZE
+setopt inc_append_history   # write to history immediately
+setopt hist_ignore_dups     # ignore second instance of same event
+setopt share_history        # share history between session
+setopt extended_history     # special history format with timestamp
+setopt no_hist_beep         # fucking beep
+setopt hist_ignore_space    # ignore entries with leading space
