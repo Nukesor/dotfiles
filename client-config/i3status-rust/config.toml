@@ -13,12 +13,12 @@ alert = 10.0
 
 [[block]]
 block = "custom"
-command = '~/.config/i3/scripts/netinfo'
+command = '~/.config/i3status-rust/scripts/netinfo'
 
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "Mem: {Mup}%"
+format_mem = "Mem: {mem_used_percents}%"
 clickable = false
 
 [[block]]
@@ -33,6 +33,9 @@ critical = 95
 block = "hueshift"
 step = 50
 hue_shifter = "redshift"
+
+[[block]]
+block = "backlight"
 
 [[block]]
 block = "battery"
