@@ -67,7 +67,6 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Formatting
-Plug 'psf/black'
 "Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
