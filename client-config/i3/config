@@ -193,4 +193,4 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 ## ---------------- Misc ----------------
 
 #exec --no-startup-id picom -b
-exec ./bin/set_keyboard_layout en
+exec ~/.bin/keyboard_layout en
