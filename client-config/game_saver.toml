@@ -1,0 +1,11 @@
+backup_directory = "~/Syncthing/Backup/games"
+
+[games.Cataclysm_DDA]
+savegame_location = "~/.local/share/cataclysm-dda/save"
+autosaves = 30
+ignored_files = []
+
+[games.Cataclysm_DDA_config]
+savegame_location = "~/.config/cataclysm-dda"
+autosaves = 30
+ignored_files = []
