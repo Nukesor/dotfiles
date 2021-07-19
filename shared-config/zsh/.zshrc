@@ -96,6 +96,7 @@ alias till='tmux kill-session -t'
 alias dcu='docker-compose up'
 
 #Pueue
+alias p='pueue'
 alias pad='pueue add --'
 alias padh='pueue add -g hdd --'
 alias padc='pueue add -g cpu --'
