@@ -1,5 +1,0 @@
-
-alias localdev="FLASK_CONFIG='local' SQLALCHEMY_DATABASE_URI='postgresql://localhost/andyslist'"
-
-alias phpunit="./bin/portaldocker phpunit"
-alias workssh="ssh-add ~/.ssh/keyfiles/daa-cluster"
