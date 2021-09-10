@@ -36,6 +36,9 @@ export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
 export WINEPREFIX=$XDG_DATA_HOME/wine
+
+# Android dev Stuff
+export ADB_LIBUSB=1
 export ANDROID_SDK_ROOT="$XDG_DATA_HOME/android-sdk"
 path=($path $ANDROID_SDK_ROOT/cmdline-tools/latest/bin)
 path=($path $ANDROID_SDK_ROOT/platform-tools)

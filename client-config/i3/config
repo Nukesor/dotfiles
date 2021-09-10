@@ -123,6 +123,7 @@ bindsym Ctrl+$mod+z exec "maim -s ~/$(date +%Y-%m-%d_%H-%M-%S).png"
 # Other apps
 bindsym Ctrl+$mod+t exec thunderbird
 bindsym Ctrl+$mod+m exec telegram-desktop
+bindsym Ctrl+$mod+comma exec discord
 
 bindsym $mod+o mode "open"
 mode "open" {
