@@ -160,3 +160,11 @@ setopt share_history        # share history between session
 setopt extended_history     # special history format with timestamp
 setopt no_hist_beep         # fucking beep
 setopt hist_ignore_space    # ignore entries with leading space
+
+# Save and restore zsh history file to backup.
+if [[ $(wc -l ~/.local/share/zsh/history | awk '{print $1}') -lt 1000 ]]; then
+    echo "History file has less than 1000 lines, restoring backup..."
+    cp -f ~/.local/share/zsh/history_backup ~/.local/share/zsh/history
+else
+    cp -f ~/.local/share/zsh/history ~/.local/share/zsh/history_backup
+fi
