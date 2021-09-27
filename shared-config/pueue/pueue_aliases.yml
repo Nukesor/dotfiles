@@ -1,4 +1,4 @@
 rsync: "rsync --recursive --partial --perms --progress"
 arsync: "rsync -a --progress"
-yd: 'youtube-dl -f best --output "%(title)s.%(ext)s"'
-ydp: 'youtube-dl -f best --output "%(playlist_index)s-%(title)s.%(ext)s"'
+yd: 'youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] --output "%(title)s.%(ext)s"'
+ydp: 'youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a] --output "%(playlist_index)s-%(title)s.%(ext)s"'
