@@ -37,12 +37,14 @@ export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
 export WINEPREFIX=$XDG_DATA_HOME/wine
 
-# Android dev Stuff
+# Work/Android dev Stuff
 export ADB_LIBUSB=1
 export ANDROID_SDK_ROOT="$XDG_DATA_HOME/android-sdk"
 path=($path $ANDROID_SDK_ROOT/cmdline-tools/latest/bin)
 path=($path $ANDROID_SDK_ROOT/platform-tools)
 path=($path $ANDROID_SDK_ROOT/tools)
+export PUB_CACHE="$XDG_CACHE_HOME/dart-pub-cache"
+export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 
 # Runtime cleanup
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
