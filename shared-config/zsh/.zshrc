@@ -1,5 +1,4 @@
 # -------------------- External plugin init --------------------
-source "$ZDOTDIR/zgen/zgen.zsh"
 if [[ -f "/usr/share/fzf/key-bindings.zsh" ]]; then
     source "/usr/share/fzf/key-bindings.zsh"
 fi
@@ -10,17 +9,15 @@ fi
 autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
 
 # -------------------- Packages --------------------
-if ! zgen saved; then
-    echo "Creating a zgen save"
+source $ZDOTDIR/zplug/init.zsh
 
-    zgen load robbyrussell/oh-my-zsh plugins/colored-man
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load nojhan/liquidprompt
-    zgen load chrissicool/zsh-256color
-    #zgen load zsh-users/zsh-completions src
+zplug "chrissicool/zsh-256color"
+zplug "nojhan/liquidprompt"
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting"
+#zplug "zsh-users/zsh-completions" use:src
 
-    zgen save
-fi
+zplug load
 
 
 # -------------------- General configuration --------------------
