@@ -1,3 +1,3 @@
 [submodule "shared-config/zsh/zplug"]
 	path = shared-config/zsh/zplug
-	url = git@github.com:zplug/zplug.git
+	url = https://github.com/zplug/zplug.git
