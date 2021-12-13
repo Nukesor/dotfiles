@@ -5,6 +5,9 @@
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "/usr/bin/black",
     "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+    "rust-analyzer.diagnostics.disabled": [
+        "unresolved-macro-call"
+    ],
     "eslint.format.enable": true,
     "markdownlint.config": {
         "line_length": false
