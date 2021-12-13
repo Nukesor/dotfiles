@@ -1,5 +1,11 @@
 backup_directory = "~/Syncthing/Backup/games"
 
+[games.noita]
+savegame_location = "~/storage/SteamLibrary/steamapps/compatdata/881100/pfx/drive_c/users/steamuser/AppData/LocalLow/Nolla_Games_Noita/save00"
+autosaves = 0
+autosave_timeout = 120
+ignored_files = []
+
 [games.Cataclysm_DDA]
 # The folder where the save files are located.
 savegame_location = "~/.local/share/cataclysm-dda/save"
