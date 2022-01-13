@@ -23,6 +23,9 @@ zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug load
 
+# Run "zplug install" if not all plugins are installed.
+zplug check || zplug install
+
 eval "$(starship init zsh)"
 
 # -------------------- General configuration --------------------
@@ -39,7 +42,6 @@ alias pong='ping -D google.de'
 alias spacman='sudo pacman'
 alias mksrcinfo='updpkgsums && makepkg --printsrcinfo > .SRCINFO'
 alias watch='watch -c'
-alias sdi='/usr/bin/sd'
 
 # Systemctl
 alias sys='sudo systemctl'
@@ -62,10 +64,6 @@ alias cp='cp --reflink=auto'
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 
-# Tar
-alias tarz='tar -I zstd -cvf'
-alias untarz='tar -I zstd -xvf'
-
 # Vim
 alias nvim='vim -c NERD'
 alias svim='sudo nvim'
@@ -73,9 +71,6 @@ alias svim='sudo nvim'
 # Netctl
 alias co='sudo netctl stop-all && sudo netctl start'
 alias disca='sudo netctl stop-all'
-
-# dust default Human readable
-alias dud='dust -d1'
 
 # Git
 alias gb='git branch'
@@ -147,11 +142,7 @@ bindkey "^g" __gflist
 
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
-if [[ -f ~/.ssh/id_ed25519 ]]; then
-    eval `keychain --eval --agents 'ssh' -Q -q id_ed25519`
-elif [[ -f ~/.ssh/id_rsa ]]; then
-    eval `keychain --eval --agents 'ssh' -Q -q id_rsa`
-fi
+eval `keychain --eval --agents 'ssh' -Q -q id_ed25519`
 
 # History
 HISTSIZE=1000000

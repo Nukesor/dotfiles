@@ -16,7 +16,4 @@ alias vpnup='sudo systemctl start wg-quick@vpn'
 
 # Boot windows
 alias windowsboot='sudo efibootmgr -n 0000 && reboot'
-
-path=($path $HOME/.local/share/screenlayout)
-path=($path $HOME/go/bin)
 """
