@@ -9,6 +9,11 @@ fi
 autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
 
 # -------------------- Packages --------------------
+export ZPLUG_BIN="$HOME/.local/share/zplug/bin"
+export ZPLUG_HOME="$HOME/.local/share/zplug"
+export ZPLUG_REPOS="$HOME/.local/share/zplug"
+export ZPLUG_CACHE_DIR="$HOME/.cache/zplug"
+
 source /usr/share/zsh/scripts/zplug/init.zsh
 
 zplug "chrissicool/zsh-256color"
