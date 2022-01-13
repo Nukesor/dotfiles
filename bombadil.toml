@@ -9,17 +9,16 @@ vars = []
 posthooks = []
 
 [profiles.laptop]
-vars = ["vars/laptop-vars.toml", "vars/client-vars.toml"]
-extra_profiles = ["graphical"]
+extra_profiles = ["pc"]
+vars = ["vars/laptop-vars.toml", "vars/pc-vars.toml"]
 
 [profiles.desktop]
-vars = ["vars/desktop-vars.toml", "vars/client-vars.toml"]
-extra_profiles = ["graphical"]
+extra_profiles = ["pc"]
+vars = ["vars/desktop-vars.toml", "vars/pc-vars.toml"]
 
 [profiles.server]
 vars = ["vars/server-vars.toml"]
-[profiles.server.dots]
-zshenv = { source="server/zshenv", target=".zshenv" }
+
 
 #----- Base setup for all machines -----
 [settings.dots]
@@ -42,20 +41,25 @@ flake = { source="config/flake8", target=".config/flake8" }
 npm = { source="config/npm", target=".config/npm" }
 
 
-#----- Base setup for non-server machines -----
-[profiles.graphical.dots]
+#----- Setup for pc machines -----
+[profiles.pc.dots]
 # Env
-zshenv = { source="client/zshenv", target=".zshenv" }
+zshenv = { source="pc/zshenv", target=".zshenv" }
 
-# Graphical core
+# pc core
 i3 = { source="config/i3", target=".config/i3" }
 i3status-rust = { source="config/i3status-rust", target=".config/i3status-rust" }
 x11 = { source="config/X11", target=".config/X11" }
 dunst = { source="config/dunstrc", target=".config/dunstrc" }
 
-# Graphical Apps
+# pc Apps
 rofi = { source="config/rofi", target=".config/rofi" }
 rofi-pass = { source="config/rofi-pass", target=".config/rofi-pass" }
 
 # Cli Apps
 game_saver = { source="config/game_saver.toml", target=".config/game_saver.toml" }
+
+
+#----- Setup for server machines -----
+[profiles.server.dots]
+zshenv = { source="server/zshenv", target=".zshenv" }
