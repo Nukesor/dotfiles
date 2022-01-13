@@ -1,0 +1,60 @@
+# Path to your dotfiles relative to your $HOME directory
+dotfiles_dir = ".dotfiles"
+
+[settings]
+# An array of toml files paths containing the variables to inject in your templatized dotfiles
+# You can have multiple var files as long as variable names does not colide.
+vars = []
+# An array of post install shell commands
+posthooks = []
+
+[profiles.laptop]
+vars = ["vars/laptop-vars.toml", "vars/client-vars.toml"]
+extra_profiles = ["graphical"]
+
+[profiles.desktop]
+vars = ["vars/desktop-vars.toml", "vars/client-vars.toml"]
+extra_profiles = ["graphical"]
+
+[profiles.server]
+vars = ["vars/server-vars.toml"]
+[profiles.server.dots]
+zshenv = { source="server/zshenv", target=".zshenv" }
+
+#----- Base setup for all machines -----
+[settings.dots]
+# Shell
+zsh = { source="config/zsh", target=".config/zsh" }
+alacritty = { source="config/alacritty", target=".config/alacritty" }
+termite = { source="config/termite/config", target=".config/termite" }
+tmux = { source="config/tmux", target=".config/tmux" }
+liquidprompt = { source="config/liquidpromptrc", target=".config/liquidpromptrc" }
+
+# Tooling
+git = { source="config/git", target=".config/git" }
+pueue_aliases = { source="config/pueue", target=".config/pueue" }
+pacman = { source="config/pacman", target=".config/pacman" }
+nvim = { source="config/nvim", target=".config/nvim" }
+
+# Language tooling
+flake = { source="config/flake8", target=".config/flake8" }
+npm = { source="config/npm", target=".config/npm" }
+
+
+#----- Base setup for non-server machines -----
+[profiles.graphical.dots]
+# Env
+zshenv = { source="client/zshenv", target=".zshenv" }
+
+# Graphical core
+i3 = { source="config/i3", target=".config/i3" }
+i3status-rust = { source="config/i3status-rust", target=".config/i3status-rust" }
+x11 = { source="config/X11", target=".config/X11" }
+dunst = { source="config/dunstrc", target=".config/dunstrc" }
+
+# Graphical Apps
+rofi = { source="config/rofi", target=".config/rofi" }
+rofi-pass = { source="config/rofi-pass", target=".config/rofi-pass" }
+
+# Cli Apps
+game_saver = { source="config/game_saver.toml", target=".config/game_saver.toml" }

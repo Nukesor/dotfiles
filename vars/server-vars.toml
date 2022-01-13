@@ -1,0 +1,5 @@
+zsh-server = """
+alias poweroff='reboot'
+#Aliases
+"""
+zsh-client = ""

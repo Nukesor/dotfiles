@@ -1,0 +1,16 @@
+---
+client:
+  restart_in_place: true
+  read_local_logs: true
+  max_status_lines: 10
+  status_time_format: "%H:%M:%S"
+  status_datetime_format: "%Y-%m-%d %H:%M:%S"
+daemon:
+  pause_group_on_failure: false
+  pause_all_on_failure: false
+  callback: ~
+  callback_log_lines: 10
+shared:
+  use_unix_socket: true
+  host: 127.0.0.1
+  port: "6924"
