@@ -5,6 +5,9 @@
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "/usr/bin/black",
     "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+    "rust-analyzer.cargo.allFeatures": true,
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.cargo.runBuildScripts": true,
     "rust-analyzer.diagnostics.disabled": [
         "unresolved-macro-call"
     ],
