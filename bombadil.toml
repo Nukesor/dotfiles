@@ -29,6 +29,7 @@ alacritty = { source="config/alacritty", target=".config/alacritty" }
 termite = { source="config/termite/config", target=".config/termite" }
 tmux = { source="config/tmux", target=".config/tmux" }
 liquidprompt = { source="config/liquidpromptrc", target=".config/liquidpromptrc" }
+starship = { source="config/starship.toml", target=".config/starship.toml" }
 
 # Tooling
 git = { source="config/git", target=".config/git" }
