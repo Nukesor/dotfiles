@@ -28,7 +28,6 @@ post-rewrite-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-
 
 # Shell
 zsh = { source="base/zsh", target=".config/zsh" }
-alacritty = { source="base/alacritty", target=".config/alacritty" }
 tmux = { source="base/tmux", target=".config/tmux" }
 liquidprompt = { source="base/liquidpromptrc", target=".config/liquidpromptrc" }
 starship = { source="base/starship.toml", target=".config/starship.toml" }
@@ -58,11 +57,11 @@ dunst = { source="pc/dunstrc", target=".config/dunstrc" }
 # pc Apps
 rofi = { source="pc/rofi", target=".config/rofi" }
 rofi-pass = { source="pc/rofi-pass", target=".config/rofi-pass" }
+alacritty = { source="base/alacritty", target=".config/alacritty" }
+termite = { source="pc/termite/config", target=".config/termite" }
 
 # Cli Apps
 game_saver = { source="pc/game_saver.toml", target=".config/game_saver.toml" }
-termite = { source="pc/termite/config", target=".config/termite" }
-
 
 #----- Setup for server machines -----
 [profiles.server.dots]
