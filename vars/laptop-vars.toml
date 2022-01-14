@@ -1,3 +1,5 @@
+profile_name = "laptop"
+
 alacritty_fontsize = "5.5"
 
 i3status_config = """

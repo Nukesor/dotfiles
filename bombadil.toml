@@ -22,6 +22,10 @@ vars = ["vars/server-vars.toml"]
 
 #----- Base setup for all machines -----
 [settings.dots]
+# Dotfile meta
+post-merge-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-merge" }
+post-rewrite-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-rewrite" }
+
 # Shell
 zsh = { source="base/zsh", target=".config/zsh" }
 alacritty = { source="base/alacritty", target=".config/alacritty" }

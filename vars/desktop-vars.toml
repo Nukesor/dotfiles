@@ -1,3 +1,5 @@
+profile_name = "desktop"
+
 alacritty_fontsize = "10"
 
 i3status_config = ""

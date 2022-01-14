@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# A git hook, which automatically deploys the config whenever we pull new files.
+exec bombadil link -p __[profile_name]__
