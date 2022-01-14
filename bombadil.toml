@@ -23,22 +23,21 @@ vars = ["vars/server-vars.toml"]
 #----- Base setup for all machines -----
 [settings.dots]
 # Shell
-zsh = { source="config/zsh", target=".config/zsh" }
-alacritty = { source="config/alacritty", target=".config/alacritty" }
-termite = { source="config/termite/config", target=".config/termite" }
-tmux = { source="config/tmux", target=".config/tmux" }
-liquidprompt = { source="config/liquidpromptrc", target=".config/liquidpromptrc" }
-starship = { source="config/starship.toml", target=".config/starship.toml" }
+zsh = { source="base/zsh", target=".config/zsh" }
+alacritty = { source="base/alacritty", target=".config/alacritty" }
+tmux = { source="base/tmux", target=".config/tmux" }
+liquidprompt = { source="base/liquidpromptrc", target=".config/liquidpromptrc" }
+starship = { source="base/starship.toml", target=".config/starship.toml" }
 
 # Tooling
-git = { source="config/git", target=".config/git" }
-pueue_aliases = { source="config/pueue", target=".config/pueue" }
-pacman = { source="config/pacman", target=".config/pacman" }
-nvim = { source="config/nvim", target=".config/nvim" }
+git = { source="base/git", target=".config/git" }
+pueue_aliases = { source="base/pueue", target=".config/pueue" }
+pacman = { source="base/pacman", target=".config/pacman" }
+nvim = { source="base/nvim", target=".config/nvim" }
 
 # Language tooling
-flake = { source="config/flake8", target=".config/flake8" }
-npm = { source="config/npm", target=".config/npm" }
+flake = { source="base/flake8", target=".config/flake8" }
+npm = { source="base/npm", target=".config/npm" }
 
 
 #----- Setup for pc machines -----
@@ -47,17 +46,18 @@ npm = { source="config/npm", target=".config/npm" }
 zshenv = { source="pc/zshenv", target=".zshenv" }
 
 # pc core
-i3 = { source="config/i3", target=".config/i3" }
-i3status-rust = { source="config/i3status-rust", target=".config/i3status-rust" }
-x11 = { source="config/X11", target=".config/X11" }
-dunst = { source="config/dunstrc", target=".config/dunstrc" }
+i3 = { source="pc/i3", target=".config/i3" }
+i3status-rust = { source="pc/i3status-rust", target=".config/i3status-rust" }
+x11 = { source="pc/X11", target=".config/X11" }
+dunst = { source="pc/dunstrc", target=".config/dunstrc" }
 
 # pc Apps
-rofi = { source="config/rofi", target=".config/rofi" }
-rofi-pass = { source="config/rofi-pass", target=".config/rofi-pass" }
+rofi = { source="pc/rofi", target=".config/rofi" }
+rofi-pass = { source="pc/rofi-pass", target=".config/rofi-pass" }
 
 # Cli Apps
-game_saver = { source="config/game_saver.toml", target=".config/game_saver.toml" }
+game_saver = { source="pc/game_saver.toml", target=".config/game_saver.toml" }
+termite = { source="pc/termite/config", target=".config/termite" }
 
 
 #----- Setup for server machines -----
