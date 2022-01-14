@@ -1,0 +1,29 @@
+#!/bin/bash
+
+workspaces=(1 2 3 7 9 10)
+
+for workspace in ${workspaces[@]}; do
+    i3-msg "workspace ${workspace}" && i3-msg "append_layout /home/nuke/.config/i3/layout/${workspace}.json"
+done
+
+# Go back to workspace 2 as default
+i3-msg "workspace 2"
+
+# Workspace 1 & 2
+alacritty &
+alacritty &
+alacritty &
+alacritty &
+
+# Workspace 3
+firefox &
+
+# Workspace 7
+spotify &
+
+# Workspace 9
+telegram-desktop &
+discord &
+
+# Workspace 10
+thunderbird &

@@ -1,0 +1,22 @@
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+        "height": 1397,
+        "width": 849,
+        "x": 0,
+        "y": 0
+    },
+    "marks": [],
+    "name": "Inbox - privat@arne.beer - Mozilla Thunderbird",
+    "percent": 1,
+    "swallows": [
+        {
+            "class": "^Thunderbird$",
+            "instance": "^Mail$",
+            "window_role": "^3pane$"
+        }
+    ],
+    "type": "con"
+}
