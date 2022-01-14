@@ -162,5 +162,4 @@ else
     cp -f ~/.local/share/zsh/history ~/.local/share/zsh/history_backup
 fi
 
-__[zsh-server]__
-__[zsh-client]__
+__[zsh_appendix]__

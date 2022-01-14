@@ -1,4 +1,7 @@
 alacritty_fontsize = "10"
 
-i3status_backlight = ""
-i3status_battery = ""
+i3status_config = ""
+
+xprofile_commands = """
+amixer -c 2 cset numid=22 'Headphones' &
+"""

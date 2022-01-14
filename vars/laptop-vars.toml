@@ -1,10 +1,9 @@
 alacritty_fontsize = "5.5"
 
-i3status_backlight = """
+i3status_config = """
 [[block]]
 block = "backlight"
-"""
-i3status_battery = """
+
 [[block]]
 block = "battery"
 device = "BAT0"
@@ -21,3 +20,5 @@ allow_missing = true
 hide_missing = true
 format = "Bat1: {percentage}% {time}"
 """
+
+xprofile_commands = ""

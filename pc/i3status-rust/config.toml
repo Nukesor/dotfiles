@@ -34,9 +34,7 @@ block = "hueshift"
 step = 50
 hue_shifter = "redshift"
 
-__[i3status_backlight]__
-
-__[i3status_battery]__
+__[i3status_config]__
 
 [[block]]
 block = "music"

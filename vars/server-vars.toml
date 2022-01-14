@@ -1,5 +1,4 @@
-zsh-server = """
+zsh_appendix = """
 alias poweroff='reboot'
 #Aliases
 """
-zsh-client = ""

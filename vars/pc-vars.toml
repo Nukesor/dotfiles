@@ -1,5 +1,4 @@
-zsh-server = ""
-zsh-client = """
+zsh_appendix = """
 #Aliases
 alias km="killall telegram-deskto"
 alias susp='i3lock-blur && systemctl suspend'

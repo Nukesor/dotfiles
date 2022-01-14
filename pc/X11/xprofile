@@ -1,0 +1,5 @@
+__[xprofile_commands]__
+
+feh --no-fehbg --bg-scale ~/.local/bg.jpg &
+
+exec ~/.bin/keyboard_layout en &
