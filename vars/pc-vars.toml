@@ -5,7 +5,7 @@ alias susp='i3lock-blur && systemctl suspend'
 
 # Helper
 alias noblank='xset s off && xset -dpms && xset s noblank'
-alias todo='vim ~/.local/todo'
+alias todo='vim ~/Syncthing/Transfer/todo'
 
 # X
 alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
