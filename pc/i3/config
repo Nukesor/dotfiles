@@ -114,7 +114,7 @@ mode "resize" {
 # Hot applications
 bindsym $mod+x kill
 bindsym $mod+m exec rofi -show run
-bindsym $mod+n exec alacritty
+bindsym $mod+n exec alacritty --working-directory ~
 bindsym Ctrl+$mod+u exec rofi-pass
 bindsym Ctrl+$mod+i exec firefox
 bindsym Ctrl+$mod+c exec ~/.bin/screenshot
