@@ -2,51 +2,95 @@
 add_newline = false
 
 format = """
+$battery\
+$memory_usage\
 $username\
 $hostname\
 $directory\
 $git_branch\
 $git_state\
 $git_status\
+$git_metrics\
 $cmd_duration\
 $line_break\
-$python\
+$status\
 $character"""
 
+[[battery.display]] # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]] # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+threshold = 30
+style = "bold orange"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[memory_usage]
+disabled = false
+format = "[${ram}]($style) "
+threshold = 80
+style = "bold red"
+
+[username]
+show_always = true
+format = "\\[[$user]($style)"
+style_user = "white"
+style_root = "yellow bold"
+
+[hostname]
+ssh_only = true
+style = "yellow"
+format = "[@$hostname]($style)"
+style_user = "white"
+style_root = "yellow bold"
+
 [directory]
-style = "blue"
+format = ":[$path]($style)[$read_only]($read_only_style)\\] "
+truncation_symbol = "../"
+style = "white bold"
+# Never show parent folders of repos
+truncate_to_repo = true
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vicmd_symbol = "[❮](green)"
+success_symbol = "[>](green)"
+error_symbol = "[!](red)"
+vicmd_symbol = "[>](green)"
 
 [git_branch]
 format = "[$branch]($style)"
 style = "orange"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](red)($ahead_behind$stashed)](166) "
+style = "orange"
 conflicted = "​"
 untracked = "​"
-modified = "±"
+modified = ""
 staged = "​"
 renamed = "​"
 deleted = "​"
-stashed = "≡"
+stashed = "📋"
 
 [git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+format = '\([$state($progress_current/$progress_total)]($style)\) '
+style = "166"
+
+[git_metrics]
+disabled = false
+only_nonzero_diffs = true
+added_style = "green"
+deleted_style = "red"
+format = '(\([-$deleted]($deleted_style)/[+$added]($added_style)\) )'
 
 [cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
+format = "[$duration](yellow) "
 
-[python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
+[status]
+format = "[$status](red)"
+disabled = false
 
 [line_break]
 disabled = true
