@@ -44,8 +44,6 @@ style_root = "yellow bold"
 ssh_only = true
 style = "yellow"
 format = "[@$hostname]($style)"
-style_user = "white"
-style_root = "yellow bold"
 
 [directory]
 format = ":[$path]($style)[$read_only]($read_only_style)\\] "
