@@ -1,6 +1,7 @@
 zsh_appendix = """
 #Aliases
 alias km="killall telegram-deskto"
+alias kd="killall -9 Discord"
 alias susp='i3lock-blur && systemctl suspend'
 
 # Helper
