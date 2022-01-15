@@ -2,6 +2,10 @@ theme = "modern"
 icons = "awesome5"
 
 [[block]]
+block = "custom"
+command = "~/.cache/cargo/bin/print_todo"
+
+[[block]]
 block = "disk_space"
 path = "/"
 alias = "root:"
@@ -13,7 +17,7 @@ alert = 10.0
 
 [[block]]
 block = "custom"
-command = '~/.config/i3status-rust/scripts/netinfo'
+command = "~/.cache/cargo/bin/netinfo"
 
 [[block]]
 block = "memory"
