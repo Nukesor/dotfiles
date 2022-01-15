@@ -27,3 +27,8 @@ discord &
 
 # Workspace 10
 thunderbird &
+
+__[i3_layout]__
+
+# Land on workspace 3 by default.
+i3-msg 'workspace 3'

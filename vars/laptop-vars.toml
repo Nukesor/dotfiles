@@ -22,5 +22,6 @@ allow_missing = true
 hide_missing = true
 format = "Bat1: {percentage}% {time}"
 """
+i3_layout = ""
 
 xprofile_commands = ""
