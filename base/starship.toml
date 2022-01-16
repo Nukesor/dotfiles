@@ -12,7 +12,6 @@ $git_state\
 $git_status\
 $git_metrics\
 $cmd_duration\
-$line_break\
 $status\
 $character"""
 
@@ -52,11 +51,6 @@ style = "white bold"
 # Never show parent folders of repos
 truncate_to_repo = true
 
-[character]
-success_symbol = "[>](green)"
-error_symbol = "[!](red)"
-vicmd_symbol = "[>](green)"
-
 [git_branch]
 format = "[$branch]($style)"
 style = "orange"
@@ -90,5 +84,7 @@ format = "[$duration](yellow) "
 format = "[$status](red)"
 disabled = false
 
-[line_break]
-disabled = true
+[character]
+success_symbol = "[>](green)"
+error_symbol = "[!](red)"
+vicmd_symbol = "[>](green)"
