@@ -3,7 +3,7 @@ icons = "awesome5"
 
 [[block]]
 block = "custom"
-command = "~/.cache/cargo/bin/print_todo"
+command = "~/.cache/cargo/bin/print_todo ~/Syncthing/Transfer/todo.md"
 
 [[block]]
 block = "disk_space"
