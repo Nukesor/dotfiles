@@ -29,8 +29,9 @@ style = "bold red"
 
 [memory_usage]
 disabled = false
-format = "[${ram}]($style) "
+format = "$symbol [$ram_pct]($style) "
 threshold = 80
+symbol = ""
 style = "bold red"
 
 [username]
