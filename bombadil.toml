@@ -57,7 +57,7 @@ dunst = { source="pc/dunstrc", target=".config/dunstrc" }
 # pc Apps
 rofi = { source="pc/rofi", target=".config/rofi" }
 rofi-pass = { source="pc/rofi-pass", target=".config/rofi-pass" }
-alacritty = { source="base/alacritty", target=".config/alacritty" }
+alacritty = { source="pc/alacritty", target=".config/alacritty" }
 termite = { source="pc/termite/config", target=".config/termite" }
 
 # Cli Apps
