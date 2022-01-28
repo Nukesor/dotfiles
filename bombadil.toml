@@ -29,7 +29,6 @@ post-rewrite-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-
 # Shell
 zsh = { source="base/zsh", target=".config/zsh" }
 tmux = { source="base/tmux", target=".config/tmux" }
-liquidprompt = { source="base/liquidpromptrc", target=".config/liquidpromptrc" }
 starship = { source="base/starship.toml", target=".config/starship.toml" }
 
 # Tooling
