@@ -9,8 +9,8 @@ i3-msg '[workspace="1"]' move workspace to output DP-5
 i3-msg '[workspace="2"]' move workspace to output primary
 i3-msg '[workspace="3"]' move workspace to output primary
 i3-msg '[workspace="7"]' move workspace to output primary
-i3-msg '[workspace="9"]' move workspace to output DVI-D-0
-i3-msg '[workspace="10"]' move workspace to output DVI-D-0
+i3-msg '[workspace="9"]' move workspace to output DVI-D-1
+i3-msg '[workspace="10"]' move workspace to output DVI-D-1
 
 # Focus the correct workspaces once
 i3-msg workspace 1
