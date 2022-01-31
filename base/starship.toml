@@ -50,7 +50,7 @@ format = ":[$path]($style)[$read_only]($read_only_style)\\] "
 truncation_symbol = "../"
 style = "white bold"
 # Never show parent folders of repos
-truncate_to_repo = true
+truncate_to_repo = false
 
 [git_branch]
 format = "[$branch]($style)"
