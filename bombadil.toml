@@ -47,6 +47,9 @@ npm = { source="base/npm", target=".config/npm" }
 # Env
 zshenv = { source="pc/zshenv", target=".zshenv" }
 
+# System config
+user-dirs = { source="pc/user-dirs.dirs", target=".config/user-dirs.dirs" }
+
 # pc core
 i3 = { source="pc/i3", target=".config/i3" }
 i3status-rust = { source="pc/i3status-rust", target=".config/i3status-rust" }
