@@ -162,4 +162,26 @@ else
     cp -f ~/.local/share/zsh/history ~/.local/share/zsh/history_backup
 fi
 
-__[zsh_appendix]__
+{% if profile == "server" %}
+#Aliases
+alias poweroff='reboot'
+{% else %}
+#Aliases
+alias km="killall telegram-deskto"
+alias kd="killall -9 Discord"
+alias susp='i3lock-blur && systemctl suspend'
+
+# Helper
+alias noblank='xset s off && xset -dpms && xset s noblank'
+alias todo='vim ~/Syncthing/Transfer/todo.md'
+
+# X
+alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
+
+# VPN
+alias vpndown='sudo systemctl stop wg-quick@vpn'
+alias vpnup='sudo systemctl start wg-quick@vpn'
+
+# Boot windows
+alias windowsboot='sudo efibootmgr -n 0000 && reboot'
+{% endif %}

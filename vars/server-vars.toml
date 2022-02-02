@@ -1,5 +1,1 @@
 profile_name = "server"
-zsh_appendix = """
-alias poweroff='reboot'
-#Aliases
-"""

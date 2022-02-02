@@ -10,11 +10,11 @@ posthooks = []
 
 [profiles.laptop]
 extra_profiles = ["pc"]
-vars = ["vars/laptop-vars.toml", "vars/pc-vars.toml"]
+vars = ["vars/laptop-vars.toml"]
 
 [profiles.desktop]
 extra_profiles = ["pc"]
-vars = ["vars/desktop-vars.toml", "vars/pc-vars.toml"]
+vars = ["vars/desktop-vars.toml"]
 
 [profiles.server]
 vars = ["vars/server-vars.toml"]

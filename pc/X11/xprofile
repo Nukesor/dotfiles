@@ -1,4 +1,6 @@
-__[xprofile_commands]__
+{%- if profile == "desktop" %}
+amixer -c 0 cset numid=22 'Headphones' &
+{% endif -%}
 
 feh --no-fehbg --bg-scale ~/.local/bg.jpg &
 

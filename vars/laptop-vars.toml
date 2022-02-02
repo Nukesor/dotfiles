@@ -1,27 +1,3 @@
-profile_name = "laptop"
+profile = "laptop"
 
 alacritty_fontsize = "5.5"
-
-i3status_config = """
-[[block]]
-block = "backlight"
-
-[[block]]
-block = "battery"
-device = "BAT0"
-driver = "sysfs"
-allow_missing = true
-hide_missing = true
-format = "Bat0: {percentage}% {time}"
-
-[[block]]
-block = "battery"
-device = "BAT1"
-driver = "sysfs"
-allow_missing = true
-hide_missing = true
-format = "Bat1: {percentage}% {time}"
-"""
-i3_layout = ""
-
-xprofile_commands = ""
