@@ -18,5 +18,5 @@ i3-msg workspace 9
 """
 
 xprofile_commands = """
-amixer -c 2 cset numid=22 'Headphones' &
+amixer -c 0 cset numid=22 'Headphones' &
 """
