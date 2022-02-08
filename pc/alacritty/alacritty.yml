@@ -40,12 +40,13 @@ scrolling:
 
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    Default:
-        - (Linux/BSD) monospace
-    family: monospace
+    family: Input Mono
+    style: Regular
+  bold:
+    style: Medium
+  italic:
+    style: Italic
 
   # Point size
   size: __[alacritty_fontsize]__
