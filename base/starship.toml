@@ -4,6 +4,7 @@ add_newline = false
 format = """
 $battery\
 $memory_usage\
+$jobs\
 $username\
 $hostname\
 $directory\
@@ -33,6 +34,11 @@ format = "$symbol [$ram_pct]($style) "
 threshold = 80
 symbol = ""
 style = "bold red"
+
+[jobs]
+number_threshold = 1
+symbol = "+"
+style = "yellow bold"
 
 [username]
 show_always = true
