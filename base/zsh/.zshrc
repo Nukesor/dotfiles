@@ -142,7 +142,9 @@ bindkey "^g" __gflist
 
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
-eval `keychain --eval --agents 'ssh' -Q -q id_ed25519`
+if [[ -f "~/.ssh/id_ed25519" ]]; then
+    eval `keychain --eval --agents 'ssh' -Q -q id_ed25519`
+fi
 
 # History
 HISTSIZE=1000000
@@ -155,7 +157,10 @@ setopt no_hist_beep         # fucking beep
 setopt hist_ignore_space    # ignore entries with leading space
 
 # Save and restore zsh history file to backup.
-if [[ $(wc -l ~/.local/share/zsh/history | awk '{print $1}') -lt 1000 ]]; then
+if [[
+    $(wc -l ~/.local/share/zsh/history | awk '{print $1}') -lt 1000 && \
+    $(wc -l ~/.local/share/zsh/history_backup | awk '{print $1}') -gt 1000
+]]; then
     echo "History file has less than 1000 lines, restoring backup..."
     cp -f ~/.local/share/zsh/history_backup ~/.local/share/zsh/history
 else
