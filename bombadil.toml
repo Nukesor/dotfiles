@@ -4,7 +4,7 @@ dotfiles_dir = ".dotfiles"
 [settings]
 # An array of toml files paths containing the variables to inject in your templatized dotfiles
 # You can have multiple var files as long as variable names does not colide.
-vars = []
+vars = ["vars/vars.toml"]
 # An array of post install shell commands
 posthooks = []
 
