@@ -142,7 +142,7 @@ bindkey "^g" __gflist
 
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
-if [[ -f "~/.ssh/id_ed25519" ]]; then
+if [[ -f "$HOME/.ssh/id_ed25519" ]]; then
     eval `keychain --eval --agents 'ssh' -Q -q id_ed25519`
 fi
 
