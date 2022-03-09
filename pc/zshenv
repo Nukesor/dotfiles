@@ -5,6 +5,11 @@ path=($path ./bin)
 path=($path $HOME/.screenlayout)
 path=($path ./node_modules/.bin)
 
+# Application logic
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export VAGRANT_EXPERIMENTAL="disks"
+export JAVA_HOME=/usr/lib/jvm/default
+
 # XDG Setup
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -46,7 +51,6 @@ export PUB_CACHE="$XDG_CACHE_HOME/dart-pub-cache"
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 
 # Runtime cleanup
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 
 # Vim setup
@@ -60,7 +64,3 @@ export GTK_THEME=Advaita:dark
 # Convenience stuff
 export ZRC=$ZDOTDIR/.zshrc
 export NVIM=$XDG_CONFIG_HOME/nvim/
-
-# Application logic
-export VAGRANT_EXPERIMENTAL="disks"
-export JAVA_HOME=/usr/lib/jvm/default

@@ -143,9 +143,6 @@ bindkey "^g" __gflist
 
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
-if [[ -f "$HOME/.ssh/id_ed25519" ]]; then
-    eval `keychain --eval --agents 'ssh' -Q -q id_ed25519`
-fi
 
 # History
 HISTSIZE=1000000
@@ -165,7 +162,9 @@ if [[
     echo "History file has less than 1000 lines, restoring backup..."
     cp -f ~/.local/share/zsh/history_backup ~/.local/share/zsh/history
 else
-    cp -f ~/.local/share/zsh/history ~/.local/share/zsh/history_backup
+    if [[ -f "$HOME/.local/share/zsh/history" ]]; then
+        cp -f ~/.local/share/zsh/history ~/.local/share/zsh/history_backup
+    fi
 fi
 
 {% if profile == "server" %}
