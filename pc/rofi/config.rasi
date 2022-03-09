@@ -1,5 +1,6 @@
 configuration {
   matching: "fuzzy";
+  terminal: "alacritty";
 }
 
 @theme "/home/nuke/.config/rofi/flat-orange.rasi"

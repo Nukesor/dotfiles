@@ -52,6 +52,9 @@ EDITOR='gvim -f'
 # Browser
 BROWSER='xdg-open'
 
+# Set password store location
+PASSWORD_STORE_DIR=~/.local/share/password-store
+
 ## Misc settings
 
 default_do='menu' # menu, autotype, copyPass, typeUser, typePass, copyUser, copyUrl, viewEntry, typeMenu, actionMenu, copyMenu, openUrl
