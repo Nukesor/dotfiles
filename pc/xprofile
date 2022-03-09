@@ -2,11 +2,16 @@
 amixer -c 0 cset numid=22 'Headphones' &
 {% endif -%}
 
-feh --no-fehbg --bg-scale ~/.local/bg.jpg &
+# Load zshenv
+[ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
 
+# Load keyboard layout
 exec ~/.bin/keyboard-layout en &
 
 # Load base monitor layout on start
 if [ -f ~/.bin/base.sh ]; then
     exec ~/.bin/base.sh &
 fi
+
+# Set background pic
+feh --no-fehbg --bg-scale ~/.local/bg.jpg &

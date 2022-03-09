@@ -54,6 +54,7 @@ ssh_agent_service = { source="pc/systemd_user/ssh-agent.service", target=".confi
 i3 = { source="pc/i3", target=".config/i3" }
 i3status-rust = { source="pc/i3status-rust", target=".config/i3status-rust" }
 x11 = { source="pc/X11", target=".config/X11" }
+xprofile = { source="pc/xprofile", target=".xprofile" }
 dunst = { source="pc/dunstrc", target=".config/dunstrc" }
 
 # pc Apps
