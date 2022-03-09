@@ -1,0 +1,5 @@
+configuration {
+  matching: "fuzzy";
+}
+
+@theme "/home/nuke/.config/rofi/flat-orange.rasi"
