@@ -38,10 +38,7 @@ npm = { source="base/npm", target=".config/npm" }
 [profiles.laptop]
 extra_profiles = ["pc"]
 vars = ["vars/laptop-vars.toml"]
-prehooks = [
-  "bash -c \"mkdir -p ~/.config/systemd\"",
-  "bash -c \"mkdir -p ~/.config/systemd/default.target.wants\"",
-]
+prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
 
 #----- Setup for pc machines -----
 [profiles.pc.dots]
@@ -50,7 +47,8 @@ zshenv = { source="pc/zshenv", target=".zshenv" }
 
 # System config
 user-dirs = { source="pc/user-dirs.dirs", target=".config/user-dirs.dirs" }
-systemd_services = { source="pc/systemd/user", target=".config/systemd/user" }
+pueued_service = { source="pc/systemd_user/pueued.service", target=".config/systemd/user/pueued.service" }
+ssh_agent_service = { source="pc/systemd_user/ssh-agent.service", target=".config/systemd/user/ssh-agent.service" }
 
 # pc core
 i3 = { source="pc/i3", target=".config/i3" }
