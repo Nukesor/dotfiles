@@ -1,0 +1,10 @@
+[Unit]
+Description=Pueue Daemon - CLI process scheduler and manager
+
+[Service]
+Restart=no
+ExecStart=%h/.cache/cargo/bin/pueued -vv
+ExecStop=%h/.cache/cargo/bin/pueue shutdown
+
+[Install]
+WantedBy=default.target
