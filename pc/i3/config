@@ -2,12 +2,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # ---------------- I3 Config variables ----------------
-
 # Set mod key to Windows
 set $mod Mod4
-
-# Font for window titles.
-font --misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Use Mouse+/$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -15,6 +11,10 @@ floating_modifier $mod
 # mouse floating causing no longer change of window focus
 focus_follows_mouse no
 mouse_warping none
+
+# New window
+for_window [class="^.*"] border pixel 2
+font pango:DejaVu Sans Mono 0
 
 # Workspace names
 set $ws1 "1: debug"
@@ -109,11 +109,11 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-## ---------------- Application related stuff ----------------
+## ---------------- Application shortcuts ----------------
 
 # Hot applications
 bindsym $mod+x kill
-bindsym $mod+m exec rofi -show run
+bindsym $mod+m exec rofi -show run ~/.config/rofi/config
 bindsym $mod+n exec alacritty --working-directory ~
 bindsym Ctrl+$mod+u exec rofi-pass
 bindsym Ctrl+$mod+i exec firefox
@@ -125,6 +125,7 @@ bindsym Ctrl+$mod+t exec thunderbird
 bindsym Ctrl+$mod+m exec telegram-desktop
 bindsym Ctrl+$mod+comma exec discord-canary
 
+
 bindsym $mod+o mode "open"
 mode "open" {
     bindsym d mode "default", exec nemo
@@ -134,6 +135,10 @@ mode "open" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
+## ---------------- Application related stuff ----------------
+
+no_focus [class="Steam"]
 
 ## ---------------- System shortcuts (audio, backlight, etc.) ----------------
 
@@ -157,7 +162,52 @@ bindsym $mod+Control+q exec ~/.bin/backlight normal
 bindsym $mod+Control+w exec ~/.bin/backlight down
 bindsym $mod+Control+e exec ~/.bin/backlight up
 
-## ---------------- Styling ----------------
+## ---------------- I3 System ----------------
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+t reload
+
+# lock screen
+bindsym $mod+Control+p exec /home/nuke/.bin/i3lock-blur
+bindsym Mod5+Control+p exec /home/nuke/.bin/i3lock-blur
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+## ---------------- I3 Styling ----------------
+
+#== define colors
+set_from_resource $darkred     color1  #cc241d
+set_from_resource $red         color9  #fb4934
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $white       color15 #000000
+
+set $black       #282828
+set $darkblack   #8ec07c
+set $darkred   #f03f3f
+set $transparent #000001a3
+set $barbg #2D2D2D
+set $darkyellow #ffaa00
+
+#                           BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
+client.focused              $red        $black      $darkwhite  $darkred    $darkyellow
+client.unfocused            $black      $black      $white      $darkred    $darkwhite
+client.focused_inactive     $black      $black      $white      $black      $darkcyan
+client.urgent               $darkred    $darkred    $black      $darkred    $darkred
+client.background           $black
+
+## ---------------- I3 status bar styling ----------------
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -176,19 +226,6 @@ bar {
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
-
-## ---------------- I3 System ----------------
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+t reload
-
-# lock screen
-bindsym $mod+Control+p exec /home/nuke/.bin/i3lock-blur
-bindsym Mod5+Control+p exec /home/nuke/.bin/i3lock-blur
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 ## ---------------- Misc ----------------
 {% if profile != "minmal" -%}
