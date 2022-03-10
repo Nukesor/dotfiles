@@ -12,7 +12,7 @@
    darkgray:         #848484;
    scrollbarcolor:   #505050;
 
-   font: "DejaVu Sans Mono Regular 14";
+   font: "DejaVu Sans Mono Regular 12";
    background-color: @blackdarkest;
    text-color: @fgwhite;
 }
