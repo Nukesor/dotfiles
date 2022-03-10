@@ -5,16 +5,12 @@
 # Set mod key to Windows
 set $mod Mod4
 
-# Use Mouse+/$mod to drag floating windows to their wanted position
+# Use Mouse+/$mod to drag floating windows
 floating_modifier $mod
 
-# mouse floating causing no longer change of window focus
+# Mouse hover doesn't focus windows
 focus_follows_mouse no
 mouse_warping none
-
-# New window
-for_window [class="^.*"] border pixel 2
-font pango:DejaVu Sans Mono 0
 
 # Workspace names
 set $ws1 "1: debug"
@@ -138,6 +134,7 @@ mode "open" {
 
 ## ---------------- Application related stuff ----------------
 
+# Don't give steam any focus.
 no_focus [class="Steam"]
 
 ## ---------------- System shortcuts (audio, backlight, etc.) ----------------
@@ -177,6 +174,11 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 ## ---------------- I3 Styling ----------------
 
+# Hide title for unstacked windows
+for_window [class="^.*"] border pixel 2
+# Font config
+font pango:DejaVu Sans Mono 8
+
 #== define colors
 set_from_resource $darkred     color1  #cc241d
 set_from_resource $red         color9  #fb4934
@@ -199,12 +201,13 @@ set $darkred   #f03f3f
 set $transparent #000001a3
 set $barbg #2D2D2D
 set $darkyellow #ffaa00
+set $darkeryellow #a06b00
 
-#                           BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
-client.focused              $red        $black      $darkwhite  $darkred    $darkyellow
-client.unfocused            $black      $black      $white      $darkred    $darkwhite
-client.focused_inactive     $black      $black      $white      $black      $darkcyan
-client.urgent               $darkred    $darkred    $black      $darkred    $darkred
+#                           BORDER          BACKGROUND  TEXT            INDICATOR   CHILD_BORDER
+client.focused              $darkeryellow   $black      $darkyellow     $darkred    $darkeryellow
+client.unfocused            $black          $black      $darkyellow     $darkred    $darkwhite
+client.focused_inactive     $black          $black      $darkyellow     $black      $darkcyan
+client.urgent               $darkred        $darkred    $darkyellow     $darkred    $darkred
 client.background           $black
 
 ## ---------------- I3 status bar styling ----------------
