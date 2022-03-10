@@ -236,6 +236,9 @@ set softtabstop=4       " counts n spaces when DELETE or BCKSPCE is used
 set autoindent          " auto indents next new line
 set listchars=tab:→,trail:¸ " show trail spaces and tabstchars
 
+" Display title in window bar
+set title
+autocmd BufEnter * let &titlestring = "neovim: " . expand("%:t")
 
 "----- Functionality ------
 " Spell checking
