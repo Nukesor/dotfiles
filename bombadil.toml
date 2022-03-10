@@ -8,10 +8,14 @@ vars = ["vars/vars.toml"]
 # An array of post install shell commands
 posthooks = []
 
+[profiles.laptop]
+extra_profiles = ["pc"]
+vars = ["vars/laptop-vars.toml"]
+prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
+
 [profiles.desktop]
 extra_profiles = ["pc"]
 vars = ["vars/desktop-vars.toml"]
-
 
 #----- Base setup for all machines -----
 [settings.dots]
@@ -34,10 +38,7 @@ nvim = { source="base/nvim", target=".config/nvim" }
 flake = { source="base/flake8", target=".config/flake8" }
 npm = { source="base/npm", target=".config/npm" }
 
-
-[profiles.laptop]
-extra_profiles = ["pc"]
-vars = ["vars/laptop-vars.toml"]
+[profiles.pc]
 prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
 posthooks = [
   "systemctl --user daemon-reload",
