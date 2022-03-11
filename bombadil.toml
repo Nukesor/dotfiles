@@ -19,9 +19,6 @@ vars = ["vars/desktop-vars.toml"]
 
 #----- Base setup for all machines -----
 [settings.dots]
-# Dotfile meta
-post-merge-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-merge" }
-post-rewrite-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-rewrite" }
 
 # Shell
 zsh = { source="base/zsh", target=".config/zsh" }
@@ -44,6 +41,7 @@ posthooks = [
   "systemctl --user daemon-reload",
   "systemctl --user enable pueued",
   "systemctl --user enable ssh-agent",
+  "systemctl --user enable dotfile-deploy",
 ]
 
 #----- Setup for pc machines -----
@@ -55,6 +53,7 @@ zshenv = { source="pc/zshenv", target=".zshenv" }
 user-dirs = { source="pc/user-dirs.dirs", target=".config/user-dirs.dirs" }
 pueued_service = { source="pc/systemd_user/pueued.service", target=".config/systemd/user/pueued.service" }
 ssh_agent_service = { source="pc/systemd_user/ssh-agent.service", target=".config/systemd/user/ssh-agent.service" }
+dotfile_service = { source="pc/systemd_user/dotfile-deploy.service", target=".config/systemd/user/dotfile-deploy.service" }
 
 # pc core
 i3 = { source="pc/i3", target=".config/i3" }
@@ -77,4 +76,9 @@ vars = ["vars/server-vars.toml"]
 
 #----- Setup for server machines -----
 [profiles.server.dots]
+# Dotfile auto-deploy on pull
+# We only need this on the server, as we have the watcher job on PCs
+post-merge-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-merge" }
+post-rewrite-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-rewrite" }
+
 zshenv = { source="server/zshenv", target=".zshenv" }
