@@ -2,6 +2,9 @@
 amixer -c 0 cset numid=22 'Headphones' &
 {% endif -%}
 
+export PATH=~/.cache/cargo/bin:$PATH
+export PATH=~/.bin:$PATH
+
 # Load zshenv
 [ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
 
