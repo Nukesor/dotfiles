@@ -1,2 +1,4 @@
 profile = "laptop"
 alacritty_fontsize = "5.5"
+
+i3_title_font_size = "10"

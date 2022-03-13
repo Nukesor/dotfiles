@@ -22,12 +22,12 @@ command = "~/.cache/cargo/bin/netinfo"
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "Mem: {mem_used_percents}%"
+format_mem = "Mem: {mem_used_percents}"
 clickable = false
 
 [[block]]
 block = "cpu"
-format = "{barchart} {utilization}%"
+format = "{barchart} {utilization}"
 interval = 3
 info = 80
 warning = 90
@@ -48,7 +48,7 @@ device = "BAT0"
 driver = "sysfs"
 allow_missing = true
 hide_missing = true
-format = "Bat0: {percentage}% {time}"
+format = "Bat0: {percentage} {time}"
 
 [[block]]
 block = "battery"
@@ -56,7 +56,8 @@ device = "BAT1"
 driver = "sysfs"
 allow_missing = true
 hide_missing = true
-format = "Bat1: {percentage}% {time}"
+format = "Bat1: {percentage} {time}"
+
 {%- endif %}
 
 [[block]]

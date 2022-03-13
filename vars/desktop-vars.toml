@@ -1,1 +1,3 @@
 profile = "desktop"
+
+i3_title_font_size = "8"

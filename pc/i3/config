@@ -177,7 +177,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Hide title for unstacked windows
 for_window [class="^.*"] border pixel 2
 # Font config
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono {{ i3_title_font_size }}
 
 #== define colors
 set_from_resource $darkred     color1  #cc241d
