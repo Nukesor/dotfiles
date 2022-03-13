@@ -1,5 +1,5 @@
 {%- if profile == "desktop" %}
-amixer -c 0 cset numid=22 'Headphones' &
+~/.bin/fix_xonar_output
 {% endif -%}
 
 export PATH=~/.cache/cargo/bin:$PATH
