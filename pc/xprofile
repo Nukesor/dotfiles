@@ -11,10 +11,5 @@ export PATH=~/.bin:$PATH
 # Load keyboard layout
 exec ~/.bin/keyboard-layout en &
 
-# Load base monitor layout on start
-if [ -f ~/.bin/base.sh ]; then
-    exec ~/.bin/base.sh &
-fi
-
 # Set background pic
 feh --no-fehbg --bg-scale ~/.local/bg.jpg &
