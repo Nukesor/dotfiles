@@ -140,9 +140,9 @@ no_focus [class="Steam"]
 ## ---------------- System shortcuts (audio, backlight, etc.) ----------------
 
 # Set pulse audio sink
-bindsym $mod+F1 exec ~/.bin/change-sink 1
-bindsym $mod+F2 exec ~/.bin/change-sink 2
-bindsym $mod+F3 exec ~/.bin/change-sink 0
+bindsym $mod+F1 exec change_sink built-in
+bindsym $mod+F2 exec change_sink xonar
+bindsym $mod+F3 exec change_sink hdmi
 
 # Special keyboard audio keys
 bindsym XF86AudioMute exec "pactl set-sink-volume @DEFAULT_SINK@ 0 &"
