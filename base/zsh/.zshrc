@@ -180,6 +180,10 @@ alias susp='i3lock-blur && systemctl suspend'
 alias noblank='xset s off && xset -dpms && xset s noblank'
 alias todo='vim ~/Syncthing/Transfer/todo.md'
 
+sshHcloud() {
+    hcloud server ssh $1 -o StrictHostKeyChecking=no -i ~/.ssh/work/hcloud_sshkey
+}
+
 # X
 alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
 
@@ -189,4 +193,5 @@ alias vpnup='sudo systemctl start wg-quick@vpn'
 
 # Boot windows
 alias windowsboot='sudo efibootmgr -n 0000 && reboot'
+
 {% endif %}
