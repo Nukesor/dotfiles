@@ -1,15 +1,15 @@
-{%- if profile == "desktop" %}
-~/.bin/fix_xonar_output
-{% endif -%}
-
-export PATH=~/.cache/cargo/bin:$PATH
 export PATH=~/.bin:$PATH
+export PATH=~/.cache/cargo/bin:$PATH
+
+{%- if profile == "desktop" %}
+fix_xonar_output
+{% endif -%}
 
 # Load zshenv
 [ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
 
 # Load keyboard layout
-exec ~/.bin/keyboard-layout en &
+exec keyboard-layout en &
 
 # Set background pic
 feh --no-fehbg --bg-scale ~/.local/bg.jpg &
