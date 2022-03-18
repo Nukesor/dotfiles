@@ -143,6 +143,7 @@ no_focus [class="Steam"]
 bindsym $mod+F1 exec change_sink built-in
 bindsym $mod+F2 exec change_sink xonar
 bindsym $mod+F3 exec change_sink hdmi
+bindsym $mod+F4 exec change_sink unitek
 
 # Special keyboard audio keys
 bindsym XF86AudioMute exec "pactl set-sink-volume @DEFAULT_SINK@ 0 &"
