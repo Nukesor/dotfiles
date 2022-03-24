@@ -6,6 +6,10 @@ if [[ -f "/usr/share/fzf/completion.zsh" ]]; then
     source "/usr/share/fzf/completion.zsh"
 fi
 
+if [[ -d "$HOME/repos/tools/pueue/utils/completions/" ]]; then
+    fpath=($HOME/repos/tools/pueue/utils/completions/ $fpath)
+fi
+
 autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
 
 # -------------------- Packages --------------------
