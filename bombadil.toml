@@ -39,9 +39,9 @@ npm = { source="base/npm", target=".config/npm" }
 prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
 posthooks = [
   "systemctl --user daemon-reload",
-  "systemctl --user enable pueued",
-  "systemctl --user enable ssh-agent",
-  "systemctl --user enable dotfile-deploy",
+  "systemctl --user enable --now pueued",
+  "systemctl --user enable --now ssh-agent",
+  "systemctl --user enable --now dotfile-deploy",
 ]
 
 #----- Setup for pc machines -----
