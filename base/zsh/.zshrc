@@ -49,6 +49,7 @@ alias watch='watch -c'
 
 # Systemctl
 alias sys='sudo systemctl'
+alias sysu='systemctl --user'
 alias systatus='systemctl --type=service --all'
 alias logs='sudo journalctl -u'
 
