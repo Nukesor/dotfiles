@@ -70,7 +70,7 @@ eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 
 # Vim
-alias nvim='vim -c NERD'
+alias nvim='nvim -c NERD'
 alias svim='sudo nvim'
 
 # Netctl
