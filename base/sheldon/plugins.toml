@@ -1,0 +1,8 @@
+[plugins.256color]
+github = "chrissicool/zsh-256color"
+
+#[plugins.colored_man_page]
+#github = "plugins/colored-man-pages"
+
+[plugins.syntax_highlighting]
+github = "zsh-users/zsh-syntax-highlighting"

@@ -21,19 +21,20 @@ vars = ["vars/desktop-vars.toml"]
 [settings.dots]
 
 # Shell
-zsh = { source="base/zsh", target=".config/zsh" }
-tmux = { source="base/tmux", target=".config/tmux" }
-starship = { source="base/starship.toml", target=".config/starship.toml" }
+zsh = { source = "base/zsh", target = ".config/zsh" }
+sheldon = { source = "base/sheldon", target = ".config/sheldon" }
+tmux = { source = "base/tmux", target = ".config/tmux" }
+starship = { source = "base/starship.toml", target = ".config/starship.toml" }
 
 # Tooling
-git = { source="base/git", target=".config/git" }
-pueue_aliases = { source="base/pueue", target=".config/pueue" }
-pacman = { source="base/pacman", target=".config/pacman" }
-nvim = { source="base/nvim", target=".config/nvim" }
+git = { source = "base/git", target = ".config/git" }
+pueue_aliases = { source = "base/pueue", target = ".config/pueue" }
+pacman = { source = "base/pacman", target = ".config/pacman" }
+nvim = { source = "base/nvim", target = ".config/nvim" }
 
 # Language tooling
-flake = { source="base/flake8", target=".config/flake8" }
-npm = { source="base/npm", target=".config/npm" }
+flake = { source = "base/flake8", target = ".config/flake8" }
+npm = { source = "base/npm", target = ".config/npm" }
 
 [profiles.pc]
 prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
@@ -47,29 +48,29 @@ posthooks = [
 #----- Setup for pc machines -----
 [profiles.pc.dots]
 # Env
-zshenv = { source="pc/zshenv", target=".zshenv" }
+zshenv = { source = "pc/zshenv", target = ".zshenv" }
 
 # System config
-user-dirs = { source="pc/user-dirs.dirs", target=".config/user-dirs.dirs" }
-pueued_service = { source="pc/systemd_user/pueued.service", target=".config/systemd/user/pueued.service" }
-ssh_agent_service = { source="pc/systemd_user/ssh-agent.service", target=".config/systemd/user/ssh-agent.service" }
-dotfile_service = { source="pc/systemd_user/dotfile-deploy.service", target=".config/systemd/user/dotfile-deploy.service" }
+user-dirs = { source = "pc/user-dirs.dirs", target = ".config/user-dirs.dirs" }
+pueued_service = { source = "pc/systemd_user/pueued.service", target = ".config/systemd/user/pueued.service" }
+ssh_agent_service = { source = "pc/systemd_user/ssh-agent.service", target = ".config/systemd/user/ssh-agent.service" }
+dotfile_service = { source = "pc/systemd_user/dotfile-deploy.service", target = ".config/systemd/user/dotfile-deploy.service" }
 
 # pc core
-i3 = { source="pc/i3", target=".config/i3" }
-i3status-rust = { source="pc/i3status-rust", target=".config/i3status-rust" }
-x11 = { source="pc/X11", target=".config/X11" }
-xprofile = { source="pc/xprofile", target=".xprofile" }
-dunst = { source="pc/dunstrc", target=".config/dunstrc" }
+i3 = { source = "pc/i3", target = ".config/i3" }
+i3status-rust = { source = "pc/i3status-rust", target = ".config/i3status-rust" }
+x11 = { source = "pc/X11", target = ".config/X11" }
+xprofile = { source = "pc/xprofile", target = ".xprofile" }
+dunst = { source = "pc/dunstrc", target = ".config/dunstrc" }
 
 # pc Apps
-rofi = { source="pc/rofi", target=".config/rofi" }
-rofi-pass = { source="pc/rofi-pass", target=".config/rofi-pass" }
-alacritty = { source="pc/alacritty", target=".config/alacritty" }
-termite = { source="pc/termite/config", target=".config/termite" }
+rofi = { source = "pc/rofi", target = ".config/rofi" }
+rofi-pass = { source = "pc/rofi-pass", target = ".config/rofi-pass" }
+alacritty = { source = "pc/alacritty", target = ".config/alacritty" }
+termite = { source = "pc/termite/config", target = ".config/termite" }
 
 # Cli Apps
-game_saver = { source="pc/game_saver.toml", target=".config/game_saver.toml" }
+game_saver = { source = "pc/game_saver.toml", target = ".config/game_saver.toml" }
 
 [profiles.server]
 vars = ["vars/server-vars.toml"]
@@ -78,7 +79,7 @@ vars = ["vars/server-vars.toml"]
 [profiles.server.dots]
 # Dotfile auto-deploy on pull
 # We only need this on the server, as we have the watcher job on PCs
-post-merge-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-merge" }
-post-rewrite-hook = { source="base/git-hook", target=".dotfiles/.git/hooks/post-rewrite" }
+post-merge-hook = { source = "base/git-hook", target = ".dotfiles/.git/hooks/post-merge" }
+post-rewrite-hook = { source = "base/git-hook", target = ".dotfiles/.git/hooks/post-rewrite" }
 
-zshenv = { source="server/zshenv", target=".zshenv" }
+zshenv = { source = "server/zshenv", target = ".zshenv" }

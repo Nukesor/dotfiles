@@ -12,24 +12,11 @@ fi
 
 autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
 
-# -------------------- Packages --------------------
-export ZPLUG_BIN="$HOME/.local/share/zplug/bin"
-export ZPLUG_HOME="$HOME/.local/share/zplug"
-export ZPLUG_REPOS="$HOME/.local/share/zplug"
-export ZPLUG_CACHE_DIR="$HOME/.cache/zplug"
+# -------------------- Plugins/External --------------------
 
-source /usr/share/zsh/scripts/zplug/init.zsh
-
-zplug "chrissicool/zsh-256color"
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "zsh-users/zsh-syntax-highlighting"
-#zplug "zsh-users/zsh-completions" use:src
-
-zplug load
-
-# Run "zplug install" if not all plugins are installed.
-zplug check || zplug install
-
+# Plugin manager
+eval "$(sheldon source)"
+# Prompt
 eval "$(starship init zsh)"
 
 # -------------------- General configuration --------------------
