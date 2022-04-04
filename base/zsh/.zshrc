@@ -14,6 +14,8 @@ autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
 
 # -------------------- Plugins/External --------------------
 
+export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
+export SHELDON_DATA_DIR="$HOME/.local/share/sheldon"
 # Plugin manager
 eval "$(sheldon source)"
 # Prompt
