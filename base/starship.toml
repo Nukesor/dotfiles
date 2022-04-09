@@ -8,6 +8,7 @@ $jobs\
 $username\
 $hostname\
 $directory\
+$python\
 $git_branch\
 $git_state\
 $git_status\
@@ -57,6 +58,9 @@ truncation_symbol = "../"
 style = "white bold"
 # Never show parent folders of repos
 truncate_to_repo = false
+
+[python]
+format = '[${pyenv_prefix}(\($virtualenv\) )]($style)'
 
 [git_branch]
 format = "[$branch]($style)"
