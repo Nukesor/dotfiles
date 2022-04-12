@@ -17,7 +17,7 @@ Plug 'NoahTheDuke/vim-just'
 "----- Other language support ------
 " Markup/Data structure/Templating support
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'kkiyama117/coc-toml', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'kkiyama117/coc-toml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'stephpy/vim-yaml'
 Plug 'Glench/Vim-Jinja2-Syntax'
 "Plug 'mustache/vim-mustache-handlebars'
