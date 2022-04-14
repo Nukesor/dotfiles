@@ -54,9 +54,8 @@ alias la='ls -alh'
 # cp
 alias cp='cp --reflink=auto'
 
-# fasd
-eval "$(fasd --init auto)"
-alias j='fasd_cd -d'
+# zoxide init + z alias for convenience
+eval "$(zoxide init zsh --cmd j)"
 
 # Vim
 alias nvim='nvim -c NERD'
