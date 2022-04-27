@@ -1,7 +1,6 @@
 # Path setup
 path=($HOME/.bin $path)
 path=($HOME/.cache/cargo/bin $path)
-path=($path ./bin)
 
 # Application logic
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
