@@ -1,5 +1,5 @@
 theme = "modern"
-icons = "awesome5"
+icons = "awesome"
 
 [[block]]
 block = "custom"
