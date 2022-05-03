@@ -43,6 +43,7 @@ posthooks = [
   "systemctl --user enable --now pueued",
   "systemctl --user enable --now ssh-agent",
   "systemctl --user enable --now dotfile-deploy",
+  "systemctl --user enable --now screenlock",
 ]
 
 #----- Setup for pc machines -----
@@ -55,6 +56,7 @@ user-dirs = { source = "pc/user-dirs.dirs", target = ".config/user-dirs.dirs" }
 pueued_service = { source = "pc/systemd_user/pueued.service", target = ".config/systemd/user/pueued.service" }
 ssh_agent_service = { source = "pc/systemd_user/ssh-agent.service", target = ".config/systemd/user/ssh-agent.service" }
 dotfile_service = { source = "pc/systemd_user/dotfile-deploy.service", target = ".config/systemd/user/dotfile-deploy.service" }
+screenlock = { source = "pc/systemd_user/screenlock.service", target = ".config/systemd/user/screenlock.service" }
 
 # pc core
 i3 = { source = "pc/i3", target = ".config/i3" }
