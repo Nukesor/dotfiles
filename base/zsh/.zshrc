@@ -167,7 +167,7 @@ alias poweroff='reboot'
 #Aliases
 alias km="killall telegram-deskto"
 alias kd="killall -9 DiscordCanary"
-alias susp='i3lock-blur && systemctl suspend'
+alias susp='systemctl suspend'
 
 # Helper
 alias noblank='xset s off && xset -dpms && xset s noblank'
