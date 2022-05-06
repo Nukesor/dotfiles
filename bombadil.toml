@@ -8,15 +8,6 @@ vars = ["vars/vars.toml"]
 # An array of post install shell commands
 posthooks = []
 
-[profiles.laptop]
-extra_profiles = ["pc"]
-vars = ["vars/laptop-vars.toml"]
-prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
-
-[profiles.desktop]
-extra_profiles = ["pc"]
-vars = ["vars/desktop-vars.toml"]
-
 #----- Base setup for all machines -----
 [settings.dots]
 
@@ -73,6 +64,22 @@ termite = { source = "pc/termite/config", target = ".config/termite" }
 
 # Cli Apps
 game_saver = { source = "pc/game_saver.toml", target = ".config/game_saver.toml" }
+
+[profiles.laptop]
+extra_profiles = ["pc"]
+vars = ["vars/laptop-vars.toml"]
+prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
+
+[profiles.desktop]
+extra_profiles = ["pc"]
+vars = ["vars/desktop-vars.toml"]
+posthooks = [
+  "systemctl --user daemon-reload",
+  "systemctl --user enable --now gametime_warner",
+]
+
+[profiles.desktop.dots]
+gametime_warner = { source = "pc/systemd_user/gametime_warner.service", target = ".config/systemd/user/gametime_warner.service" }
 
 [profiles.server]
 vars = ["vars/server-vars.toml"]
