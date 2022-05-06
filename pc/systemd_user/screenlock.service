@@ -6,3 +6,6 @@ Type=simple
 # xss-lock listens for any sleep signals and calls the specified command
 # once it detects a sleep/hibernate signal.
 ExecStart=xss-lock %h/.bin/i3lock-blur
+
+[Install]
+WantedBy=default.target
