@@ -6,7 +6,7 @@ Type=simple
 # Checks all processes for specific game binaries/names.
 # The user will then be notified regularily how long they played.
 # If they play for too long, the notifications will get more annoying.
-ExecStart=%h/.cache/cargo/bin/gametime_warner -vv
+ExecStart=%h/.cache/cargo/bin/gametime_warner -vv -n 30
 
 [Install]
 WantedBy=default.target
