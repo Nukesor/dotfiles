@@ -75,11 +75,11 @@ extra_profiles = ["pc"]
 vars = ["vars/desktop-vars.toml"]
 posthooks = [
   "systemctl --user daemon-reload",
-  "systemctl --user enable --now gametime_warner",
+  "systemctl --user enable --now polizei",
 ]
 
 [profiles.desktop.dots]
-gametime_warner = { source = "pc/systemd_user/gametime_warner.service", target = ".config/systemd/user/gametime_warner.service" }
+polizei = { source = "pc/systemd_user/polizei.service", target = ".config/systemd/user/polizei.service" }
 
 [profiles.server]
 vars = ["vars/server-vars.toml"]
