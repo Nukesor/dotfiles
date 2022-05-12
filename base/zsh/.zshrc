@@ -17,7 +17,7 @@ autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
 export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
 export SHELDON_DATA_DIR="$HOME/.local/share/sheldon"
 # Plugin manager
-eval "$(sheldon source)"
+eval "$(sheldon -q source)"
 # Prompt
 eval "$(starship init zsh)"
 
