@@ -2,7 +2,9 @@
 add_newline = false
 
 format = """
+{% if profile == "laptop" -%}
 $battery\
+{%- endif -%}
 $memory_usage\
 $jobs\
 $username\
@@ -17,17 +19,19 @@ $cmd_duration\
 $status\
 $character"""
 
-[[battery.display]] # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+{%- if profile == "laptop" -%}
+[[battery.display]]
 threshold = 50
 style = "bold yellow"
 
-[[battery.display]] # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+[[battery.display]]
 threshold = 30
 style = "bold orange"
 
 [[battery.display]]
 threshold = 10
 style = "bold red"
+{%- endif %}
 
 [memory_usage]
 disabled = false
