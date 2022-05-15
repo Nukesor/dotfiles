@@ -181,8 +181,8 @@ sshHcloud() {
 alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
 
 # VPN
-alias vpndown='sudo systemctl stop wg-quick@vpn'
-alias vpnup='sudo systemctl start wg-quick@vpn'
+alias vpndown='sudo ip link set vpn down'
+alias vpnup='sudo ip link set vpn up'
 
 # Boot windows
 alias windowsboot='sudo efibootmgr -n 0000 && reboot'
