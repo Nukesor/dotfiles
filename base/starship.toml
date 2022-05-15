@@ -4,7 +4,7 @@ add_newline = false
 format = """
 {% if profile == "laptop" -%}
 $battery\
-{%- endif -%}
+{% endif -%}
 $memory_usage\
 $jobs\
 $username\
@@ -18,8 +18,8 @@ $git_metrics\
 $cmd_duration\
 $status\
 $character"""
+{%- if profile == "laptop" %}
 
-{%- if profile == "laptop" -%}
 [[battery.display]]
 threshold = 50
 style = "bold yellow"
