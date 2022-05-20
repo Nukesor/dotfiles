@@ -35,6 +35,7 @@ posthooks = [
   "systemctl --user enable --now ssh-agent",
   "systemctl --user enable --now dotfile-deploy",
   "systemctl --user enable --now screenlock",
+  "systemctl --user enable --now polizei",
 ]
 
 #----- Setup for pc machines -----
@@ -48,6 +49,7 @@ pueued_service = { source = "pc/systemd_user/pueued.service", target = ".config/
 ssh_agent_service = { source = "pc/systemd_user/ssh-agent.service", target = ".config/systemd/user/ssh-agent.service" }
 dotfile_service = { source = "pc/systemd_user/dotfile-deploy.service", target = ".config/systemd/user/dotfile-deploy.service" }
 screenlock = { source = "pc/systemd_user/screenlock.service", target = ".config/systemd/user/screenlock.service" }
+polizei = { source = "pc/systemd_user/polizei.service", target = ".config/systemd/user/polizei.service" }
 
 # pc core
 i3 = { source = "pc/i3", target = ".config/i3" }
@@ -75,11 +77,7 @@ extra_profiles = ["pc"]
 vars = ["vars/desktop-vars.toml"]
 posthooks = [
   "systemctl --user daemon-reload",
-  "systemctl --user enable --now polizei",
 ]
-
-[profiles.desktop.dots]
-polizei = { source = "pc/systemd_user/polizei.service", target = ".config/systemd/user/polizei.service" }
 
 [profiles.server]
 vars = ["vars/server-vars.toml"]
