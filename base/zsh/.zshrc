@@ -165,7 +165,7 @@ fi
 alias poweroff='reboot'
 {% else %}
 #Aliases
-alias km="killall telegram-deskto"
+alias km="killall telegram-desktop"
 alias kd="killall -9 DiscordCanary"
 alias susp='systemctl suspend'
 
