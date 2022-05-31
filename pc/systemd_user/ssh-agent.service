@@ -4,7 +4,7 @@ Description=SSH key agent
 [Service]
 Type=simple
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
-ExecStart=/usr/bin/ssh-agent -D -t 2d -a $SSH_AUTH_SOCK
+ExecStart=/usr/bin/ssh-agent -D -t 7d -a $SSH_AUTH_SOCK
 
 [Install]
 WantedBy=default.target
