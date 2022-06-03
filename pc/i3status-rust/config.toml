@@ -64,9 +64,8 @@ format = "Bat1: {percentage} {time}"
 block = "music"
 player = "spotify"
 max_width = 15
-marquee = true
-marquee_interval = 10
-marquee_speed = 0.25
+smart_trim = true
+marquee = false
 buttons = ["prev", "play", "next"]
 
 [[block]]
