@@ -46,7 +46,6 @@ block = "backlight"
 block = "battery"
 device = "BAT0"
 driver = "sysfs"
-allow_missing = true
 hide_missing = true
 format = "Bat0: {percentage} {time}"
 
@@ -54,7 +53,6 @@ format = "Bat0: {percentage} {time}"
 block = "battery"
 device = "BAT1"
 driver = "sysfs"
-allow_missing = true
 hide_missing = true
 format = "Bat1: {percentage} {time}"
 
