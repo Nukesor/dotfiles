@@ -42,7 +42,7 @@ i3-msg '[workspace="10"]' move workspace to output DVI-D-0
 i3-msg workspace 1
 i3-msg workspace 9
 
-{% if %}
+{% endif %}
 
 # Land on workspace 3 by default.
 i3-msg 'workspace 3'
