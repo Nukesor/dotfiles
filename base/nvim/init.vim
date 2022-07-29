@@ -168,6 +168,7 @@ endfunction
 
 "----- fzf ------
 nnoremap <C-p> :Files<Cr>
+nnoremap <leader>r :Rg<Cr>
 
 " use proximity-sort to make sure that files are sorted according
 function! s:list_cmd()
