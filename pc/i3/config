@@ -31,9 +31,10 @@ set $ws10 "10"
 
 ## ---------------- Application related stuff ----------------
 
-# Don't give steam any focus.
-no_focus [class="Steam"]
-assign [class="Steam"] $ws5
+# Don't allow steam windows to float forbid any focus switches.
+no_focus [class="(?i)steam"]
+for_window [class="(?i)steam"] floating disable
+assign [class="(?i)steam"] $ws5
 
 ## ---------------- Misc ----------------
 {% if profile != "minmal" -%}
