@@ -61,7 +61,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 
 " Navigation
-Plug 'bronson/vim-visual-star-search'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'dyng/ctrlsf.vim'
