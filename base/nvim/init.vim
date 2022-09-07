@@ -2,74 +2,63 @@
 
 call plug#begin(expand('~/.local/share/nvim/plug/'))
 "----- Programming language support ------
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Base Coc plugin
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'iamcco/coc-flutter', {'do': 'yarn install --frozen-lockfile'}
-Plug 'kristijanhusak/vim-dadbod-completion', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'NoahTheDuke/vim-just'
+"Plug 'kristijanhusak/vim-dadbod-completion', {'do': 'yarn install --frozen-lockfile'} " Database (SQL) completion
+
+"----- Programming language Linting -----
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 
 "----- Other language support ------
-" Markup/Data structure/Templating support
+" Markup/Data format/Templating languages
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'kkiyama117/coc-toml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'kkiyama117/coc-toml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'stephpy/vim-yaml'
 Plug 'Glench/Vim-Jinja2-Syntax'
-"Plug 'mustache/vim-mustache-handlebars'
 
-" Tools
+" Configuration language support
 Plug 'nginx/nginx', {'rtp': 'contrib/vim'}
-Plug 'ekalinin/Dockerfile.vim'
 Plug 'hashivim/vim-hashicorp-tools'
-"Plug 'pearofducks/ansible-vim'
-"Plug 'Firef0x/PKGBUILD.vim'
-
+Plug 'pearofducks/ansible-vim'
+Plug 'm-pilia/vim-pkgbuild'
+Plug 'NoahTheDuke/vim-just' " Just file support
 
 "----- Looks ------
 Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'Valloric/MatchTagAlways'
+Plug 'Valloric/MatchTagAlways' " Highlight matching brackets
 Plug 'ap/vim-css-color'
-Plug 'ntpeters/vim-better-whitespace'
 
 "----- Functionality ------
-Plug 'editorconfig/editorconfig-vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'sjl/gundo.vim'
-Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'gpanders/editorconfig.nvim' " Automatically parse and apply editorconfig
+Plug 'terryma/vim-multiple-cursors' " Multi-cursor support
+Plug 'tomtom/tcomment_vim' " Toggle comments in front of lines via 'gc'
+Plug 'tpope/vim-surround' " Easy bracket/quote manipulation
+Plug 'ntpeters/vim-better-whitespace' " Display whitespaces at end of lines and provide :StripWhitespace
+Plug 'dyng/ctrlsf.vim' " Multi-file search + replace
 
-" Completion
+" Snippets
 "Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 
 " Git support
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'jreybert/vimagit'
-Plug 'airblade/vim-gitgutter'
-Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
-
-" Editing
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive' " Git command wrapper + integration
+Plug 'jreybert/vimagit' " Vim integrated staging + conflict resolution
+Plug 'airblade/vim-gitgutter' " Vim change indicator beside lines
 
 " Navigation
-Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdtree'
-Plug 'dyng/ctrlsf.vim'
-Plug 'vim-scripts/taglist.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-
-" Formatting
-"Plug 'Chiel92/vim-autoformat'
+Plug 'easymotion/vim-easymotion' " Vimium-like motion helper for vim
+Plug 'scrooloose/nerdtree' " File tree
+"Plug 'vim-scripts/taglist.vim' " Code-overview in sidebuffer. Classes, functions, structs, etc.
+Plug 'junegunn/fzf.vim' " Fast and interactive search stuff
+Plug 'junegunn/fzf' " Requirement for fzf.vim
 
 call plug#end()
 

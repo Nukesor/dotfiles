@@ -22,6 +22,7 @@ To get the window class for custom rules, use the `xprop` utility.
 `lightdm` with `lightdm-webkit2-greeter` and **NO** theme.
 
 `/etc/lightdm/lightdm.conf`
+
 ```txt
 [Seat:*]
 ...
@@ -30,6 +31,7 @@ greeter-session = lightdm-webkit2-greeter
 ```
 
 `/etc/lightdm/lightdm-webkit2-greeter.conf`
+
 ```txt
 ...
 webkit_theme        = THEME HERE
@@ -47,11 +49,13 @@ webkit_theme        = THEME HERE
 Setup with local `ssh-agent` user service.
 
 Add this to `.ssh/config`:
-```
+
+```txt
 AddKeysToAgent  yes
 ```
 
 Add this to zshenv:
-```
+
+```sh
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 ```
