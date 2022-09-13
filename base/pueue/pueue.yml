@@ -11,6 +11,7 @@ daemon:
   callback: "notify-send \"Task {{ id }}\nCommand: {{ command }}\nPath: {{ path }}\nFinished with status '{{ result }}'\nTook: $(bc <<< \"{{end}} - {{start}}\") seconds\""
   callback_log_lines: 10
 shared:
+  alias_file: "~/.config/pueue/pueue_aliases.yml"
   use_unix_socket: true
   host: 127.0.0.1
   port: "6924"
