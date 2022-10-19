@@ -286,8 +286,9 @@ set smartcase           " upper-case sensitive search
 "set complete+=k
 
 "----- Languages ------
-" Python specific configs
 autocmd BufWritePre * silent! execute ':Format'
+
+" Python specific configs
 autocmd FileType python let python_highlight_all = 1
 autocmd FileType python let python_highlight_space_errors = 1
 autocmd FileType python let python_slow_sync = 1
