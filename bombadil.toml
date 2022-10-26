@@ -29,6 +29,7 @@ npm = { source = "base/npm", target = ".config/npm" }
 
 [profiles.pc]
 prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
+vars = ["vars/pc-vars.toml"]
 posthooks = [
   "systemctl --user daemon-reload",
   "systemctl --user enable --now pueued",
@@ -73,9 +74,7 @@ prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
 [profiles.desktop]
 extra_profiles = ["pc"]
 vars = ["vars/desktop-vars.toml"]
-posthooks = [
-  "systemctl --user daemon-reload",
-]
+posthooks = ["systemctl --user daemon-reload"]
 
 [profiles.server]
 vars = ["vars/server-vars.toml"]
