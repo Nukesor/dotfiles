@@ -26,6 +26,7 @@ nvim = { source = "base/nvim", target = ".config/nvim" }
 # Language tooling
 flake = { source = "base/flake8", target = ".config/flake8" }
 npm = { source = "base/npm", target = ".config/npm" }
+poetry = { source = "base/pypoetry", target = ".config/pypoetry" }
 
 [profiles.pc]
 prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]
