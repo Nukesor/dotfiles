@@ -63,6 +63,7 @@ rofi = { source = "pc/rofi", target = ".config/rofi" }
 rofi-pass = { source = "pc/rofi-pass", target = ".config/rofi-pass" }
 alacritty = { source = "pc/alacritty", target = ".config/alacritty" }
 termite = { source = "pc/termite/config", target = ".config/termite" }
+mpv = { source = "pc/mpv", target = ".config/mpv" }
 
 # Cli Apps
 game_saver = { source = "pc/game_saver.toml", target = ".config/game_saver.toml" }
