@@ -40,9 +40,8 @@ webkit_theme        = THEME HERE
 
 ## Firefox
 
-- Non-fullscreen mode:
-    Type about:config in the address bar, then search for "full-screen-api.ignore-widgets"
-    Set that to true.
+- Start firefox once and login.
+- Copy the `user.js` into the `.mozilla/firefox/*.default-release/` folder.
 
 ## SSH
 
