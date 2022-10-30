@@ -83,7 +83,7 @@ vars = ["vars/server-vars.toml"]
 
 [profiles.minimal]
 extra_profiles = ["pc"]
-vars = ["vars/server-vars.toml"]
+vars = ["vars/minimal-vars.toml"]
 
 #----- Setup for server machines -----
 [profiles.server.dots]
