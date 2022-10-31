@@ -3,7 +3,7 @@ Description=Auto deploy the user's dotfiles
 
 [Service]
 Restart=no
-ExecStart=watchexec 'bombadil link -p {{profile}}'
+ExecStart=watchexec --postpone 'bombadil link -p {{profile}}'
 WorkingDirectory=%h/.dotfiles
 
 [Install]
