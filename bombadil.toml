@@ -81,9 +81,12 @@ posthooks = ["systemctl --user daemon-reload"]
 [profiles.server]
 vars = ["vars/server-vars.toml"]
 
-[profiles.minimal]
+[profiles.tv]
 extra_profiles = ["pc"]
-vars = ["vars/minimal-vars.toml"]
+vars = ["vars/tv-vars.toml"]
+
+[profiles.tv.dots]
+Xresources = { source = "pc/Xresources", target = ".Xresources" }
 
 #----- Setup for server machines -----
 [profiles.server.dots]

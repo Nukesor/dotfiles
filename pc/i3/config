@@ -40,6 +40,6 @@ for_window [class="file_progress"] floating disable
 assign [class="file_progress"] $ws8
 
 ## ---------------- Misc ----------------
-{% if profile != "minimal" -%}
+{% if profile == "laptop" or profile == "desktop" -%}
 exec ~/.config/i3/layout/load
 {%- endif %}
