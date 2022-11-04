@@ -57,6 +57,7 @@ Plug 'airblade/vim-gitgutter' " Vim change indicator beside lines
 " Navigation
 Plug 'easymotion/vim-easymotion' " Vimium-like motion helper for vim
 Plug 'scrooloose/nerdtree' " File tree
+"Plug 'nvim-tree/nvim-tree.lua' " File tree
 "Plug 'vim-scripts/taglist.vim' " Code-overview in sidebuffer. Classes, functions, structs, etc.
 Plug 'junegunn/fzf.vim' " Fast and interactive search stuff
 Plug 'junegunn/fzf' " Requirement for fzf.vim
@@ -178,6 +179,7 @@ nmap <C-k> <Plug>CtrlSFPrompt
 "map <Leader> <Plug>(easymotion-prefix)
 
 "----- NERDTree ------
+let g:NERDTreeMinimalMenu=1
 let NERDTreeIgnore=['__pycache__', '\~$']
 let g:NERDTreeBookmarksFile = '$HOME/.cache/NERDTreeBookmarks'
 command -nargs=* NERD NERDTree <args>
