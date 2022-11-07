@@ -1,5 +1,6 @@
 export PATH=~/.bin:$PATH
 export PATH=~/.cache/cargo/bin:$PATH
+export CARGO_HOME=$XDG_CACHE_HOME/cargo
 
 {%- if profile == "desktop" %}
 fix_xonar_output
