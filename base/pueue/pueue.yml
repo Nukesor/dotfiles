@@ -8,7 +8,9 @@ client:
 daemon:
   pause_group_on_failure: false
   pause_all_on_failure: false
+{%- raw %}
   callback: "notify-send \"Task {{ id }}\nCommand: {{ command }}\nPath: {{ path }}\nFinished with status '{{ result }}'\nTook: $(bc <<< \"{{end}} - {{start}}\") seconds\""
+{%- endraw %}
   callback_log_lines: 10
 shared:
   alias_file: "~/.config/pueue/pueue_aliases.yml"
