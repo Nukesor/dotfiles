@@ -1,25 +1,23 @@
 {
-    "python.venvPath": "./",
-    "python.analysis.useLibraryCodeForTypes": false,
-    "python.linting.pydocstyleEnabled": true,
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "/usr/bin/black",
-    "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
-    "rust-analyzer.procMacro.enable": true,
-    "rust-analyzer.diagnostics.disabled": [
-        "unresolved-macro-call",
-        "macro-error"
-    ],
-    "rust-analyzer.checkOnSave.extraArgs": [
-        "--target-dir",
-        "/tmp/rust-analyzer-nuke"
-    ],
-    "eslint.format.enable": true,
-    "prettier.disableLanguages": [
-        "markdown"
-    ],
-    "markdownlint.config": {
-        "line_length": false
-    },
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
+  "prettier.disableLanguages": ["markdown"],
+  "markdownlint.config": {
+    "line_length": false
+  },
+  "python.analysis.useLibraryCodeForTypes": false,
+  "python.linting.pydocstyleEnabled": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/usr/bin/black",
+  "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.cargo.runBuildScripts": true,
+  "rust-analyzer.diagnostics.disabled": [
+    "unresolved-macro-call",
+    "macro-error"
+  ],
+  "rust-analyzer.checkOnSave.extraArgs": [
+    "--target-dir",
+    "/tmp/rust-analyzer-nuke"
+  ],
+  "eslint.format.enable": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }

@@ -7,20 +7,19 @@ Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/coc-flutter', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'kristijanhusak/vim-dadbod-completion', {'do': 'yarn install --frozen-lockfile'} " Database (SQL) completion
 
-"----- Programming language Linting -----
+"----- Programming language linting & formatting -----
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 
 "----- Other language support ------
 " Markup/Data format/Templating languages
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'kkiyama117/coc-toml', {'do': 'yarn install --frozen-lockfile'}
-Plug 'stephpy/vim-yaml'
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Configuration language support
@@ -30,15 +29,15 @@ Plug 'pearofducks/ansible-vim'
 Plug 'm-pilia/vim-pkgbuild'
 Plug 'NoahTheDuke/vim-just' " Just file support
 
-"----- Looks ------
+""----- Looks ------
 Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'Valloric/MatchTagAlways' " Highlight matching brackets
 Plug 'ap/vim-css-color'
 
-"----- Functionality ------
-Plug 'gpanders/editorconfig.nvim' " Automatically parse and apply editorconfig
+""----- Functionality ------
+Plug 'gpanders/editorconfig.nvim'
 Plug 'terryma/vim-multiple-cursors' " Multi-cursor support
 Plug 'tomtom/tcomment_vim' " Toggle comments in front of lines via 'gc'
 Plug 'tpope/vim-surround' " Easy bracket/quote manipulation
@@ -95,6 +94,18 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 function! s:check_back_space() abort
     let col = col('.') - 1
@@ -106,44 +117,27 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gd <Plug>(coc-definition)         " Show definition
 nnoremap <silent> <leader>ghd :call CocAction('jumpDefinition', 'split')<CR>
 nnoremap <silent> <leader>gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> <leader>gi <Plug>(coc-implementation)     " Show implementation
+nmap <silent> <leader>gr <Plug>(coc-references)         " Show references
 
-nmap <silent> <leader>gy <Plug>(coc-type-definition)
-nmap <silent> <leader>gi <Plug>(coc-implementation)
-nmap <silent> <leader>gr <Plug>(coc-references)
+nmap <leader>af <Plug>(coc-codeaction)              " Buffer code action menu
+nmap <leader>al <Plug>(coc-codeaction-line)         " Selected code action menu
+xmap <leader>as <Plug>(coc-codeaction-selected)     " Selected code action menu
+nmap <leader>aw viw<Plug>(coc-codeaction-selected)  " Word action menu in normal mode
+vmap <leader>aw <Plug>(coc-codeaction-selected)     " Word action menu in visual mode
 
-" Buffer code action menu
-nmap <leader>af <Plug>(coc-codeaction)
-" Selected code action menu
-nmap <leader>al <Plug>(coc-codeaction-line)
-" Selected code action menu
-xmap <leader>as <Plug>(coc-codeaction-selected)
-" Word action menu
-nmap <leader>aw viw<Plug>(coc-codeaction-selected)
-vmap <leader>aw <Plug>(coc-codeaction-selected)
-
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf <Plug>(coc-fix-current)
-" format current buffer.
-nmap <leader>f <Plug>(coc-action-format)
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-" organize imports of the current buffer.
-nmap <leader>o <Plug>(coc-action-organizeImport)
-
-" List workspace symbols.
-nmap <leader>s <Plug>(coc-list-symbols)
-
-" Do default action for next item.
-nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
+nmap <leader>qf <Plug>(coc-fix-current)             " Apply AutoFix to problem on the current line.
+nnoremap <silent> <leader>j :<C-u>CocNext<CR>      " Do default action for next item.
+nnoremap <silent> <leader>k :<C-u>CocPrev<CR>      " Do default action for previous item.
+nmap <leader>f :Format<CR>
+nmap <leader>rn <Plug>(coc-rename)                  " Symbol renaming.
+nmap <leader>o <Plug>(coc-action-organizeImport)    " Organize imports of the current buffer.
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
         execute 'h '.expand('<cword>')
@@ -156,7 +150,7 @@ endfunction
 nnoremap <C-p> :Files<Cr>
 nnoremap <leader>r :Rg<Cr>
 
-" use proximity-sort to make sure that files are sorted according
+" Use proximity-sort to make sure that files are sorted according
 function! s:list_cmd()
     let base = fnamemodify(expand('%'), ':h:.:S')
     return base == '.' ? 'fd -t f' : printf('fd -t f | proximity-sort %s', expand('%'))
@@ -218,9 +212,9 @@ set directory=/tmp      " swap file directory
 
 " Tabs and indenting
 set expandtab           " insert spaces instead of tab chars
-set tabstop=4           " a n-space tab width
-set shiftwidth=4        " allows the use of < and > for VISUAL indenting
-set softtabstop=4       " counts n spaces when DELETE or BCKSPCE is used
+"set tabstop=4           " a n-space tab width
+"set shiftwidth=4        " allows the use of < and > for VISUAL indenting
+"set softtabstop=4       " counts n spaces when DELETE or BCKSPCE is used
 set autoindent          " auto indents next new line
 set listchars=tab:→,trail:¸ " show trail spaces and tabstchars
 

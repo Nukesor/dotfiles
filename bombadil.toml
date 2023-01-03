@@ -22,6 +22,7 @@ git = { source = "base/git", target = ".config/git" }
 pueue_aliases = { source = "base/pueue", target = ".config/pueue" }
 pacman = { source = "base/pacman", target = ".config/pacman" }
 nvim = { source = "base/nvim", target = ".config/nvim" }
+editorconfig = { source = "base/editorconfig", target = ".editorconfig" }
 
 # Language tooling
 flake = { source = "base/flake8", target = ".config/flake8" }
