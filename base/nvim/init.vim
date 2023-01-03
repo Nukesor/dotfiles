@@ -117,24 +117,37 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> <leader>gd <Plug>(coc-definition)         " Show definition
+" Show definition
+nmap <silent> <leader>gd <Plug>(coc-definition)
 nnoremap <silent> <leader>ghd :call CocAction('jumpDefinition', 'split')<CR>
 nnoremap <silent> <leader>gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
-nmap <silent> <leader>gi <Plug>(coc-implementation)     " Show implementation
-nmap <silent> <leader>gr <Plug>(coc-references)         " Show references
+" Show implementation
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+" Show references
+nmap <silent> <leader>gr <Plug>(coc-references)
 
-nmap <leader>af <Plug>(coc-codeaction)              " Buffer code action menu
-nmap <leader>al <Plug>(coc-codeaction-line)         " Selected code action menu
-xmap <leader>as <Plug>(coc-codeaction-selected)     " Selected code action menu
-nmap <leader>aw viw<Plug>(coc-codeaction-selected)  " Word action menu in normal mode
-vmap <leader>aw <Plug>(coc-codeaction-selected)     " Word action menu in visual mode
+" Buffer code action menu
+nmap <leader>af <Plug>(coc-codeaction)
+" Selected code action menu
+nmap <leader>al <Plug>(coc-codeaction-line)
+" Selected code action menu
+xmap <leader>as <Plug>(coc-codeaction-selected)
+" Word action menu in normal mode
+nmap <leader>aw viw<Plug>(coc-codeaction-selected)
+" Word action menu in visual mode
+vmap <leader>aw <Plug>(coc-codeaction-selected)
+" Symbol renaming.
+nmap <leader>ar <Plug>(coc-rename)
+" Apply AutoFix to problem on the current line.
+nmap <leader>aq <Plug>(coc-fix-current)
 
-nmap <leader>qf <Plug>(coc-fix-current)             " Apply AutoFix to problem on the current line.
-nnoremap <silent> <leader>j :<C-u>CocNext<CR>      " Do default action for next item.
-nnoremap <silent> <leader>k :<C-u>CocPrev<CR>      " Do default action for previous item.
+" Do default action for next item.
+nnoremap <silent> <leader>j :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <leader>k :<C-u>CocPrev<CR>
 nmap <leader>f :Format<CR>
-nmap <leader>rn <Plug>(coc-rename)                  " Symbol renaming.
-nmap <leader>o <Plug>(coc-action-organizeImport)    " Organize imports of the current buffer.
+" Organize imports of the current buffer.
+nmap <leader>o <Plug>(coc-action-organizeImport)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
