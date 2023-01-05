@@ -121,21 +121,17 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nnoremap <silent> <leader>ghd :call CocAction('jumpDefinition', 'split')<CR>
 nnoremap <silent> <leader>gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
-" Show implementation
-nmap <silent> <leader>gi <Plug>(coc-implementation)
 " Show references
-nmap <silent> <leader>gr <Plug>(coc-references)
+nmap <silent> <leader>gi <Plug>(coc-references)
 
 " Buffer code action menu
 nmap <leader>af <Plug>(coc-codeaction)
 " Selected code action menu
 nmap <leader>al <Plug>(coc-codeaction-line)
-" Selected code action menu
-xmap <leader>as <Plug>(coc-codeaction-selected)
+" Selected action menu in visual mode
+vmap <leader>aw <Plug>(coc-codeaction-selected)
 " Word action menu in normal mode
 nmap <leader>aw viw<Plug>(coc-codeaction-selected)
-" Word action menu in visual mode
-vmap <leader>aw <Plug>(coc-codeaction-selected)
 " Symbol renaming.
 nmap <leader>ar <Plug>(coc-rename)
 " Apply AutoFix to problem on the current line.
@@ -225,9 +221,9 @@ set directory=/tmp      " swap file directory
 
 " Tabs and indenting
 set expandtab           " insert spaces instead of tab chars
-"set tabstop=4           " a n-space tab width
-"set shiftwidth=4        " allows the use of < and > for VISUAL indenting
-"set softtabstop=4       " counts n spaces when DELETE or BCKSPCE is used
+set tabstop=4           " a n-space tab width
+set shiftwidth=4        " allows the use of < and > for VISUAL indenting
+set softtabstop=4       " counts n spaces when DELETE or BCKSPCE is used
 set autoindent          " auto indents next new line
 set listchars=tab:→,trail:¸ " show trail spaces and tabstchars
 
