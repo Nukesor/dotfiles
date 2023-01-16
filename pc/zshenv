@@ -6,11 +6,35 @@ path=($HOME/.cache/cargo/bin $path)
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export VAGRANT_EXPERIMENTAL="disks"
 export JAVA_HOME=/usr/lib/jvm/default
+#export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
 # XDG Setup
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+# Work/Android dev Stuff
+export ANDROID_SDK_ROOT="$XDG_DATA_HOME/android-sdk"
+path=($path $ANDROID_SDK_ROOT/cmdline-tools/latest/bin)
+path=($path $ANDROID_SDK_ROOT/platform-tools)
+path=($path $ANDROID_SDK_ROOT/tools)
+export PUB_CACHE="$XDG_CACHE_HOME/dart-pub-cache"
+export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
+
+# Runtime cleanup
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+
+# Vim setup
+export EDITOR=nvim
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+
+# Styling
+export GTK_THEME=Advaita:dark
+
+# Convenience stuff
+export ZRC=$ZDOTDIR/.zshrc
+export NVIM=$XDG_CONFIG_HOME/nvim/
 
 # Config cleanup
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
@@ -39,25 +63,4 @@ export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
 export WINEPREFIX=$XDG_DATA_HOME/wine
 
-# Work/Android dev Stuff
-export ANDROID_SDK_ROOT="$XDG_DATA_HOME/android-sdk"
-path=($path $ANDROID_SDK_ROOT/cmdline-tools/latest/bin)
-path=($path $ANDROID_SDK_ROOT/platform-tools)
-path=($path $ANDROID_SDK_ROOT/tools)
-export PUB_CACHE="$XDG_CACHE_HOME/dart-pub-cache"
-export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 
-# Runtime cleanup
-export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-
-# Vim setup
-export EDITOR=nvim
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
-export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-# Styling
-export GTK_THEME=Advaita:dark
-
-# Convenience stuff
-export ZRC=$ZDOTDIR/.zshrc
-export NVIM=$XDG_CONFIG_HOME/nvim/
