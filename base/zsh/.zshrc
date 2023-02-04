@@ -172,6 +172,7 @@ alias susp='systemctl suspend'
 # Helper
 alias noblank='xset s off && xset -dpms && xset s noblank'
 alias todo='vim ~/Syncthing/Transfer/todo.md'
+alias notes='vim ~/Syncthing/Transfer/notes.md'
 
 sshHcloud() {
     hcloud server ssh $1 -o StrictHostKeyChecking=no -i ~/.ssh/work/hcloud_sshkey
