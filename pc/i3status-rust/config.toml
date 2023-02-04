@@ -3,7 +3,9 @@ icons = "awesome"
 
 [[block]]
 block = "custom"
+json = true
 command = "~/.cache/cargo/bin/print_todo ~/Syncthing/Transfer/todo.md"
+watch_files = ["~/Syncthing/Transfer/todo.md"]
 
 [[block]]
 block = "disk_space"
