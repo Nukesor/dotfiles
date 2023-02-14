@@ -66,13 +66,12 @@ alias co='sudo netctl stop-all && sudo netctl start'
 alias disca='sudo netctl stop-all'
 
 # Git
-alias gb='git branch'
 alias glg='git lg'
 alias gcm='git commit -m'
+alias gsm='git switch main'
 alias gls='git ls'
 alias gpu='git push origin -u'
 alias gpuf='git push origin -u --force-with-lease'
-alias gpo='git remote prune origin'
 alias git_describe="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g'"
 
 # Rust
