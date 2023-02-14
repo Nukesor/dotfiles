@@ -75,6 +75,9 @@ alias gpuf='git push origin -u --force-with-lease'
 alias gpo='git remote prune origin'
 alias git_describe="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g'"
 
+# Rust
+alias clippy='cargo clippy --workspace --tests --all-features'
+
 #Tmux
 if [[ -f "$HOME/.config/tmux/tmux.conf" ]]; then
     alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
