@@ -1,21 +1,22 @@
+[theme]
 theme = "modern"
-icons = "awesome"
+
+[icons]
+icons = "awesome4"
 
 [[block]]
 block = "custom"
 json = true
 command = "~/.cache/cargo/bin/print_todo ~/Syncthing/Transfer/todo.md"
-watch_files = ["~/Syncthing/Transfer/todo.md"]
+watch_files = ["/home/nuke/Syncthing/Transfer/todo.md"]
 
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "root:"
-info_type = "available"
-unit = "GB"
-interval = 20
-warning = 20.0
-alert = 10.0
+format = "$icon $available"
+alert_unit = "GB"
+warning = 50.0
+alert = 25.0
 
 [[block]]
 block = "custom"
@@ -23,24 +24,18 @@ command = "~/.cache/cargo/bin/netinfo"
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "Mem: {mem_used_percents}"
-clickable = false
+format = "$icon Mem: $mem_used_percents"
 
 [[block]]
 block = "cpu"
-format = "{barchart} {utilization}"
+format = "$icon $barchart $utilization"
 interval = 3
-info = 80
-warning = 90
-critical = 95
 
 [[block]]
 block = "hueshift"
 step = 50
 hue_shifter = "redshift"
-
-{% if profile == "laptop" -%}
+#{% if profile == "laptop" %}
 [[block]]
 block = "backlight"
 
@@ -48,25 +43,30 @@ block = "backlight"
 block = "battery"
 device = "BAT0"
 driver = "sysfs"
-hide_missing = true
-format = "Bat0: {percentage} {time}"
+missing_format = ""
+format = "$icon Bat0: $percentage $time"
 
 [[block]]
 block = "battery"
 device = "BAT1"
 driver = "sysfs"
-hide_missing = true
-format = "Bat1: {percentage} {time}"
-
-{%- endif %}
+missing_format = ""
+format = "$icon Bat1: $percentage $time"
+#{%- endif %}
 
 [[block]]
 block = "music"
 player = "spotify"
-max_width = 15
-smart_trim = true
-marquee = false
-buttons = ["prev", "play", "next"]
+format = "$icon {$combo.str(max_w:25,rot_interval:0.5) $prev $play $next|}"
+[[block.click]]
+button = "left"
+action = "play_pause"
+[[block.click]]
+button = "forward"
+action = "next"
+[[block.click]]
+button = "back"
+action = "prev"
 
 [[block]]
 block = "sound"
@@ -80,5 +80,5 @@ json = true
 
 [[block]]
 block = "time"
-format = "%a %d-%m-%y %T"
+format = "$timestamp.datetime(f:'%a %d-%m-%y %T', l:de_DE)"
 interval = 5
