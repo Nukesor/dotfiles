@@ -67,11 +67,10 @@ alias disca='sudo netctl stop-all'
 
 # Git
 alias glg='git lg'
-alias gcm='git commit -m'
 alias gsh='git switch'
-alias gb='git branch'
 alias gsm='git switch main 2> /dev/null || git switch master'
-alias gls='git ls'
+alias gb='git branch'
+alias gcm='git commit -m'
 alias gpu='git push origin -u'
 alias gpuf='git push origin -u --force-with-lease'
 alias git_describe="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g'"
