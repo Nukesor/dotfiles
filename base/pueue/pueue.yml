@@ -14,7 +14,6 @@ daemon:
   callback_log_lines: 10
 shared:
   alias_file: "~/.config/pueue/pueue_aliases.yml"
-  runtime_directory: "/run/user/1000"
   use_unix_socket: true
   host: 127.0.0.1
   port: "6924"
