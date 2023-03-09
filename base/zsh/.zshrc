@@ -68,6 +68,7 @@ alias disca='sudo netctl stop-all'
 # Git
 alias glg='git lg'
 alias gcm='git commit -m'
+alias gsh='git switch'
 alias gsm='git switch main 2> /dev/null || git switch master'
 alias gls='git ls'
 alias gpu='git push origin -u'
