@@ -133,10 +133,28 @@ __gflist() {
     return $ret
 }
 
+# Select a git branch
+__gblist() {
+    local branches=$(git branch --format='%(refname:short)')
+    local selection=( $($(__fzfcmd) -m \
+        --preview 'git diff --color=always {}' \
+        --preview-window up:60%  \
+        --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort,tab:toggle,ctrl-i:toggle,ctrl-o:toggle-preview <<< $branches) )
+
+    LBUFFER="${LBUFFER} ${selection}"
+    local ret=$?
+    return $ret
+}
+
+
 # -------------------- Key bindings --------------------
-# Bind it to CTRL-g
+# Bind the file selection to CTRL-g
 zle -N __gflist
 bindkey "^g" __gflist
+
+# Bind the branch selection to CTRL-b
+zle -N __gblist
+bindkey "^b" __gblist
 
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
