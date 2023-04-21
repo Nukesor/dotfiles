@@ -21,6 +21,7 @@ Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'kkiyama117/coc-toml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'jparise/vim-graphql'
 
 " Configuration language support
 Plug 'nginx/nginx', {'rtp': 'contrib/vim'}
