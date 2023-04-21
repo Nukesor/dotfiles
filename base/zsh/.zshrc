@@ -66,6 +66,7 @@ alias co='sudo netctl stop-all && sudo netctl start'
 alias disca='sudo netctl stop-all'
 
 # Git
+alias gls='git status'
 alias glg='git lg'
 alias gsh='git switch'
 alias gsm='git switch main 2> /dev/null || git switch master'
