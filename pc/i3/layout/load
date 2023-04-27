@@ -30,7 +30,7 @@ thunderbird &
 {% if profile == "desktop" %}
 
 # Position all workspaces on the correct screens
-i3-msg '[workspace="1"]' move workspace to output DP-5
+i3-msg '[workspace="1"]' move workspace to output DP-3
 i3-msg '[workspace="2"]' move workspace to output primary
 i3-msg '[workspace="3"]' move workspace to output primary
 i3-msg '[workspace="7"]' move workspace to output primary
