@@ -13,10 +13,6 @@
     "unresolved-macro-call",
     "macro-error"
   ],
-  "rust-analyzer.checkOnSave.extraArgs": [
-    "--target-dir",
-    "/tmp/rust-analyzer-nuke"
-  ],
   "eslint.format.enable": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
