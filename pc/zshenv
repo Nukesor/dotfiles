@@ -2,6 +2,7 @@
 path=($HOME/.bin $path)
 path=($HOME/.cache/cargo/bin $path)
 path=($HOME/work/utils/flutter/bin $path)
+path=($HOME/.cache/dart-pub-cache/bin $path)
 
 # Application logic
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
