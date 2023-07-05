@@ -17,17 +17,18 @@ sheldon = { source = "base/sheldon", target = ".config/sheldon" }
 tmux = { source = "base/tmux", target = ".config/tmux" }
 starship = { source = "base/starship.toml", target = ".config/starship.toml" }
 
-# Tooling
+# Tools
 git = { source = "base/git", target = ".config/git" }
 pueue_aliases = { source = "base/pueue", target = ".config/pueue" }
 pacman = { source = "base/pacman", target = ".config/pacman" }
 nvim = { source = "base/nvim", target = ".config/nvim" }
-editorconfig = { source = "base/editorconfig", target = ".editorconfig" }
+sqlite = { source = "base/sqlite", target = ".config/sqlite" }
 
 # Language tooling
 flake = { source = "base/flake8", target = ".config/flake8" }
 npm = { source = "base/npm", target = ".config/npm" }
 poetry = { source = "base/pypoetry", target = ".config/pypoetry" }
+editorconfig = { source = "base/editorconfig", target = ".editorconfig" }
 
 [profiles.pc]
 prehooks = ["bash -c \"mkdir -p ~/.config/systemd/user/default.target.wants\""]

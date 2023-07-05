@@ -29,6 +29,9 @@ ZSH_HIGHLIGHT_STYLES[globbing]='fg=002,bold'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
 
 # -------------------- Aliases --------------------
+#Dotfile cleanup aliases
+alias sqlite3='sqlite3 -init $SQLITE_CONFIG'
+
 #Various
 alias dstat='dstat -tdnclmpry'
 alias pong='ping -D google.de'
