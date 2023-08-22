@@ -9,9 +9,24 @@ daemon:
   pause_group_on_failure: false
   pause_all_on_failure: false
 {%- raw %}
-  callback: "notify-send \"Task {{ id }}\nCommand: {{ command }}\nPath: {{ path }}\nFinished with status '{{ result }}'\nTook: $(bc <<< \"{{end}} - {{start}}\") seconds\""
+  callback: |
+      notify-send \
+      "Task {{ id }}
+      Command: {{ command }}
+      Path: {{ path }}
+      Finished with status '{{ result }}'
+      Took: $(bc <<< '{{end}} - {{start}}') seconds"
 {%- endraw %}
   callback_log_lines: 10
+  shell_command: [
+    "bash",
+    "-c",
+{%- raw %}
+    "shopt -s expand_aliases && {{ pueue_command_string }}",
+{%- endraw %}
+  ]
+  env_vars:
+    BASH_ENV: "/home/nuke/.config/zsh/aliases.zsh"
 shared:
   alias_file: "~/.config/pueue/pueue_aliases.yml"
   use_unix_socket: true
