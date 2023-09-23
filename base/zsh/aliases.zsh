@@ -48,9 +48,8 @@ alias git_describe="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./
 alias clippy='cargo clippy --workspace --tests --all-features'
 
 # Tmux
-alias tew='tmux new -s'
-alias tat='tmux attach -t'
-alias till='tmux kill-session -t'
+alias z='zellij'
+alias zat='zellij attach -c'
 
 #Docker
 alias dcu='docker-compose up'
@@ -58,10 +57,7 @@ alias dcu='docker-compose up'
 #Pueue
 alias p='pueue'
 alias pad='pueue add --'
-alias padh='pueue add -g hdd --'
-alias padc='pueue add -g cpu --'
 alias pst='pueue status'
-alias pt='pueue follow'
 
 # Youtube dl
 alias yd='yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a] --output "%(title)s.%(ext)s"'
