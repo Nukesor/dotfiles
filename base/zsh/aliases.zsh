@@ -81,7 +81,7 @@ alias t="trans de:en"
 alias td="trans :de"
 
 # -------------------- Dotfile cleanup aliases --------------------
-#
+
 alias sqlite3='sqlite3 -init $SQLITE_CONFIG'
 
 # Load tmux with custom config location, if it exists.
