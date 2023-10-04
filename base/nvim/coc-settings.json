@@ -2,7 +2,11 @@
   "flutter.sdk.searchPaths": ["/home/nuke/work/utils/flutter"],
   "prettier.disableLanguages": ["markdown"],
   "markdownlint.config": {
-    "line_length": false
+    "line_length": false,
+    "blanks-around-fences": {
+        "list_items": false
+    },
+    "no-duplicate-heading": false
   },
   "python.analysis.useLibraryCodeForTypes": false,
   "python.linting.pydocstyleEnabled": true,
