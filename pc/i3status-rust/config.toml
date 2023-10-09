@@ -46,14 +46,14 @@ block = "battery"
 device = "BAT0"
 driver = "sysfs"
 missing_format = ""
-format = " $icon Bat0: $percentage $time "
+format = " $icon SmolBat0: $percentage $time | $icon Bat1: $percentage ... "
 
 [[block]]
 block = "battery"
 device = "BAT1"
 driver = "sysfs"
 missing_format = ""
-format = " $icon Bat1: $percentage $time "
+format = " $icon BigBat1: $percentage $time | $icon Bat1: $percentage ... "
 #{%- endif %}
 
 [[block]]
