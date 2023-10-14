@@ -36,7 +36,7 @@ if [ -f "$HOME/.config/zsh/aliases.zsh" ]; then
     source $HOME/.config/zsh/aliases.zsh
 fi
 
-# -------------------- Custom functions--------------------
+# -------------------- UI Keybind functions--------------------
 # Stage files multi-selected modified files
 __gflist() {
     local files=$(git ls-files -m -o -d --exclude-standard | uniq)
@@ -73,6 +73,51 @@ bindkey "^g" __gflist
 zle -N __gblist
 bindkey "^b" __gblist
 
+# -------------------- CLI functions --------------------
+
+sshHcloud() {
+    hcloud server ssh $1 -o StrictHostKeyChecking=no -i ~/.ssh/work/hcloud_sshkey "${@:2}"
+}
+
+block_and_wait() {
+    if [ "$#" -eq 0  ]; then
+        echo "First parameter should be the name of the semaphore."
+        return 1;
+    fi
+    mkdir "$XDG_RUNTIME_DIR/semaphores"
+
+    if [[ -f "$XDG_RUNTIME_DIR/semaphores/$1" ]]; then
+        echo "Semaphore $1 already exists."
+    else
+        echo "Creating semaphore $1"
+        touch "$XDG_RUNTIME_DIR/semaphores/$1"
+    fi
+
+    # Wait until the semaphore has been removed
+    while true; do
+        if [[ ! -f "$XDG_RUNTIME_DIR/semaphores/$1" ]]; then
+            return 0;
+        fi
+        sleep 2
+    done
+}
+
+unblock() {
+    if [ "$#" -eq 0 ]; then
+        echo "First parameter should be the name of the semaphore."
+        return 1;
+    fi
+
+    if [[ -f "$XDG_RUNTIME_DIR/semaphores/$1" ]]; then
+        echo "Removing semaphore $1"
+        rm "$XDG_RUNTIME_DIR/semaphores/$1"
+    else
+        echo "Couldn't find semaphore at $XDG_RUNTIME_DIR/semaphores/$1"
+        return 1;
+    fi
+}
+
+
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
 
@@ -98,7 +143,3 @@ else
         cp -f ~/.local/share/zsh/history ~/.local/share/zsh/history_backup
     fi
 fi
-
-sshHcloud() {
-    hcloud server ssh $1 -o StrictHostKeyChecking=no -i ~/.ssh/work/hcloud_sshkey "${@:2}"
-}
