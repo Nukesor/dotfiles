@@ -13,7 +13,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export VAGRANT_EXPERIMENTAL="disks"
 export JAVA_HOME=/usr/lib/jvm/default
-#export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
 # Work/Android dev Stuff
 export ANDROID_SDK_ROOT="$XDG_DATA_HOME/android-sdk"
