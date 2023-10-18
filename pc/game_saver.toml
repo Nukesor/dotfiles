@@ -1,15 +1,9 @@
-backup_directory = "~/Syncthing/Backup/games"
+backup_directory = "~/Syncthing/Games/saves"
 
 [games.noita]
 savegame_location = "~/.local/share/Steam/steamapps/compatdata/881100/pfx/drive_c/users/steamuser/AppData/LocalLow/Nolla_Games_Noita/save00"
 autosaves = 0
 autosave_timeout = 120
-ignored_files = []
-
-[games.starsector]
-savegame_location = "~/Syncthing/Transfer/starsector/saves"
-autosaves = 5
-autosave_timeout = 600
 ignored_files = []
 
 [games.Cataclysm_DDA]
