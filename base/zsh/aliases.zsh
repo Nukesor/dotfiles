@@ -102,6 +102,7 @@ alias susp='systemctl suspend'
 
 # Helper
 alias noblank='xset s off && xset -dpms && xset s noblank'
+alias blank='xset dpms force off'
 alias todo='vim ~/Syncthing/Transfer/todo.md'
 alias notes='vim ~/Syncthing/Transfer/notes.md'
 
