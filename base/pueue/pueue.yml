@@ -28,7 +28,6 @@ daemon:
   env_vars:
     BASH_ENV: "/home/nuke/.config/zsh/aliases.zsh"
 shared:
-  alias_file: "~/.config/pueue/pueue_aliases.yml"
   use_unix_socket: true
   host: 127.0.0.1
   port: "6924"
