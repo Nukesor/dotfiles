@@ -65,6 +65,7 @@ rofi-pass = { source = "pc/rofi-pass", target = ".config/rofi-pass" }
 alacritty = { source = "pc/alacritty", target = ".config/alacritty" }
 termite = { source = "pc/termite/config", target = ".config/termite" }
 mpv = { source = "pc/mpv", target = ".config/mpv" }
+discord = { source = "pc/discord", target = ".config/discord" }
 firefox = { source = "pc/firefox/user.js", target = ".mozilla/user.js" }
 
 # Cli Apps
