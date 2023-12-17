@@ -76,7 +76,7 @@ bindkey "^b" __gblist
 # -------------------- CLI functions --------------------
 
 sshHcloud() {
-    hcloud server ssh $1 -o StrictHostKeyChecking=no -i ~/.ssh/work/hcloud_sshkey "${@:2}"
+    hcloud server ssh $1 -o StrictHostKeyChecking=no -i $2 "${@:3}"
 }
 
 block_and_wait() {
