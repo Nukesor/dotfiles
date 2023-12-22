@@ -96,15 +96,17 @@ alias poweroff='reboot'
 
 {% else %}
 
+# Messenger
 alias km="killall telegram-desktop"
 alias kd="killall -9 DiscordCanary & killall -9 Discord"
-alias susp='systemctl suspend'
 
 # Helper
+alias susp='systemctl suspend'
 alias noblank='xset s off && xset -dpms && xset s noblank'
 alias blank='xset dpms force off'
 alias todo='vim ~/Syncthing/Transfer/todo.md'
 alias notes='vim ~/Syncthing/Transfer/notes.md'
+alias tether='vpndown && iwctl station wlan0 scan && sleep 2 && iwctl station wlan0 connect lolnuke'
 
 # X
 alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
