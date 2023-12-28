@@ -107,6 +107,7 @@ alias blank='xset dpms force off'
 alias todo='vim ~/Syncthing/Transfer/todo.md'
 alias notes='vim ~/Syncthing/Transfer/notes.md'
 alias tether='vpndown && iwctl station wlan0 scan && sleep 2 && iwctl station wlan0 connect lolnuke'
+alias wlan='iwctl station wlan0 scan && sleep 1 && iwctl station wlan0 connect '
 
 # X
 alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
