@@ -2,24 +2,17 @@
 
 call plug#begin(expand('~/.local/share/nvim/plug/'))
 "----- Programming language support ------
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Base Coc plugin
-Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
-Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
-Plug 'iamcco/coc-flutter', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-
-"----- Programming language linting & formatting -----
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'SirVer/ultisnips'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 
 "----- Other language support ------
 " Markup/Data format/Templating languages
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'kkiyama117/coc-toml', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'jparise/vim-graphql'
 
@@ -70,91 +63,116 @@ filetype plugin indent on
 "----------------------------------------------  Plugin Config ----------------------------------------------
 let mapleader = ","    " Set the map leader for custom commands
 
+"----- LSP ------
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
 "----- Coc ------
 " Some servers have issues with backup files, see #649.
-set nowritebackup
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-    " Recently vim can merge signcolumn and number column into one
-    set signcolumn=number
-else
-    set signcolumn=yes
-endif
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
-" remap for complete to use tab and <cr>
-inoremap <silent><expr> <TAB>
-    \ coc#pum#visible() ? coc#pum#next(1):
-    \ <SID>check_back_space() ? "\<Tab>" :
-    \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-" Show definition
-nmap <silent> <leader>gd <Plug>(coc-definition)
-nnoremap <silent> <leader>ghd :call CocAction('jumpDefinition', 'split')<CR>
-nnoremap <silent> <leader>gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
-" Show references
-nmap <silent> <leader>gi <Plug>(coc-references)
-
-" Buffer code action menu
-nmap <leader>af <Plug>(coc-codeaction)
-" Selected code action menu
-nmap <leader>al <Plug>(coc-codeaction-line)
-" Selected action menu in visual mode
-vmap <leader>aw <Plug>(coc-codeaction-selected)
-" Word action menu in normal mode
-nmap <leader>aw viw<Plug>(coc-codeaction-selected)
-" Symbol renaming.
-nmap <leader>ar <Plug>(coc-rename)
-" Apply AutoFix to problem on the current line.
-nmap <leader>aq <Plug>(coc-fix-current)
-
-" Do default action for next item.
-nnoremap <silent> <leader>j :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <leader>k :<C-u>CocPrev<CR>
-nmap <leader>f :Format<CR>
-" Organize imports of the current buffer.
-nmap <leader>o <Plug>(coc-action-organizeImport)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
-endfunction
+"set nowritebackup
+"
+"" Always show the signcolumn, otherwise it would shift the text each time
+"" diagnostics appear/become resolved.
+"if has("patch-8.1.1564")
+"    " Recently vim can merge signcolumn and number column into one
+"    set signcolumn=number
+"else
+"    set signcolumn=yes
+"endif
+"
+"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
+"" remap for complete to use tab and <cr>
+"inoremap <silent><expr> <TAB>
+"    \ coc#pum#visible() ? coc#pum#next(1):
+"    \ <SID>check_back_space() ? "\<Tab>" :
+"    \ coc#refresh()
+"inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+"inoremap <silent><expr> <c-space> coc#refresh()
+"
+"" Add `:Format` command to format current buffer.
+"command! -nargs=0 Format :call CocAction('format')
+"command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+"
+"" Add `:Fold` command to fold current buffer.
+"command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+"
+"" Add `:OR` command for organize imports of the current buffer.
+"command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+"
+"" Add (Neo)Vim's native statusline support.
+"" NOTE: Please see `:h coc-status` for integrations with external plugins that
+"" provide custom statusline: lightline.vim, vim-airline.
+"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"
+"function! s:check_back_space() abort
+"    let col = col('.') - 1
+"    return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+"
+"" Use `[g` and `]g` to navigate diagnostics
+"nmap <silent> [g <Plug>(coc-diagnostic-prev)
+"nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"
+"" GoTo code navigation.
+"" Show definition
+"nmap <silent> <leader>gd <Plug>(coc-definition)
+"nnoremap <silent> <leader>ghd :call CocAction('jumpDefinition', 'split')<CR>
+"nnoremap <silent> <leader>gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
+"" Show references
+"nmap <silent> <leader>gi <Plug>(coc-references)
+"
+"" Buffer code action menu
+"nmap <leader>af <Plug>(coc-codeaction)
+"" Selected code action menu
+"nmap <leader>al <Plug>(coc-codeaction-line)
+"" Selected action menu in visual mode
+"vmap <leader>aw <Plug>(coc-codeaction-selected)
+"" Word action menu in normal mode
+"nmap <leader>aw viw<Plug>(coc-codeaction-selected)
+"" Symbol renaming.
+"nmap <leader>ar <Plug>(coc-rename)
+"" Apply AutoFix to problem on the current line.
+"nmap <leader>aq <Plug>(coc-fix-current)
+"
+"" Do default action for next item.
+"nnoremap <silent> <leader>j :<C-u>CocNext<CR>
+"" Do default action for previous item.
+"nnoremap <silent> <leader>k :<C-u>CocPrev<CR>
+"nmap <leader>f :Format<CR>
+"" Organize imports of the current buffer.
+"nmap <leader>o <Plug>(coc-action-organizeImport)
+"
+"" Use K to show documentation in preview window.
+"nnoremap <silent> K :call <SID>show_documentation()<CR>
+"function! s:show_documentation()
+"    if (index(['vim','help'], &filetype) >= 0)
+"        execute 'h '.expand('<cword>')
+"    else
+"        call CocAction('doHover')
+"    endif
+"endfunction
 
 "----- fzf ------
 nnoremap <C-p> :Files<Cr>
