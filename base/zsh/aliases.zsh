@@ -72,9 +72,8 @@ alias jsonformat='python -c "import json, sys, collections; print(json.dumps(jso
 # Python
 alias venv="poetry shell"
 
-# Taskwarrior
-alias tl='clear && task calendar && task'
-alias tui='taskwarrior-tui'
+# dool
+alias dool="dool --bytes --time --cpu --load --net --mem"
 
 # Trans
 alias t="trans de:en"
