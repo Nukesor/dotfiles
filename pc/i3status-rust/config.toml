@@ -59,7 +59,21 @@ format = " $icon BigBat1: $percentage $time | $icon Bat1: $percentage ... "
 [[block]]
 block = "music"
 player = "spotify"
-format = " $icon  {$combo.str(max_w:25,rot_interval:0.5) $prev  $play  $next |}"
+format = " {$icon $combo.str(max_w:25,rot_interval:0.5) $prev  $play  $next |}"
+[[block.click]]
+button = "left"
+action = "play_pause"
+[[block.click]]
+button = "forward"
+action = "next"
+[[block.click]]
+button = "back"
+action = "prev"
+
+[[block]]
+block = "music"
+player = "mpd"
+format = " {$icon $combo.str(max_w:25,rot_interval:0.5) $prev  $play  $next |}"
 [[block.click]]
 button = "left"
 action = "play_pause"

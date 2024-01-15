@@ -1,3 +1,9 @@
+# ---- General Navigation
+
+def_key "h"
+    previous_column
+def_key "l"
+    next_column
 def_key "j"
     scroll_down
 def_key "k"
@@ -9,18 +15,26 @@ def_key "ctrl-d"
     page_down
 
 
-def_key "h"
-    previous_column
+# ---- Browser navigation
+
 def_key "l"
-    next_column
+    enter_directory
+def_key "h"
+    jump_to_parent_directory
 
-def_key "n"
-    next_found_item
-def_key "N"
-    previous_found_item
+# ---- Song movement
 
-# not used but bound
 def_key "J"
-    move_sort_order_down
+    move_selected_items_down
 def_key "K"
-    move_sort_order_up
+    move_selected_items_up
+
+# ---- Search navigation
+
+def_key "enter"
+    add_item_to_playlist
+    play_item
+
+def_key "space"
+    select_item
+    scroll_down
