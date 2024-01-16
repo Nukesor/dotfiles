@@ -10,10 +10,10 @@
   },
   "python.analysis.useLibraryCodeForTypes": false,
   "python.linting.pydocstyleEnabled": true,
-  "python.formatting.provider": "black",
+  "pyright.organizeimports.provider": "ruff",
+  "python.linting.ruffEnabled": true,
   "rust-analyzer.server.path": "/usr/lib/rustup/bin/rust-analyzer",
   "rust-analyzer.procMacro.enable": true,
-  "rust-analyzer.cargo.runBuildScripts": true,
   "rust-analyzer.diagnostics.disabled": [
     "unresolved-macro-call",
     "macro-error"
