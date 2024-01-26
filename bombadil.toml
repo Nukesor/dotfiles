@@ -69,6 +69,7 @@ mpd = { source = "pc/mpd", target = ".config/mpd" }
 ncmpcpp = { source = "pc/ncmpcpp", target = ".config/ncmpcpp" }
 discord = { source = "pc/discord", target = ".config/discord" }
 firefox = { source = "pc/firefox/user.js", target = ".mozilla/user.js" }
+picom = { source = "pc/picom", target = ".config/picom" }
 
 # Cli Apps
 game_saver = { source = "pc/game_saver.toml", target = ".config/game_saver.toml" }
