@@ -84,7 +84,7 @@ block_and_wait() {
         echo "First parameter should be the name of the semaphore."
         return 1;
     fi
-    mkdir "$XDG_RUNTIME_DIR/semaphores"
+    mkdir -p "$XDG_RUNTIME_DIR/semaphores"
 
     if [[ -f "$XDG_RUNTIME_DIR/semaphores/$1" ]]; then
         echo "Semaphore $1 already exists."
