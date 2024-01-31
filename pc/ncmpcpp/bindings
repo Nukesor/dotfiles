@@ -22,6 +22,15 @@ def_key "l"
 def_key "h"
     jump_to_parent_directory
 
+def_key "enter"
+    require_screen "browser"
+    enter_directory
+
+def_key "space"
+    require_screen "browser"
+    add_item_to_playlist
+
+
 # ---- Song movement
 
 def_key "J"
@@ -29,12 +38,13 @@ def_key "J"
 def_key "K"
     move_selected_items_up
 
-# ---- Search navigation
+# --- Playlist commands
 
 def_key "enter"
-    add_item_to_playlist
+    require_screen "playlist"
     play_item
 
 def_key "space"
+    require_screen "playlist"
     select_item
     scroll_down
