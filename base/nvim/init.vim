@@ -7,6 +7,7 @@ Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/coc-lua', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/coc-flutter', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'udalov/kotlin-vim', {'do': 'yarn install --frozen-lockfile'}
 
 "----- Programming language linting & formatting -----
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
@@ -14,6 +15,7 @@ Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
+Plug 'weirongxu/coc-kotlin', {'do': 'yarn install --frozen-lockfile'}
 
 "----- Other language support ------
 " Markup/Data format/Templating languages
