@@ -1,4 +1,5 @@
 {
+  "html.format.templating": true,
   "flutter.sdk.searchPaths": ["/home/nuke/work/utils/flutter"],
   "prettier.disableLanguages": ["markdown"],
   "markdownlint.config": {
