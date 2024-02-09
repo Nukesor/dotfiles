@@ -17,27 +17,6 @@ See the [official docs](https://i3wm.org/docs/layout-saving.html) for more info.
 
 To get the window class for custom rules, use the `xprop` utility.
 
-## Desktop manager
-
-`lightdm` with `lightdm-webkit2-greeter` and **NO** theme.
-
-`/etc/lightdm/lightdm.conf`
-
-```txt
-[Seat:*]
-...
-greeter-session = lightdm-webkit2-greeter
-...
-```
-
-`/etc/lightdm/lightdm-webkit2-greeter.conf`
-
-```txt
-...
-webkit_theme        = THEME HERE
-...
-```
-
 ## Firefox
 
 - Start firefox once and login.
