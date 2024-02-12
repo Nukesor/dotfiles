@@ -32,7 +32,7 @@ yellow = "#FFFF40"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 12
+size = {{ alacritty_fontsize }}
 
 [font.bold]
 style = "Medium"
