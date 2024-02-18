@@ -27,9 +27,20 @@
 
 [pull]
     rebase = true
+    autoSquash = true
+    updateRefs = true
 
 [diff]
+    # Use better, descriptive initials (c, i, w) instead of a/b.
+    mnemonicPrefix = true
     tool = vimdiff
+    # Display submodule-related information (commit listings)
+    submodule = log
+
+[grep]
+  break = true
+  heading = true
+  lineNumber = true
 
 [init]
     defaultBranch = main
