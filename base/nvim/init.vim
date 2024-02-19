@@ -296,6 +296,7 @@ set smartcase           " upper-case sensitive search
 "----- Languages ------
 autocmd BufWritePre *.rs silent! execute ':Format'
 autocmd BufWritePre *.py silent! execute ':Format'
+autocmd BufWritePre *.dart silent! execute ':Format'
 autocmd BufWritePre *.tsx silent! execute ':Format'
 autocmd BufWritePre *.ts silent! execute ':Format'
 autocmd BufWritePre *.html silent! execute ':Prettier'
