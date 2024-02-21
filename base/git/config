@@ -27,6 +27,8 @@
 
 [pull]
     rebase = true
+
+[rebase]
     autoSquash = true
     updateRefs = true
 
