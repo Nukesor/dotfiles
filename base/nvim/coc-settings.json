@@ -14,7 +14,6 @@
   "pyright.organizeimports.provider": "ruff",
   "python.linting.ruffEnabled": true,
   "kotlin.languageServer.path": "/usr/bin/kotlin-language-server",
-  "rust-analyzer.server.path": "/usr/lib/rustup/bin/rust-analyzer",
   "rust-analyzer.procMacro.enable": true,
   "rust-analyzer.diagnostics.disabled": [
     "unresolved-macro-call",
