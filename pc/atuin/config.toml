@@ -3,3 +3,14 @@ sync_frequency = "10m"
 workspaces = true
 style = "compact"
 show_preview = true
+history_filter = [
+   "^t .*",
+   "^td .*",
+   "^j .*",
+   "^ping .*",
+   "^nvim",
+   "^gls",
+   "^git add .*",
+   "^git diff .*",
+   "^cd .*",
+]
