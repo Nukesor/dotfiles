@@ -2,9 +2,6 @@
 if [[ -f "/usr/share/fzf/key-bindings.zsh" ]]; then
     source "/usr/share/fzf/key-bindings.zsh"
 fi
-if [[ -f "/usr/share/fzf/completion.zsh" ]]; then
-    source "/usr/share/fzf/completion.zsh"
-fi
 
 if [[ -d "$HOME/repos/tools/pueue/utils/completions/" ]]; then
     fpath=($HOME/repos/tools/pueue/utils/completions/ $fpath)
@@ -20,6 +17,8 @@ export SHELDON_DATA_DIR="$HOME/.local/share/sheldon"
 eval "$(sheldon -q source)"
 # Prompt
 eval "$(starship init zsh)"
+# Shared history
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # -------------------- General configuration --------------------
 autoload -U promptinit && promptinit
@@ -121,25 +120,11 @@ unblock() {
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
 
-# History
-HISTSIZE=1000000
-SAVEHIST=$HISTSIZE
+# Only store the last 1000 history entries, as we're using atuin
+HISTSIZE=1000
 setopt inc_append_history   # write to history immediately
 setopt hist_ignore_dups     # ignore second instance of same event
 setopt share_history        # share history between session
 setopt extended_history     # special history format with timestamp
 setopt no_hist_beep         # fucking beep
 setopt hist_ignore_space    # ignore entries with leading space
-
-# Save and restore zsh history file to backup.
-if [[
-    $(wc -l ~/.local/share/zsh/history | awk '{print $1}') -lt 1000 && \
-    $(wc -l ~/.local/share/zsh/history_backup | awk '{print $1}') -gt 1000
-]]; then
-    echo "History file has less than 1000 lines, restoring backup..."
-    cp -f ~/.local/share/zsh/history_backup ~/.local/share/zsh/history
-else
-    if [[ -f "$HOME/.local/share/zsh/history" ]]; then
-        cp -f ~/.local/share/zsh/history ~/.local/share/zsh/history_backup
-    fi
-fi
