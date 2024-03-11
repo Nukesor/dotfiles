@@ -4,7 +4,7 @@ export CARGO_HOME=$XDG_CACHE_HOME/cargo
 
 {%- if profile == "desktop" %}
 fix_xonar_output
-{% endif -%}
+{% endif %}
 
 # Load zshenv
 [ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
