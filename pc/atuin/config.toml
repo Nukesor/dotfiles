@@ -1,6 +1,5 @@
 sync_address = "http://10.0.1.1:8888"
 sync_frequency = "10m"
-workspaces = true
 style = "compact"
 show_preview = true
 history_filter = [
@@ -13,4 +12,7 @@ history_filter = [
    "^git add .*",
    "^git diff .*",
    "^cd .*",
+   "^mv .*",
+   "^wget .*",
+   "^curl .*",
 ]
