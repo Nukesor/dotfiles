@@ -15,4 +15,9 @@ history_filter = [
    "^mv .*",
    "^wget .*",
    "^curl .*",
+   "^rsync .*",
+   "^gb -D*",
+   "^git branch -D*",
+   "^spacman .*",
+   "^#.*",
 ]
