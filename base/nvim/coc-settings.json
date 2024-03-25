@@ -5,7 +5,7 @@
   "markdownlint.config": {
     "line_length": false,
     "blanks-around-fences": {
-        "list_items": false
+      "list_items": false
     },
     "no-duplicate-heading": false
   },
@@ -14,11 +14,12 @@
   "pyright.organizeimports.provider": "ruff",
   "python.linting.ruffEnabled": true,
   "kotlin.languageServer.path": "/usr/bin/kotlin-language-server",
-  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.check.allTargets": true,
   "rust-analyzer.diagnostics.disabled": [
     "unresolved-macro-call",
     "macro-error"
   ],
+  "rust-analyzer.procMacro.enable": true,
   "eslint.format.enable": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }

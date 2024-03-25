@@ -4,7 +4,5 @@
 // once you've started firefox once.
 
 user_pref("full-screen-api.ignore-widgets", true);
-{% if enable_hw_acc == 'true' %}
 user_pref("gfx.webrender.all", true);
 user_pref("media.ffmpeg.vaapi.enabled", true);
-{% endif %}
