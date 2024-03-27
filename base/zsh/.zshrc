@@ -128,3 +128,11 @@ setopt share_history        # share history between session
 setopt extended_history     # special history format with timestamp
 setopt no_hist_beep         # fucking beep
 setopt hist_ignore_space    # ignore entries with leading space
+
+# This is a way to start an alacritty shell with a custom command,
+# while keeping an active zsh session.
+# The alternative would be a `zsh -c $command`, which doesn't allow falling
+# back to the shell and exits the terminal after closing vim.
+if [[ -n $ROFI_COMMAND ]] then
+   eval $ROFI_COMMAND
+fi
