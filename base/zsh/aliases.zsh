@@ -27,7 +27,7 @@ alias cp='cp --reflink=auto'
 
 # Vim
 alias nvim='nvim -c NERD'
-alias svim='sudo nvim'
+alias svim='sudo nvim -c NERD'
 
 # Netctl
 alias co='sudo netctl stop-all && sudo netctl start'
