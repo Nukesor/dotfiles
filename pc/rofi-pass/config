@@ -4,7 +4,7 @@
 
 # rofi command. Make sure to have "$@" as last argument
 _rofi () {
-    rofi -i -no-auto-select "$@"
+    rofi -no-custom -i -no-auto-select "$@"
 }
 
 # default command to generate passwords
@@ -47,7 +47,7 @@ xdotool_delay=12
 
 ## Programs to be used
 # Editor
-EDITOR='gvim -f'
+EDITOR='alacritty -e zsh -c vim "$@"'
 
 # Browser
 BROWSER='xdg-open'
@@ -68,10 +68,10 @@ help_color="#4872FF"
 
 # Clipboard settings
 # Possible options: primary, clipboard, both
-clip=primary
+clip=clipboard
 
 # Seconds before clearing pass from clipboard
-clip_clear=45
+clip_clear=30
 
 ## Options for generating new password entries
 
@@ -79,7 +79,7 @@ clip_clear=45
 edit_new_pass="true"
 
 # default_user is also used for password files that have no user field.
-default_user="Nukesor"
+default_user="nukesor"
 #default_user2=mary_ann
 #password_length=12
 
