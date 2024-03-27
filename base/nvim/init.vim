@@ -61,8 +61,8 @@ Plug 'easymotion/vim-easymotion' " Vimium-like motion helper for vim
 Plug 'scrooloose/nerdtree' " File tree
 "Plug 'nvim-tree/nvim-tree.lua' " File tree
 "Plug 'vim-scripts/taglist.vim' " Code-overview in sidebuffer. Classes, functions, structs, etc.
-Plug 'junegunn/fzf.vim' " Fast and interactive search stuff
-Plug 'junegunn/fzf' " Requirement for fzf.vim
+Plug 'lotabout/skim.vim' " Fast and interactive search stuff
+Plug 'lotabout/skim' " Requirement for skim.vim
 
 call plug#end()
 
@@ -158,7 +158,7 @@ function! s:show_documentation()
     endif
 endfunction
 
-"----- fzf ------
+"----- Skim ------
 nnoremap <C-p> :Files<Cr>
 nnoremap <leader>r :Rg<Cr>
 
