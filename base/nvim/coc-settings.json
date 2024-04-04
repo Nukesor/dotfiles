@@ -13,6 +13,7 @@
   "python.linting.pydocstyleEnabled": true,
   "pyright.organizeimports.provider": "ruff",
   "python.linting.ruffEnabled": true,
+  "python.formatting.provider": "ruff",
   "kotlin.languageServer.path": "/usr/bin/kotlin-language-server",
   "rust-analyzer.check.allTargets": true,
   "rust-analyzer.diagnostics.disabled": [
