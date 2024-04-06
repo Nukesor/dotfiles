@@ -1,7 +1,7 @@
 {
-  "html.format.templating": true,
+  "eslint.format.enable": true,
   "flutter.sdk.searchPaths": ["/home/nuke/work/utils/flutter"],
-  "prettier.disableLanguages": ["markdown"],
+  "kotlin.languageServer.path": "/usr/bin/kotlin-language-server",
   "markdownlint.config": {
     "line_length": false,
     "blanks-around-fences": {
@@ -9,18 +9,17 @@
     },
     "no-duplicate-heading": false
   },
-  "python.analysis.useLibraryCodeForTypes": false,
-  "python.linting.pydocstyleEnabled": true,
+  "prettier.disableLanguages": ["markdown"],
   "pyright.organizeimports.provider": "ruff",
-  "python.linting.ruffEnabled": true,
+  "python.analysis.useLibraryCodeForTypes": false,
   "python.formatting.provider": "ruff",
-  "kotlin.languageServer.path": "/usr/bin/kotlin-language-server",
+  "python.linting.pydocstyleEnabled": true,
+  "python.linting.ruffEnabled": true,
   "rust-analyzer.check.allTargets": true,
   "rust-analyzer.diagnostics.disabled": [
     "unresolved-macro-call",
     "macro-error"
   ],
   "rust-analyzer.procMacro.enable": true,
-  "eslint.format.enable": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
