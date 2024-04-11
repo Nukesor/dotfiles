@@ -33,11 +33,17 @@
     updateRefs = true
 
 [diff]
+    tool = difftastic
     # Use better, descriptive initials (c, i, w) instead of a/b.
     mnemonicPrefix = true
-    tool = vimdiff
     # Display submodule-related information (commit listings)
     submodule = log
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
 
 [grep]
   break = true
@@ -46,9 +52,6 @@
 
 [init]
     defaultBranch = main
-
-[difftool]
-    prompt = false
 
 [pager]
     log  = bat --style=plain
