@@ -5,19 +5,20 @@
     signingkey = CC9408F679023B65
 {% endif -%}
 
-[color]
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
+[commit]
+	gpgsign = true
 
-[alias]
-    lg = log --graph --all --format=format:'%C(yellow)%h%C(reset) - %C(cyan)%ci%C(reset) %C(green)(%cr)%C(reset) %C(bold yellow)%d%C(reset)%n          %C(white)%s%C(reset) %C(bold white)- %cn%C(reset)%n' --abbrev-commit --date=relative
-    ls = status
-    fwl = push --force-with-lease
+[init]
+    defaultBranch = main
+
+#### Functionality ####
 
 [core]
     editor = vim
+    pager = delta
+
+[submodule]
+	recurse = true
 
 [branch]
     autosetupmerge = always
@@ -28,45 +29,56 @@
 [pull]
     rebase = true
 
+[remote "origin"]
+	prune = true
+
 [rebase]
     autoSquash = true
     updateRefs = true
 
-[diff]
-    tool = difftastic
-    # Use better, descriptive initials (c, i, w) instead of a/b.
-    mnemonicPrefix = true
-    # Display submodule-related information (commit listings)
-    submodule = log
+#[merge]
+#    conflictstyle = zdiff3
 
-[difftool]
-    prompt = false
+[interactive]
+    diffFilter = delta --color-only
 
-[difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
+[alias]
+    lg = log --graph --all --format=format:'%C(yellow)%h%C(reset) - %C(cyan)%ci%C(reset) %C(green)(%cr)%C(reset) %C(bold yellow)%d%C(reset)%n          %C(white)%s%C(reset) %C(bold white)- %cn%C(reset)%n' --abbrev-commit --date=relative
+    ls = status
+    fwl = push --force-with-lease
+    df = difftool
 
 [grep]
   break = true
   heading = true
   lineNumber = true
 
-[init]
-    defaultBranch = main
+#### Styling ####
 
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+
+[diff]
+    # Display submodule-related information (commit listings)
+    submodule = log
+    colorMoved = zebra
+    tool = difftastic
+[delta]
+    dark = true
+    line-numbers = true
+    hyperlinks = true
+    hunk-header-style = raw
+    hunk-header-decoration-style = none
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE" --color=always
 [pager]
-    log  = bat --style=plain
-    # diff-highlight is script provided by git that shows word-by-word diff
-    show = /usr/share/git/diff-highlight/diff-highlight | bat --style=changes
-    diff = /usr/share/git/diff-highlight/diff-highlight | bat --style=changes
-    tag = less
+    difftool = true
 
-[submodule]
-	recurse = true
-[commit]
-	gpgsign = true
-
-[remote "origin"]
-	prune = true
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f

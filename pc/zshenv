@@ -9,6 +9,12 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+# Tooling
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export EDITOR=nvim
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 # Application logic
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export VAGRANT_EXPERIMENTAL="disks"
@@ -23,17 +29,12 @@ path=($path $ANDROID_SDK_ROOT/tools)
 export PUB_CACHE="$XDG_CACHE_HOME/dart-pub-cache"
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 
-# Vim setup
-export EDITOR=nvim
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
-export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
 # Styling
 export GTK_THEME=Advaita:dark
 
 # Convenience stuff
 export ZRC=$ZDOTDIR/.zshrc
-export NVIM=$XDG_CONFIG_HOME/nvim/
+export VRC=$XDG_CONFIG_HOME/nvim/init.vim
 
 # Config cleanup
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
