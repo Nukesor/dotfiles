@@ -16,6 +16,7 @@ Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'weirongxu/coc-kotlin', {'do': 'yarn install --frozen-lockfile'}
+Plug 'hashivim/vim-terraform'
 
 "----- Other language support ------
 " Markup/Data format/Templating languages
