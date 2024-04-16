@@ -67,7 +67,7 @@ termite = { source = "pc/termite/config", target = ".config/termite" }
 mpv = { source = "pc/mpv", target = ".config/mpv" }
 mpd = { source = "pc/mpd", target = ".config/mpd" }
 ncmpcpp = { source = "pc/ncmpcpp", target = ".config/ncmpcpp" }
-discord = { source = "pc/discord", target = ".config/discord" }
+#discord = { source = "pc/discord", target = ".config/discord" }
 firefox = { source = "pc/firefox/user.js", target = ".mozilla/user.js" }
 picom = { source = "pc/picom", target = ".config/picom" }
 
