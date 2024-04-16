@@ -2,6 +2,7 @@
 path=($HOME/.bin $path)
 path=($HOME/.cache/cargo/bin $path)
 path=($HOME/work/utils/flutter/bin $path)
+path=($HOME/work/bin $path)
 path=($HOME/.cache/dart-pub-cache/bin $path)
 
 # XDG Setup
