@@ -1,5 +1,13 @@
 ! 2022-08-05 https://www.reddit.com
 www.reddit.com##.sitetable
+www.reddit.com##.premium-banner
+www.reddit.com##.create.sidebox
+www.reddit.com##.footer-parent
+
+! 2022-12-30 https://stackoverflow.com
+stackoverflow.com##.js-review-button
+stackoverflow.com##.iconAchievements
+stackoverflow.com##.js-inbox-button
 
 ! 2022-08-10 https://www.washingtonpost.com
 www.washingtonpost.com##.purchase-paywall-overlay.paywall-overlay.bottom-0.right-0.left-0.fixed
