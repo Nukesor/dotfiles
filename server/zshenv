@@ -9,7 +9,7 @@ path=($path ./node_modules/.bin)
 export CONFIG_HOME="$HOME/.config"
 export CACHE_HOME="$HOME/.cache"
 export DATA_HOME="$HOME/.local/share"
-export XDG_RUNTIME_DIR="run/user/$UID"
+export XDG_RUNTIME_DIR="/run/user/$UID"
 
 # Config cleanup
 export ZDOTDIR=$CONFIG_HOME/zsh
