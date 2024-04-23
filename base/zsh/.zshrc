@@ -74,10 +74,6 @@ bindkey "^b" __gblist
 
 # -------------------- CLI functions --------------------
 
-sshHcloud() {
-    hcloud server ssh $1 -o StrictHostKeyChecking=no -i $2 "${@:3}"
-}
-
 block_and_wait() {
     if [ "$#" -eq 0  ]; then
         echo "First parameter should be the name of the semaphore."
