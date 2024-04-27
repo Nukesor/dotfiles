@@ -3,36 +3,49 @@ sync_frequency = "10m"
 style = "compact"
 show_preview = true
 history_filter = [
-   "^a$",
-   "^cd$",
-   "^fg",
-   "^j .*",
-   "^ls",
-   "^la",
-   "^km",
-   "^kd",
-   "^t .*",
-   "^td .*",
-   "^pong",
-   "^nvim",
-   "^gb",
-   "^gb -D.*",
-   "^git add .*",
-   "^git diff .*",
-   "^git branch -D*",
-   "^gi t.*",
-   "^git commit --fixup=.*",
-   "^gsh",
-   "^gls",
-   "^gpuf?",
-   "^glg",
-   "^gsm",
-   "^cd .*",
-   "^mv .*",
-   "^wget .*",
-   "^curl .*",
-   "^rsync .*",
-   "^#.*",
+  # Day-to-day shell commands
+  "^cd .*",
+  "^cd$",
+  "^fg",
+  "^j .*",
+  "^ls",
+  "^la",
+  "^mv .*",
+
+  # Git related
+  "^gb",
+  "^gb -D.*",
+  "^git add .*",
+  "^git diff .*",
+  "^git branch -D*",
+  "^gi t.*",
+  "^git commit --fixup=.*",
+  "^gsh",
+  "^gls",
+  "^gpuf?",
+  "^glg",
+  "^gsm",
+
+  # Uninteresting commands
+  "^curl .*",
+  "^rsync .*",
+  "^pong",
+  "^t .*",
+  "^td .*",
+  "^nvim",
+  "^wget .*",
+
+  # Typos
+  "^a$",
+  "^#.*",
+
+  # Help text commands
+  "^.* -h.*$",
+  "^.* --help.*$",
+
+  # Scripts/aliase
+  "^km",
+  "^kd",
 ]
 
 [sync]
