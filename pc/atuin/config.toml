@@ -33,3 +33,8 @@ history_filter = [
    "^rsync .*",
    "^#.*",
 ]
+
+[sync]
+# Enable sync v2
+# Run `atuin history init-store` when mitgrating from old sync
+records = true
