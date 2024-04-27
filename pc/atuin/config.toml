@@ -34,6 +34,8 @@ history_filter = [
   "^td .*",
   "^nvim",
   "^wget .*",
+  "^p .*",
+  "^pad .*",
 
   # Typos
   "^a$",
