@@ -1,15 +1,8 @@
-# -------------------- External plugin init --------------------
+# -------------------- Plugins/External --------------------
+# Run fzf keybindings first. CTRL+R will be overwritten by atuin.
 if [[ -f "/usr/share/fzf/key-bindings.zsh" ]]; then
     source "/usr/share/fzf/key-bindings.zsh"
 fi
-
-if [[ -d "$HOME/repos/tools/pueue/utils/completions/" ]]; then
-    fpath=($HOME/repos/tools/pueue/utils/completions/ $fpath)
-fi
-
-autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
-
-# -------------------- Plugins/External --------------------
 
 export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
 export SHELDON_DATA_DIR="$HOME/.local/share/sheldon"
@@ -19,6 +12,10 @@ eval "$(sheldon -q source)"
 eval "$(starship init zsh)"
 # Shared history
 eval "$(atuin init zsh --disable-up-arrow)"
+
+if [[ -d "$HOME/repos/tools/pueue/utils/completions/" ]]; then
+    fpath=($HOME/repos/tools/pueue/utils/completions/ $fpath)
+fi
 
 # -------------------- General configuration --------------------
 autoload -U promptinit && promptinit
@@ -115,15 +112,7 @@ unblock() {
 
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
-
-# Only store the last 1000 history entries, as we're using atuin
-HISTSIZE=1000
-setopt inc_append_history   # write to history immediately
-setopt hist_ignore_dups     # ignore second instance of same event
-setopt share_history        # share history between session
-setopt extended_history     # special history format with timestamp
 setopt no_hist_beep         # fucking beep
-setopt hist_ignore_space    # ignore entries with leading space
 
 # This is a way to start an alacritty shell with a custom command,
 # while keeping an active zsh session.

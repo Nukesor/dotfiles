@@ -1,8 +1,16 @@
 [plugins.256color]
 github = "chrissicool/zsh-256color"
 
-#[plugins.colored_man_page]
-#github = "plugins/colored-man-pages"
-
 [plugins.syntax_highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["zsh-autosuggestions.zsh"]
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+# Not sure if this is worth it. It adds quite a bit of lag.
+[plugins.zsh-autocompletions]
+github = "marlonrichert/zsh-autocomplete"
