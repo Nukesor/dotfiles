@@ -35,10 +35,11 @@ Plug 'NoahTheDuke/vim-just' " Just file support
 
 ""----- Looks ------
 Plug 'bling/vim-airline'
-Plug 'flazz/vim-colorschemes'
-Plug 'rafi/awesome-vim-colorschemes'
 Plug 'Valloric/MatchTagAlways' " Highlight matching brackets
 Plug 'ap/vim-css-color'
+Plug 'morhetz/gruvbox'
+Plug 'tomasiser/vim-code-dark'
+Plug 'Luxed/ayu-vim'
 
 ""----- Functionality ------
 Plug 'gpanders/editorconfig.nvim'
@@ -47,6 +48,7 @@ Plug 'tomtom/tcomment_vim' " Toggle comments in front of lines via 'gc'
 Plug 'tpope/vim-surround' " Easy bracket/quote manipulation
 Plug 'ntpeters/vim-better-whitespace' " Display whitespaces at end of lines and provide :StripWhitespace
 Plug 'dyng/ctrlsf.vim' " Multi-file search + replace
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " Snippets
 "Plug 'SirVer/ultisnips'
@@ -243,25 +245,35 @@ set spelllang=en_us,de
 " Vim sudo hack
 cmap w!! w !sudo tee > /dev/null %
 
-" Misc
-"autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disable auto commenting
-"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif " Automatically open and close the popup menu / preview window
-
 "----- Navigation ------
 set mouse=a             " make sure mouse is used in all cases.
 set splitbelow          " hsplit opens below current window
 set splitright          " ssplit opens right of current window
 
-"----- Looks ------
+"----- Colorscheme -----
+syntax on               " enable syntax highlighting
+set background=dark
 set termguicolors
 set t_Co=256            " set 256 color
-colorscheme earendel    " define syntax color scheme
-syntax on               " enable syntax highlighting
+
+" Gruvbox: values are soft,medium,hard
+let g:gruvbox_contrast_dark="medium"
+colorscheme gruvbox     " define syntax color scheme
+
+" Codedark:
+"let g:codedark_modern=1
+"let g:airline_theme = 'codedark'
+"colorscheme codedark
+
+" Ayu: values are light,mirage,dark
+"let ayucolor="dark"
+"colorscheme ayu
+
+"----- Looks ------
 set showmode            " show mode at bottom of screen
 set showmatch           " show matching brackets (),{},[]
 set matchpairs+=<:>     " match < and > as well
 "set mat=0              " show matching brackets for 0.5 seconds
-"set background=dark
 
 " Cursor highlighting
 set cursorline          " highlight cursor line

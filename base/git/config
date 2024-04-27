@@ -75,6 +75,8 @@
     hyperlinks = true
     hunk-header-style = raw
     hunk-header-decoration-style = none
+    # Colorscheme
+    syntax-theme = gruvbox-dark
 [difftool]
     prompt = false
 [difftool "difftastic"]
