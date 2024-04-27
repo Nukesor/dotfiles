@@ -17,9 +17,10 @@ if [[ -d "$HOME/repos/tools/pueue/utils/completions/" ]]; then
     fpath=($HOME/repos/tools/pueue/utils/completions/ $fpath)
 fi
 
-# -------------------- General configuration --------------------
+autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
 autoload -U promptinit && promptinit
 
+# -------------------- General configuration --------------------
 #Syntax Highlighting
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=002,bold'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'

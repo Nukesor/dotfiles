@@ -12,5 +12,6 @@ use = ["zsh-autosuggestions.zsh"]
 github = "zsh-users/zsh-completions"
 
 # Not sure if this is worth it. It adds quite a bit of lag.
-[plugins.zsh-autocompletions]
-github = "marlonrichert/zsh-autocomplete"
+# Also has annoying arrow up/down menu
+#[plugins.zsh-autocompletions]
+#github = "marlonrichert/zsh-autocomplete"
