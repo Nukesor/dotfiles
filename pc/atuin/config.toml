@@ -16,7 +16,6 @@ history_filter = [
   "^gb",
   "^gb -D.*",
   "^git add .*",
-  "^git diff .*",
   "^git branch -D*",
   "^gi t.*",
   "^git commit --fixup=.*",
