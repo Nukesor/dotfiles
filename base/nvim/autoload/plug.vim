@@ -1,4 +1,3 @@
-
 " vim-plug: Vim plugin manager
 " ============================
 "

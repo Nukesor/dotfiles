@@ -114,6 +114,8 @@ unblock() {
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
 setopt no_hist_beep         # fucking beep
+# Don't enable flow-control (Ctrl-S & Ctrl-Q)
+setopt noflowcontrol
 
 # This is a way to start an alacritty shell with a custom command,
 # while keeping an active zsh session.

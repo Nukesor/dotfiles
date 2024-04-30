@@ -26,7 +26,7 @@ daemon:
 {%- endraw %}
   ]
   env_vars:
-    BASH_ENV: "/home/nuke/.config/zsh/aliases.zsh"
+    BASH_ENV: "$HOME/.config/zsh/aliases.zsh"
 shared:
   use_unix_socket: true
   host: 127.0.0.1
