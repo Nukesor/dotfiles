@@ -37,11 +37,13 @@ cmp.setup({
                 local source = entry['source']['name']
                 if source == 'luasnip' then
                     cmp.confirm({ select = true })
-                else
-                    cmp.confirm({ select = true }, function()
-                        vim.api.nvim_paste(" ", false, -1)
-                    end)
+                    return
                 end
+
+                -- Select and insert a space afterwards
+                cmp.confirm({ select = true }, function()
+                    vim.api.nvim_paste(" ", false, -1)
+                end)
             else
                 fallback()
             end
