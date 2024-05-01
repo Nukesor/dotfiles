@@ -4,9 +4,9 @@ github = "chrissicool/zsh-256color"
 [plugins.syntax_highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 
-[plugins.zsh-autosuggestions]
-github = "zsh-users/zsh-autosuggestions"
-use = ["zsh-autosuggestions.zsh"]
+#[plugins.zsh-autosuggestions]
+#github = "zsh-users/zsh-autosuggestions"
+#use = ["zsh-autosuggestions.zsh"]
 
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
