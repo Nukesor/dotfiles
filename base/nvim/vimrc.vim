@@ -31,10 +31,8 @@ map <Leader>f <Plug>(easymotion-prefix)
 let g:NERDTreeMinimalMenu=1
 let NERDTreeIgnore=['__pycache__']
 let g:NERDTreeBookmarksFile = '$HOME/.cache/NERDTreeBookmarks'
-command -nargs=* NERD NERDTree <args>
 " Jumps to file in current buffer
-nnoremap <silent> <leader>no :NERDTree<CR>
-nnoremap <silent> <leader>nf :NERDTreeFocus<CR>
+nnoremap <silent> <leader>no :NERDTreeFocus<CR>
 nnoremap <silent> <leader>ns :NERDTreeFind<CR>
 
 "----- AirLine ------
@@ -168,6 +166,6 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 :nnoremap <F8> :set spell spellang=en_us <CR>
 
 " Split/tab shortcuts
-nmap <leader>sv :vsplit<CR>
-nmap <leader>sh :split<CR>
+nmap <leader>v :vsplit<CR>
+nmap <leader>h :split<CR>
 nmap <leader>t :tabnew<CR>

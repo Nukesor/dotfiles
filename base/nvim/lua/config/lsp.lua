@@ -16,15 +16,15 @@ local lsp_attach = function(_client, buffer)
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-    vim.keymap.set("n", "[g", vim.diagnostic.goto_next, opts)
-    vim.keymap.set("n", "]g", vim.diagnostic.goto_prev, opts)
+    vim.keymap.set("n", "gw", vim.lsp.buf.workspace_symbol, opts)
+    vim.keymap.set("n", "g[", vim.diagnostic.goto_next, opts)
+    vim.keymap.set("n", "g]", vim.diagnostic.goto_prev, opts)
+    vim.keymap.set("n", "<leader>af", vim.lsp.buf.format, opts)
+    vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "<leader>aw", vim.lsp.buf.code_action, opts)
     vim.keymap.set("v", "<leader>aw", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "<leader>af", vim.lsp.buf.format, opts)
-    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-    vim.keymap.set("n", "<leader>vd", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>vw", vim.lsp.buf.workspace_symbol, opts)
-    vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, opts)
 end
 
 ----- Language server declaration and configuration -----

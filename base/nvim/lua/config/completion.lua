@@ -19,7 +19,6 @@ cmp.setup({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
         ["<C-Space>"] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
         ["<Space>"] = cmp.mapping(function(fallback)
             -- This little function allows to select entries with space.
