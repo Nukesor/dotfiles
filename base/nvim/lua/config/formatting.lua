@@ -29,6 +29,14 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end,
 })
 
+function mdformat()
+  return {
+    exe = "mdformat",
+    args = { "-" },
+    stdin = true,
+  }
+end
+
 -- Setup the formatter.nvim plugin.
 -- What's interesting is, that all formatters are opt-in **only**.
 --
@@ -43,6 +51,9 @@ formatter.setup({
     filetype = {
         yaml = {
             require("formatter.filetypes.yaml").prettier,
+        },
+        markdown = {
+            mdformat,
         },
     },
 })
