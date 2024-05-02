@@ -1,7 +1,12 @@
 local vim = vim
 vim.lsp.set_log_level("debug")
 
+local reader = require("config.reader")
 local lspconfig = require("lspconfig")
+
+-- To enable lsp log if necessary for debugging, set log to
+-- "debug", "info"
+vim.lsp.set_log_level("off")
 
 ----- LSP autocompletion support -----
 -- For nvim-cmp to properly work, we need to inject nvim_lsp as a provider
@@ -41,18 +46,45 @@ local lsps = {
     marksman = {},
     pest_ls = {},
     ruff = {},
-    rust_analyzer = {},
+    rust_analyzer = {
+        ['rust-analyzer'] = vim.tbl_deep_extend(
+            "force",
+            reader.get_json_file('/./.rust-analyzer.json'),
+            -- Overrides (forces these regardless of what's in .rust-analyzer.json
+            -- See https://rust-analyzer.github.io/manual.html#configuration
+            {
+                check = { allTargets = true },
+                procMacro = { enable = true },
+                diagnostics = {
+                    disabled = {
+                        "unresolved-proc-macro",
+                        "unresolved-macro-call",
+                        "macro-error",
+                    }
+                },
+            }
+        )
+    },
     tailwindcss = {},
     terraform_lsp = {},
     tsserver = {},
 }
 
 ----- Language server initialization -----
-for name, options in pairs(lsps) do
+for name, settings in pairs(lsps) do
+    local options = {}
     -- Inject the nvim_lsp capabilities for proper completion support
     options["capabilities"] = capabilities
     -- Inject the keybindings
     options["on_attach"] = lsp_attach
+
+    -- Set custom LSP settings
+    options["settings"] = settings
+
+    -- Print options for a specific server
+    --if name == "rust_analyzer" then
+    --    print(vim.inspect(options))
+    --end
 
     -- Run the server setup
     lspconfig[name].setup(options)
