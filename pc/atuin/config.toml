@@ -19,7 +19,6 @@ history_filter = [
   "^git branch -D*",
   "^gi t.*",
   "^git commit --fixup=.*",
-  "^gsh",
   "^gls",
   "^gpuf?",
   "^glg",
