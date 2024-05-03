@@ -25,11 +25,13 @@ local lsp_attach = function(_client, buffer)
     vim.keymap.set("n", "g[", vim.diagnostic.goto_next, opts)
     vim.keymap.set("n", "g]", vim.diagnostic.goto_prev, opts)
     vim.keymap.set("n", "<leader>af", vim.lsp.buf.format, opts)
-    vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename, opts)
-    vim.keymap.set("n", "<leader>aw", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("v", "<leader>aw", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "<leader>ar", function() vim.cmd('Lspsaga rename') end, opts)
+    vim.keymap.set("n", "<leader>aw", function() vim.cmd('Lspsaga code_action') end, opts)
+    vim.keymap.set("v", "<leader>aw", function() vim.cmd('Lspsaga code_action') end, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, opts)
+    vim.keymap.set("n", "<leader>sf", function() vim.cmd('Lspsaga finder') end, opts)
+    vim.keymap.set("n", "<leader>so", function() vim.cmd('Lspsaga outline') end, opts)
 end
 
 ----- Language server declaration and configuration -----
@@ -89,3 +91,19 @@ for name, settings in pairs(lsps) do
     -- Run the server setup
     lspconfig[name].setup(options)
 end
+
+----- lspsaga improvements -----
+-- See docs for more info:
+-- https://nvimdev.github.io/lspsaga/
+--
+-- What does it do:
+-- - Breadcrumb bar at the top of the buffer
+-- - Floating rename
+-- - Floating diagnostics with preview
+-- - Usage finder popup
+-- - File structure utline window
+
+require('lspsaga').setup({})
+
+-- Get a fancy breadcrumb bar
+require('lspsaga.symbol.winbar').get_bar()

@@ -6,6 +6,8 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 ----- Base setup/config -----
 cmp.setup({
+    -- Don't auto-select anything
+    preselect = cmp.PreselectMode.None,
     snippet = {
         -- Specify a snippet engine
         expand = function(args)

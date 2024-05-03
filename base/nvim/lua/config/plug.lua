@@ -7,6 +7,7 @@ vim.call('plug#begin', '~/.local/share/nvim/plug')
 ----- Language setup ------
 -- Language server support
 Plug('neovim/nvim-lspconfig')
+Plug('nvimdev/lspsaga.nvim')
 
 -- Auto completions
 Plug('hrsh7th/nvim-cmp')
