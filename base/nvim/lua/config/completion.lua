@@ -22,6 +22,7 @@ cmp.setup({
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+        ["<CR>"] = cmp.mapping.confirm(),
         ["<Space>"] = cmp.mapping(function(fallback)
             -- This little function allows to select entries with space.
             -- However, it only does so, if an entry is selected and it's not a snippet.

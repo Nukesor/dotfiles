@@ -103,7 +103,19 @@ end
 -- - Usage finder popup
 -- - File structure utline window
 
-require('lspsaga').setup({})
+require('lspsaga').setup({
+    rename = {
+        in_select = false,
+        keys = {
+            quit = "<Esc>",
+        }
+    },
+    code_action = {
+        keys = {
+            quit = "<Esc>",
+        }
+    },
+})
 
 -- Get a fancy breadcrumb bar
 require('lspsaga.symbol.winbar').get_bar()

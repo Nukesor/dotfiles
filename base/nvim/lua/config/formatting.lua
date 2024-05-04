@@ -8,6 +8,9 @@ local formatter = require("formatter")
 --
 -- The rules will be enforced on write to disk.
 
+------- LSP -------
+-- Use language servers for formatting wherever we can.
+-- This is mounted in the lsp_attach function in the lsp module.
 -- Use language servers wherever we can.
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     desc = "nvim-lsp autoformat on write",
@@ -29,12 +32,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end,
 })
 
+------- formatter.nvim
 function mdformat()
-  return {
-    exe = "mdformat",
-    args = { "-" },
-    stdin = true,
-  }
+    return {
+        exe = "mdformat",
+        args = { "-" },
+        stdin = true,
+    }
 end
 
 -- Setup the formatter.nvim plugin.
@@ -49,6 +53,12 @@ formatter.setup({
     logging = true,
     log_level = vim.log.levels.WARN,
     filetype = {
+        terraform = {
+            require("formatter.filetypes.terraform").terraformfmt,
+        },
+        sh = {
+            require("formatter.filetypes.sh").shfmt,
+        },
         yaml = {
             require("formatter.filetypes.yaml").prettier,
         },
