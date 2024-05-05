@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         "*.html",
         "*.lua",
         "*.j2",
+        "*.json",
         "*.md",
         "*.pest",
         "*.py",
