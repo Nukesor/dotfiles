@@ -30,46 +30,52 @@ path=($path $ANDROID_SDK_ROOT/platform-tools)
 path=($path $ANDROID_SDK_ROOT/tools)
 export PUB_CACHE="$XDG_CACHE_HOME/dart-pub-cache"
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
+export AZURE_CONFIG_DIR=$XDG_DATA_HOME/azure
 
 # Styling
 export GTK_THEME=Advaita:dark
 
 # Convenience stuff
-export ZRC=$ZDOTDIR/.zshrc
 export VRC=$XDG_CONFIG_HOME/nvim/init.vim
+export ZRC=$ZDOTDIR/.zshrc
 
 # Config cleanup
-export ZDOTDIR=$XDG_CONFIG_HOME/zsh
-export WEECHAT_HOME=$XDG_CONFIG_HOME/weechat
-export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export TASKRC=$XDG_CONFIG_HOME/task/taskrc
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export SQLITE_CONFIG="$XDG_CONFIG_HOME"/sqlite/sqliterc
+export TASKRC=$XDG_CONFIG_HOME/task/taskrc
+export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
+export WEECHAT_HOME=$XDG_CONFIG_HOME/weechat
+export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
 # Cache cleanup
-export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
-export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump
 export CARGO_HOME=$XDG_CACHE_HOME/cargo
 export CCACHE_DIR=$XDG_CACHE_HOME/ccache
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
+export XARGO_HOME=$XDG_CACHE_HOME/cargo
+export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump
+export ANSIBLE_HOME="$XDG_CACHE_HOME/ansible"
 
 # Data cleanup
-export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
-export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export GOPATH=$XDG_DATA_HOME/go
+export DISCORD_USER_DATA_DIR="${XDG_DATA_HOME}/discord"
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
+export VSCODE_EXTENSIONS=$XDG_DATA_HOME/vscode
 export WINEPREFIX=$XDG_DATA_HOME/wine
-export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-# X11 errorfile
-export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
-# Tex
-export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
-export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
 # History files
+export _FASD_DATA=$XDG_DATA_HOME/fasd/fasd_history
 export HISTFILE=$XDG_DATA_HOME/zsh/history
 export LESSHISTFILE="$XDG_DATA_HOME/less_history"
-export _FASD_DATA=$XDG_DATA_HOME/fasd/fasd_history
-export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+
+# Runtime files
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
