@@ -35,11 +35,11 @@ interval = 3
 block = "hueshift"
 step = 50
 hue_shifter = "redshift"
-format = " $temperature"
+format = " $temperature |"
 #{% if profile == "laptop" %}
 [[block]]
 block = "backlight"
-format = " $icon $brightness"
+format = " $icon $brightness|"
 
 [[block]]
 block = "battery"
@@ -70,23 +70,38 @@ action = "next"
 button = "back"
 action = "prev"
 
-[[block]]
-block = "music"
-player = "mpd"
-format = " {$icon $combo.str(max_w:25,rot_interval:0.5) $prev  $play  $next |}"
-[[block.click]]
-button = "left"
-action = "play_pause"
-[[block.click]]
-button = "forward"
-action = "next"
-[[block.click]]
-button = "back"
-action = "prev"
+#[[block]]
+#block = "music"
+#player = "mpd"
+#format = " {$icon $combo.str(max_w:25,rot_interval:0.5) $prev  $play  $next |}"
+#[[block.click]]
+#button = "left"
+#action = "play_pause"
+#[[block.click]]
+#button = "forward"
+#action = "next"
+#[[block.click]]
+#button = "back"
+#action = "prev"
 
 [[block]]
 block = "sound"
 step_width = 2
+format = "$icon {$volume.eng(w:2)|}"
+
+[[block]]
+block = "custom"
+command = "~/.cache/cargo/bin/headphone_battery"
+format = "$text"
+interval = 180
+json = true
+# Dis-/enable sidetone with left/right mouse-button
+[[block.click]]
+button = "left"
+cmd = "headsetcontrol --sidetone 0"
+[[block.click]]
+button = "right"
+cmd = "headsetcontrol --sidetone 100"
 
 [[block]]
 block = "custom"
