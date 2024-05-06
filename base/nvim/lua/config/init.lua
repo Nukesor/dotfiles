@@ -10,6 +10,9 @@ require("config.lsp")
 -- Setup formatting and auto-formatting
 require("config.formatting")
 
+-- Setup formatting and auto-formatting
+require("config.highlighting")
+
 local vim = vim
 
 -- Allow modeline-like filetype overwrite, without enabling modeline

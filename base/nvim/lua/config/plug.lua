@@ -22,9 +22,11 @@ Plug('mhartington/formatter.nvim')
 
 -- Languages without LSP support
 Plug('nginx/nginx', { ['rtp'] = 'contrib/vim' })
-Plug('hashivim/vim-hashicorp-tools')
 Plug('m-pilia/vim-pkgbuild')
 Plug('NoahTheDuke/vim-just')
+
+-- Syntax highlighting
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 
 ----- Looks ------
 Plug('bling/vim-airline')
@@ -36,14 +38,10 @@ Plug('morhetz/gruvbox')
 Plug('tomasiser/vim-code-dark')
 Plug('Luxed/ayu-vim')
 
------ Tooling ------
-Plug('nvim-treesitter/nvim-treesitter')
-
 -- Package managers
 --Plug('saecki/crates.nvim', { ['tag']= 'stable' })
 
 ----- Editing ------
-Plug('nvim-treesitter/nvim-treesitter')
 Plug('terryma/vim-multiple-cursors')
 --  Toggle comments in front of lines via 'gc'
 Plug('tomtom/tcomment_vim')
@@ -66,8 +64,6 @@ Plug('easymotion/vim-easymotion')
 Plug('scrooloose/nerdtree')
 -- File tree
 --Plug('nvim-tree/nvim-tree.lua'
--- Code-overview in sidebuffer. Classes, functions, structs, etc.
---Plug(vim-scripts/taglist.vim'
 -- Fast and interactive search stuff
 Plug('lotabout/skim.vim')
 Plug('lotabout/skim')
