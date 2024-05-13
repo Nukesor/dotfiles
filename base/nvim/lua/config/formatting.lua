@@ -42,6 +42,13 @@ function mdformat()
     }
 end
 
+function yamlfmt()
+    local yamlfmt_config = require("formatter.filetypes.yaml").yamlfmt();
+    table.insert(yamlfmt_config['args'], "-formatter")
+    table.insert(yamlfmt_config['args'], "retain_line_breaks=true")
+    return yamlfmt_config
+end
+
 -- Setup the formatter.nvim plugin.
 -- What's interesting is, that all formatters are opt-in **only**.
 --
@@ -61,7 +68,7 @@ formatter.setup({
             require("formatter.filetypes.sh").shfmt,
         },
         yaml = {
-            require("formatter.filetypes.yaml").prettier,
+            yamlfmt,
         },
         markdown = {
             mdformat,
