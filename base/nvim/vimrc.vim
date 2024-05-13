@@ -1,6 +1,26 @@
-"----------------------------------------------  Plugin Config ----------------------------------------------
+"----------------------------------------------  Key mappings ----------------------------------------------
 let mapleader = ","    " Set the map leader for custom commands
+" Map ; to :
+map ; :
 
+" Save with CTRL + S. `:update` only writes if there're changes in the buffer.
+noremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
+
+" Disable F1 help
+:nnoremap <F1> :echo<CR>
+:inoremap <F1> <C-o>:echo<CR>
+
+" Enable spell
+:nnoremap <F8> :set spell spellang=en_us <CR>
+
+" Split/tab shortcuts
+nmap <leader>v :vsplit<CR>
+nmap <leader>h :split<CR>
+nmap <leader>t :tabnew<CR>
+
+"----------------------------------------------  Plugin Config ----------------------------------------------
 "----- Skim ------
 nnoremap <C-p> :Files<Cr>
 nnoremap <leader>r :Rg<Cr>
@@ -125,47 +145,9 @@ set showcmd             " show incomplete command at bottom of screen
 
 " Wrapping
 set nowrap              " Don't auto-wrap lines. This hides long lines and is bad practice
-"set display=lastline    " don't display @ with long paragraphs
-
-" Command mode
-"set wildmenu
-"set wildmode=list:longest,full
 
 " Search stuff
 set hlsearch            " highlight all search results
 set incsearch           " increment search
 set ignorecase          " case-insensitive search
 set smartcase           " upper-case sensitive search
-
-" Auto completion stuff
-"set ofu=syntaxcomplete#Complete
-
-" Enable dictionary completion
-"set complete+=k
-
-"----- Languages ------
-" Python specific configs
-autocmd FileType python let python_highlight_all = 1
-autocmd FileType python let python_highlight_space_errors = 1
-autocmd FileType python let python_slow_sync = 1
-
-"----------------------------------------------  Key mappings ----------------------------------------------
-" Map ; to :
-map ; :
-
-" Save with CTRL + S. `:update` only writes if there're changes in the buffer.
-noremap <silent> <C-S> :update<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>
-inoremap <silent> <C-S> <C-O>:update<CR>
-
-" Disable F1 help
-:nnoremap <F1> :echo<CR>
-:inoremap <F1> <C-o>:echo<CR>
-
-" Enable spell
-:nnoremap <F8> :set spell spellang=en_us <CR>
-
-" Split/tab shortcuts
-nmap <leader>v :vsplit<CR>
-nmap <leader>h :split<CR>
-nmap <leader>t :tabnew<CR>
