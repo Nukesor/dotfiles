@@ -37,7 +37,7 @@ posthooks = [
   "systemctl --user enable --now pueued",
   "systemctl --user enable --now ssh-agent",
   "systemctl --user enable --now dotfile-deploy",
-  "systemctl --user enable --now polizei",
+  #"systemctl --user enable --now polizei",
 ]
 
 #----- Setup for pc machines -----
