@@ -36,8 +36,8 @@
     autoSquash = true
     updateRefs = true
 
-#[merge]
-#    conflictstyle = zdiff3
+[merge]
+    conflictstyle = zdiff3
 
 [rerere]
 	enabled = true
