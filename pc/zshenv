@@ -24,10 +24,10 @@ export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 # Work/Android dev Stuff
-export ANDROID_SDK_ROOT="$XDG_DATA_HOME/android-sdk"
-path=($path $ANDROID_SDK_ROOT/cmdline-tools/latest/bin)
-path=($path $ANDROID_SDK_ROOT/platform-tools)
-path=($path $ANDROID_SDK_ROOT/tools)
+export ANDROID_HOME="$XDG_DATA_HOME/android-sdk"
+path=($path $ANDROID_HOME/cmdline-tools/latest/bin)
+path=($path $ANDROID_HOME/platform-tools)
+path=($path $ANDROID_HOME/tools)
 export PUB_CACHE="$XDG_CACHE_HOME/dart-pub-cache"
 export GRADLE_USER_HOME="$XDG_CACHE_HOME/gradle"
 export AZURE_CONFIG_DIR=$XDG_DATA_HOME/azure
