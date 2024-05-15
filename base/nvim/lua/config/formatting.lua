@@ -1,6 +1,7 @@
 -- Utilities for creating configurations
-local vim = vim
-local formatter = require("formatter")
+local vim = vim;
+local formatter = require("formatter");
+local util = require("formatter.util");
 
 -- Editorconfig
 -- neovim has built-in editorconfig support since 0.9
@@ -34,18 +35,10 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 ------- formatter.nvim
-function mdformat()
-    return {
-        exe = "mdformat",
-        args = { "-" },
-        stdin = true,
-    }
-end
-
 function yamlfmt()
     local yamlfmt_config = require("formatter.filetypes.yaml").yamlfmt();
-    table.insert(yamlfmt_config['args'], "-formatter")
-    table.insert(yamlfmt_config['args'], "retain_line_breaks=true")
+    table.insert(yamlfmt_config['args'], "-formatter");
+    table.insert(yamlfmt_config['args'], "retain_line_breaks=true");
     return yamlfmt_config
 end
 
@@ -71,10 +64,29 @@ formatter.setup({
             yamlfmt,
         },
         markdown = {
-            mdformat,
+            function()
+                -- mdformat doesn't play well with some formats such as the zola metainfo
+                -- Zola adds toml at the top of the Markdown file, which then get's formatted in a way
+                -- that breaks the zola build.
+                --
+                -- Read the first line of the current buffer
+                -- Zola documents always start with a `+++` prefix for their metadata
+                -- If we find such a thing, use prettier instead of mdformat.
+                local first_line = vim.api.nvim_buf_get_lines(0, 0, 1, false);
+                if first_line ~= "+++" then
+                    return require("formatter.filetypes.markdown").prettier();
+                end
+
+                -- Otherwise use mdformat as a default
+                return {
+                    exe = "mdformat",
+                    args = { "-" },
+                    stdin = true,
+                }
+            end
         },
     },
-})
+});
 
 -- Run FormatWrite on all buffers post write.
 -- Since it's opt-in only, it'll only be called on the files we specified
