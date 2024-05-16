@@ -36,7 +36,6 @@ export TMUX_TMPDIR="$RUNTIME_DIR"
 # Vim setup
 export EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
-export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 # Convenience stuff
 export RC=$ZDOTDIR/.zshrc
