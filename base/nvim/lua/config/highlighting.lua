@@ -19,6 +19,7 @@ require('nvim-treesitter.configs').setup({
         "just",
         "lua",
         "markdown",
+        "markdown_inline",
         "make",
         "nix",
         "python",
