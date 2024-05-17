@@ -65,6 +65,9 @@ let g:airline_section_warning = ''
 "----- GitGutter ------
 let g:gitgutter_max_signs = 20000
 
+"----------------------------------------------  Language Config ----------------------------------------------
+let g:python3_host_prog = "/usr/bin/python"
+
 "----------------------------------------------  Vim internal options ----------------------------------------------
 "----- Basics settings ------
 set shell=zsh                   " set zsh as standart vim shell
