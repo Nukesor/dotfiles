@@ -47,6 +47,7 @@ local lsps = {
     lua_ls = {},
     marksman = {},
     pest_ls = {},
+    pylsp = {},
     ruff = {},
     rust_analyzer = {
         ['rust-analyzer'] = vim.tbl_deep_extend(
