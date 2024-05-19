@@ -1,6 +1,5 @@
 -- Completion is done using the `nvim-cmp` plugin
 -- https://github.com/hrsh7th/nvim-cmp
-local vim = vim
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -8,13 +7,13 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup({
     -- Don't auto-select anything
     preselect = cmp.PreselectMode.None,
+    -- Set the snippet engine
     snippet = {
-        -- Specify a snippet engine
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
         end,
     },
-    -- The mapping for nvim-cmp
+    -- The key mappings for nvim-cmp
     mapping = cmp.mapping.preset.insert({
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),

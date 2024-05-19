@@ -15,9 +15,11 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 :nnoremap <F8> :set spell spellang=en_us <CR>
 
 " Split/tab shortcuts
+set splitbelow          " hsplit opens below current window
+set splitright          " ssplit opens right of current window
 nmap <leader>v :vsplit<CR>
 nmap <leader>h :split<CR>
-nmap <leader>t :tabnew<CR>
+nmap <leader>t :tabnew<CR>:Neotree source=filesystem<CR>
 
 "----------------------------------------------  Plugin Config ----------------------------------------------
 "----- Skim ------
@@ -68,8 +70,6 @@ let g:python3_host_prog = "/usr/bin/python"
 "----- Basics settings ------
 set shell=zsh                   " set zsh as standart vim shell
 set history=100                 " 100 lines of command line history
-set encoding=utf-8
-set fileencoding=utf-8
 set backspace=indent,eol,start  " full backspacing capabilities
 set clipboard=unnamedplus       " yank and copy to X clipboard
 set shortmess+=c                " disable the welcome screen
@@ -85,7 +85,6 @@ set expandtab           " insert spaces instead of tab chars
 set tabstop=4           " a n-space tab width
 set shiftwidth=4        " allows the use of < and > for VISUAL indenting
 set softtabstop=4       " counts n spaces when DELETE or BCKSPCE is used
-set autoindent          " auto indents next new line
 set listchars=tab:→,trail:¸ " show trail spaces and tabstchars
 
 " Display title in window bar
@@ -102,8 +101,6 @@ cmap w!! w !sudo tee > /dev/null %
 
 "----- Navigation ------
 set mouse=a             " make sure mouse is used in all cases.
-set splitbelow          " hsplit opens below current window
-set splitright          " ssplit opens right of current window
 
 "----- Colorscheme -----
 syntax on               " enable syntax highlighting
@@ -143,7 +140,7 @@ set cmdheight=1         " set the command height
 set showcmd             " show incomplete command at bottom of screen
 
 " Wrapping
-set nowrap              " Don't auto-wrap lines. This hides long lines and is bad practice
+set nowrap              " Don't auto-wrap lines.
 
 " Search stuff
 set hlsearch            " highlight all search results

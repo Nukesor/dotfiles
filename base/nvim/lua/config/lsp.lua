@@ -1,7 +1,6 @@
-local vim = vim
 vim.lsp.set_log_level("debug")
 
-local reader = require("config.reader")
+local file_helper = require("config.helper.file")
 local lspconfig = require("lspconfig")
 
 -- To enable lsp log if necessary for debugging, set log to
@@ -59,7 +58,7 @@ local lsps = {
     rust_analyzer = {
         ['rust-analyzer'] = vim.tbl_deep_extend(
             "force",
-            reader.get_json_file('/./.rust-analyzer.json'),
+            file_helper.get_json_file('/./.rust-analyzer.json'),
             -- Overrides (forces these regardless of what's in .rust-analyzer.json
             -- See https://rust-analyzer.github.io/manual.html#configuration
             {
@@ -91,7 +90,7 @@ for name, settings in pairs(lsps) do
     -- Set custom LSP settings
     options["settings"] = settings
 
-    -- Print options for a specific server
+    -- Print options for a specific server (debugging)
     --if name == "rust_analyzer" then
     --    print(vim.inspect(options))
     --end
@@ -110,7 +109,6 @@ end
 -- - Floating diagnostics with preview
 -- - Usage finder popup
 -- - File structure utline window
-
 require('lspsaga').setup({
     rename = {
         in_select = false,

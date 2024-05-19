@@ -1,5 +1,3 @@
-local vim = vim;
-
 -- Neo tree filter rules, moved to the top for convenience purposes.
 local filtered_items = {
     visible = false,
@@ -24,8 +22,7 @@ local filtered_items = {
     },
 };
 
-
-
+-- Initialize and configure neo-tree
 require("neo-tree").setup({
     -- Close Neo-tree if it is the last window left in the tab
     close_if_last_window = false,

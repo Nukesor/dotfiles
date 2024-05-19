@@ -1,5 +1,3 @@
-local vim = vim
-
 local module = {}
 
 function module.get_json_file(path)

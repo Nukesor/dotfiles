@@ -1,5 +1,3 @@
-local vim = vim
-
 require('nvim-treesitter.configs').setup({
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
     -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
@@ -44,18 +42,8 @@ require('nvim-treesitter.configs').setup({
     -- Automatically install missing parsers when entering buffer
     auto_install = false,
 
-    -- List of parsers to ignore installing (or "all")
-    ignore_install = {},
-
-    ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-    -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
     highlight = {
         enable = true,
-
-        -- List of languages that will be disabled.
-        -- These are the names of the parsers and not the filetype.
-        -- disable = {},
 
         -- Don't use syntax highlighting for huge files.
         disable = function(_, buf)
@@ -65,10 +53,5 @@ require('nvim-treesitter.configs').setup({
                 return true
             end
         end,
-
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Might break things though.
-        additional_vim_regex_highlighting = false,
     },
 })

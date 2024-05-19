@@ -1,5 +1,3 @@
--- Redefine global `vim` to avoid undefined warnings
-local vim = vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
@@ -32,7 +30,10 @@ require("lazy").setup({
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
-    'L3MON4D3/LuaSnip',
+    {
+        'L3MON4D3/LuaSnip',
+        build = "make install_jsregexp"
+    },
 
     ----- Formatting ------
     'mhartington/formatter.nvim',

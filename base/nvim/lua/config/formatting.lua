@@ -1,5 +1,4 @@
 -- Utilities for creating configurations
-local vim = vim;
 local formatter = require("formatter");
 
 -- Editorconfig
@@ -88,6 +87,7 @@ formatter.setup({
 });
 
 -- Run FormatWrite on all buffers post write.
+-- We do post-write because it would conflict with nvim's builtin editorconfig formatting otherwise.
 -- Since it's opt-in only, it'll only be called on the files we specified
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
