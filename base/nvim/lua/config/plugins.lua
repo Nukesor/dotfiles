@@ -75,7 +75,6 @@ require("lazy").setup({
 
     ----- Looks ------
     'bling/vim-airline',
-    'Valloric/MatchTagAlways',
     'ap/vim-css-color',
 
     -- Colorschemes
