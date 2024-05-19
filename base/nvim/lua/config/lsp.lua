@@ -16,7 +16,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 ----- LSP keybinds -----
 -- They'll be set as soon as a server attaches to a buffer.
 -- See https://neovim.io/doc/user/lsp.html for all available functions
-local lsp_attach = function(_client, buffer)
+local lsp_attach = function(_, buffer)
     local opts = { buffer = buffer, remap = false }
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)

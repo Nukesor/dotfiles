@@ -40,7 +40,7 @@ require("lazy").setup({
     ----- Syntax highlighting ------
     {
         'nvim-treesitter/nvim-treesitter',
-        config = function(plugin)
+        config = function(_)
             vim.cmd('TSUpdate')
         end
     },
