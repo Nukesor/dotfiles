@@ -84,8 +84,6 @@ require("lazy").setup({
 
     ----- Editing ------
     'terryma/vim-multiple-cursors',
-    --  Toggle comments in front of lines via 'gc'
-    'tomtom/tcomment_vim',
     -- Easy bracket/quote manipulation
     'tpope/vim-surround',
     -- Multi-file search + replace

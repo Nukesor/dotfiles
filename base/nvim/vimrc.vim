@@ -103,11 +103,6 @@ cmap w!! w !sudo tee > /dev/null %
 set mouse=a             " make sure mouse is used in all cases.
 
 "----- Colorscheme -----
-syntax on               " enable syntax highlighting
-set background=dark
-set termguicolors
-set t_Co=256            " set 256 color
-
 " Gruvbox: values are soft,medium,hard
 let g:gruvbox_contrast_dark="medium"
 colorscheme gruvbox     " define syntax color scheme
