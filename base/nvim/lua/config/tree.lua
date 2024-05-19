@@ -33,12 +33,6 @@ require("neo-tree").setup({
             indent_marker = "│",
             last_indent_marker = "└",
             highlight = "NeoTreeIndentMarker",
-            -- Expander config, needed for nesting files
-            -- if nil and file nesting is enabled, will enable expanders
-            with_expanders = false,
-            expander_collapsed = "",
-            expander_expanded = "",
-            expander_highlight = "NeoTreeExpander",
         },
         icon = {
             folder_closed = "",
@@ -53,14 +47,8 @@ require("neo-tree").setup({
         git_status = {
             symbols = {
                 -- Change type
-                --- or "✚", but this is redundant info if you use git_status_colors on the name
                 added     = "",
-                --- or "", but this is redundant info if you use git_status_colors on the name
                 modified  = "",
-                --- this can only be used in the git_status source
-                deleted   = "✖",
-                --- this can only be used in the git_status source
-                renamed   = "󰁕",
                 -- Status type
                 untracked = "",
                 ignored   = "",
@@ -195,7 +183,7 @@ require("neo-tree").setup({
             hide_dotfiles = true,
             hide_gitignored = true,
             hide_by_name = {
-                --"node_modules"
+                "node_modules"
             },
             hide_by_pattern = { -- uses glob style patterns
                 --"*.meta",
@@ -206,11 +194,9 @@ require("neo-tree").setup({
                 ".gitignore",
             },
             -- remains hidden even if visible is toggled to true, this overrides always_show
-            never_show = {
-            },
-            never_show_by_pattern = { -- uses glob style patterns
-                --".null-ls_*",
-            },
+            never_show = {},
+            --- uses glob style patterns
+            never_show_by_pattern = {},
         },
         follow_current_file = {
             -- This will find and focus the file in the active buffer every time
@@ -248,9 +234,6 @@ require("neo-tree").setup({
                 ["gu"]    = "git_unstage_file",
                 ["ga"]    = "git_add_file",
                 ["gr"]    = "git_revert_file",
-                ["gc"]    = "git_commit",
-                ["gp"]    = "git_push",
-                ["gg"]    = "git_commit_and_push",
             },
             -- define keymaps for filter popup window in fuzzy_finder_mode
             fuzzy_finder_mappings = {
