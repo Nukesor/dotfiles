@@ -1,1 +1,2 @@
 profile = "server"
+threads = "8"
