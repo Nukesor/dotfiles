@@ -1,7 +1,6 @@
 -- Utilities for creating configurations
 local vim = vim;
 local formatter = require("formatter");
-local util = require("formatter.util");
 
 -- Editorconfig
 -- neovim has built-in editorconfig support since 0.9
@@ -35,7 +34,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 ------- formatter.nvim
-function yamlfmt()
+local function yamlfmt()
     local yamlfmt_config = require("formatter.filetypes.yaml").yamlfmt();
     table.insert(yamlfmt_config['args'], "-formatter");
     table.insert(yamlfmt_config['args'], "retain_line_breaks=true");

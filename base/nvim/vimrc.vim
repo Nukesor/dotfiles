@@ -51,8 +51,8 @@ let g:NERDTreeMinimalMenu=1
 let NERDTreeIgnore=['__pycache__']
 let g:NERDTreeBookmarksFile = '$HOME/.cache/NERDTreeBookmarks'
 " Jumps to file in current buffer
-nnoremap <silent> <leader>no :NERDTreeFocus<CR>
-nnoremap <silent> <leader>ns :NERDTreeFind<CR>
+nnoremap <silent> <leader>no :Neotree source=filesystem<CR>
+nnoremap <silent> <leader>ns :Neotree source=filesystem reveal=true<CR>
 
 "----- AirLine ------
 set laststatus=2

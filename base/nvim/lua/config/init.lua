@@ -13,6 +13,9 @@ require("config.formatting")
 -- Setup formatting and auto-formatting
 require("config.highlighting")
 
+-- Setup File Tree
+require("config.tree")
+
 local vim = vim
 
 -- Allow modeline-like filetype overwrite, without enabling modeline
@@ -32,7 +35,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
         -- Look out for a filetype declaration.
         for match in string.gmatch(first_line[1], ".*filetype=(%w+)") do
             -- If we allow this filetype, set it.
-            for _i, filetype in ipairs(allowed_filetypes) do
+            for _, filetype in ipairs(allowed_filetypes) do
                 if filetype == match then
                     vim.cmd(string.format("set filetype=%s", match))
                 end

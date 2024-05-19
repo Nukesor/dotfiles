@@ -44,7 +44,14 @@ local lsps = {
     jinja_lsp = {},
     jsonls = {},
     kotlin_language_server = {},
-    lua_ls = {},
+    lua_ls = {
+        Lua = {
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { 'vim' },
+            }
+        },
+    },
     marksman = {},
     pest_ls = {},
     pyright = {},

@@ -56,11 +56,21 @@ require("lazy").setup({
     'NoahTheDuke/vim-just',
 
     ----- Tree ------
+    {
+        's1n7ax/nvim-window-picker',
+        name = 'window-picker',
+        event = 'VeryLazy',
+        version = '2.*',
+        config = function()
+            require 'window-picker'.setup()
+        end,
+    },
     "nvim-tree/nvim-web-devicons",
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
     },
+    "antosha417/nvim-lsp-file-operations",
 
     ----- Looks ------
     'bling/vim-airline',
