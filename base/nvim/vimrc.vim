@@ -46,13 +46,10 @@ nmap <C-k> <Plug>CtrlSFPrompt
 "----- Easymotion ------
 map <Leader>f <Plug>(easymotion-prefix)
 
-"----- NERDTree ------
-let g:NERDTreeMinimalMenu=1
-let NERDTreeIgnore=['__pycache__']
-let g:NERDTreeBookmarksFile = '$HOME/.cache/NERDTreeBookmarks'
-" Jumps to file in current buffer
+"----- Neo Tree ------
 nnoremap <silent> <leader>no :Neotree source=filesystem<CR>
 nnoremap <silent> <leader>ns :Neotree source=filesystem reveal=true<CR>
+"nnoremap \ :Neotree reveal<CR>
 
 "----- AirLine ------
 set laststatus=2

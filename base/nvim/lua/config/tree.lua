@@ -1,14 +1,30 @@
 local vim = vim;
 
--- If you want icons for diagnostic errors, you'll need to define them somewhere:
-vim.fn.sign_define("DiagnosticSignError",
-    { text = " ", texthl = "DiagnosticSignError" })
-vim.fn.sign_define("DiagnosticSignWarn",
-    { text = " ", texthl = "DiagnosticSignWarn" })
-vim.fn.sign_define("DiagnosticSignInfo",
-    { text = " ", texthl = "DiagnosticSignInfo" })
-vim.fn.sign_define("DiagnosticSignHint",
-    { text = "󰌵", texthl = "DiagnosticSignHint" })
+-- Neo tree filter rules, moved to the top for convenience purposes.
+local filtered_items = {
+    visible = false,
+    hide_dotfiles = true,
+    hide_gitignored = true,
+    hide_by_name = {
+        "LICENSE",
+        "node_modules",
+        "package-lock.json",
+    },
+    hide_by_pattern = { -- uses glob style patterns
+    },
+    -- remains visible even if other settings would normally hide it
+    always_show = {
+        ".gitignore",
+    },
+    -- remains hidden even if visible is toggled to true, this overrides always_show
+    never_show = {},
+    --- uses glob style patterns
+    never_show_by_pattern = {
+        "**/__pycache__",
+    },
+};
+
+
 
 require("neo-tree").setup({
     -- Close Neo-tree if it is the last window left in the tab
@@ -100,27 +116,35 @@ require("neo-tree").setup({
             nowait = true,
         },
         mappings = {
-            ["<space>"] = {
-                "toggle_node",
-                nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
-            },
+            ------ Neovim navigation ------
+            ["<space>"] = "toggle_node",
+            ["."] = "set_root",
+            ["C"] = "close_node",
+            -- ['C'] = 'close_all_subnodes',
+            ["z"] = "close_all_nodes",
+            ["I"] = "toggle_hidden",
+
+            ------ Neovim meta keys ------
+            ["P"] = "toggle_preview",
+            ["q"] = "close_window",
+            ["R"] = "refresh",
+            ["?"] = "show_help",
+            ["<"] = "prev_source",
+            [">"] = "next_source",
+            ["i"] = "show_file_details",
+            ["<esc>"] = "cancel",
+
+            ------ Open file ------
             ["o"] = { "open", nowait = true },
             ["O"] = "open_with_window_picker",
-            ["<2-LeftMouse>"] = "open",
-            -- close preview or floating neo-tree window
-            ["<esc>"] = "cancel",
             -- Read `# Preview Mode` for more information
-            ["l"] = "focus_preview",
             ["h"] = "open_split",
             ["s"] = "open_vsplit",
             ["H"] = "split_with_window_picker",
             ["S"] = "vsplit_with_window_picker",
             ["t"] = "open_tabnew",
-            -- enter preview mode, which shows the current node without focusing
-            --["P"] = "toggle_preview",
-            ["C"] = "close_node",
-            -- ['C'] = 'close_all_subnodes',
-            ["z"] = "close_all_nodes",
+
+            ------ Filesystem operations ------
             ["a"] = {
                 "add",
                 -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc).
@@ -149,12 +173,15 @@ require("neo-tree").setup({
                     show_path = "absolute"
                 }
             },
-            ["q"] = "close_window",
-            ["R"] = "refresh",
-            ["?"] = "show_help",
-            ["<"] = "prev_source",
-            [">"] = "next_source",
-            ["i"] = "show_file_details",
+
+            ------ Git ------
+            ["A"] = "git_add_all",
+            ["gu"] = "git_unstage_file",
+            ["ga"] = "git_add_file",
+            ["gr"] = "git_revert_file",
+
+            ------ Clear unwanted keybinds ------
+            ["l"] = "noop",
 
             -- Remove ordering keymaps.
             -- Otherwise when pressing `o` to open files, no action is performed until
@@ -173,31 +200,12 @@ require("neo-tree").setup({
             --["on"] = { "order_by_name", nowait = false },
             --["os"] = { "order_by_size", nowait = false },
             --["ot"] = { "order_by_type", nowait = false },
+
         }
     },
     nesting_rules = {},
     filesystem = {
-        filtered_items = {
-            -- When true, they will just be displayed differently than normal items
-            visible = false,
-            hide_dotfiles = true,
-            hide_gitignored = true,
-            hide_by_name = {
-                "node_modules"
-            },
-            hide_by_pattern = { -- uses glob style patterns
-                --"*.meta",
-                --"*/src/*/tsconfig.json",
-            },
-            -- remains visible even if other settings would normally hide it
-            always_show = {
-                ".gitignore",
-            },
-            -- remains hidden even if visible is toggled to true, this overrides always_show
-            never_show = {},
-            --- uses glob style patterns
-            never_show_by_pattern = {},
-        },
+        filtered_items = filtered_items,
         follow_current_file = {
             -- This will find and focus the file in the active buffer every time
             enabled = true,
@@ -217,23 +225,15 @@ require("neo-tree").setup({
         use_libuv_file_watcher = false,
         window = {
             mappings = {
-                ["<bs>"]  = "navigate_up",
-                ["."]     = "set_root",
-                ["I"]     = "toggle_hidden",
-                ["/"]     = "fuzzy_finder",
-                ["D"]     = "fuzzy_finder_directory",
-                ["#"]     = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
+                ["<bs>"] = "navigate_up",
+                ["/"] = "fuzzy_finder",
+                ["D"] = "fuzzy_finder_directory",
+                ["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
                 -- ["D"] = "fuzzy_sorter_directory",
-                ["f"]     = "filter_on_submit",
+                ["f"] = "filter_on_submit",
                 ["<c-x>"] = "clear_filter",
-                ["[g"]    = "prev_git_modified",
-                ["]g"]    = "next_git_modified",
-                -- ['<key>'] = function(state) ... end,
-                --
-                ["A"]     = "git_add_all",
-                ["gu"]    = "git_unstage_file",
-                ["ga"]    = "git_add_file",
-                ["gr"]    = "git_revert_file",
+                ["[g"] = "prev_git_modified",
+                ["]g"] = "next_git_modified",
             },
             -- define keymaps for filter popup window in fuzzy_finder_mode
             fuzzy_finder_mappings = {
@@ -257,7 +257,15 @@ require("neo-tree").setup({
     },
 })
 
-vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+-- Icons for diagnostic errors
+vim.fn.sign_define("DiagnosticSignError",
+    { text = " ", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn",
+    { text = " ", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo",
+    { text = " ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint",
+    { text = "󰌵", texthl = "DiagnosticSignHint" })
 
 
 -- Setup LSP file operation integration for Neo-tree
