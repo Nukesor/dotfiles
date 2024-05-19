@@ -1,71 +1,97 @@
 -- Redefine global `vim` to avoid undefined warnings
 local vim = vim
-local Plug = vim.fn['plug#']
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
-vim.call('plug#begin', '~/.local/share/nvim/plug')
+-- Set the map leader for custom commands
+vim.g.mapleader = ","
 
------ Language setup ------
--- Language server support
-Plug('neovim/nvim-lspconfig')
-Plug('nvimdev/lspsaga.nvim')
+require("lazy").setup({
+    ----- Libraries -----
+    "MunifTanjim/nui.nvim",
+    "nvim-lua/plenary.nvim",
 
--- Auto completions
-Plug('hrsh7th/nvim-cmp')
-Plug('hrsh7th/cmp-nvim-lsp')
-Plug('hrsh7th/cmp-buffer')
-Plug('hrsh7th/cmp-path')
-Plug('hrsh7th/cmp-cmdline')
-Plug('L3MON4D3/LuaSnip')
+    ----- Language setup ------
+    -- Language server support
+    'neovim/nvim-lspconfig',
+    'nvimdev/lspsaga.nvim',
 
--- Formatting
-Plug('mhartington/formatter.nvim')
+    ----- Auto completions ------
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'L3MON4D3/LuaSnip',
 
--- Languages without LSP support
-Plug('nginx/nginx', { ['rtp'] = 'contrib/vim' })
-Plug('m-pilia/vim-pkgbuild')
-Plug('NoahTheDuke/vim-just')
+    ----- Formatting ------
+    'mhartington/formatter.nvim',
 
--- Syntax highlighting
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+    ----- Syntax highlighting ------
+    {
+        'nvim-treesitter/nvim-treesitter',
+        config = function(plugin)
+            vim.cmd('TSUpdate')
+        end
+    },
+    -- Languages without treesitter
+    {
+        'nginx/nginx',
+        config = function(plugin)
+            vim.opt.rtp:append(plugin.dir .. "/contrib/vim")
+        end
+    }
+    ,
+    'm-pilia/vim-pkgbuild',
+    'NoahTheDuke/vim-just',
 
------ Looks ------
-Plug('bling/vim-airline')
-Plug('Valloric/MatchTagAlways')
-Plug('ap/vim-css-color')
+    ----- Tree ------
+    "nvim-tree/nvim-web-devicons",
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+    },
 
--- Colorschemes
-Plug('morhetz/gruvbox')
-Plug('tomasiser/vim-code-dark')
-Plug('Luxed/ayu-vim')
+    ----- Looks ------
+    'bling/vim-airline',
+    'Valloric/MatchTagAlways',
+    'ap/vim-css-color',
 
--- Package managers
---Plug('saecki/crates.nvim', { ['tag']= 'stable' })
+    -- Colorschemes
+    'morhetz/gruvbox',
+    'tomasiser/vim-code-dark',
+    'Luxed/ayu-vim',
 
------ Editing ------
-Plug('terryma/vim-multiple-cursors')
---  Toggle comments in front of lines via 'gc'
-Plug('tomtom/tcomment_vim')
--- Easy bracket/quote manipulation
-Plug('tpope/vim-surround')
--- Multi-file search + replace
-Plug('dyng/ctrlsf.vim')
+    ----- Editing ------
+    'terryma/vim-multiple-cursors',
+    --  Toggle comments in front of lines via 'gc'
+    'tomtom/tcomment_vim',
+    -- Easy bracket/quote manipulation
+    'tpope/vim-surround',
+    -- Multi-file search + replace
+    'dyng/ctrlsf.vim',
 
------ Git support------
--- Git command wrapper + integration
-Plug('tpope/vim-fugitive')
--- Vim integrated staging + conflict resolution
-Plug('jreybert/vimagit')
--- Vim change indicator beside lines
-Plug('airblade/vim-gitgutter')
+    ----- Git support------
+    -- Git command wrapper + integration
+    'tpope/vim-fugitive',
+    -- Vim integrated staging + conflict resolution
+    --'jreybert/vimagit',
+    -- Vim change indicator beside lines
+    'airblade/vim-gitgutter',
 
------ Navigation ------
--- Vimium-like motion helper for vim
-Plug('easymotion/vim-easymotion')
-Plug('scrooloose/nerdtree')
--- File tree
---Plug('nvim-tree/nvim-tree.lua'
--- Fast and interactive search stuff
-Plug('lotabout/skim.vim')
-Plug('lotabout/skim')
-
-vim.call('plug#end')
+    ----- Navigation ------
+    -- Vimium-like motion helper for vim
+    'easymotion/vim-easymotion',
+    'lotabout/skim.vim',
+    'lotabout/skim'
+});

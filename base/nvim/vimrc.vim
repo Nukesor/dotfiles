@@ -1,5 +1,4 @@
 "----------------------------------------------  Key mappings ----------------------------------------------
-let mapleader = ","    " Set the map leader for custom commands
 " Map ; to :
 map ; :
 
