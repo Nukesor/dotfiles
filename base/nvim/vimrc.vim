@@ -66,6 +66,13 @@ let g:gitgutter_max_signs = 20000
 "----------------------------------------------  Language Config ----------------------------------------------
 let g:python3_host_prog = "/usr/bin/python"
 
+au BufRead,BufNewFile *.toml.j2 set filetype=toml
+au BufRead,BufNewFile *.timer.j2 set filetype=systemd
+au BufRead,BufNewFile *.service.j2 set filetype=systemd
+au BufRead,BufNewFile *.netdev.j2 set filetype=systemd
+au BufRead,BufNewFile *.network.j2 set filetype=systemd
+au BufRead,BufNewFile *.conf.j2 set filetype=nginx
+
 "----------------------------------------------  Vim internal options ----------------------------------------------
 "----- Basics settings ------
 set shell=zsh                   " set zsh as standart vim shell
