@@ -31,5 +31,8 @@ daemon:
     BASH_ENV: "$HOME/.config/zsh/aliases.zsh"
 shared:
   use_unix_socket: true
+{%- if profile == "server" %}
+  runtime_directory: "~/.local/share/pueue"
+{% endif %}
   host: 127.0.0.1
   port: "6924"
