@@ -8,6 +8,7 @@ client:
 daemon:
   pause_group_on_failure: false
   pause_all_on_failure: false
+{%- if profile != "server" %}
 {%- raw %}
   callback: |
       notify-send \
@@ -17,6 +18,7 @@ daemon:
       Finished with status '{{ result }}'
       Took: $(bc <<< '{{end}} - {{start}}') seconds"
 {%- endraw %}
+{% endif %}
   callback_log_lines: 10
   shell_command: [
     "bash",
