@@ -72,6 +72,8 @@ au BufRead,BufNewFile *.service.j2 set filetype=systemd
 au BufRead,BufNewFile *.netdev.j2 set filetype=systemd
 au BufRead,BufNewFile *.network.j2 set filetype=systemd
 au BufRead,BufNewFile *.conf.j2 set filetype=nginx
+au BufRead,BufNewFile *.yaml.j2 set filetype=yaml
+au BufRead,BufNewFile *.yml.j2 set filetype=yaml
 
 "----------------------------------------------  Vim internal options ----------------------------------------------
 "----- Basics settings ------
