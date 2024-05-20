@@ -13,7 +13,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 # Tooling
 export MANPAGER="bat -l man -p"
 export EDITOR=nvim
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # Application logic
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
@@ -44,7 +43,6 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export SQLITE_CONFIG="$XDG_CONFIG_HOME"/sqlite/sqliterc
-export TASKRC=$XDG_CONFIG_HOME/task/taskrc
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 export WEECHAT_HOME=$XDG_CONFIG_HOME/weechat
 export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
