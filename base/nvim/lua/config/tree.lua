@@ -13,6 +13,8 @@ local filtered_items = {
     -- remains visible even if other settings would normally hide it
     always_show = {
         ".gitignore",
+        ".github",
+        ".gitlab",
     },
     -- remains hidden even if visible is toggled to true, this overrides always_show
     never_show = {},
@@ -113,7 +115,7 @@ require("neo-tree").setup({
             nowait = true,
         },
         mappings = {
-            ------ Neovim navigation ------
+            ------ Neo-tree navigation ------
             ["<space>"] = "toggle_node",
             ["."] = "set_root",
             ["C"] = "close_node",
