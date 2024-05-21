@@ -99,7 +99,13 @@ require("lazy").setup({
 
     ----- Navigation ------
     -- Vimium-like motion helper for vim
-    'easymotion/vim-easymotion',
+    {
+        'smoka7/hop.nvim',
+        version = "*",
+        opts = {
+            keys = 'etovxqpdygfblzhckisuran'
+        }
+    },
     'lotabout/skim.vim',
     'lotabout/skim'
 });

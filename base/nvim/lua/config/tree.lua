@@ -119,7 +119,7 @@ require("neo-tree").setup({
             ["C"] = "close_node",
             -- ['C'] = 'close_all_subnodes',
             ["z"] = "close_all_nodes",
-            ["I"] = "toggle_hidden",
+            ["l"] = "toggle_hidden",
 
             ------ Neovim meta keys ------
             ["P"] = "toggle_preview",
@@ -128,16 +128,16 @@ require("neo-tree").setup({
             ["?"] = "show_help",
             ["<"] = "prev_source",
             [">"] = "next_source",
-            ["i"] = "show_file_details",
+            ["f"] = "show_file_details",
             ["<esc>"] = "cancel",
 
             ------ Open file ------
             ["o"] = { "open", nowait = true },
             ["O"] = "open_with_window_picker",
             -- Read `# Preview Mode` for more information
-            ["h"] = "open_split",
+            ["i"] = "open_split",
             ["s"] = "open_vsplit",
-            ["H"] = "split_with_window_picker",
+            ["I"] = "split_with_window_picker",
             ["S"] = "vsplit_with_window_picker",
             ["t"] = "open_tabnew",
 
@@ -153,7 +153,7 @@ require("neo-tree").setup({
             },
             ["d"] = "delete",
             ["r"] = "rename",
-            ["y"] = "copy_to_clipboard",
+            ["Y"] = "copy_to_clipboard",
             ["x"] = "cut_to_clipboard",
             ["p"] = "paste_from_clipboard",
             ["c"] = {
@@ -179,6 +179,8 @@ require("neo-tree").setup({
 
             ------ Clear unwanted keybinds ------
             ["l"] = "noop",
+            ["y"] = "noop",
+            ["w"] = "noop",
 
             -- Remove ordering keymaps.
             -- Otherwise when pressing `o` to open files, no action is performed until
@@ -227,7 +229,7 @@ require("neo-tree").setup({
                 ["D"] = "fuzzy_finder_directory",
                 ["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
                 -- ["D"] = "fuzzy_sorter_directory",
-                ["f"] = "filter_on_submit",
+                -- ["f"] = "filter_on_submit",
                 ["<c-x>"] = "clear_filter",
                 ["[g"] = "prev_git_modified",
                 ["]g"] = "next_git_modified",

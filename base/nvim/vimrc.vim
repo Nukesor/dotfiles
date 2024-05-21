@@ -45,8 +45,15 @@ command! -bang -nargs=? -complete=dir Files
 "----- ctrlsf ------
 nmap <C-k> <Plug>CtrlSFPrompt
 
-"----- Easymotion ------
-map <Leader>f <Plug>(easymotion-prefix)
+"----- Hop ------
+map <Leader>ff :HopLineStart<CR>
+map <Leader>fk :HopLineStartBC<CR>
+map <Leader>fj :HopLineStartAC<CR>
+map <Leader>fwl :HopWordCurrentLine<CR>
+map <Leader>fwk :HopWordBC<CR>
+map <Leader>fwj :HopWordAC<CR>
+map <Leader>fck :HopChar1BC<CR>
+map <Leader>fcj :HopChar1AC<CR>
 
 "----- Neo Tree ------
 nnoremap <silent> <leader>no :Neotree source=filesystem<CR>
