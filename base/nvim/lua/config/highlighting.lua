@@ -8,6 +8,8 @@ require('nvim-treesitter.configs').setup({
         "diff",
         "dockerfile",
         "gdscript",
+        "git_config",
+        "git_rebase",
         "gitcommit",
         "gitignore",
         "graphql",
