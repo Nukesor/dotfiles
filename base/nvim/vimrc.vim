@@ -49,7 +49,8 @@ nmap <C-k> <Plug>CtrlSFPrompt
 map <Leader>ff :HopLineStart<CR>
 map <Leader>fk :HopLineStartBC<CR>
 map <Leader>fj :HopLineStartAC<CR>
-map <Leader>fwl :HopWordCurrentLine<CR>
+map <Leader>fh :HopWordCurrentLineBC<CR>
+map <Leader>fl :HopWordCurrentLineAC<CR>
 map <Leader>fwk :HopWordBC<CR>
 map <Leader>fwj :HopWordAC<CR>
 map <Leader>fck :HopChar1BC<CR>
