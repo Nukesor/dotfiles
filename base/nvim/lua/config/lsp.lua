@@ -18,20 +18,23 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lsp_attach = function(_, buffer)
     local opts = { buffer = buffer, remap = false }
 
+    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<leader>gw", vim.lsp.buf.workspace_symbol, opts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "gw", vim.lsp.buf.workspace_symbol, opts)
     vim.keymap.set("n", "g[", vim.diagnostic.goto_next, opts)
     vim.keymap.set("n", "g]", vim.diagnostic.goto_prev, opts)
     vim.keymap.set("n", "<leader>af", vim.lsp.buf.format, opts)
-    vim.keymap.set("n", "<leader>ai", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, opts)
     vim.keymap.set("n", "<leader>ar", function() vim.cmd('Lspsaga rename') end, opts)
     vim.keymap.set("n", "<leader>aw", function() vim.cmd('Lspsaga code_action') end, opts)
     vim.keymap.set("v", "<leader>aw", function() vim.cmd('Lspsaga code_action') end, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, opts)
-    vim.keymap.set("n", "<leader>sf", function() vim.cmd('Lspsaga finder') end, opts)
+    vim.keymap.set("n", "<leader>su", function() vim.cmd('Lspsaga finder') end, opts)
     vim.keymap.set("n", "<leader>so", function() vim.cmd('Lspsaga outline') end, opts)
+    vim.keymap.set("n", "<leader>si", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, opts)
 end
 
 ----- Language server declaration and configuration -----
@@ -110,6 +113,7 @@ end
 -- - Floating diagnostics with preview
 -- - Usage finder popup
 -- - File structure utline window
+-- - Lightbulb on LSP hints
 require('lspsaga').setup({
     rename = {
         in_select = false,
