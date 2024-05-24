@@ -118,10 +118,13 @@ require("neo-tree").setup({
             ------ Neo-tree navigation ------
             ["<space>"] = "toggle_node",
             ["."] = "set_root",
+            ["<bs>"] = "navigate_up",
             ["C"] = "close_node",
             -- ['C'] = 'close_all_subnodes',
             ["z"] = "close_all_nodes",
-            ["l"] = "toggle_hidden",
+            ["H"] = "toggle_hidden",
+            ["[g"] = "prev_git_modified",
+            ["]g"] = "next_git_modified",
 
             ------ Neovim meta keys ------
             ["P"] = "toggle_preview",
@@ -226,15 +229,16 @@ require("neo-tree").setup({
         use_libuv_file_watcher = false,
         window = {
             mappings = {
-                ["<bs>"] = "navigate_up",
-                ["/"] = "fuzzy_finder",
-                ["D"] = "fuzzy_finder_directory",
-                ["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
+                ["/"] = "unset",
+                ["D"] = "unset",
+                ["#"] = "unset",
+                ["<c-x>"] = "unset",
+                --["/"] = "fuzzy_finder",
+                --["D"] = "fuzzy_finder_directory",
+                --["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
                 -- ["D"] = "fuzzy_sorter_directory",
                 -- ["f"] = "filter_on_submit",
-                ["<c-x>"] = "clear_filter",
-                ["[g"] = "prev_git_modified",
-                ["]g"] = "next_git_modified",
+                -- ["<c-x>"] = "clear_filter",
             },
             -- define keymaps for filter popup window in fuzzy_finder_mode
             fuzzy_finder_mappings = {
