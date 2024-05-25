@@ -9,8 +9,5 @@ fix_xonar_output
 # Load zshenv
 [ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
 
-# Load keyboard layout
-exec keyboard-layout en &
-
 # Set background pic
 feh --no-fehbg --bg-scale ~/.local/bg.jpg &
