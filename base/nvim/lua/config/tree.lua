@@ -229,10 +229,10 @@ require("neo-tree").setup({
         use_libuv_file_watcher = false,
         window = {
             mappings = {
-                ["/"] = "unset",
-                ["D"] = "unset",
-                ["#"] = "unset",
-                ["<c-x>"] = "unset",
+                ["/"] = "noop",
+                ["D"] = "noop",
+                ["#"] = "noop",
+                ["<c-x>"] = "noop",
                 --["/"] = "fuzzy_finder",
                 --["D"] = "fuzzy_finder_directory",
                 --["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
