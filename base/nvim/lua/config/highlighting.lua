@@ -27,6 +27,7 @@ require('nvim-treesitter.configs').setup({
         "rust",
         "scss",
         "ssh_config",
+        "sql",
         "terraform",
         "toml",
         "tsx",
