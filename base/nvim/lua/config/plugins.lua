@@ -1,23 +1,23 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', -- latest stable release
         lazypath,
     })
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- Set the map leader for custom commands
-vim.g.mapleader = ","
+vim.g.mapleader = ','
 
-require("lazy").setup({
+require('lazy').setup({
     ----- Libraries -----
-    "MunifTanjim/nui.nvim",
-    "nvim-lua/plenary.nvim",
+    'MunifTanjim/nui.nvim',
+    'nvim-lua/plenary.nvim',
 
     ----- Language setup ------
     -- Language server support
@@ -32,7 +32,7 @@ require("lazy").setup({
     'hrsh7th/cmp-cmdline',
     {
         'L3MON4D3/LuaSnip',
-        build = "make install_jsregexp"
+        build = 'make install_jsregexp'
     },
 
     ----- Formatting ------
@@ -49,7 +49,7 @@ require("lazy").setup({
     {
         'nginx/nginx',
         config = function(plugin)
-            vim.opt.rtp:append(plugin.dir .. "/contrib/vim")
+            vim.opt.rtp:append(plugin.dir .. '/contrib/vim')
         end
     }
     ,
@@ -66,21 +66,21 @@ require("lazy").setup({
             require 'window-picker'.setup()
         end,
     },
-    "nvim-tree/nvim-web-devicons",
+    'nvim-tree/nvim-web-devicons',
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = 'v3.x',
     },
-    "antosha417/nvim-lsp-file-operations",
+    'antosha417/nvim-lsp-file-operations',
 
     ----- Looks ------
     'bling/vim-airline',
     'ap/vim-css-color',
 
     -- Colorschemes
-    'morhetz/gruvbox',
-    'tomasiser/vim-code-dark',
-    'Luxed/ayu-vim',
+    'ellisonleao/gruvbox.nvim',
+    --'tomasiser/vim-code-dark',
+    --'Luxed/ayu-vim',
 
     ----- Editing ------
     'terryma/vim-multiple-cursors',
@@ -101,7 +101,7 @@ require("lazy").setup({
     -- Vimium-like motion helper for vim
     {
         'smoka7/hop.nvim',
-        version = "*",
+        version = '*',
         opts = {
             keys = 'etovxqpdygfblzhckisuran'
         }

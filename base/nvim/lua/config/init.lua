@@ -1,6 +1,9 @@
 -- First up, load all plugins
 require("config.plugins")
 
+-- Configure colorscheme
+require("config.colorscheme")
+
 -- Setup the completion engine via nvim-cmp
 require("config.completion")
 

@@ -1,4 +1,4 @@
-"----------------------------------------------  Key mappings ----------------------------------------------
+"----------------------------------------------  Native key mappings ----------------------------------------------
 " Map ; to :
 map ; :
 
@@ -87,16 +87,13 @@ au BufRead,BufNewFile .env.example set filetype=sh
 "----------------------------------------------  Vim internal options ----------------------------------------------
 "----- Basics settings ------
 set shell=zsh                   " set zsh as standart vim shell
-set history=100                 " 100 lines of command line history
+set history=1000                " 100 lines of command line history
 set backspace=indent,eol,start  " full backspacing capabilities
 set clipboard=unnamedplus       " yank and copy to X clipboard
-set shortmess+=c                " disable the welcome screen
-set updatetime=300              " Milliseconds to swap file write
 
 " Backup settings
 set noswapfile          " don't create a swap file
-set nobackup              " keep a backup file
-set directory=/tmp      " swap file directory
+set nobackup            " don't keep a backup file
 
 " Tabs and indenting
 set expandtab           " insert spaces instead of tab chars
@@ -120,20 +117,6 @@ cmap w!! w !sudo tee > /dev/null %
 "----- Navigation ------
 set mouse=a             " make sure mouse is used in all cases.
 
-"----- Colorscheme -----
-" Gruvbox: values are soft,medium,hard
-let g:gruvbox_contrast_dark="medium"
-colorscheme gruvbox     " define syntax color scheme
-
-" Codedark:
-"let g:codedark_modern=1
-"let g:airline_theme = 'codedark'
-"colorscheme codedark
-
-" Ayu: values are light,mirage,dark
-"let ayucolor="dark"
-"colorscheme ayu
-
 "----- Looks ------
 set showmode            " show mode at bottom of screen
 set showmatch           " show matching brackets (),{},[]
@@ -149,7 +132,6 @@ set cursorcolumn        " highlight cursor column (breaks completion preview)
 set ruler               " ruler display in status line
 set number              " show line numbers
 set showmode            " show mode at bottom of screen
-set cmdheight=1         " set the command height
 set showcmd             " show incomplete command at bottom of screen
 
 " Wrapping
