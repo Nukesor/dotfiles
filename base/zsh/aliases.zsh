@@ -26,7 +26,7 @@ alias la='ls -alh'
 alias cp='cp --reflink=auto'
 
 # Vim
-alias nvim='nvim -c "Neotree source=filesystem"'
+alias nvim='nvim -c "Neotree source=filesystem action=show"'
 alias svim='sudo nvim -c "Neotree source=filesystem"'
 
 # Netctl

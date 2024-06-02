@@ -11,9 +11,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Set the map leader for custom commands
-vim.g.mapleader = ','
-
 require('lazy').setup({
     ----- Libraries -----
     'MunifTanjim/nui.nvim',
@@ -73,6 +70,26 @@ require('lazy').setup({
     },
     'antosha417/nvim-lsp-file-operations',
 
+    ----- Navigation ------
+    {
+        'smoka7/hop.nvim',
+        version = '*',
+        opts = {
+            keys = 'etovxqpdygfblzhckisuran'
+        }
+    },
+    'lotabout/skim.vim',
+    'lotabout/skim',
+    'nvim-telescope/telescope.nvim',
+
+    ----- Editing ------
+    'terryma/vim-multiple-cursors',
+    -- Easy bracket/quote manipulation
+    'tpope/vim-surround',
+    -- Multi-file search + replace
+    -- TODO: Better search+replace
+    --'dyng/ctrlsf.vim',
+
     ----- Looks ------
     'bling/vim-airline',
     'ap/vim-css-color',
@@ -82,13 +99,6 @@ require('lazy').setup({
     --'tomasiser/vim-code-dark',
     --'Luxed/ayu-vim',
 
-    ----- Editing ------
-    'terryma/vim-multiple-cursors',
-    -- Easy bracket/quote manipulation
-    'tpope/vim-surround',
-    -- Multi-file search + replace
-    'dyng/ctrlsf.vim',
-
     ----- Git support------
     -- Git command wrapper + integration
     'tpope/vim-fugitive',
@@ -96,16 +106,4 @@ require('lazy').setup({
     --'jreybert/vimagit',
     -- Vim change indicator beside lines
     'airblade/vim-gitgutter',
-
-    ----- Navigation ------
-    -- Vimium-like motion helper for vim
-    {
-        'smoka7/hop.nvim',
-        version = '*',
-        opts = {
-            keys = 'etovxqpdygfblzhckisuran'
-        }
-    },
-    'lotabout/skim.vim',
-    'lotabout/skim'
 });

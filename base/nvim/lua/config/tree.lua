@@ -1,3 +1,14 @@
+local neotree = require("neo-tree")
+local neotree_command = require("neo-tree.command")
+
+-- Open neovim with the focus on the file
+vim.keymap.set('n', '-', function()
+    neotree_command.execute({
+        reveal = true,
+        reveal_force_cwd = false
+    })
+end)
+
 -- Neo tree filter rules, moved to the top for convenience purposes.
 local filtered_items = {
     visible = false,
@@ -8,7 +19,7 @@ local filtered_items = {
         "node_modules",
         "package-lock.json",
     },
-    hide_by_pattern = { -- uses glob style patterns
+    hide_by_pattern = { -- uses glob style pattern
     },
     -- remains visible even if other settings would normally hide it
     always_show = {
@@ -25,7 +36,7 @@ local filtered_items = {
 };
 
 -- Initialize and configure neo-tree
-require("neo-tree").setup({
+neotree.setup({
     -- Close Neo-tree if it is the last window left in the tab
     close_if_last_window = false,
     popup_border_style = "rounded",
@@ -211,8 +222,8 @@ require("neo-tree").setup({
     filesystem = {
         filtered_items = filtered_items,
         follow_current_file = {
-            -- This will find and focus the file in the active buffer every time
-            enabled = true,
+            -- If true, this will find and focus the file in the active buffer every time
+            enabled = false,
             -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
             leave_dirs_open = true,
         },

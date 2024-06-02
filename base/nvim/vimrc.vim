@@ -1,11 +1,25 @@
 "----------------------------------------------  Native key mappings ----------------------------------------------
-" Map ; to :
-map ; :
 
 " Save with CTRL + S. `:update` only writes if there're changes in the buffer.
 noremap <silent> <C-S> :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
+
+" Close buffer
+:nnoremap <leader>q :q<CR>
+
+" Navigate
+:nnoremap <leader>h <C-w>h
+:nnoremap <leader>j <C-w>j
+:nnoremap <leader>k <C-w>k
+:nnoremap <leader>l <C-w>l
+
+" Split/tab shortcuts
+set splitbelow          " hsplit opens below current window
+set splitright          " ssplit opens right of current window
+nmap <leader>v :vsplit<CR>
+nmap <leader>i :split<CR>
+nmap <leader>t :tabnew<CR>:Neotree source=filesystem<CR>
 
 " Disable F1 help
 :nnoremap <F1> :echo<CR>
@@ -14,52 +28,36 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 " Enable spell
 :nnoremap <F8> :set spell spellang=en_us <CR>
 
-" Split/tab shortcuts
-set splitbelow          " hsplit opens below current window
-set splitright          " ssplit opens right of current window
-nmap <leader>v :vsplit<CR>
-nmap <leader>h :split<CR>
-nmap <leader>t :tabnew<CR>:Neotree source=filesystem<CR>
-
 "----------------------------------------------  Plugin Config ----------------------------------------------
 "----- Skim ------
-nnoremap <C-p> :Files<Cr>
-nnoremap <leader>r :Rg<Cr>
+ nnoremap <C-p> :Files<Cr>
+"nnoremap <leader>r :Rg<Cr>
 
-" Use proximity-sort to make sure that files are properly sorted
-function! s:list_cmd()
-    let base = fnamemodify(expand('%'), ':h:.:S')
-    return base == '.' ? 'fd -t f' : printf('fd -t f | proximity-sort %s', expand('%'))
-endfunction
+ " Use proximity-sort to make sure that files are properly sorted
+ function! s:list_cmd()
+     let base = fnamemodify(expand('%'), ':h:.:S')
+     return base == '.' ? 'fd -t f' : printf('fd -t f | proximity-sort %s', expand('%'))
+ endfunction
 
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(
-    \   <q-args>,
-    \   fzf#vim#with_preview({
-    \      'source': s:list_cmd(),
-    \      'options': '--tiebreak=index --bind=ctrl-n:preview-down,ctrl-p:preview-up'
-    \   }),
-    \   <bang>0
-    \ )
+ command! -bang -nargs=? -complete=dir Files
+     \ call fzf#vim#files(
+     \   <q-args>,
+     \   fzf#vim#with_preview({
+     \      'source': s:list_cmd(),
+     \      'options': '--tiebreak=index --bind=ctrl-n:preview-down,ctrl-p:preview-up'
+     \   }),
+     \   <bang>0
+     \ )
 
 "----- ctrlsf ------
 nmap <C-k> <Plug>CtrlSFPrompt
 
 "----- Hop ------
-map <Leader>ff :HopLineStart<CR>
-map <Leader>fk :HopLineStartBC<CR>
-map <Leader>fj :HopLineStartAC<CR>
 map <Leader>fh :HopWordCurrentLineBC<CR>
+map <Leader>fj :HopWordAC<CR>
+map <Leader>fk :HopWordBC<CR>
 map <Leader>fl :HopWordCurrentLineAC<CR>
-map <Leader>fwk :HopWordBC<CR>
-map <Leader>fwj :HopWordAC<CR>
-map <Leader>fck :HopChar1BC<CR>
-map <Leader>fcj :HopChar1AC<CR>
 
-"----- Neo Tree ------
-nnoremap <silent> <leader>no :Neotree source=filesystem<CR>
-nnoremap <silent> <leader>ns :Neotree source=filesystem reveal=true<CR>
-"nnoremap \ :Neotree reveal<CR>
 
 "----- AirLine ------
 set laststatus=2
@@ -69,6 +67,8 @@ let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
 "----- GitGutter ------
+" Disable gitgutter keybinds
+let g:gitgutter_map_keys = 0
 let g:gitgutter_max_signs = 20000
 
 "----------------------------------------------  Language Config ----------------------------------------------

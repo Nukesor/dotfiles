@@ -16,6 +16,9 @@ require("config.formatting")
 -- Setup formatting and auto-formatting
 require("config.highlighting")
 
+-- Configure navigation and code search (mostly keybinds)
+require("config.navigation")
+
 -- Setup File Tree
 require("config.tree")
 
