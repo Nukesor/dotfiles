@@ -7,6 +7,8 @@ include ~/.config/i3/styling.conf
 include ~/.config/i3/status_bar.conf
 
 # ---------------- I3 Config variables ----------------
+font pango:Input Mono, Font Awesome 6 Free 9
+
 # Set mod key to Windows
 set $mod Mod4
 
