@@ -57,4 +57,6 @@ require('nvim-treesitter.configs').setup({
             end
         end,
     },
+
+    additional_vim_regex_highlighting = false,
 })

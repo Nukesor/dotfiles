@@ -124,6 +124,10 @@ require('lspsaga').setup({
             quit = "<Esc>",
         }
     },
+    finder = {
+        default = 'ref',
+        max_height = 0.6,
+    }
 })
 
 -- Get a fancy breadcrumb bar
