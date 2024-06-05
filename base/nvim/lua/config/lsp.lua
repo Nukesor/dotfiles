@@ -64,7 +64,7 @@ local lsps = {
             -- Overrides (forces these regardless of what's in .rust-analyzer.json
             -- See https://rust-analyzer.github.io/manual.html#configuration
             {
-                check = { allTargets = true },
+                check = { allTargets = true, command = "clippy" },
                 procMacro = { enable = true },
                 diagnostics = {
                     disabled = {
