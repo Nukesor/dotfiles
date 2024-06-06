@@ -4,6 +4,8 @@
 alias dstat='dstat -tdnclmpry'
 alias pong='ping -D google.de'
 alias spacman='sudo pacman'
+alias add='sudo pacman -S'
+alias remove='sudo pacman -Rns'
 alias mksrcinfo='updpkgsums && makepkg --printsrcinfo > .SRCINFO'
 alias watch='watch -c'
 
