@@ -14,6 +14,12 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 :nnoremap <leader>k <C-w>k
 :nnoremap <leader>l <C-w>l
 
+
+:nnoremap <C-j> :resize -5<CR>
+:nnoremap <C-k> :resize +5<CR>
+:nnoremap <C-h> :vertical resize +10<CR>
+:nnoremap <C-l> :vertical resize -10<CR>
+
 " Split/tab shortcuts
 set splitbelow          " hsplit opens below current window
 set splitright          " ssplit opens right of current window
@@ -48,9 +54,6 @@ nmap <leader>t :tabnew<CR>:Neotree source=filesystem<CR>
      \   }),
      \   <bang>0
      \ )
-
-"----- ctrlsf ------
-nmap <C-k> <Plug>CtrlSFPrompt
 
 "----- Hop ------
 map <Leader>fh :HopWordCurrentLineBC<CR>

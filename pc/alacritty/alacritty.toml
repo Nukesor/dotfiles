@@ -1,3 +1,8 @@
+[keyboard]
+bindings = [
+  { key= "H", mods= "Command", action= "None" },
+]
+
 [colors.bright]
 black = "#2D2D2D"
 blue = "#4040FF"
