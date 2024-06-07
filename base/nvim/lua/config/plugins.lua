@@ -86,9 +86,6 @@ require('lazy').setup({
     'terryma/vim-multiple-cursors',
     -- Easy bracket/quote manipulation
     'tpope/vim-surround',
-    -- Multi-file search + replace
-    -- TODO: Better search+replace
-    --'dyng/ctrlsf.vim',
 
     ----- Looks ------
     'bling/vim-airline',

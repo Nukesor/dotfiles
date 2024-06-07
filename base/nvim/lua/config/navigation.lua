@@ -24,9 +24,6 @@ telescope.setup({
                 ["<C-i>"] = actions.select_horizontal,
                 ["<C-v>"] = actions.select_vertical,
                 ["<C-t>"] = actions.select_tab,
-
-                ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-                ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
             },
             n = {
                 ["q"] = actions.close,
