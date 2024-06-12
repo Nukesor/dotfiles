@@ -12,6 +12,11 @@ vim.lsp.set_log_level("off")
 -- into the language servers.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+vim.diagnostic.config({
+    underline = true,
+    virtual_text = false,
+})
+
 ----- LSP keybinds -----
 -- They'll be set as soon as a server attaches to a buffer.
 -- See https://neovim.io/doc/user/lsp.html for all available functions
@@ -20,7 +25,6 @@ local lsp_attach = function(_, buffer)
 
     vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
-    vim.keymap.set("n", "<leader>gw", vim.lsp.buf.workspace_symbol, opts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "gw", vim.lsp.buf.workspace_symbol, opts)
