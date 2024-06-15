@@ -41,7 +41,7 @@ end
 
 ----- Language server declaration and configuration -----
 -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local lsps = {
+local servers = {
     ansiblels = {},
     bashls = {},
     dartls = {},
@@ -86,7 +86,7 @@ local lsps = {
 }
 
 ----- Language server initialization -----
-for name, settings in pairs(lsps) do
+for name, settings in pairs(servers) do
     local options = {}
     -- Inject the nvim_lsp capabilities for proper completion support
     options["capabilities"] = capabilities
