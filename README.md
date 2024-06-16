@@ -22,6 +22,12 @@ To get the window class for custom rules, use the `xprop` utility.
 - Start firefox once and login.
 - Copy the `user.js` into the `.mozilla/firefox/*.default-release/` folder.
 
+## Nemo
+
+To make `Open in Terminal` work with Nemo, run this:
+
+`gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty`
+
 ## SSH
 
 Setup with local `ssh-agent` user service.
