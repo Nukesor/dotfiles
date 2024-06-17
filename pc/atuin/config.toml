@@ -1,5 +1,6 @@
 sync_address = "http://10.0.1.1:8888"
 sync_frequency = "10m"
+search_mode = "fulltext"
 style = "compact"
 show_preview = true
 history_filter = [
