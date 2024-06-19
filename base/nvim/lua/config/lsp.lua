@@ -61,23 +61,18 @@ local servers = {
     pyright = {},
     ruff = {},
     rust_analyzer = {
-        ['rust-analyzer'] = vim.tbl_deep_extend(
-            "force",
-            file_helper.get_json_file('/./.rust-analyzer.json'),
-            -- Overrides (forces these regardless of what's in .rust-analyzer.json
-            -- See https://rust-analyzer.github.io/manual.html#configuration
-            {
-                check = { allTargets = true, command = "clippy" },
-                procMacro = { enable = true },
-                diagnostics = {
-                    disabled = {
-                        "unresolved-proc-macro",
-                        "unresolved-macro-call",
-                        "macro-error",
-                    }
-                },
-            }
-        )
+        ['rust-analyzer'] =
+        {
+            check = { allTargets = true, command = "clippy" },
+            procMacro = { enable = true },
+            diagnostics = {
+                disabled = {
+                    "unresolved-proc-macro",
+                    "unresolved-macro-call",
+                    "macro-error",
+                }
+            },
+        }
     },
     tailwindcss = {},
     terraform_lsp = {},
@@ -85,6 +80,8 @@ local servers = {
 }
 
 ----- Language server initialization -----
+local local_config = file_helper.get_json_file('/./.vim/settings.json');
+--print(vim.inspect(local_config))
 for name, settings in pairs(servers) do
     local options = {}
     -- Inject the nvim_lsp capabilities for proper completion support
@@ -92,8 +89,19 @@ for name, settings in pairs(servers) do
     -- Inject the keybindings
     options["on_attach"] = lsp_attach
 
+    -- Load any configuration for this lsp if provided.
+    if (local_config[name] ~= nil) then
+        settings = vim.tbl_deep_extend(
+            "force",
+            local_config[name],
+            settings
+        )
+        --print(vim.inspect(settings))
+    end
+
     -- Set custom LSP settings
     options["settings"] = settings
+
 
     -- Print options for a specific server (debugging)
     --if name == "rust_analyzer" then
