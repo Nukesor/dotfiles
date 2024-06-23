@@ -88,7 +88,7 @@ require('lazy').setup({
     'tpope/vim-surround',
 
     ----- Looks ------
-    'bling/vim-airline',
+    --'bling/vim-airline',
     'ap/vim-css-color',
 
     -- Colorschemes
