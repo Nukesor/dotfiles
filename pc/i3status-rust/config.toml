@@ -14,9 +14,21 @@ watch_files = ["/home/nuke/Syncthing/Transfer/todo.md"]
 block = "disk_space"
 path = "/"
 format = "$icon $available"
+format_alt = "$icon $percentage"
 alert_unit = "GB"
-warning = 50.0
-alert = 25.0
+warning = 100.0
+alert = 50.0
+
+{%- if profile == "desktop" %}
+[[block]]
+block = "disk_space"
+path = "/home/nuke/storage"
+format = "$available"
+format_alt = " $percentage"
+alert_unit = "GB"
+warning = 100.0
+alert = 50.0
+{% endif %}
 
 [[block]]
 block = "custom"
