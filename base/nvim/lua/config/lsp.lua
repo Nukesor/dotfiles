@@ -82,6 +82,7 @@ local servers = {
 ----- Language server initialization -----
 local local_config = file_helper.get_json_file('/./.vim/settings.json');
 --print(vim.inspect(local_config))
+
 for name, settings in pairs(servers) do
     local options = {}
     -- Inject the nvim_lsp capabilities for proper completion support
@@ -124,6 +125,11 @@ end
 -- - File structure utline window
 -- - Lightbulb on LSP hints
 require('lspsaga').setup({
+    symbol_in_winbar = {
+        -- I really like the bar, but fugitive's blame is no longer alligned
+        -- when the breadcrumb bar is inserted at the top of the buffer.
+        enable = false,
+    },
     rename = {
         in_select = false,
         keys = {
@@ -140,6 +146,3 @@ require('lspsaga').setup({
         max_height = 0.6,
     }
 })
-
--- Get a fancy breadcrumb bar
-require('lspsaga.symbol.winbar').get_bar()
