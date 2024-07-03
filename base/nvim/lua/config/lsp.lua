@@ -80,6 +80,18 @@ local servers = {
 }
 
 ----- Language server initialization -----
+-- Example file looks like this
+-- {
+--     "rust_analyzer": {
+--         "rust-analyzer": {
+--             "cargo": {
+--                 "features": [
+--                     "integration-test"
+--                 ]
+--             }
+--         }
+--     }
+-- }
 local local_config = file_helper.get_json_file('/./.vim/settings.json');
 --print(vim.inspect(local_config))
 
