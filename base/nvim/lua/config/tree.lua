@@ -26,6 +26,7 @@ local filtered_items = {
         ".gitignore",
         ".github",
         ".gitlab",
+        ".vim",
     },
     -- remains hidden even if visible is toggled to true, this overrides always_show
     never_show = {},
