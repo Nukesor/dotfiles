@@ -40,6 +40,11 @@ history_filter = [
   "^a$",
   "^#.*",
 
+  # Debug/test commands
+  ".*omfg.*",
+  ".*lol.*",
+  ".*rofl.*",
+
   # Help text commands
   "^.* -h.*$",
   "^.* --help.*$",
