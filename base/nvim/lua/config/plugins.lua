@@ -92,7 +92,7 @@ require('lazy').setup({
     'ap/vim-css-color',
 
     -- Colorschemes
-    { "ellisonleao/gruvbox.nvim", name = "gruvbox", priority = 1000 },
+    { "ellisonleao/gruvbox.nvim", priority = 1000 },
     --'tomasiser/vim-code-dark',
 
     ----- Git support------
