@@ -1,6 +1,5 @@
--- Set colorscheme
+-- Gruvbox
 vim.o.background = "dark";
-
 require("gruvbox").setup({
     terminal_colors = true,
     undercurl = true,
@@ -25,7 +24,3 @@ vim.cmd([[colorscheme gruvbox]])
 --vim.g.codedark_modern = 1
 --vim.g.airline_theme = 'codedark'
 --vim.cmd([[colorscheme codedark]])
-
--- Ayu: values are light,mirage,dark
---vim.g.ayucolor = "dark"
---vim.cmd([[colorscheme ayu]])
