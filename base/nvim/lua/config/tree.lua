@@ -5,7 +5,15 @@ local neotree_command = require("neo-tree.command")
 vim.keymap.set('n', '-', function()
     neotree_command.execute({
         reveal = true,
-        reveal_force_cwd = false
+        reveal_force_cwd = false,
+    })
+end)
+-- Same as `-`, but toggle it
+vim.keymap.set('n', '_', function()
+    neotree_command.execute({
+        reveal = true,
+        reveal_force_cwd = false,
+        toggle = true
     })
 end)
 
