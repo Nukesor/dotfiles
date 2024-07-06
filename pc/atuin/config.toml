@@ -16,6 +16,7 @@ history_filter = [
   # Git related
   "^gb",
   "^gb -D.*",
+  "^git show .*",
   "^git add .*",
   "^git branch -D*",
   "^gi t.*",
@@ -24,6 +25,13 @@ history_filter = [
   "^gpuf?",
   "^glg",
   "^gsm",
+
+  # Typos
+  "git upll",
+  "git pul",
+  "nvi",
+  "vin",
+  "vnim",
 
   # Uninteresting commands
   "^curl .*",
@@ -35,6 +43,10 @@ history_filter = [
   "^wget .*",
   "^p .*",
   "^pad .*",
+
+  # Super specific commands with ids
+  "^podman image rm .*",
+  "^git checkout .{40}$",
 
   # Typos
   "^a$",
