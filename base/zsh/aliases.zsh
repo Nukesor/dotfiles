@@ -50,6 +50,8 @@ alias git_describe="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./
 alias clippy='cargo clippy --workspace --tests --all-features'
 
 # Tmux
+alias tew='tmux new -s'
+alias tat='tmux attach -t'
 alias z='zellij'
 alias zat='zellij attach -c'
 
