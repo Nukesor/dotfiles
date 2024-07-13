@@ -43,6 +43,7 @@ end
 local servers = {
     ansiblels = {},
     bashls = {},
+    ccls = {},
     dartls = {},
     html = {},
     jinja_lsp = {},
