@@ -51,7 +51,7 @@ format = " $temperature |"
 #{% if profile == "laptop" %}
 [[block]]
 block = "backlight"
-format = " $icon $brightness|"
+format = "  $brightness|"
 
 [[block]]
 block = "battery"
