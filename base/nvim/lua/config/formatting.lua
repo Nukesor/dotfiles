@@ -1,5 +1,6 @@
 -- Utilities for creating configurations
 local formatter = require("formatter");
+local util = require "formatter.util"
 
 -- Editorconfig
 -- neovim has built-in editorconfig support since 0.9
@@ -23,6 +24,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         "*.py",
         "*.rs",
         "*.tf",
+        "*.toml",
         "*.ts",
         "*.tsx",
     },
@@ -82,6 +84,25 @@ formatter.setup({
                 }
             end
         },
+        -- Toml formatting is usually done by the taplo language server
+        -- However, we also want to sort Cargo.toml files.
+        toml = {
+            function()
+                local filename = util.get_current_buffer_file_name()
+                if filename == "Cargo.toml" then
+                    local path = util.get_current_buffer_file_path()
+                    return {
+                        exe = "cargo",
+                        args = {
+                            "sort",
+                        },
+                        stdin = false,
+                    }
+                end
+
+                return nil
+            end
+        }
     },
 });
 

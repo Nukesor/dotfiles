@@ -76,6 +76,7 @@ local servers = {
         }
     },
     tailwindcss = {},
+    taplo = {},
     terraform_lsp = {},
     tsserver = {},
 }
