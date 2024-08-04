@@ -60,6 +60,16 @@ __gblist() {
     return $ret
 }
 
+__dirlist() {
+    # Get a directory, cd into it and save the exit code for later
+    local target=$(zoxide query --all --interactive)
+    cd $target
+    local ret=$?
+
+    # Without this, no prompt will be visible.
+    zle reset-prompt
+    return $ret
+}
 
 # -------------------- Key bindings --------------------
 # Bind the file selection to CTRL-g
@@ -69,6 +79,11 @@ bindkey "^g" __gflist
 # Bind the branch selection to CTRL-b
 zle -N __gblist
 bindkey "^b" __gblist
+
+# Call interactive directory selection on CTRL+p
+zle -N __dirlist
+bindkey "^p" __dirlist
+
 
 # -------------------- CLI functions --------------------
 
