@@ -62,7 +62,7 @@ __gblist() {
 
 __dirlist() {
     # Get a directory, cd into it and save the exit code for later
-    local target=$(zoxide query --all --interactive)
+    local target=$(zoxide query --exclude $(__zoxide_pwd) --all --interactive)
     cd $target
     local ret=$?
 
