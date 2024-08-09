@@ -45,7 +45,6 @@ local servers = {
     bashls = {},
     ccls = {},
     dartls = {},
-    harper_ls = {},
     html = {},
     jinja_lsp = {},
     jsonls = {},
