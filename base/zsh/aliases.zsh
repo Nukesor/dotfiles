@@ -55,10 +55,10 @@ alias tat='tmux attach -t'
 alias z='zellij'
 alias zat='zellij attach -c'
 
-#Docker
+# Docker
 alias dcu='docker-compose up'
 
-#Pueue
+# Pueue
 alias p='pueue'
 alias pad='pueue add --'
 alias pst='pueue status'
@@ -77,7 +77,7 @@ alias jsonformat='python -c "import json, sys, collections; print(json.dumps(jso
 alias venv="poetry shell"
 
 # dool
-alias dool="dool --bytes --time --cpu --load --net --mem"
+alias dool="dool --bytes --time --cpu --load --net --mem --disk"
 
 # Trans
 alias t="trans de:en"
