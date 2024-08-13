@@ -63,6 +63,12 @@ __gblist() {
 __dirlist() {
     # Get a directory, cd into it and save the exit code for later
     local target=$(zoxide query --exclude $(__zoxide_pwd) --all --interactive)
+    # Return early if the zoxide call is aborted.
+    # Otherwise $target is empty and we would jump to the home directory.
+    if [[ -z $target ]]; then
+        zle reset-prompt
+        return
+    fi
     cd $target
     local ret=$?
 
