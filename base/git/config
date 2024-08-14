@@ -1,10 +1,8 @@
 [user]
     name = Arne Beer
     email = contact@arne.beer
-{% if profile != "server" -%}
-    signingkey = CC9408F679023B65
-{% endif -%}
-
+    {% if profile != "server" %}signingkey = CC9408F679023B65
+{%- endif %}
 [commit]
 	gpgsign = true
 
