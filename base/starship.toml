@@ -12,13 +12,14 @@ $hostname\
 $directory\
 $python\
 $git_branch\
+$git_commit\
 $git_state\
 $git_status\
 $git_metrics\
 $cmd_duration\
 $status\
 $character"""
-{%- if profile == "laptop" %}
+#{%- if profile == "laptop" %}
 
 [[battery.display]]
 threshold = 50
@@ -31,7 +32,7 @@ style = "bold orange"
 [[battery.display]]
 threshold = 10
 style = "bold red"
-{%- endif %}
+#{%- endif %}
 
 [memory_usage]
 disabled = false
@@ -57,21 +58,29 @@ style = "yellow"
 format = "[@$hostname]($style)"
 
 [directory]
-format = ":[$path]($style)[$read_only]($read_only_style)\\] "
+format = ":[$path]($style)[$read_only]($read_only_style)\\]"
 truncation_symbol = "../"
 style = "white bold"
 # Never show parent folders of repos
 truncate_to_repo = false
 
 [python]
-format = '[${pyenv_prefix}(\($virtualenv\) )]($style)'
+format = '[${pyenv_prefix}(\($virtualenv\))]($style)'
 
 [git_branch]
-format = "[$branch]($style)"
+format = "[( $branch)]($style)"
 style = "orange"
+only_attached = true
+
+[git_commit]
+format = '[( \($tag\))]($style)'
+style = "bold white"
+tag_disabled = false
+tag_symbol = ' '
+only_detached = false
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](red)( $ahead_behind$stashed)](166) "
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](red)( $ahead_behind$stashed)](166)"
 style = "orange"
 ahead = ""
 diverged = ""
@@ -87,7 +96,7 @@ deleted = "​"
 stashed = "📋"
 
 [git_state]
-format = '\([$state($progress_current/$progress_total)]($style)\) '
+format = '\([$state($progress_current/$progress_total)]($style)\)'
 style = "166"
 
 [git_metrics]
@@ -95,16 +104,16 @@ disabled = false
 only_nonzero_diffs = true
 added_style = "green"
 deleted_style = "red"
-format = '(\([-$deleted]($deleted_style)/[+$added]($added_style)\) )'
+format = '( \([-$deleted]($deleted_style)/[+$added]($added_style)\))'
 
 [cmd_duration]
-format = "[$duration](yellow) "
+format = "[( $duration)](yellow)"
 
 [status]
 format = "[$status](red)"
 disabled = false
 
 [character]
-success_symbol = "[>](green)"
-error_symbol = "[!](red)"
-vicmd_symbol = "[>](green)"
+success_symbol = "[ >](green)"
+error_symbol = "[ !](red)"
+vicmd_symbol = "[ >](green)"
