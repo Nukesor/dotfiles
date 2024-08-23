@@ -18,7 +18,7 @@ $git_status\
 $git_metrics\
 $cmd_duration\
 $status\
-$character"""
+[ >](green) """
 #{%- if profile == "laptop" %}
 
 [[battery.display]]
@@ -110,10 +110,5 @@ format = '( \([-$deleted]($deleted_style)/[+$added]($added_style)\))'
 format = "[( $duration)](yellow)"
 
 [status]
-format = "[$status](red)"
+format = "[ $status!](red)"
 disabled = false
-
-[character]
-success_symbol = "[ >](green)"
-error_symbol = "[ !](red)"
-vicmd_symbol = "[ >](green)"
