@@ -1,5 +1,4 @@
 -- Gruvbox
-vim.o.background = "dark";
 require("gruvbox").setup({
     terminal_colors = true,
     undercurl = true,
@@ -19,8 +18,22 @@ require("gruvbox").setup({
     overrides = {},
 })
 vim.cmd([[colorscheme gruvbox]])
+vim.o.background = "dark";
 
 -- Codedark:
 --vim.g.codedark_modern = 1
 --vim.g.airline_theme = 'codedark'
 --vim.cmd([[colorscheme codedark]])
+
+
+vim.api.nvim_create_user_command('Light',
+    function(opts)
+        vim.o.background = "light";
+    end,
+    { nargs = 0 })
+
+vim.api.nvim_create_user_command('Dark',
+    function(opts)
+        vim.o.background = "dark";
+    end,
+    { nargs = 0 })

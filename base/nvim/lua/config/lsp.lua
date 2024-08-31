@@ -36,6 +36,9 @@ local lsp_attach = function(_, buffer)
     vim.keymap.set("n", "<leader>sr", function() vim.cmd('Lspsaga finder') end, opts)
     vim.keymap.set("n", "<leader>so", function() vim.cmd('Lspsaga outline') end, opts)
     vim.keymap.set("n", "<leader>si", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, opts)
+    -- Swap the default diagnostics jumps around (more intuitive for me)
+    vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
+    vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
 end
 
 ----- Language server declaration and configuration -----
