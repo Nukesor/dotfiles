@@ -37,6 +37,7 @@ posthooks = [
   "systemctl --user enable --now pueued",
   "systemctl --user enable --now ssh-agent",
   "systemctl --user enable --now dotfile-deploy",
+  "systemctl --user enable --now mpd.socket",
   #"systemctl --user enable --now polizei",
 ]
 
