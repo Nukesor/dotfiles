@@ -1,10 +1,12 @@
 [user]
     name = Arne Beer
     email = contact@arne.beer
-    {% if profile != "server" %}signingkey = CC9408F679023B65
-{%- endif %}
+{%- if profile != "server" %}
+    signingkey = CC9408F679023B65
+
 [commit]
-	gpgsign = true
+    gpgsign = true
+{%- endif %}
 
 [init]
     defaultBranch = main
@@ -16,7 +18,7 @@
     pager = delta
 
 [submodule]
-	recurse = true
+    recurse = true
 
 [branch]
     autosetupmerge = always
@@ -28,7 +30,7 @@
     rebase = true
 
 [remote "origin"]
-	prune = true
+    prune = true
 
 [rebase]
     autoSquash = true
@@ -38,7 +40,7 @@
     conflictstyle = zdiff3
 
 [rerere]
-	enabled = true
+    enabled = true
 
 [interactive]
     diffFilter = delta --color-only
@@ -83,7 +85,7 @@
     difftool = true
 
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
