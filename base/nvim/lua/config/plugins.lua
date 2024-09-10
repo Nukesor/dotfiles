@@ -86,6 +86,8 @@ require('lazy').setup({
     'terryma/vim-multiple-cursors',
     -- Easy bracket/quote manipulation
     'tpope/vim-surround',
+    -- Easy commenting
+    'numToStr/Comment.nvim',
 
     ----- Looks ------
     --'bling/vim-airline',
@@ -93,7 +95,7 @@ require('lazy').setup({
 
     -- Colorschemes
     { "ellisonleao/gruvbox.nvim", priority = 1000 },
-    --'tomasiser/vim-code-dark',
+    -- 'tomasiser/vim-code-dark',
 
     ----- Git support------
     -- Git command wrapper + integration
