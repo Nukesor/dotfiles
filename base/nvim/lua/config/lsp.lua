@@ -81,7 +81,7 @@ local servers = {
     tailwindcss = {},
     taplo = {},
     terraform_lsp = {},
-    tsserver = {},
+    ts_ls = {},
 }
 
 ----- Language server initialization -----
