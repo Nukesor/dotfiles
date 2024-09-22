@@ -84,6 +84,15 @@ local servers = {
     ts_ls = {},
 }
 
+-- Detect jinja templates
+vim.filetype.add {
+    extension = {
+        jinja = 'jinja',
+        jinja2 = 'jinja',
+        j2 = 'jinja',
+    },
+}
+
 ----- Language server initialization -----
 -- Example file looks like this
 -- {
