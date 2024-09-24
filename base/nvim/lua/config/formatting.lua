@@ -77,11 +77,7 @@ formatter.setup({
                 end
 
                 -- Otherwise use mdformat as a default
-                return {
-                    exe = "mdformat",
-                    args = { "-" },
-                    stdin = true,
-                }
+                return require("formatter.filetypes.markdown").mdformat()
             end
         },
         -- Toml formatting is usually done by the taplo language server
