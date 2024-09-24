@@ -1,3 +1,5 @@
+shell = "zsh"
+
 [plugins.256color]
 github = "chrissicool/zsh-256color"
 
