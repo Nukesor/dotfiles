@@ -1,0 +1,47 @@
+#!/bin/bash
+
+workspaces=(1 2 3 7 9 10)
+
+for workspace in ${workspaces[@]}; do
+    i3-msg "workspace ${workspace}" && i3-msg "append_layout /home/nuke/.config/i3/layout/${workspace}.json"
+done
+
+# Go back to workspace 2 as default
+i3-msg "workspace 2"
+
+# Workspace 1 & 2
+alacritty &
+alacritty &
+alacritty &
+alacritty &
+
+# Workspace 3
+firefox &
+
+# Workspace 7
+spotify &
+
+# Workspace 9
+telegram-desktop &
+
+# Workspace 10
+thunderbird &
+
+{% if profile == "desktop" %}
+
+# Position all workspaces on the correct screens
+i3-msg '[workspace="1"]' move workspace to output DP-3
+i3-msg '[workspace="2"]' move workspace to output primary
+i3-msg '[workspace="3"]' move workspace to output primary
+i3-msg '[workspace="7"]' move workspace to output primary
+i3-msg '[workspace="9"]' move workspace to output DVI-D-0
+i3-msg '[workspace="10"]' move workspace to output DVI-D-0
+
+# Focus the correct workspaces once
+i3-msg workspace 1
+i3-msg workspace 9
+
+{% endif %}
+
+# Land on workspace 3 by default.
+i3-msg 'workspace 3'

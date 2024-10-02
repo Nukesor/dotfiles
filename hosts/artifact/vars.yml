@@ -1,0 +1,5 @@
+profile: "laptop"
+alacritty_fontsize: "12"
+i3_title_font_size: "10"
+enable_hw_acc: "false"
+threads: "12"

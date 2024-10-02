@@ -1,0 +1,72 @@
+sync_address = "http://10.0.1.1:8888"
+sync_frequency = "10m"
+search_mode = "fulltext"
+style = "compact"
+show_preview = true
+history_filter = [
+  # Day-to-day shell commands
+  "^cd .*",
+  "^cd$",
+  "^fg",
+  "^j .*",
+  "^ls",
+  "^la",
+  "^mv .*",
+
+  # Git related
+  "^gb",
+  "^gb -D.*",
+  "^git show .*",
+  "^git add .*",
+  "^git branch -D*",
+  "^gi t.*",
+  "^git commit --fixup=.*",
+  "^gls",
+  "^gpuf?",
+  "^glg",
+  "^gsm",
+
+  # Typos
+  "git upll",
+  "git pul",
+  "nvi",
+  "vin",
+  "vnim",
+
+  # Uninteresting commands
+  "^curl .*",
+  "^rsync .*",
+  "^pong",
+  "^t .*",
+  "^td .*",
+  "^nvim",
+  "^wget .*",
+  "^p .*",
+  "^pad .*",
+
+  # Super specific commands with ids
+  "^podman image rm .*",
+  "^git checkout .{40}$",
+
+  # Typos
+  "^a$",
+  "^#.*",
+
+  # Debug/test commands
+  ".*omfg.*",
+  ".*lol.*",
+  ".*rofl.*",
+
+  # Help text commands
+  "^.* -h.*$",
+  "^.* --help.*$",
+
+  # Scripts/aliase
+  "^km",
+  "^kd",
+]
+
+[sync]
+# Enable sync v2
+# Run `atuin history init-store` when mitgrating from old sync
+records = true

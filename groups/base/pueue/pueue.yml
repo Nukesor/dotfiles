@@ -1,0 +1,38 @@
+---
+client:
+  restart_in_place: true
+  read_local_logs: true
+  max_status_lines: 10
+  status_time_format: "%H:%M:%S"
+  status_datetime_format: "%Y-%m-%d %H:%M:%S"
+daemon:
+  pause_group_on_failure: false
+  pause_all_on_failure: false
+{%- if profile != "server" %}
+{%- raw %}
+  callback: |
+      notify-send \
+      "Task {{ id }}
+      Command: {{ command }}
+      Path: {{ path }}
+      Finished with status '{{ result }}'
+      Took: $(bc <<< '{{end}} - {{start}}') seconds"
+{%- endraw %}
+{% endif %}
+  callback_log_lines: 10
+  shell_command: [
+    "bash",
+    "-c",
+{%- raw %}
+    "shopt -s expand_aliases && {{ pueue_command_string }}",
+{%- endraw %}
+  ]
+  env_vars:
+    BASH_ENV: "$HOME/.config/zsh/aliases.zsh"
+shared:
+  use_unix_socket: true
+{%- if profile == "server" %}
+  runtime_directory: "~/.local/share/pueue"
+{% endif %}
+  host: 127.0.0.1
+  port: "6924"

@@ -1,0 +1,8 @@
+configuration {
+  sort: true;
+  matching: "fuzzy";
+  sorting-method: "fzf";
+  terminal: "alacritty";
+}
+
+@theme "/home/nuke/.config/rofi/flat-orange.rasi"

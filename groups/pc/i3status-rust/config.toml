@@ -1,0 +1,136 @@
+# bois_config
+# bois_config
+[theme]
+theme = "modern"
+
+[icons]
+icons = "awesome4"
+
+[[block]]
+block = "custom"
+json = true
+command = "~/.cache/cargo/bin/print_todo ~/Syncthing/Transfer/todo.md"
+watch_files = ["/home/nuke/Syncthing/Transfer/todo.md"]
+
+[[block]]
+block = "disk_space"
+path = "/"
+format = "$icon $available"
+format_alt = "$icon $percentage"
+alert_unit = "GB"
+warning = 100.0
+alert = 50.0
+
+#{%- if host == "bomb" %}
+[[block]]
+block = "disk_space"
+path = "/home/nuke/storage"
+format = "$available"
+format_alt = " $percentage"
+alert_unit = "GB"
+warning = 100.0
+alert = 50.0
+#{% endif %}
+
+[[block]]
+block = "custom"
+command = "~/.cache/cargo/bin/netinfo"
+
+[[block]]
+block = "memory"
+format = "$icon Mem: $mem_used_percents "
+
+[[block]]
+block = "cpu"
+format = "$icon $barchart $utilization "
+interval = 3
+
+[[block]]
+block = "hueshift"
+step = 50
+hue_shifter = "redshift"
+format = " $temperature |"
+#{% if host == "artifact" or host == "contamination" %}
+[[block]]
+block = "backlight"
+format = "  $brightness|"
+
+[[block]]
+block = "battery"
+device = "BAT0"
+driver = "sysfs"
+missing_format = ""
+format = " $icon SmolBat0: $percentage $time | $icon Bat1: $percentage ... "
+
+#{% if host == "contamination" %}
+[[block]]
+block = "battery"
+device = "BAT1"
+driver = "sysfs"
+missing_format = ""
+format = " $icon BigBat1: $percentage $time | $icon Bat1: $percentage ... "
+#{%- endif %}{% endif %}
+
+[[block]]
+block = "music"
+player = "spotify"
+format = " {$icon $combo.str(max_w:25,rot_interval:0.5) $prev  $play  $next |}"
+[[block.click]]
+button = "left"
+action = "play_pause"
+[[block.click]]
+button = "forward"
+action = "next"
+[[block.click]]
+button = "back"
+action = "prev"
+[[block.click]]
+button = "up"
+action = "volume_up"
+[[block.click]]
+button = "down"
+action = "volume_down"
+
+#[[block]]
+#block = "music"
+#player = "mpd"
+#format = " {$icon $combo.str(max_w:25,rot_interval:0.5) $prev  $play  $next |}"
+#[[block.click]]
+#button = "left"
+#action = "play_pause"
+#[[block.click]]
+#button = "forward"
+#action = "next"
+#[[block.click]]
+#button = "back"
+#action = "prev"
+
+[[block]]
+block = "sound"
+step_width = 2
+format = "$icon {$volume.eng(w:2)|}"
+
+[[block]]
+block = "custom"
+command = "~/.cache/cargo/bin/headphone_battery"
+format = "$text"
+interval = 180
+json = true
+# Dis-/enable sidetone with left/right mouse-button
+[[block.click]]
+button = "left"
+cmd = "headsetcontrol --sidetone 0"
+[[block.click]]
+button = "right"
+cmd = "headsetcontrol --sidetone 100"
+
+[[block]]
+block = "custom"
+cycle = ["~/.bin/keyboard-layout en", "~/.bin/keyboard-layout de"]
+interval = "once"
+json = true
+
+[[block]]
+block = "time"
+format = "$timestamp.datetime(f:'%a %d-%m-%y %T', l:de_DE) "
+interval = 5

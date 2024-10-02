@@ -1,0 +1,47 @@
+# i3 config file (v4)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+include ~/.config/i3/nav_shortcuts.conf
+include ~/.config/i3/shortcuts.conf
+include ~/.config/i3/styling.conf
+include ~/.config/i3/status_bar.conf
+
+# ---------------- I3 Config variables ----------------
+font pango:Input Mono, Font Awesome 6 Free 9
+
+# Set mod key to Windows
+set $mod Mod4
+
+# Use Mouse+/$mod to drag floating windows
+floating_modifier $mod
+
+# Mouse hover doesn't focus windows
+focus_follows_mouse no
+mouse_warping none
+
+# Workspace names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+## ---------------- Application related stuff ----------------
+
+# Don't allow steam windows to float forbid any focus switches.
+no_focus [class="(?i)steam"]
+for_window [class="(?i)steam"] floating disable
+assign [class="(?i)steam"] $ws5
+# Move Nemo file progress to a remote workspace, as it's super annoying
+for_window [class="file_progress"] floating disable
+assign [class="file_progress"] $ws8
+
+## ---------------- Misc ----------------
+{% if profile == "laptop" or profile == "desktop" -%}
+exec ~/.config/i3/layout/load
+{%- endif %}

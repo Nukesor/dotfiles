@@ -1,0 +1,114 @@
+# No blank line between shell prompts
+add_newline = false
+
+format = """
+{% if profile == "laptop" -%}
+$battery\
+{% endif -%}
+$memory_usage\
+$jobs\
+$username\
+$hostname\
+$directory\
+$python\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$git_metrics\
+$cmd_duration\
+$status\
+[ >](green) """
+#{%- if profile == "laptop" %}
+
+[[battery.display]]
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 30
+style = "bold orange"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+#{%- endif %}
+
+[memory_usage]
+disabled = false
+format = "$symbol [$ram_pct]($style) "
+threshold = 80
+symbol = ""
+style = "bold red"
+
+[jobs]
+number_threshold = 1
+symbol = "+"
+style = "yellow bold"
+
+[username]
+show_always = true
+format = "\\[[$user]($style)"
+style_user = "white"
+style_root = "yellow bold"
+
+[hostname]
+ssh_only = true
+style = "yellow"
+format = "[@$hostname]($style)"
+
+[directory]
+format = ":[$path]($style)[$read_only]($read_only_style)\\]"
+truncation_symbol = "../"
+style = "white bold"
+# Never show parent folders of repos
+truncate_to_repo = false
+
+[python]
+format = '[${pyenv_prefix}(\($virtualenv\))]($style)'
+
+[git_branch]
+format = "[( $branch)]($style)"
+style = "orange"
+only_attached = true
+
+[git_commit]
+format = '[( \($tag\))]($style)'
+style = "bold white"
+tag_disabled = false
+tag_symbol = ' '
+only_detached = false
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](red)( $ahead_behind$stashed)](166)"
+style = "orange"
+ahead = ""
+diverged = ""
+behind = ""
+# Just use empty chars to force the star to be triggered.
+# I just want a single char to notify me of any changes
+modified = "​"
+conflicted = "​"
+untracked = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "📋"
+
+[git_state]
+format = '\([$state($progress_current/$progress_total)]($style)\)'
+style = "166"
+
+[git_metrics]
+disabled = false
+only_nonzero_diffs = true
+added_style = "green"
+deleted_style = "red"
+format = '( \([-$deleted]($deleted_style)/[+$added]($added_style)\))'
+
+[cmd_duration]
+format = "[( $duration)](yellow)"
+
+[status]
+format = "[ $status!](red)"
+disabled = false

@@ -1,0 +1,29 @@
+! 2022-08-05 https://www.reddit.com
+www.reddit.com##.sitetable
+www.reddit.com##.premium-banner
+www.reddit.com##.create.sidebox
+www.reddit.com##.footer-parent
+
+! 2022-12-30 https://stackoverflow.com
+stackoverflow.com##.js-review-button
+stackoverflow.com##.iconAchievements
+stackoverflow.com##.js-inbox-button
+
+! 2022-08-10 https://www.washingtonpost.com
+www.washingtonpost.com##.purchase-paywall-overlay.paywall-overlay.bottom-0.right-0.left-0.fixed
+
+! 2022-08-18 https://www.discogs.com
+www.discogs.com###release-videos
+
+! 2023-06-13 https://www.kleinanzeigen.de
+www.kleinanzeigen.de###brws_banner-supersize
+www.kleinanzeigen.de###srp_adsense-top
+www.kleinanzeigen.de##[id^="liberty-srps-result-list"]
+
+! 2024-04-11 https://registry.terraform.io
+registry.terraform.io##div.is-3.column:nth-of-type(2)
+
+! 2024-04-19 https://www.youtube.com
+www.youtube.com##ytd-mini-guide-entry-renderer[aria-label="Shorts"]
+www.youtube.com##a.yt-simple-endpoint[title="Shorts"]
+www.youtube.com##.ytd-rich-section-renderer.style-scope > .ytd-rich-shelf-renderer.style-scope

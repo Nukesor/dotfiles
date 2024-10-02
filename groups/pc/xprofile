@@ -1,0 +1,16 @@
+# bois_config
+# path: ~/.xprofile
+# bois_config
+export PATH=~/.bin:$PATH
+export PATH=~/.cache/cargo/bin:$PATH
+export CARGO_HOME=$XDG_CACHE_HOME/cargo
+
+#{%- if profile == "desktop" %}
+#fix_xonar_output
+#{% endif %}
+
+# Load zshenv
+[ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
+
+# Set background pic
+feh --no-fehbg --bg-scale ~/.local/bg.jpg &

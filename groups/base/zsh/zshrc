@@ -1,0 +1,150 @@
+# bois_config
+# rename: .zshrc
+# bois_config
+# -------------------- Plugins/External --------------------
+# Run fzf keybindings first. CTRL+R will be overwritten by atuin.
+if [[ -f "/usr/share/fzf/key-bindings.zsh" ]]; then
+    source "/usr/share/fzf/key-bindings.zsh"
+fi
+
+export SHELDON_CONFIG_DIR="$HOME/.config/sheldon"
+export SHELDON_DATA_DIR="$HOME/.local/share/sheldon"
+# Plugin manager
+eval "$(sheldon -q source)"
+# Prompt
+eval "$(starship init zsh)"
+# Shared history
+eval "$(atuin init zsh --disable-up-arrow)"
+
+if [[ -d "$HOME/repos/tools/pueue/utils/completions/" ]]; then
+    fpath=($HOME/repos/tools/pueue/utils/completions/ $fpath)
+fi
+
+autoload -U compinit && compinit -d $HOME/.cache/zsh/zcompdump
+autoload -U promptinit && promptinit
+
+# -------------------- General configuration --------------------
+#Syntax Highlighting
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=002,bold'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=002,bold'
+
+# zoxide init + j alias for convenience
+eval "$(zoxide init zsh --cmd j)"
+
+# Aliases
+if [ -f "$HOME/.config/zsh/aliases.zsh" ]; then
+    source $HOME/.config/zsh/aliases.zsh
+fi
+
+# -------------------- UI Keybind functions--------------------
+# Stage files multi-selected modified files
+__gflist() {
+    local files=$(git ls-files -m -o -d --exclude-standard | uniq)
+    local selection=( $($(__fzfcmd) -m \
+        --preview 'git-diff-all {}' \
+        --preview-window up:60%  \
+        --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort,tab:toggle,ctrl-i:toggle,ctrl-o:toggle-preview <<< $files) )
+
+    LBUFFER="${LBUFFER} ${selection}"
+    local ret=$?
+    return $ret
+}
+
+# Select a git branch
+__gblist() {
+    local branches=$(git branch --format='%(refname:short)')
+    local selection=( $($(__fzfcmd) -m \
+        --preview 'git diff --color=always {}' \
+        --preview-window up:60%  \
+        --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort,tab:toggle,ctrl-i:toggle,ctrl-o:toggle-preview <<< $branches) )
+
+    LBUFFER="${LBUFFER} ${selection}"
+    local ret=$?
+    return $ret
+}
+
+__dirlist() {
+    # Get a directory, cd into it and save the exit code for later
+    local target=$(zoxide query --exclude $(__zoxide_pwd) --all --interactive)
+    # Return early if the zoxide call is aborted.
+    # Otherwise $target is empty and we would jump to the home directory.
+    if [[ -z $target ]]; then
+        zle reset-prompt
+        return
+    fi
+    cd $target
+    local ret=$?
+
+    # Without this, no prompt will be visible.
+    zle reset-prompt
+    return $ret
+}
+
+# -------------------- Key bindings --------------------
+# Bind the file selection to CTRL-g
+zle -N __gflist
+bindkey "^g" __gflist
+
+# Bind the branch selection to CTRL-b
+zle -N __gblist
+bindkey "^b" __gblist
+
+# Call interactive directory selection on CTRL+p
+zle -N __dirlist
+bindkey "^p" __dirlist
+
+
+# -------------------- CLI functions --------------------
+
+block_and_wait() {
+    if [ "$#" -eq 0  ]; then
+        echo "First parameter should be the name of the semaphore."
+        return 1;
+    fi
+    mkdir -p "$XDG_RUNTIME_DIR/semaphores"
+
+    if [[ -f "$XDG_RUNTIME_DIR/semaphores/$1" ]]; then
+        echo "Semaphore $1 already exists."
+    else
+        echo "Creating semaphore $1"
+        touch "$XDG_RUNTIME_DIR/semaphores/$1"
+    fi
+
+    # Wait until the semaphore has been removed
+    while true; do
+        if [[ ! -f "$XDG_RUNTIME_DIR/semaphores/$1" ]]; then
+            return 0;
+        fi
+        sleep 2
+    done
+}
+
+unblock() {
+    if [ "$#" -eq 0 ]; then
+        echo "First parameter should be the name of the semaphore."
+        return 1;
+    fi
+
+    if [[ -f "$XDG_RUNTIME_DIR/semaphores/$1" ]]; then
+        echo "Removing semaphore $1"
+        rm "$XDG_RUNTIME_DIR/semaphores/$1"
+    else
+        echo "Couldn't find semaphore at $XDG_RUNTIME_DIR/semaphores/$1"
+        return 1;
+    fi
+}
+
+
+# -------------------- Other stuff --------------------
+export TERM='xterm-256color'
+setopt no_hist_beep         # fucking beep
+# Don't enable flow-control (Ctrl-S & Ctrl-Q)
+setopt noflowcontrol
+
+# This is a way to start an alacritty shell with a custom command,
+# while keeping an active zsh session.
+# The alternative would be a `zsh -c $command`, which doesn't allow falling
+# back to the shell and exits the terminal after closing vim.
+if [[ -n $ROFI_COMMAND ]] then
+   eval $ROFI_COMMAND
+fi

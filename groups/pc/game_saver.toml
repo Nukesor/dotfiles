@@ -1,0 +1,34 @@
+backup_directory = "~/Syncthing/Games/saves"
+
+[games.noita]
+savegame_location = "~/.local/share/Steam/steamapps/compatdata/881100/pfx/drive_c/users/steamuser/AppData/LocalLow/Nolla_Games_Noita/save00"
+autosaves = 0
+autosave_timeout = 120
+ignored_files = []
+
+[games.Cataclysm_DDA]
+# The folder where the save files are located.
+savegame_location = "~/.local/share/cataclysm-dda/save"
+# The amount of autosave slots you want to keep.
+# Once this limit is reached, the oldest autosave files will be deleted.
+#
+# Set to 0, if you want to disable.
+autosaves = 5
+# By default, game-saver saves the game everytime something changes on disk.
+# As this can be quite often, you can specify a timeout up to which all changes on disk will
+# be simply ignored.
+#
+# The timeout is specified in seconds.
+# Set to 0, to disable the timeout.
+autosave_timeout = 120
+# A list of glob patterns that should be ignored.
+# The paths should be relative to `savegame_location/`.
+#
+# `.ignore` Files will also be respected.
+ignored_files = []
+
+[games.Cataclysm_DDA_config]
+savegame_location = "~/.config/cataclysm-dda"
+autosaves = 5
+autosave_timeout = 300
+ignored_files = []

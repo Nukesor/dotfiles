@@ -1,0 +1,65 @@
+# bois_config
+# template: true
+# bois_config
+[keyboard]
+bindings = [{ key = "H", mods = "Command", action = "None" }]
+
+[colors.bright]
+black = "#2D2D2D"
+blue = "#4040FF"
+cyan = "#40FFFF"
+green = "#40FF40"
+magenta = "#bd00bd"
+red = "#FF4040"
+white = "#B3B9C5"
+yellow = "#FFFF40"
+
+[colors.dim]
+black = "#2D2D2D"
+blue = "#4040FF"
+cyan = "#40FFFF"
+green = "#40FF40"
+magenta = "#bd00bd"
+red = "#FF4040"
+white = "#B3B9C5"
+yellow = "#FFFF40"
+
+[colors.normal]
+black = "#2D2D2D"
+blue = "#4040FF"
+cyan = "#40FFFF"
+green = "#40FF40"
+magenta = "#bd00bd"
+red = "#FF4040"
+white = "#B3B9C5"
+yellow = "#FFFF40"
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = {{ alacritty_fontsize }}
+
+[font.bold]
+style = "Medium"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Input Mono"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[mouse]
+hide_when_typing = false
+
+[scrolling]
+history = 20000
+
+[window]
+decorations = "full"
+dynamic_title = true
