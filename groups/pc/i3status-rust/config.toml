@@ -1,4 +1,5 @@
 # bois_config
+# template: true
 # bois_config
 [theme]
 theme = "modern"

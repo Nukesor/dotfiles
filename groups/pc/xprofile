@@ -1,5 +1,6 @@
 # bois_config
 # path: ~/.xprofile
+# template: true
 # bois_config
 export PATH=~/.bin:$PATH
 export PATH=~/.cache/cargo/bin:$PATH
