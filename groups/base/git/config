@@ -4,12 +4,10 @@
 [user]
     name = Arne Beer
     email = contact@arne.beer
-{%- if profile != "server" and profile != "tv"%}
     signingkey = CC9408F679023B65
 
 [commit]
     gpgsign = true
-{%- endif %}
 
 [init]
     defaultBranch = main

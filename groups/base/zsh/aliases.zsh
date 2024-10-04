@@ -97,11 +97,6 @@ fi
 
 # -------------------- Platform dependant aliases --------------------
 
-{% if profile == "server" %}
-alias poweroff='reboot'
-
-{% else %}
-
 # Messenger
 alias km="killall telegram-desktop"
 alias kd="killall -9 DiscordCanary & killall -9 Discord"
@@ -126,5 +121,3 @@ alias vpnup='sudo ip link set vpn up'
 
 # Boot windows
 alias windowsboot='sudo efibootmgr -n 0000 && reboot'
-
-{% endif %}

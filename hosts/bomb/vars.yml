@@ -1,5 +1,7 @@
-profile: "desktop"
+has_i3_layout: true
+
 alacritty_fontsize: "10"
 i3_title_font_size: "9"
+
 enable_hw_acc: "true"
 threads: "24"

@@ -1,8 +1,11 @@
+# bois_config
+# template: true
+# bois_config
 # No blank line between shell prompts
 add_newline = false
 
 format = """
-{% if profile == "laptop" -%}
+{% if has_battery -%}
 $battery\
 {% endif -%}
 $memory_usage\
@@ -19,7 +22,7 @@ $git_metrics\
 $cmd_duration\
 $status\
 [ >](green) """
-#{%- if profile == "laptop" %}
+#{%- if has_battery %}
 
 [[battery.display]]
 threshold = 50

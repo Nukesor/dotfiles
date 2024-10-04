@@ -1,5 +1,8 @@
-profile: "laptop"
+has_battery: true
+has_i3_layout: true
+
 alacritty_fontsize: "12"
 i3_title_font_size: "10"
+
 enable_hw_acc: "false"
-threads: "12"
+threads: "8"

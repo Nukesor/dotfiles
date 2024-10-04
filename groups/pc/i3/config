@@ -11,7 +11,6 @@ include ~/.config/i3/status_bar.conf
 
 # ---------------- I3 Config variables ----------------
 font pango:Input Mono, Font Awesome 6 Free 9
-
 # Set mod key to Windows
 set $mod Mod4
 
@@ -45,6 +44,6 @@ for_window [class="file_progress"] floating disable
 assign [class="file_progress"] $ws8
 
 ## ---------------- Misc ----------------
-{% if profile == "laptop" or profile == "desktop" -%}
+{% if has_i3_layout -%}
 exec ~/.config/i3/layout/load
 {%- endif %}

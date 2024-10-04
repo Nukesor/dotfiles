@@ -30,7 +30,7 @@ telegram-desktop &
 # Workspace 10
 thunderbird &
 
-{% if profile == "desktop" %}
+{% if host == "bomb" %}
 
 # Position all workspaces on the correct screens
 i3-msg '[workspace="1"]' move workspace to output DP-3
