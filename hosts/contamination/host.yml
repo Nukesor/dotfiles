@@ -1,3 +1,6 @@
 groups:
   - base
-  - pc
+  - cli
+  - dev
+  - gui
+  - X
