@@ -1,5 +1,6 @@
 alacritty_fontsize: "16"
 i3_title_font_size: "10"
+dpi: 160
 
 enable_hw_acc: "true"
 threads: "4"

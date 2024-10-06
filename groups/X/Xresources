@@ -1,4 +1,7 @@
 # bois_config
 # path: ~/.Xresources
+# template: true
 # bois_config
+{% if dpi %}
 Xft.dpi: 160
+{% endif %}
