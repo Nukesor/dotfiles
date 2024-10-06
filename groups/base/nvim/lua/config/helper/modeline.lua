@@ -4,6 +4,8 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
     callback = function(event)
         local allowed_filetypes = {
             "i3config",
+            "gitconfig",
+            "editorconfig",
         };
 
         -- Read the first line

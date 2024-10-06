@@ -1,6 +1,7 @@
 # bois_config
 # template: true
 # bois_config
+# vim: filetype=gitconfig
 [user]
     name = Arne Beer
     email = contact@arne.beer
