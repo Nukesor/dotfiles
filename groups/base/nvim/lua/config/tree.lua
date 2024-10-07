@@ -31,6 +31,7 @@ local filtered_items = {
     },
     -- remains visible even if other settings would normally hide it
     always_show = {
+        "details.yml",
         ".gitignore",
         ".github",
         ".gitlab",
