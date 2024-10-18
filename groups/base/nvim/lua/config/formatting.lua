@@ -98,6 +98,16 @@ formatter.setup({
 
                 return nil
             end
+        },
+        -- Custom formatter for typst
+        typst = {
+            function()
+                local filename = util.get_current_buffer_file_name()
+                return {
+                    exe = "typstyle",
+                    stdin = true,
+                }
+            end
         }
     },
 });

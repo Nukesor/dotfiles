@@ -42,7 +42,7 @@ local lsp_attach = function(_, buffer)
 end
 
 ----- Language server declaration and configuration -----
--- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+-- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 local servers = {
     ansiblels = {},
     bashls = {},
@@ -82,6 +82,7 @@ local servers = {
     taplo = {},
     terraform_lsp = {},
     ts_ls = {},
+    typst_lsp = {},
 }
 
 -- Detect jinja templates
