@@ -1,4 +1,4 @@
-has_i3_layout: true
+has_desktop_layout: true
 
 alacritty_fontsize: "10"
 i3_title_font_size: "9"

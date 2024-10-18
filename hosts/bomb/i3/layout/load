@@ -30,21 +30,17 @@ telegram-desktop &
 # Workspace 10
 thunderbird &
 
-{% if host == "bomb" %}
-
 # Position all workspaces on the correct screens
-i3-msg '[workspace="1"]' move workspace to output DP-3
+i3-msg '[workspace="1"]' move workspace to output HDMI-A-1
 i3-msg '[workspace="2"]' move workspace to output primary
 i3-msg '[workspace="3"]' move workspace to output primary
 i3-msg '[workspace="7"]' move workspace to output primary
-i3-msg '[workspace="9"]' move workspace to output DVI-D-0
-i3-msg '[workspace="10"]' move workspace to output DVI-D-0
+i3-msg '[workspace="9"]' move workspace to output DisplayPort-1
+i3-msg '[workspace="10"]' move workspace to output DisplayPort-1
 
 # Focus the correct workspaces once
 i3-msg workspace 1
 i3-msg workspace 9
-
-{% endif %}
 
 # Land on workspace 3 by default.
 i3-msg 'workspace 3'

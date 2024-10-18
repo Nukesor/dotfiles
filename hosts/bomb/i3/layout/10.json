@@ -1,20 +1,19 @@
 {
-    "border": "pixel",
-    "current_border_width": 2,
-    "floating": "auto_off",
-    "geometry": {
-        "x": 0,
-        "y": 0
-    },
-    "marks": [],
-    "name": "Inbox - privat@arne.beer - Mozilla Thunderbird",
-    "percent": 1,
-    "swallows": [
-        {
-            "class": "^thunderbird$",
-            "instance": "^Mail$",
-            "window_role": "^3pane$"
-        }
-    ],
-    "type": "con"
+  "border": "pixel",
+  "current_border_width": 2,
+  "floating": "auto_off",
+  "geometry": {
+    "x": 0,
+    "y": 0
+  },
+  "marks": [],
+  "percent": 1,
+  "swallows": [
+    {
+      "class": "^thunderbird$",
+      "instance": "^Mail$",
+      "window_role": "^3pane$"
+    }
+  ],
+  "type": "con"
 }
