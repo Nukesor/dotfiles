@@ -81,8 +81,8 @@ local servers = {
     tailwindcss = {},
     taplo = {},
     terraform_lsp = {},
+    tinymist = {},
     ts_ls = {},
-    typst_lsp = {},
 }
 
 -- Detect jinja templates
@@ -116,6 +116,11 @@ for name, settings in pairs(servers) do
     options["capabilities"] = capabilities
     -- Inject the keybindings
     options["on_attach"] = lsp_attach
+
+    -- Temporary workaround for https://github.com/Myriad-Dreamin/tinymist/issues/638
+    if name == "tinymist" then
+        options["offset_encoding"] = "utf-8"
+    end
 
     -- Load any configuration for this lsp if provided.
     if (local_config[name] ~= nil) then
