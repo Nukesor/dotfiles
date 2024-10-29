@@ -1,0 +1,9 @@
+[Unit]
+Description=Start easyeffects in the background
+
+[Service]
+Type=simple
+ExecStart=easyeffects --gapplication-service
+
+[Install]
+WantedBy=default.target
