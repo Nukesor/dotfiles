@@ -58,6 +58,10 @@
   heading = true
   lineNumber = true
 
+# Allow git absorb to look deeper into the history for branch-of detection
+[absorb]
+    maxStack=50
+
 #### Styling ####
 
 [color]
