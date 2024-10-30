@@ -3,8 +3,8 @@ Description=Auto deploy the user's dotfiles
 
 [Service]
 Restart=no
-ExecStart=watchexec --postpone 'bombadil link -p {{profile}}'
-WorkingDirectory=%h/.dotfiles
+ExecStart=watchexec --postpone '%h/.cache/cargo/bin/bois deploy'
+WorkingDirectory=%h/.config/dotfiles
 
 [Install]
 WantedBy=default.target
