@@ -10,8 +10,8 @@ icons = "awesome4"
 [[block]]
 block = "custom"
 json = true
-command = "~/.cache/cargo/bin/print_todo ~/Syncthing/Transfer/todo.md"
-watch_files = ["/home/nuke/Syncthing/Transfer/todo.md"]
+command = "~/.cache/cargo/bin/print_todo ~/Dokumente/Various/notes/todo.md"
+watch_files = ["~/Dokumente/Various/notes/todo.md"]
 
 [[block]]
 block = "disk_space"

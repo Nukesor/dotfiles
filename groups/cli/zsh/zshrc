@@ -134,6 +134,15 @@ unblock() {
     fi
 }
 
+n() {
+    note_path='notes'
+    if [[ "$#" -ne 0 ]]; then
+        note_path=$1
+    fi
+    cd ~/Dokumente/Various/notes/ && vim ~/Dokumente/Various/notes/$note_path.md || true
+    cd "$OLDPWD"
+}
+
 
 # -------------------- Other stuff --------------------
 export TERM='xterm-256color'
