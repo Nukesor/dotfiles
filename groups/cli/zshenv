@@ -5,6 +5,7 @@
 path=($HOME/.bin $path)
 path=($HOME/.cache/cargo/bin $path)
 path=($HOME/work/bin $path)
+path=($HOME/repos/accounting/bin $path)
 
 # XDG Setup
 export XDG_CONFIG_HOME="$HOME/.config"
