@@ -81,6 +81,7 @@ require('lazy').setup({
     'lotabout/skim.vim',
     'lotabout/skim',
     'nvim-telescope/telescope.nvim',
+    'tpope/vim-unimpaired',
 
     ----- Editing ------
     'terryma/vim-multiple-cursors',
