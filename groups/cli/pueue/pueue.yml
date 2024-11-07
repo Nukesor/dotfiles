@@ -1,7 +1,10 @@
 # bois_config
 # template: true
+# delimiters:
+#   block: ["#{%", "%}"]
+#   variable: ["#{{", "}}"]
+#   comment: ["#{#", "#}"]
 # bois_config
----
 client:
   restart_in_place: true
   read_local_logs: true
@@ -11,23 +14,15 @@ client:
 daemon:
   pause_group_on_failure: false
   pause_all_on_failure: false
-{%- raw %}
   callback: |
-      notify-send \
-      "Task {{ id }}
-      Command: {{ command }}
-      Path: {{ path }}
-      Finished with status '{{ result }}'
-      Took: $(bc <<< '{{end}} - {{start}}') seconds"
-{%- endraw %}
+    notify-send \
+    "Task {{ id }}
+    Command: {{ command }}
+    Path: {{ path }}
+    Finished with status '{{ result }}'
+    Took: $(bc <<< '{{end}} - {{start}}') seconds"
   callback_log_lines: 10
-  shell_command: [
-    "bash",
-    "-c",
-{%- raw %}
-    "shopt -s expand_aliases && {{ pueue_command_string }}",
-{%- endraw %}
-  ]
+  shell_command: ["bash", "-c", "shopt -s expand_aliases && {{ pueue_command_string }}"]
   env_vars:
     BASH_ENV: "$HOME/.config/zsh/aliases.zsh"
 shared:

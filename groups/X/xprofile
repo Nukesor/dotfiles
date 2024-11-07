@@ -1,15 +1,10 @@
 # bois_config
 # path: ~/.xprofile
-# template: true
 # bois_config
 export PATH=~/.bin:$PATH
 export PATH=~/.cache/cargo/bin:$PATH
 export CARGO_HOME=$XDG_CACHE_HOME/cargo
 export GTK_THEME=Advaita:dark
-
-#{%- if host == "bomb" %}
-#fix_xonar_output
-#{% endif %}
 
 # Load zshenv
 [ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv

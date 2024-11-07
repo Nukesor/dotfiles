@@ -1,13 +1,17 @@
 # bois_config
 # template: true
+# delimiters:
+#   block: ["#{%", "%}"]
+#   variable: ["#{{", "}}"]
+#   comment: ["#{#", "#}"]
 # bois_config
 # No blank line between shell prompts
 add_newline = false
 
 format = """
-{% if has_battery -%}
+#{% if has_battery %}
 $battery\
-{% endif -%}
+#{% endif %}
 $memory_usage\
 $jobs\
 $username\
@@ -22,8 +26,8 @@ $git_metrics\
 $cmd_duration\
 $status\
 [ >](green) """
-#{%- if has_battery %}
 
+#{% if has_battery %}
 [[battery.display]]
 threshold = 50
 style = "bold yellow"
@@ -35,8 +39,8 @@ style = "bold orange"
 [[battery.display]]
 threshold = 10
 style = "bold red"
-#{%- endif %}
 
+#{% endif %}
 [memory_usage]
 disabled = false
 format = "$symbol [$ram_pct]($style) "

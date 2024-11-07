@@ -1,6 +1,3 @@
-# bois_config
-# template: true
-# bois_config
 # -------------------- Aliases --------------------
 
 #Various
