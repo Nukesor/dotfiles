@@ -3,6 +3,7 @@
 #Various
 alias dstat='dstat -tdnclmpry'
 alias pong='ping -D google.de'
+alias ppong='prettyping google.de'
 alias spacman='sudo pacman'
 alias add='sudo pacman -S'
 alias remove='sudo pacman -Rns'
