@@ -18,6 +18,8 @@ require('lazy').setup({
 
     ----- Language setup ------
     -- Language server support
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     'neovim/nvim-lspconfig',
     'nvimdev/lspsaga.nvim',
 

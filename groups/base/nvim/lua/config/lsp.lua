@@ -1,7 +1,6 @@
 vim.lsp.set_log_level("debug")
 
 local file_helper = require("config.helper.file")
-local lspconfig = require("lspconfig")
 
 -- To enable lsp log if necessary for debugging, set log to
 -- "debug", "info"
@@ -41,17 +40,29 @@ local lsp_attach = function(_, buffer)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
 end
 
+-- Disable server cancelation errors for now
+-- https://github.com/neovim/neovim/issues/30985
+-- https://old.reddit.com/r/rust/comments/1geyfld/rustanalyzer_server_cancelled_the_request_in/
+for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
+    local default_diagnostic_handler = vim.lsp.handlers[method]
+    vim.lsp.handlers[method] = function(err, result, context, config)
+        if err ~= nil and err.code == -32802 then
+            return
+        end
+        return default_diagnostic_handler(err, result, context, config)
+    end
+end
+
 ----- Language server declaration and configuration -----
 -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+-- https://github.com/williamboman/mason-lspconfig.nvim
 local servers = {
     ansiblels = {},
     bashls = {},
-    ccls = {},
-    dartls = {},
+    cssls = {},
     html = {},
     jinja_lsp = {},
     jsonls = {},
-    kotlin_language_server = {},
     lua_ls = {
         Lua = {
             diagnostics = {
@@ -60,10 +71,9 @@ local servers = {
             }
         },
     },
-    marksman = {},
-    pest_ls = {},
-    pyright = {},
-    ruff = {},
+    marksman = {}, -- Markdownls
+    pyright = {},  -- python type checker
+    ruff = {},     -- python linter + formatter
     rust_analyzer = {
         ['rust-analyzer'] =
         {
@@ -79,11 +89,21 @@ local servers = {
         }
     },
     tailwindcss = {},
-    taplo = {},
-    terraform_lsp = {},
-    tinymist = {},
+    taplo = {},    -- toml
+    terraformls = {},
+    tinymist = {}, -- typst
     ts_ls = {},
 }
+
+-- Always install these lsps via mason
+local ensure_installed = {
+    --"terraformls",
+}
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+local lspconfig = require("lspconfig")
+
 
 -- Detect jinja templates
 vim.filetype.add {
