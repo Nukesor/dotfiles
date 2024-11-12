@@ -24,8 +24,10 @@ local lsp_attach = function(_, buffer)
 
     vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, opts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
     vim.keymap.set("n", "<leader>af", vim.lsp.buf.format, opts)
     vim.keymap.set("n", "<leader>ar", function() vim.cmd('Lspsaga rename') end, opts)
     vim.keymap.set("n", "<leader>aw", function() vim.cmd('Lspsaga code_action') end, opts)
@@ -60,6 +62,7 @@ local servers = {
     ansiblels = {},
     bashls = {},
     cssls = {},
+    clangd = {},
     html = {},
     jinja_lsp = {},
     jsonls = {},

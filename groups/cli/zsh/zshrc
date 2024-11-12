@@ -65,18 +65,42 @@ __gblist() {
 
 __dirlist() {
     # Get a directory, cd into it and save the exit code for later
-    local target=$(zoxide query --exclude $(__zoxide_pwd) --all --interactive)
+    local target=$(zoxide query --exclude $(__zoxide_pwd) --interactive)
     # Return early if the zoxide call is aborted.
     # Otherwise $target is empty and we would jump to the home directory.
     if [[ -z $target ]]; then
         zle reset-prompt
         return
     fi
+
+    # If there's already something on the buffer, simply append the directory to the buffer
+    # instead of entering the directory. Useful for command completion of well-used dirs.
+    if [[ ! -z "$BUFFER" ]]; then
+        BUFFER+="${target}"
+        CURSOR+=${#target}
+        CURSOR+=1
+        zle redisplay
+        return 0
+    fi
+
     cd $target
     local ret=$?
 
     # Without this, no prompt will be visible.
     zle reset-prompt
+    return $ret
+}
+
+# Show a file picker
+__filelist() {
+    local files=$(fd --type f .)
+    local selection=( $($(__fzfcmd) -m \
+        --preview 'bat --color=always {}' \
+        --preview-window up:60%  \
+        --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort,tab:toggle,ctrl-i:toggle,ctrl-o:toggle-preview <<< $files) )
+
+    LBUFFER="${LBUFFER}${selection}"
+    local ret=$?
     return $ret
 }
 
@@ -93,6 +117,9 @@ bindkey "^b" __gblist
 zle -N __dirlist
 bindkey "^p" __dirlist
 
+# Call interactive directory selection on CTRL+f
+zle -N __filelist
+bindkey "^f" __filelist
 
 # -------------------- CLI functions --------------------
 
