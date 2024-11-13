@@ -1,0 +1,39 @@
+# vim: filetype=sshconfig
+Host *
+    ServerAliveInterval 30
+    ServerAliveCountMax 360
+    Compression yes
+    PasswordAuthentication yes
+    IdentitiesOnly yes
+    AddKeysToAgent  yes
+
+# ---------------- Own machines ----------------
+Host jarvis
+    User root
+    HostName 144.76.120.70
+    Port 222
+
+Host rescuejarvis
+    User root
+    HostName 144.76.120.70
+
+Host old-jarvis
+    User root
+    HostName 46.4.32.58
+
+# Specific config for tinyssh
+Host cryptbomb
+    User root
+    Hostname 192.168.178.3
+    Ciphers chacha20-poly1305@openssh.com
+    HostKeyAlgorithms ssh-ed25519
+    KexAlgorithms curve25519-sha256@libssh.org
+
+# ---------------- Other server ----------------
+Host sven
+    User nuke
+    HostName dozer.pseudoform.org
+
+Host beer-home
+    Hostname BeerServer
+    User root
