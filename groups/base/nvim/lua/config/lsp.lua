@@ -81,6 +81,9 @@ local servers = {
     rust_analyzer = {
         ['rust-analyzer'] =
         {
+            rustmft = {
+                extraArgs = { "+nightly" },
+            },
             check = { allTargets = true, command = "clippy" },
             procMacro = { enable = true },
             diagnostics = {

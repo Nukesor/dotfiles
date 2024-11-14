@@ -24,3 +24,6 @@ require("config.tree")
 
 -- Load helper files
 require("config.helper")
+
+-- Load helper files
+require("config.keybinds")

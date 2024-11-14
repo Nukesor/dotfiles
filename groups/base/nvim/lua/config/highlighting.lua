@@ -1,3 +1,24 @@
+-- Map proper filetypes for templating.
+local template_mappings = {
+    { '*.timer.j2,*.service.j2,*.netdev.j2,*.network.j2', 'systemd' },
+    { '*.conf.j2',                                        'nginx' },
+    { '*.yaml.j2,*.yml.j2',                               'yaml' },
+    { '.env.example',                                     'sh' },
+}
+
+for i, mapping in pairs(template_mappings) do
+    vim.api.nvim_create_autocmd(
+        { 'BufRead', 'BufNewFile' },
+        {
+            pattern = mapping[1],
+            callback = function()
+                local buf = vim.api.nvim_get_current_buf()
+                vim.api.nvim_buf_set_option(buf, "filetype", mapping[2])
+            end,
+        }
+    )
+end
+
 require('nvim-treesitter.configs').setup({
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
     -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages

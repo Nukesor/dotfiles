@@ -15,6 +15,7 @@ require('lazy').setup({
     ----- Libraries -----
     'MunifTanjim/nui.nvim',
     'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons',
 
     ----- Language setup ------
     -- Language server support
@@ -65,7 +66,6 @@ require('lazy').setup({
             require 'window-picker'.setup()
         end,
     },
-    'nvim-tree/nvim-web-devicons',
     {
         'nvim-neo-tree/neo-tree.nvim',
         branch = 'v3.x',
@@ -93,7 +93,7 @@ require('lazy').setup({
     'numToStr/Comment.nvim',
 
     ----- Looks ------
-    --'bling/vim-airline',
+    'nvim-lualine/lualine.nvim',
     'ap/vim-css-color',
 
     -- Colorschemes
@@ -106,5 +106,12 @@ require('lazy').setup({
     -- Vim integrated staging + conflict resolution
     --'jreybert/vimagit',
     -- Vim change indicator beside lines
-    'airblade/vim-gitgutter',
+    {
+        'airblade/vim-gitgutter',
+        init = function()
+            -- Disable gitgutter keybinds
+            vim.g.gitgutter_map_keys = 0
+            vim.g.gitgutter_max_signs = 20000
+        end,
+    }
 });
