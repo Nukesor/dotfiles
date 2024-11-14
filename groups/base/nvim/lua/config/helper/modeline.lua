@@ -3,6 +3,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
     desc = "Detect filetype modeline",
     callback = function(event)
         local allowed_filetypes = {
+            "conf",
             "i3config",
             "sshconfig",
             "gitconfig",
