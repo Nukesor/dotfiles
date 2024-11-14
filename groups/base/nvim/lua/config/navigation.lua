@@ -6,6 +6,9 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>w", builtin.lsp_dynamic_workspace_symbols)
 vim.keymap.set("n", "<leader>r", builtin.live_grep)
 
+vim.keymap.set("n", "[q", function() vim.cmd [[:cnext]] end)
+vim.keymap.set("n", "]q", function() vim.cmd [[:cprevious]] end)
+
 
 -- TODO: I' would like to have either Skim or Telescope
 -- Right now, there's no nice way to add prximity-sort's logic to Telescope
