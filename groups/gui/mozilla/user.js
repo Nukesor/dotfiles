@@ -6,3 +6,7 @@
 user_pref("full-screen-api.ignore-widgets", true);
 user_pref("gfx.webrender.all", true);
 user_pref("media.ffmpeg.vaapi.enabled", true);
+
+// Remove the menu from the "Firefox Suggest" entries in the search bar.
+user_pref("browser.urlbar.resultMenu", false);
+
