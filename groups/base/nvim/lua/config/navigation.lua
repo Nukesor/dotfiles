@@ -34,17 +34,17 @@ local hop = require('hop')
 local directions = require('hop.hint').HintDirection
 -- Hop to other lines
 vim.keymap.set("n", "<Leader>fj", function()
-    hop.hint_char1({ direction = directions.AFTER_CHAR })
+    hop.hint_words({ direction = directions.AFTER_CURSOR })
 end)
 vim.keymap.set("n", "<Leader>fk", function()
-    hop.hint_char1({ direction = directions.BEFORE_CHAR })
+    hop.hint_words({ direction = directions.BEFORE_CURSOR })
 end)
 -- Hop inside same line
 vim.keymap.set("n", "<Leader>fh", function()
-    hop.hint_char1({ direction = directions.BEFORE_CHAR, current_line_only = true })
+    hop.hint_words({ direction = directions.BEFORE_CURSOR, current_line_only = true })
 end)
 vim.keymap.set("n", "<Leader>fl", function()
-    hop.hint_char1({ direction = directions.AFTER_CHAR, current_line_only = true })
+    hop.hint_words({ direction = directions.AFTER_CURSOR, current_line_only = true })
 end)
 
 
