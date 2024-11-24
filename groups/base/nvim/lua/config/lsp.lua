@@ -81,7 +81,7 @@ local servers = {
     rust_analyzer = {
         ['rust-analyzer'] =
         {
-            rustmft = {
+            rustfmt = {
                 extraArgs = { "+nightly" },
             },
             check = { allTargets = true, command = "clippy" },
