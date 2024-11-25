@@ -1,9 +1,10 @@
-# bois_config
-# template: true
-# bois_config
 # vim: filetype=i3config
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# bois_config
+# template: true
+# bois_config
 
 include ~/.config/i3/nav_shortcuts.conf
 include ~/.config/i3/shortcuts.conf
