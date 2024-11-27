@@ -3,6 +3,9 @@ Description=Start easyeffects in the background
 
 [Service]
 Type=simple
+# Wait for a bit before starting this up.
+# We need `DISPLAY` to be there.
+ExecStartPre=/bin/sleep 30
 ExecStart=easyeffects --gapplication-service
 
 [Install]
