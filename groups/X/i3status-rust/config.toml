@@ -20,7 +20,7 @@ watch_files = ["/home/nuke/Dokumente/Various/notes/todo.md"]
 [[block]]
 block = "disk_space"
 path = "/"
-format = "$icon $available"
+format = "$icon$available"
 format_alt = "$icon $percentage"
 alert_unit = "GB"
 warning = 100.0
