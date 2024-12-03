@@ -1,0 +1,9 @@
+[Unit]
+Description=Daily sync of all database backups from jarvis
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
