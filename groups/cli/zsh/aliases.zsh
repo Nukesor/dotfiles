@@ -116,6 +116,7 @@ alias startx="startx '$XDG_CONFIG_HOME/X11/xinitrc'"
 # VPN
 alias vpndown='sudo ip link set vpn down'
 alias vpnup='sudo ip link set vpn up'
+alias vpnpause='sudo ip link set vpn down && nohup zsh -c "sleep 120 && sudo ip link set vpn up" >/dev/null 2>&1 & disown'
 
 # Boot windows
 alias windowsboot='sudo efibootmgr -n 0000 && reboot'
