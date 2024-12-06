@@ -33,7 +33,7 @@ eval "$(zoxide init zsh --cmd j)"
 
 # Aliases
 if [ -f "$HOME/.config/zsh/aliases.zsh" ]; then
-    source $HOME/.config/zsh/aliases.zsh
+    source $HOME/.config/shell_aliases
 fi
 
 # -------------------- UI Keybind functions--------------------

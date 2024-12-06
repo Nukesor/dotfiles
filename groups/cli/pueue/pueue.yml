@@ -24,7 +24,7 @@ daemon:
   callback_log_lines: 10
   shell_command: ["bash", "-c", "shopt -s expand_aliases && {{ pueue_command_string }}"]
   env_vars:
-    BASH_ENV: "$HOME/.config/zsh/aliases.zsh"
+    BASH_ENV: "$HOME/.config/shell_aliases"
 shared:
   use_unix_socket: true
   host: 127.0.0.1
