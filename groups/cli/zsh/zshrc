@@ -181,6 +181,6 @@ setopt noflowcontrol
 # while keeping an active zsh session.
 # The alternative would be a `zsh -c $command`, which doesn't allow falling
 # back to the shell and exits the terminal after closing vim.
-if [[ -n $ROFI_COMMAND ]] then
+if [[ -n $ROFI_COMMAND ]]; then
    eval $ROFI_COMMAND
 fi
