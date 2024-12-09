@@ -2,14 +2,6 @@
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
     desc = "Detect filetype modeline",
     callback = function(event)
-        local allowed_filetypes = {
-            "conf",
-            "i3config",
-            "sshconfig",
-            "gitconfig",
-            "editorconfig",
-        };
-
         -- Read the first line
         local first_line = vim.api.nvim_buf_get_lines(event.buf, 0, 1, false);
         if #first_line == 0 then
@@ -18,12 +10,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 
         -- Look out for a filetype declaration.
         for match in string.gmatch(first_line[1], ".*filetype=(%w+)") do
-            -- If we allow this filetype, set it.
-            for _, filetype in ipairs(allowed_filetypes) do
-                if filetype == match then
-                    vim.cmd(string.format("set filetype=%s", match))
-                end
-            end
+            vim.bo.filetype = match
         end
     end,
 })
