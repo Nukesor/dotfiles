@@ -1,0 +1,13 @@
+# vim: filetype=zsh
+# Stage files multi-selected modified files
+git_file_list() {
+    local files=$(git ls-files -m -o -d --exclude-standard | uniq)
+    local selection=( $($(__fzfcmd) -m \
+        --preview 'git-diff-all {}' \
+        --preview-window up:60%  \
+        --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort,tab:toggle,ctrl-i:toggle,ctrl-o:toggle-preview <<< $files) )
+
+    LBUFFER="${LBUFFER} ${selection}"
+    local ret=$?
+    return $ret
+}

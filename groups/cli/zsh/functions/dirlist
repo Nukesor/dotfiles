@@ -1,0 +1,29 @@
+# vim: filetype=zsh
+# Query the list of known zoxide directories and append selected entries to the buffer or cd into them,
+# depending on whether the current prompt buffer is empty or not.
+dirlist() {
+    local target=$(zoxide query --exclude $(__zoxide_pwd) --interactive)
+    # Return early if the zoxide call is aborted.
+    # Otherwise $target is empty and we would jump to the home directory.
+    if [[ -z $target ]]; then
+        zle reset-prompt
+        return
+    fi
+
+    # If there's already something on the buffer, simply append the directory to the buffer
+    # instead of entering the directory. Useful for command completion of well-used dirs.
+    if [[ ! -z "$BUFFER" ]]; then
+        BUFFER+="${target}"
+        CURSOR+=${#target}
+        CURSOR+=1
+        zle redisplay
+        return 0
+    fi
+
+    cd $target
+    local ret=$?
+
+    # Without this, no prompt will be visible.
+    zle reset-prompt
+    return $ret
+}
