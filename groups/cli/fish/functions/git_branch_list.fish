@@ -8,7 +8,17 @@ function git_branch_list
         --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort,tab:toggle,ctrl-i:toggle,ctrl-o:toggle-preview
     )
 
-    commandline --append " $selection"
+    # If there's already something on the buffer, simply append the branches to the buffer
+    # instead of switching to them. Useful for command completion for branches.
+    if not test -z (commandline --current-buffer)
+        commandline --append " $selection"
+        return 0
+    end
+
+    git switch $selection
     set --local ret $status
+
+    # Without this, no prompt will be visible.
+    commandline -f repaint
     return $ret
 end
