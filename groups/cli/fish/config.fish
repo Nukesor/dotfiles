@@ -1,6 +1,3 @@
-# -------------------- Set environment variables --------------------
-source ~/.config/fish/env.fish
-
 # -------------------- Plugins/External --------------------
 # Run fzf keybindings first. CTRL+R will be overwritten by atuin.
 if test -f "/usr/share/fish/vendor_functions.d/fzf_key_bindings.fish"
