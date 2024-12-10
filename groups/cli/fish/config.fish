@@ -26,11 +26,6 @@ set fish_greeting
 # Disable autosuggestions
 set -g fish_autosuggestion_enabled 0
 
-# Load custom aliases
-if test -f "$HOME/.config/shell_aliases"
-    source $HOME/.config/shell_aliases
-end
-
 # -------------------- Key bindings --------------------
 # Since this config uses vi mode, all bindings also need
 # to be set for the insert mode as well.
