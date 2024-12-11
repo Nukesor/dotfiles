@@ -1,9 +1,10 @@
 # Open my notes
 function n
-    set --local note_path 'notes'
-    if [ $(count $argv) != 0 ]
-        set --local note_path $1
+    set --function note_path 'notes'
+    if test (count $argv) -ge 1
+        set --function note_path $argv[1]
     end
-    cd ~/Dokumente/Various/notes/ && vim ~/Dokumente/Various/notes/$note_path.md || true
-    cd "$OLDPWD"
+    echo $note_path
+
+    vim ~/Dokumente/Various/notes/$note_path.md
 end
