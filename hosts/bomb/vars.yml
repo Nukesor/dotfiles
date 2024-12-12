@@ -1,5 +1,7 @@
 has_desktop_layout: true
 
+music_location: ~/storage/music
+
 alacritty_fontsize: "10"
 i3_title_font_size: "9"
 

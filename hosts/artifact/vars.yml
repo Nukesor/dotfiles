@@ -1,6 +1,8 @@
 has_battery: true
 has_i3_layout: true
 
+music_location: ~/music
+
 alacritty_fontsize: "12"
 i3_title_font_size: "10"
 
