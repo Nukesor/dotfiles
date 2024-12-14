@@ -15,12 +15,10 @@ local util = require "formatter.util"
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     desc = "nvim-lsp autoformat on write",
     pattern = {
-        "*.dart",
         "*.html",
         "*.lua",
         "*.j2",
         "*.json",
-        "*.pest",
         "*.py",
         "*.rs",
         "*.tf",
