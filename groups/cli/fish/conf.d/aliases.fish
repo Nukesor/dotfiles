@@ -11,10 +11,7 @@ alias mksrcinfo='updpkgsums && makepkg --printsrcinfo > .SRCINFO'
 alias watch='watch -c'
 
 # Systemctl
-alias sys='sudo systemctl'
-alias sysu='systemctl --user'
 alias systatus='systemctl --type=service --all'
-alias logs='sudo journalctl -u'
 
 # Rsync
 alias arsync='rsync -a --partial --progress'
@@ -33,17 +30,12 @@ alias svim='sudo nvim -c "Neotree source=filesystem"'
 alias todo='n todo'
 alias notes='n notes'
 
-# Netctl
-alias co='sudo netctl stop-all && sudo netctl start'
-alias disca='sudo netctl stop-all'
-
 # Git
 alias gls='git status'
 alias glg='git lg'
 alias gsh='git switch'
-alias gsm='git switch main 2> /dev/null || git switch master'
+alias gsm='git switch main &> /dev/null || git switch master'
 alias gb='git branch'
-alias gc='git commit'
 alias gcm='git commit -m'
 alias gpu='git push origin -u'
 alias gpuf='git push origin -u --force-with-lease'
@@ -63,8 +55,6 @@ alias dcu='docker-compose up'
 
 # Pueue
 alias p='pueue'
-alias pad='pueue add --'
-alias pst='pueue status'
 
 # Youtube dl
 alias yd='yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a] --output "%(title)s.%(ext)s"'
