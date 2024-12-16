@@ -6,6 +6,7 @@ Type=simple
 ExecStart=rsync \
     --archive \
     --delete \
+    --rsh "ssh -i /home/nuke/.ssh/backup_key" \
     backup@jarvis:/var/lib/backup/db %h/.local/share/db_backup
 
 [Install]
