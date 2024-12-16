@@ -17,4 +17,7 @@ abbr --add 'sys' 'sudo systemctl'
 abbr --add 'sysu' 'systemctl --user'
 
 abbr --add --set-cursor='%' 'pad' 'pueue add -- "%"'
+
+# -------------------- Git abbreviations --------------------
+abbr --add 'gf' 'git commit --fixup'
 abbr --add --set-cursor='%' 'gcm' 'git commit -m "%"'
