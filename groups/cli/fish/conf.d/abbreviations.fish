@@ -14,6 +14,7 @@ abbr --position anywhere -a "!!" --function last_history_item
 abbr --add 'jf' 'sudo journalctl -f -u'
 abbr --add 'jb' 'sudo journalctl -b -u'
 abbr --add 'sys' 'sudo systemctl'
-abbr --add 'sysu' 'systemctl -u'
+abbr --add 'sysu' 'systemctl --user'
 
-abbr --add 'pad' 'pueue add --'
+abbr --add --set-cursor='%' 'pad' 'pueue add -- "%"'
+abbr --add --set-cursor='%' 'gcm' 'git commit -m "%"'

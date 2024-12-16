@@ -36,7 +36,6 @@ alias glg='git lg'
 alias gsh='git switch'
 alias gsm='git switch main &> /dev/null || git switch master'
 alias gb='git branch'
-alias gcm='git commit -m'
 alias gpu='git push origin -u'
 alias gpuf='git push origin -u --force-with-lease'
 alias git_describe="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g'"
