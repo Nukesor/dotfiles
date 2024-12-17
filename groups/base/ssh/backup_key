@@ -1,5 +1,5 @@
 # bois_config
-# permissions: 0o400
+# permissions: 0o600
 # bois_config
 -----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAaAAAABNlY2RzYS
