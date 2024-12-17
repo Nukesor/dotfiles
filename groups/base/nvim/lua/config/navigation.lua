@@ -64,6 +64,10 @@ vim.keymap.set("n", "<leader>w", builtin.lsp_dynamic_workspace_symbols)
 --nnoremap <silent> <C-p> :Telescope find_files<CR>
 telescope.setup({
     defaults = {
+        file_ignore_patterns = {
+            -- Arch linux translation files
+            "po"
+        },
         layout_config = {
             width = 0.90
         },
