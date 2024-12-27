@@ -99,7 +99,6 @@ local servers = {
     taplo = {},    -- toml
     terraformls = {},
     tinymist = {}, -- typst
-    ts_ls = {},
 }
 
 -- Always install these lsps via mason
