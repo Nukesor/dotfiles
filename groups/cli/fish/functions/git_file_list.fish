@@ -7,7 +7,7 @@ function git_file_list
         --preview-window up:60%  \
         --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort,tab:toggle,ctrl-i:toggle,ctrl-o:toggle-preview)
 
-    commandline --append " $selection"
-    set --local ret $status
-    return $ret
+    commandline --append "$selection"
+    commandline -f end-of-line
+    commandline -f repaint
 end

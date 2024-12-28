@@ -11,7 +11,9 @@ function git_branch_list
     # If there's already something on the buffer, simply append the branches to the buffer
     # instead of switching to them. Useful for command completion for branches.
     if not test -z (commandline --current-buffer)
-        commandline --append " $selection"
+        commandline --append "$selection"
+        commandline -f end-of-line
+        commandline -f repaint
         return 0
     end
 

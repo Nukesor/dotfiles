@@ -8,6 +8,6 @@ function filelist
         --bind=ctrl-n:preview-down,ctrl-p:preview-up,q:abort,tab:toggle,ctrl-i:toggle,ctrl-o:toggle-preview)
 
     commandline --append "$selection"
-    set --local ret $status
-    return $ret
+    commandline -f end-of-line
+    commandline -f repaint
 end

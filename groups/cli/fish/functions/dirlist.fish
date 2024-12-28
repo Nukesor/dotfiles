@@ -14,7 +14,9 @@ function dirlist
     # If there's already something on the buffer, simply append the directory to the buffer
     # instead of entering the directory. Useful for command completion of well-used dirs.
     if not test -z (commandline --current-buffer)
-        commandline --append " $selection"
+        commandline --append "$target"
+        commandline -f end-of-line
+        commandline -f repaint
         return 0
     end
 
