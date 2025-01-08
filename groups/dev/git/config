@@ -16,7 +16,7 @@
     editor = vim
     pager = delta
     # Required for mergiraf to work:
-    attributesfile = ~/config/git/gitattributes
+    attributesfile = ~/.config/git/gitattributes
 
 [submodule]
     recurse = true
