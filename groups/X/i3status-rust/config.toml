@@ -100,19 +100,19 @@ action = "volume_up"
 button = "down"
 action = "volume_down"
 
-#[[block]]
-#block = "music"
-#player = "mpd"
-#format = " {$icon $combo.str(max_w:25,rot_interval:0.5) $prev  $play  $next |}"
-#[[block.click]]
-#button = "left"
-#action = "play_pause"
-#[[block.click]]
-#button = "forward"
-#action = "next"
-#[[block.click]]
-#button = "back"
-#action = "prev"
+[[block]]
+block = "music"
+player = "mpd"
+format = " {$icon $combo.str(max_w:25,rot_interval:0.5) $prev  $play  $next |}"
+[[block.click]]
+button = "left"
+action = "play_pause"
+[[block.click]]
+button = "forward"
+action = "next"
+[[block.click]]
+button = "back"
+action = "prev"
 
 [[block]]
 block = "sound"

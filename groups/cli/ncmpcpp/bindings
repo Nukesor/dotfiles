@@ -14,6 +14,16 @@ def_key "ctrl-u"
 def_key "ctrl-d"
     page_down
 
+def_key "n"
+    next_found_item
+def_key "N"
+    previous_found_item
+
+def_key "g"
+  move_home
+
+def_key "G"
+  move_end
 
 # ---- Browser navigation
 
@@ -22,9 +32,9 @@ def_key "l"
 def_key "h"
     jump_to_parent_directory
 
-def_key "enter"
-    require_screen "browser"
-    enter_directory
+#def_key "enter"
+#    require_screen "browser"
+#    enter_directory
 
 def_key "space"
     require_screen "browser"
@@ -39,10 +49,6 @@ def_key "K"
     move_selected_items_up
 
 # --- Playlist commands
-
-def_key "enter"
-    require_screen "playlist"
-    play_item
 
 def_key "space"
     require_screen "playlist"
