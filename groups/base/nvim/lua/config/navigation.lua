@@ -66,7 +66,7 @@ telescope.setup({
     defaults = {
         file_ignore_patterns = {
             -- Arch linux translation files
-            "po"
+            "/po/"
         },
         layout_config = {
             width = 0.90
