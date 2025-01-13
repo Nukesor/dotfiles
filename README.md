@@ -6,6 +6,16 @@ This is a collection of my personal configuration files for my environments.
 
 The dotfiles are managed with [bois](https://github.com/Nukesor/bois).
 
+## Services
+
+- mpd
+- mpd-mpris
+- easyeffects
+- dotfile-deploy
+- pueued
+- polizei?
+- sync-backup
+
 ## i3
 
 ### Layout

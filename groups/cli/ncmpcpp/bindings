@@ -54,3 +54,9 @@ def_key "space"
     require_screen "playlist"
     select_item
     scroll_down
+
+def_key "left"
+  seek_backward
+
+def_key "right"
+  seek_forward
