@@ -113,6 +113,12 @@ action = "next"
 [[block.click]]
 button = "back"
 action = "prev"
+[[block.click]]
+button = "up"
+action = "volume_up"
+[[block.click]]
+button = "down"
+action = "volume_down"
 
 [[block]]
 block = "sound"
