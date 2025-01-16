@@ -16,6 +16,8 @@ abbr --add 'jb' 'sudo journalctl -b -u'
 abbr --add 'sys' 'sudo systemctl'
 abbr --add 'sysu' 'systemctl --user'
 
+abbr --add 'wi' 'iwctl station wlan0'
+
 abbr --add --set-cursor='%' 'pad' 'pueue add -- "%"'
 
 # -------------------- Git abbreviations --------------------

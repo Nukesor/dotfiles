@@ -3,6 +3,7 @@ sync_frequency = "10m"
 search_mode = "fulltext"
 style = "compact"
 show_preview = true
+store_failed = false
 history_filter = [
   # Day-to-day shell commands
   "^cd .*",
@@ -36,6 +37,9 @@ history_filter = [
   "^wget .*",
   "^p .*",
   "^pad .*",
+
+  # Atuin
+  "^atuin search",
 
   # Super specific commands with ids
   "^podman image rm .*",
