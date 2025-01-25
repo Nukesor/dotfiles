@@ -15,8 +15,8 @@
 [core]
     editor = vim
     pager = delta
-    # Required for mergiraf to work:
-    attributesfile = ~/.config/git/gitattributes
+#    # Required for mergiraf to work:
+#    attributesfile = ~/.config/git/gitattributes
 
 [submodule]
     recurse = true
@@ -40,9 +40,9 @@
 [merge]
     conflictstyle = zdiff3
 
-[merge "mergiraf"]
-    name = mergiraf
-    driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P
+#[merge "mergiraf"]
+#    name = mergiraf
+#    driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P
 
 [rerere]
     enabled = true
