@@ -1,0 +1,9 @@
+[Unit]
+Description=Make the user stretch once in a while.
+
+[Service]
+Type=simple
+ExecStart=%h/.cache/cargo/bin/dehn-polizei -vv start
+
+[Install]
+WantedBy=default.target
