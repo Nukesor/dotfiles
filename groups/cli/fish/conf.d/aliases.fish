@@ -9,6 +9,7 @@ alias add='sudo pacman -S'
 alias remove='sudo pacman -Rns'
 alias mksrcinfo='updpkgsums && makepkg --printsrcinfo > .SRCINFO'
 alias watch='watch -c'
+alias dfc='dfc -t btrfs,vfat,ext4'
 
 # Systemctl
 alias systatus='systemctl --type=service --all'
