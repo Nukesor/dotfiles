@@ -23,7 +23,6 @@ set -gx DOCKER_HOST "unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
 # History files
 set -gx _FASD_DATA $XDG_DATA_HOME/fasd/fasd_history
-set -gx HISTFILE $XDG_DATA_HOME/zsh/history
 set -gx LESSHISTFILE "$XDG_DATA_HOME/less_history"
 set -gx PSQL_HISTORY "$XDG_DATA_HOME/psql_history"
 set -gx SQLITE_HISTORY $XDG_DATA_HOME/sqlite_history
@@ -37,7 +36,6 @@ set -gx SQLITE_CONFIG "$XDG_CONFIG_HOME"/sqlite/sqliterc
 set -gx TEXMFCONFIG $XDG_CONFIG_HOME/texlive/texmf-config
 set -gx WEECHAT_HOME $XDG_CONFIG_HOME/weechat
 set -gx XINITRC $XDG_CONFIG_HOME/X11/xinitrc
-set -gx ZDOTDIR $XDG_CONFIG_HOME/zsh
 set -gx AZURE_CONFIG_DIR $XDG_CONFIG_HOME/azure
 
 # Cache cleanup
@@ -47,7 +45,6 @@ set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME"/nv
 set -gx ERRFILE "$XDG_CACHE_HOME/X11/xsession-errors"
 set -gx TEXMFVAR $XDG_CACHE_HOME/texlive/texmf-var
 set -gx XARGO_HOME $XDG_CACHE_HOME/cargo
-set -gx ZSH_COMPDUMP $XDG_CACHE_HOME/zsh/zcompdump
 set -gx ANSIBLE_HOME "$XDG_CACHE_HOME/ansible"
 
 # Data cleanup

@@ -10,7 +10,7 @@ vim.g.mapleader    = ';'
 -- ######## Basic Neovim config ########
 
 -- General settings
-vim.opt.shell      = 'zsh'              -- set zsh as standart vim shell
+vim.opt.shell      = 'fish'             -- set fish as standart vim shell
 vim.opt.history    = 1000               -- 100 lines of command line history
 vim.opt.backspace  = 'indent,eol,start' -- full backspacing capabilities
 vim.opt.clipboard  = 'unnamedplus'      -- yank and copy to X clipboard

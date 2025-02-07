@@ -47,7 +47,7 @@ xdotool_delay=12
 
 ## Programs to be used
 # Editor
-EDITOR='alacritty -e zsh -c vim "$@"'
+EDITOR='alacritty -e fish -c vim "$@"'
 
 # Browser
 BROWSER='xdg-open'

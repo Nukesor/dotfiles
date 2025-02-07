@@ -48,8 +48,8 @@ Add this to `.ssh/config`:
 AddKeysToAgent  yes
 ```
 
-Add this to zshenv:
+Add this to your shell's env:
 
 ```sh
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 ```

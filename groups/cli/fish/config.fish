@@ -48,8 +48,8 @@ bind -M insert \cf filelist
 
 # -------------------- Other stuff --------------------
 # This is a way to start an alacritty shell with a custom command,
-# while keeping an active zsh session.
-# The alternative would be a `zsh -c $command`, which doesn't allow falling
+# while keeping an active shell session.
+# The alternative would be a `fish -c $command`, which doesn't allow falling
 # back to the shell and exits the terminal after closing vim.
 if test -n $ROFI_COMMAND
    eval $ROFI_COMMAND

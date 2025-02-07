@@ -6,8 +6,5 @@ export PATH=~/.cache/cargo/bin:$PATH
 export CARGO_HOME=$XDG_CACHE_HOME/cargo
 export GTK_THEME=Advaita:dark
 
-# Load zshenv
-[ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
-
 # Set background pic
 feh --no-fehbg --bg-scale ~/.local/bg.jpg &
