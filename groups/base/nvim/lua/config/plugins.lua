@@ -95,7 +95,6 @@ require('lazy').setup({
     ----- Looks ------
     'nvim-lualine/lualine.nvim',
     'ap/vim-css-color',
-    "OXY2DEV/markview.nvim",
 
     -- Colorschemes
     { "ellisonleao/gruvbox.nvim", priority = 1000 },

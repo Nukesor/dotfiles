@@ -81,10 +81,3 @@ require('nvim-treesitter.configs').setup({
 
     additional_vim_regex_highlighting = false,
 })
-
--- Markview setup
-require("markview").setup({
-    preview = {
-        enable = false,
-    }
-});
