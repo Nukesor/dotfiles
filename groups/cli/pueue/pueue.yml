@@ -14,6 +14,7 @@ client:
 daemon:
   pause_group_on_failure: false
   pause_all_on_failure: false
+  compress_state_file: true
   callback: |
     notify-send \
     "Task {{ id }}
