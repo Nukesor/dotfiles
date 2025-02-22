@@ -9,6 +9,7 @@ client:
   restart_in_place: true
   read_local_logs: true
   max_status_lines: 10
+  edit_mode: "files"
   status_time_format: "%H:%M:%S"
   status_datetime_format: "%Y-%m-%d %H:%M:%S"
 daemon:
