@@ -69,8 +69,11 @@ formatter.setup({
                 -- Read the first line of the current buffer
                 -- Zola documents always start with a `+++` prefix for their metadata
                 -- If we find such a thing, use prettier instead of mdformat.
-                local first_line = vim.api.nvim_buf_get_lines(0, 0, 1, false);
-                if first_line ~= "+++" then
+                local lines = vim.api.nvim_buf_get_lines(0, 0, 1, false);
+                if string.find(lines[1], "noformat") then
+                    return nil
+                end
+                if lines[1] ~= "+++" then
                     return require("formatter.filetypes.markdown").prettier();
                 end
 
