@@ -11,7 +11,6 @@
     defaultBranch = main
 
 #### Functionality ####
-
 [core]
     editor = vim
     pager = delta
@@ -25,16 +24,20 @@
     autosetupmerge = always
 
 [push]
-    default = current
+    default = simple
+    # Automatically does -> git push origin -u
+    autoSetupRemote = true
 
 [pull]
     rebase = true
 
-[remote "origin"]
+[fetch]
     prune = true
+    all = true
 
 [rebase]
     autoSquash = true
+    autoStash = true
     updateRefs = true
 
 [merge]
@@ -46,9 +49,7 @@
 
 [rerere]
     enabled = true
-
-[interactive]
-    diffFilter = delta --color-only
+    autoupdate = true
 
 [alias]
     lg = log --graph --all --format=format:'%C(yellow)%h%C(reset) - %C(cyan)%ci%C(reset) %C(green)(%cr)%C(reset) %C(bold yellow)%d%C(reset)%n          %C(white)%s%C(reset) %C(bold white)- %cn%C(reset)%n' --abbrev-commit --date=relative
@@ -56,28 +57,38 @@
     fwl = push --force-with-lease
     df = difftool
 
-[grep]
-  break = true
-  heading = true
-  lineNumber = true
-
-# Allow git absorb to look deeper into the history for branch-of detection
 [absorb]
+    # Allow git-absorb to look deeper into the history for branch-of detection
     maxStack=50
 
-#### Styling ####
+#### UX improvements ####
+[commit]
+    verbose = true
 
+[branch]
+    # Show newest commit branches first.
+    sort = -committerdate
+
+[tag]
+    # Makes 0.5.101 to be sorted after 0.5.1000
+    sort = version:refname
+
+[grep]
+    break = true
+    heading = true
+    lineNumber = true
+
+#### Styling ####
 [color]
     diff = auto
     status = auto
     branch = auto
     interactive = auto
 
-[diff]
-    # Display submodule-related information (commit listings)
-    submodule = log
-    colorMoved = zebra
-    tool = difftastic
+#### Git diffs with delta ####
+[interactive]
+    diffFilter = delta --color-only
+
 [delta]
     dark = true
     line-numbers = true
@@ -86,13 +97,24 @@
     hunk-header-decoration-style = none
     # Colorscheme
     syntax-theme = gruvbox-dark
+
+#### Diffing with difftastic ####
+[diff]
+    # Display submodule-related information (commit listings)
+    submodule = log
+    colorMoved = zebra
+    tool = difftastic
+
 [difftool]
     prompt = false
+
 [difftool "difftastic"]
     cmd = difft "$LOCAL" "$REMOTE" --color=always
+
 [pager]
     difftool = true
 
+#### Git LFS ####
 [filter "lfs"]
     required = true
     clean = git-lfs clean -- %f
