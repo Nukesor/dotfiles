@@ -68,34 +68,44 @@ local servers = {
     jinja_lsp = {},
     jsonls = {},
     lua_ls = {
-        Lua = {
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { 'vim' },
-            }
-        },
+        settings = {
+            Lua = {
+                diagnostics = {
+                    -- Get the language server to recognize the `vim` global
+                    globals = { 'vim' },
+                }
+            },
+        }
     },
     marksman = {}, -- Markdownls
     pyright = {},  -- python type checker
     ruff = {},     -- python linter + formatter
     rust_analyzer = {
-        ['rust-analyzer'] =
-        {
-            rustfmt = {
-                extraArgs = { "+nightly" },
-            },
-            check = { allTargets = true, command = "clippy" },
-            procMacro = { enable = true },
-            diagnostics = {
-                disabled = {
-                    "unresolved-proc-macro",
-                    "unresolved-macro-call",
-                    "macro-error",
-                }
-            },
+        settings = {
+            ['rust-analyzer'] = {
+                rustfmt = {
+                    extraArgs = { "+nightly" },
+                },
+                cargt = { allFeatures = true },
+                check = { command = "clippy" },
+                procMacro = { enable = true },
+                diagnostics = {
+                    disabled = {
+                        "unresolved-proc-macro",
+                        "unresolved-macro-call",
+                        "macro-error",
+                    }
+                },
+            }
         }
     },
-    tailwindcss = {},
+    tailwindcss = {
+        filetypes = {
+            "html",
+            "javascriptreact",
+            "typescriptreact",
+        },
+    },
     taplo = {},    -- toml
     terraformls = {},
     tinymist = {}, -- typst
@@ -136,7 +146,7 @@ vim.filetype.add {
 local local_config = file_helper.get_json_file('/./.vim/settings.json');
 --print(vim.inspect(local_config))
 
-for name, settings in pairs(servers) do
+for name, overwrites in pairs(servers) do
     local options = {}
     -- Inject the nvim_lsp capabilities for proper completion support
     options["capabilities"] = capabilities
@@ -158,9 +168,15 @@ for name, settings in pairs(servers) do
         --print(vim.inspect(settings))
     end
 
-    -- Set custom LSP settings
-    options["settings"] = settings
+    -- Set custom LSP filetypes
+    if overwrites["filetypes"] ~= nil then
+        options["filetypes"] = overwrites["filetypes"]
+    end
 
+    -- Set custom LSP settings
+    if overwrites["settings"] ~= nil then
+        options["settings"] = overwrites["settings"]
+    end
 
     -- Print options for a specific server (debugging)
     --if name == "rust_analyzer" then
