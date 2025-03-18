@@ -141,13 +141,14 @@ local proximity_files = function(opts)
                 prompt = "."
             end
 
-            local cmd = {
+            local command = {
                 "bash",
                 "-c",
-                string.format('fd --full-path --type f %s . | proximity-sort %s', prompt, path),
+                string.format('fd --full-path --type f . | sk --exact --filter %s | proximity-sort %s',
+                    vim.fn.shellescape(prompt), vim.fn.shellescape(path)),
             }
             -- print("Cmd: ", vim.inspect(cmd))
-            return cmd
+            return command
         end,
         opts.entry_maker or make_entry.gen_from_file(opts),
         opts.max_results,
