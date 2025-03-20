@@ -21,7 +21,7 @@
     recurse = true
 
 [branch]
-    autosetupmerge = always
+    autoSetupMerge = always
 
 [push]
     default = simple

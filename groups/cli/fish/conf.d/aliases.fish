@@ -37,8 +37,8 @@ alias glg='git lg'
 alias gsh='git switch'
 alias gsm='git switch main &> /dev/null || git switch master'
 alias gb='git branch'
-alias gp='git push'
-alias gpf='git push --force-with-lease'
+alias gpu='git push --set-upstream origin'
+alias gpuf='git push --set-upstream origin --force-with-lease'
 alias git_describe="git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g'"
 
 # Rust
