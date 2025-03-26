@@ -38,9 +38,6 @@ history_filter = [
   "^p .*",
   "^pad .*",
 
-  # Atuin
-  "^atuin search",
-
   # Super specific commands with ids
   "^podman image rm .*",
   "^git checkout .{40}$",
