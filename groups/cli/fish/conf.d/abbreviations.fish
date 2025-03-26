@@ -10,6 +10,9 @@ function last_history_item
 end
 abbr --position anywhere -a "!!" --function last_history_item
 
+# -------------------- Command Prefixes --------------------
+abbr --add 'u' 'unbuffer'
+
 # -------------------- Command Abbreviations --------------------
 abbr --add 'jf' 'sudo journalctl -f -u'
 abbr --add 'jb' 'sudo journalctl -b -u'
