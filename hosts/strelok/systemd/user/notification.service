@@ -1,0 +1,11 @@
+[Unit]
+Description=Notification telegram bot
+
+[Service]
+Type=simple
+ExectStartPre=just setup
+ExecStart=just
+WorkingDirectory=%h/repos/notification-bot
+
+[Install]
+WantedBy=default.target
