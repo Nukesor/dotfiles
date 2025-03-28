@@ -13,7 +13,24 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 vim.diagnostic.config({
     underline = true,
-    virtual_text = false,
+    virtual_text = vim.diagnostic.config({
+        virtual_text = { current_line = true }
+    }),
+    virtual_lines = { current_line = true },
+
+    -- Icons for diagnostic errors
+    text = {
+        [vim.diagnostic.severity.ERROR] = " ",
+        [vim.diagnostic.severity.WARN] = " ",
+        [vim.diagnostic.severity.INFO] = " ",
+        [vim.diagnostic.severity.HINT] = "󰌵",
+    },
+    numhl = {
+        [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+        [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+        [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+        [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+    }
 })
 
 ----- LSP keybinds -----
@@ -34,7 +51,22 @@ local lsp_attach = function(_, buffer)
     vim.keymap.set("n", "<leader>aw", function() vim.cmd('Lspsaga code_action') end, opts)
     vim.keymap.set("v", "<leader>aw", function() vim.cmd('Lspsaga code_action') end, opts)
     vim.keymap.set("n", "<leader>sh", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, opts)
+    vim.keymap.set("n", "<leader>sd",
+        function()
+            local current_config = vim.diagnostic.config().virtual_text
+            if current_config.current_line == true then
+                vim.diagnostic.config({
+                    virtual_text = { current_line = false },
+                    virtual_lines = { current_line = false },
+                })
+            else
+                vim.diagnostic.config({
+                    virtual_text = { current_line = true },
+                    virtual_lines = { current_line = true },
+                })
+            end
+        end,
+        opts)
     vim.keymap.set("n", "<leader>sr", function() vim.cmd('Lspsaga finder') end, opts)
     vim.keymap.set("n", "<leader>so", function() vim.cmd('Lspsaga outline') end, opts)
     vim.keymap.set("n", "<leader>si", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, opts)
